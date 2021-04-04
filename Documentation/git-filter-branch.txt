@@ -133,8 +133,8 @@ OPTIONS
 	It will receive the parent string on stdin and shall output
 	the new parent string on stdout.  The parent string is in
 	the format described in linkgit:git-commit-tree[1]: empty for
-	the initial commit, "-p parent" for a normal commit and
-	"-p parent1 -p parent2 -p parent3 ..." for a merge commit.
+	the initial commit, `-p parent` for a normal commit and
+	`-p parent1 -p parent2 -p parent3 ...` for a merge commit.
 
 --msg-filter <command>::
 	This is the filter for rewriting the commit messages.
@@ -170,7 +170,7 @@ and that makes no change to the tree.
 	tag name is expected on standard output.
 +
 The original tags are not deleted, but can be overwritten;
-use "--tag-name-filter cat" to simply update the tags.  In this
+use `--tag-name-filter cat` to simply update the tags.  In this
 case, be very careful and make sure you have the old tags
 backed up in case the conversion has run afoul.
 +
@@ -598,12 +598,12 @@ with:
   sensitive files and others which don't.  This comes about in
   multiple different ways:
 
-  ** the default to only doing a partial history rewrite ('--all' is not
+  ** the default to only doing a partial history rewrite (`--all` is not
      the default and few examples show it)
 
   ** the fact that there's no automatic post-run cleanup
 
-  ** the fact that --tag-name-filter (when used to rename tags) doesn't
+  ** the fact that `--tag-name-filter` (when used to rename tags) doesn't
      remove the old tags but just adds new ones with the new name
 
   ** the fact that little educational information is provided to inform
@@ -623,15 +623,15 @@ with:
      git-filter-branch command.  (The backup in refs/original/ is not a
      real backup; it dereferences tags first.)
 
-  ** Running git-filter-branch with either --tags or --all in your
+  ** Running git-filter-branch with either `--tags` or `--all` in your
      <rev-list options>.  In order to retain annotated tags as
-     annotated, you must use --tag-name-filter (and must not have
+     annotated, you must use `--tag-name-filter` (and must not have
      restored from refs/original/ in a previously botched rewrite).
 
 * Any commit messages that specify an encoding will become corrupted
   by the rewrite; git-filter-branch ignores the encoding, takes the
   original bytes, and feeds it to commit-tree without telling it the
-  proper encoding.  (This happens whether or not --msg-filter is
+  proper encoding.  (This happens whether or not `--msg-filter` is
   used.)
 
 * Commit messages (even if they are all UTF-8) by default become
@@ -650,21 +650,21 @@ with:
   dependencies (node_modules or similar) which couldn't have ever been
   functional since it's missing some files.)
 
-* If --prune-empty isn't specified, then the filtering process can
+* If `--prune-empty` isn't specified, then the filtering process can
   create hoards of confusing empty commits
 
-* If --prune-empty is specified, then intentionally placed empty
+* If `--prune-empty` is specified, then intentionally placed empty
   commits from before the filtering operation are also pruned instead
   of just pruning commits that became empty due to filtering rules.
 
-* If --prune-empty is specified, sometimes empty commits are missed
+* If `--prune-empty` is specified, sometimes empty commits are missed
   and left around anyway (a somewhat rare bug, but it happens...)
 
 * A minor issue, but users who have a goal to update all names and
-  emails in a repository may be led to --env-filter which will only
+  emails in a repository may be led to `--env-filter` which will only
   update authors and committers, missing taggers.
 
-* If the user provides a --tag-name-filter that maps multiple tags to
+* If the user provides a `--tag-name-filter` that maps multiple tags to
   the same name, no warning or error is provided; git-filter-branch
   simply overwrites each tag in some undocumented pre-defined order
   resulting in only one tag at the end.  (A git-filter-branch

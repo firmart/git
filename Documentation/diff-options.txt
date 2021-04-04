@@ -471,7 +471,7 @@ ifndef::git-format-patch[]
 	that is immediately followed by a tab character inside the
 	initial indent of the line are considered whitespace errors.
 	Exits with non-zero status if problems are found. Not compatible
-	with --exit-code.
+	with `--exit-code`.
 
 --ws-error-highlight=<kind>::
 	Highlight whitespace errors in the `context`, `old` or `new`
@@ -522,10 +522,10 @@ original should remain in the result for Git to consider it a total
 rewrite (i.e. otherwise the resulting patch will be a series of
 deletion and insertion mixed together with context lines).
 +
-When used with -M, a totally-rewritten file is also considered as the
-source of a rename (usually -M only considers a file that disappeared
+When used with `-M`, a totally-rewritten file is also considered as the
+source of a rename (usually `-M` only considers a file that disappeared
 as the source of a rename), and the number `n` controls this aspect of
-the -B option (defaults to 50%). `-B20%` specifies that a change with
+the `-B` option (defaults to 50%). `-B20%` specifies that a change with
 addition and deletion compared to 20% or more of the file's size are
 eligible for being picked up as a possible source of a rename to
 another file.

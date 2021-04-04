@@ -109,7 +109,7 @@ It is optional: it defaults to 'traditional'.
 The possible options are:
 
 	- 'traditional' - Shows ignored files and directories, unless
-			  --untracked-files=all is specified, in which case
+			  `--untracked-files=all` is specified, in which case
 			  individual files in ignored directories are
 			  displayed.
 	- 'no'	        - Show no ignored files.
@@ -252,7 +252,7 @@ via `git add` in the superproject to prepare a commit.
 'm' and '?' are applied recursively. For example if a nested submodule
 in a submodule contains an untracked file, this is reported as '?' as well.
 
-If -b is used the short-format status is preceded by a line
+If `-b` is used the short-format status is preceded by a line
 
     ## branchname tracking info
 
@@ -271,7 +271,7 @@ format, with a few exceptions:
 2. The user's status.relativePaths configuration is not respected; paths
    shown will always be relative to the repository root.
 
-There is also an alternate -z format recommended for machine parsing. In
+There is also an alternate `-z` format recommended for machine parsing. In
 that format, the status field is the same, but some other things
 change.  First, the '\->' is omitted from rename entries and the field
 order is reversed (e.g 'from \-> to' becomes 'to from'). Second, a NUL
@@ -425,11 +425,11 @@ directory.
 If `status.submoduleSummary` is set to a non zero number or true (identical
 to -1 or an unlimited number), the submodule summary will be enabled for
 the long format and a summary of commits for modified submodules will be
-shown (see --summary-limit option of linkgit:git-submodule[1]). Please note
+shown (see `--summary-limit` option of linkgit:git-submodule[1]). Please note
 that the summary output from the status command will be suppressed for all
 submodules when `diff.ignoreSubmodules` is set to 'all' or only for those
 submodules where `submodule.<name>.ignore=all`. To also view the summary for
-ignored submodules you can either use the --ignore-submodules=dirty command
+ignored submodules you can either use the `--ignore-submodules=dirty` command
 line option or the 'git submodule summary' command, which shows a similar
 output but does not honor these settings.
 

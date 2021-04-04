@@ -38,7 +38,7 @@ created by 'git cvsimport'.  By default initial import will create and populate 
 "master" branch from the CVS repository's main branch which you're free
 to work with; after that, you need to 'git merge' incremental imports, or
 any CVS branches, yourself.  It is advisable to specify a named remote via
--r to separate and protect the incoming branches.
+`-r` to separate and protect the incoming branches.
 
 If you intend to set up a shared public repository that all developers can
 read/write, or if you want to use linkgit:git-cvsserver[1], then you
@@ -74,7 +74,7 @@ OPTIONS
 	akin to the way 'git clone' uses 'origin' by default.
 
 -o <branch-for-HEAD>::
-	When no remote is specified (via -r) the `HEAD` branch
+	When no remote is specified (via `-r`) the `HEAD` branch
 	from CVS is imported to the 'origin' branch within the Git
 	repository, as `HEAD` already has a special meaning for Git.
 	When a remote is specified the `HEAD` branch is named
@@ -82,7 +82,7 @@ OPTIONS
 	Use this option if you want to import into a different
 	branch.
 +
-Use '-o master' for continuing an import that was initially done by
+Use `-o master` for continuing an import that was initially done by
 the old cvs2git tool.
 
 -i::
@@ -91,7 +91,7 @@ the old cvs2git tool.
 	not create them if they do not exist.
 
 -k::
-	Kill keywords: will extract files with '-kk' from the CVS archive
+	Kill keywords: will extract files with `-kk` from the CVS archive
 	to avoid noisy changesets. Highly recommended, but off by default
 	to preserve compatibility with early imported trees.
 
@@ -103,7 +103,7 @@ the old cvs2git tool.
 
 -p <options-for-cvsps>::
 	Additional options for cvsps.
-	The options `-u` and '-A' are implicit and should not be used here.
+	The options `-u` and `-A` are implicit and should not be used here.
 +
 If you need to pass multiple options, separate them with a comma.
 
@@ -158,7 +158,7 @@ all along.  If a time zone is specified, GIT_AUTHOR_DATE will
 have the corresponding offset applied.
 +
 For convenience, this data is saved to `$GIT_DIR/cvs-authors`
-each time the '-A' option is provided and read from that same
+each time the `-A` option is provided and read from that same
 file each time 'git cvsimport' is run.
 +
 It is not recommended to use this feature if you intend to

@@ -66,7 +66,7 @@ grep.fullName::
 	If set to true, enable `--full-name` option by default.
 
 grep.fallbackToNoIndex::
-	If set to true, fall back to git grep --no-index if git grep
+	If set to true, fall back to git grep `--no-index` if git grep
 	is executed outside of a git repository.  Defaults to false.
 
 
@@ -123,7 +123,7 @@ OPTIONS
 	levels of directories. A value of -1 means no limit.
 	This option is ignored if <pathspec> contains active wildcards.
 	In other words if "a*" matches a directory named "a*",
-	"*" is matched literally so --max-depth is still effective.
+	"*" is matched literally so `--max-depth` is still effective.
 
 -r::
 --recursive::

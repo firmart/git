@@ -44,13 +44,13 @@ syntaxes may be used:
 
 ifndef::git-clone[]
 These two syntaxes are mostly equivalent, except when cloning, when
-the former implies --local option. See linkgit:git-clone[1] for
+the former implies `--local` option. See linkgit:git-clone[1] for
 details.
 endif::git-clone[]
 
 ifdef::git-clone[]
 These two syntaxes are mostly equivalent, except the former implies
---local option.
+`--local` option.
 endif::git-clone[]
 
 'git clone', 'git fetch' and 'git pull', but not 'git push', will also

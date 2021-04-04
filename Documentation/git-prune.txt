@@ -75,7 +75,7 @@ should instead call 'git gc', which handles pruning along with
 many other housekeeping tasks.
 
 For a description of which objects are considered for pruning, see
-'git fsck''s --unreachable option.
+'git fsck''s `--unreachable` option.
 
 SEE ALSO
 --------

@@ -25,7 +25,7 @@ of <refspec> below for ways to control this behavior).
 By default, any tag that points into the histories being fetched is
 also fetched; the effect is to fetch tags that
 point at branches that you are interested in.  This default behavior
-can be changed by using the --tags or --no-tags options or by
+can be changed by using the `--tags` or `--no-tags` options or by
 configuring remote.<name>.tagOpt.  By using a refspec that fetches tags
 explicitly, you can fetch tags that do not point into branches you
 are interested in as well.
@@ -204,7 +204,7 @@ representing the status of a single ref. Each line is of the form:
  <flag> <summary> <from> -> <to> [<reason>]
 -------------------------------
 
-The status of up-to-date refs is shown only if the --verbose option is
+The status of up-to-date refs is shown only if the `--verbose` option is
 used.
 
 In compact output mode, specified with configuration variable
@@ -287,7 +287,7 @@ include::transfer-data-leaks.txt[]
 
 BUGS
 ----
-Using --recurse-submodules can only fetch new commits in already checked
+Using `--recurse-submodules` can only fetch new commits in already checked
 out submodules right now. When e.g. upstream added a new submodule in the
 just fetched commits of the superproject the submodule itself cannot be
 fetched, making it impossible to check out that submodule later without

@@ -113,7 +113,7 @@ diff.relative::
 
 diff.orderFile::
 	File indicating how to order files within a diff.
-	See the '-O' option to linkgit:git-diff[1] for details.
+	See the `-O` option to linkgit:git-diff[1] for details.
 	If `diff.orderFile` is a relative pathname, it is treated as
 	relative to the top of the working tree.
 

@@ -36,7 +36,7 @@ OPTIONS
 	merged.
 
 --[no-]summary::
-	Synonyms to --log and --no-log; these are deprecated and will be
+	Synonyms to `--log` and `--no-log`; these are deprecated and will be
 	removed in the future.
 
 -m <message>::

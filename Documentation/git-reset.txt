@@ -89,7 +89,7 @@ but carries forward unmerged index entries.
 	changes, reset is aborted.
 
 --[no-]recurse-submodules::
-	When the working tree is updated, using --recurse-submodules will
+	When the working tree is updated, using `--recurse-submodules` will
 	also recursively reset the working tree of all active submodules
 	according to the commit recorded in the superproject, also setting
 	the submodules' HEAD to be detached at that commit.
@@ -345,7 +345,7 @@ $ git commit ...                            <8>
 ------------
 +
 <1> First, reset the history back one commit so that we remove the original
-    commit, but leave the working tree with all the changes. The -N ensures
+    commit, but leave the working tree with all the changes. The `-N` ensures
     that any new files added with `HEAD` are still marked so that `git add -p`
     will find them.
 <2> Next, we interactively select diff hunks to add using the `git add -p`

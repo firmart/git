@@ -941,7 +941,7 @@ branch head.  Please see linkgit:gitrevisions[7] if you want to
 see more complex cases.
 
 [NOTE]
-Without the '--more=1' option, 'git show-branch' would not output the
+Without the `--more=1` option, 'git show-branch' would not output the
 '[master^]' commit, as '[mybranch]' commit is a common ancestor of
 both 'master' and 'mybranch' tips.  Please see linkgit:git-show-branch[1]
 for details.

@@ -37,7 +37,7 @@ OPTIONS
 	failure usually indicates conflicts during the merge). This is for
 	porcelains which might want to emit custom messages.
 
-If 'git merge-index' is called with multiple <file>s (or -a) then it
+If 'git merge-index' is called with multiple <file>s (or `-a`) then it
 processes them in turn only stopping if merge returns a non-zero exit
 code.
 

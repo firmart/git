@@ -42,7 +42,7 @@ OPTIONS
 	filenames.
 
 -f<nn>::
-	Skip the first <nn> numbers, for example if -f3 is specified,
+	Skip the first <nn> numbers, for example if `-f`3 is specified,
 	start the numbering with 0004.
 
 --keep-cr::

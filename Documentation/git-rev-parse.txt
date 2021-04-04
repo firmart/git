@@ -152,7 +152,7 @@ for another option.
 	form as close to the original input as possible.
 
 --symbolic-full-name::
-	This is similar to --symbolic, but it omits input that
+	This is similar to `--symbolic`, but it omits input that
 	are not refs (i.e. branch or tag names; or more
 	explicitly disambiguating "heads/master" form, when you
 	want to name the "master" branch when there is an
@@ -306,12 +306,12 @@ Other Options
 --since=datestring::
 --after=datestring::
 	Parse the date string, and output the corresponding
-	--max-age= parameter for 'git rev-list'.
+	`--max-age=` parameter for 'git rev-list'.
 
 --until=datestring::
 --before=datestring::
 	Parse the date string, and output the corresponding
-	--min-age= parameter for 'git rev-list'.
+	`--min-age=` parameter for 'git rev-list'.
 
 <args>...::
 	Flags and parameters to be parsed.

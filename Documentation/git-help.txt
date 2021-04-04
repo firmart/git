@@ -98,16 +98,16 @@ variable will be checked. The following values are supported for this
 variable; they make 'git help' behave as their corresponding command-
 line option:
 
-* "man" corresponds to '-m|--man',
-* "info" corresponds to '-i|--info',
-* "web" or "html" correspond to '-w|--web'.
+* "man" corresponds to `-m`|`--man`,
+* "info" corresponds to `-i`|`--info`,
+* "web" or "html" correspond to `-w`|`--web`.
 
 help.browser, web.browser and browser.<tool>.path
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `help.browser`, `web.browser` and `browser.<tool>.path` will also
 be checked if the 'web' format is chosen (either by command-line
-option or configuration variable). See '-w|--web' in the OPTIONS
+option or configuration variable). See `-w`|`--web` in the OPTIONS
 section above and linkgit:git-web{litdd}browse[1].
 
 man.viewer

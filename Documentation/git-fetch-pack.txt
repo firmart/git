@@ -80,7 +80,7 @@ be in a separate packet, and the list must end with a flush packet.
 	the things up in .bash_profile).
 
 --exec=<git-upload-pack>::
-	Same as --upload-pack=<git-upload-pack>.
+	Same as `--upload-pack`=<git-upload-pack>.
 
 --depth=<n>::
 	Limit fetching to ancestor-chains not longer than n.
@@ -97,7 +97,7 @@ be in a separate packet, and the list must end with a flush packet.
 	This option can be specified multiple times.
 
 --deepen-relative::
-	Argument --depth specifies the number of commits from the
+	Argument `--depth` specifies the number of commits from the
 	current shallow boundary instead of from the tip of each
 	remote branch history.
 

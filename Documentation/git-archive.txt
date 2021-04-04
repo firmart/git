@@ -77,7 +77,7 @@ OPTIONS
 	linkgit:git-upload-archive[1] for details.
 
 --exec=<git-upload-archive>::
-	Used with --remote to specify the path to the
+	Used with `--remote` to specify the path to the
 	'git-upload-archive' on the remote side.
 
 <tree-ish>::

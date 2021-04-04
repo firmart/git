@@ -54,7 +54,7 @@ since then.  I just limited the output to the first handful using
 Now I know 'master^2~4' (pronounce it as "find the second parent of
 the 'master', and then go four generations back following the first
 parent") is the one I would want to revert.  Since I also want to say
-why I am reverting it, the '-n' flag is given to 'git revert'.  This
+why I am reverting it, the `-n` flag is given to 'git revert'.  This
 prevents it from actually making a commit, and instead 'git revert'
 leaves the commit log message it wanted to use in '.msg' file:
 

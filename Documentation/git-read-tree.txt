@@ -38,7 +38,7 @@ OPTIONS
 	started.
 
 --reset::
-	Same as -m, except that unmerged entries are discarded instead
+	Same as `-m`, except that unmerged entries are discarded instead
 	of failing. When used with `-u`, updates leading to loss of
 	working tree changes will not abort the operation.
 
@@ -116,7 +116,7 @@ OPTIONS
 	located in.
 
 --[no-]recurse-submodules::
-	Using --recurse-submodules will update the content of all active
+	Using `--recurse-submodules` will update the content of all active
 	submodules according to the commit recorded in the superproject by
 	calling read-tree recursively, also setting the submodules' HEAD to be
 	detached at that commit.
@@ -227,7 +227,7 @@ refer to the presence of a path in the specified commit:
 In all "keep index" cases, the index entry stays as in the
 original index file.  If the entry is not up to date,
 'git read-tree' keeps the copy in the work tree intact when
-operating under the -u flag.
+operating under the `-u` flag.
 
 When this form of 'git read-tree' returns successfully, you can
 see which of the "local changes" that you made were carried forward by running

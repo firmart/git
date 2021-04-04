@@ -49,7 +49,7 @@ OPTIONS
 	<pack-file> is not specified, the pack is written to
 	objects/pack/ directory of the current Git repository with
 	a default name determined from the pack content.  If
-	<pack-file> is not specified consider using --keep to
+	<pack-file> is not specified consider using `--keep` to
 	prevent a race condition between this process and
 	'git repack'.
 
@@ -57,18 +57,18 @@ OPTIONS
 	Fix a "thin" pack produced by `git pack-objects --thin` (see
 	linkgit:git-pack-objects[1] for details) by adding the
 	excluded objects the deltified objects are based on to the
-	pack. This option only makes sense in conjunction with --stdin.
+	pack. This option only makes sense in conjunction with `--stdin`.
 
 --keep::
 	Before moving the index into its final destination
 	create an empty .keep file for the associated pack file.
-	This option is usually necessary with --stdin to prevent a
+	This option is usually necessary with `--stdin` to prevent a
 	simultaneous 'git repack' process from deleting
 	the newly constructed pack and index before refs can be
 	updated to use objects contained in the pack.
 
 --keep=<msg>::
-	Like --keep create a .keep file before moving the index into
+	Like `--keep` create a .keep file before moving the index into
 	its final destination, but rather than creating an empty file
 	place '<msg>' followed by an LF into the .keep file.  The '<msg>'
 	message can later be searched for within all .keep files to
@@ -112,7 +112,7 @@ name of the pack/idx file (see "Notes").
 	the current repository (set by `extensions.objectFormat`), or 'sha1' if no
 	value is set or outside a repository.
 +
-This option cannot be used with --stdin.
+This option cannot be used with `--stdin`.
 +
 include::object-format-disclaimer.txt[]
 
@@ -120,7 +120,7 @@ NOTES
 -----
 
 Once the index has been created, the hash that goes into the name of
-the pack/idx file is printed to stdout. If --stdin was
+the pack/idx file is printed to stdout. If `--stdin` was
 also used then this is prefixed by either "pack\t", or "keep\t" if a
 new .keep file was successfully created. This is useful to remove a
 .keep file used as a lock to prevent the race with 'git repack'

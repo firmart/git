@@ -67,14 +67,14 @@ produced incorrect results if you gave these options.
 	have been completed, or to save the marks table across
 	incremental runs.  As <file> is only opened and truncated
 	at completion, the same path can also be safely given to
-	--import-marks.
+	`--import-marks`.
 	The file will not be written if no new object has been
 	marked/exported.
 
 --import-marks=<file>::
 	Before processing any input, load the marks specified in
 	<file>.  The input file must exist, must be readable, and
-	must use the same format as produced by --export-marks.
+	must use the same format as produced by `--export-marks`.
 
 --mark-tags::
 	In addition to labelling blobs and commits with mark ids, also
@@ -86,7 +86,7 @@ produced incorrect results if you gave these options.
 	identifiers.
 +
 Any commits (or tags) that have already been marked will not be
-exported again.  If the backend uses a similar --import-marks file,
+exported again.  If the backend uses a similar `--import-marks` file,
 this allows for incremental bidirectional exporting of the repository
 by keeping the marks the same across runs.
 
@@ -130,7 +130,7 @@ by keeping the marks the same across runs.
 	and will make master{tilde}4 no longer have master{tilde}5 as
 	a parent (though both the old master{tilde}4 and new
 	master{tilde}4 will have all the same files).  Use
-	--reference-excluded-parents to instead have the stream
+	`--reference-excluded-parents` to instead have the stream
 	refer to commits in the excluded range of history by their
 	sha1sum.  Note that the resulting stream can only be used by a
 	repository which already contains the necessary parent
@@ -160,7 +160,7 @@ by keeping the marks the same across runs.
 	to export.  For example, `master~10..master` causes the
 	current master reference to be exported along with all objects
 	added since its 10th ancestor commit and (unless the
-	--reference-excluded-parents option is specified) all files
+	`--reference-excluded-parents` option is specified) all files
 	common to master{tilde}9 and master{tilde}10.
 
 EXAMPLES

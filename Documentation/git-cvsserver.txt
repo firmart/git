@@ -119,7 +119,7 @@ for example:
 ------
 You can use the 'htpasswd' facility that comes with Apache to make these
 files, but Apache's MD5 crypt method differs from the one used by most C
-library's crypt() function, so don't use the -m option.
+library's crypt() function, so don't use the `-m` option.
 
 Alternatively you can produce the password with perl's crypt() operator:
 -----
@@ -312,7 +312,7 @@ ENVIRONMENT
 These variables obviate the need for command-line options in some
 circumstances, allowing easier restricted usage through git-shell.
 
-GIT_CVSSERVER_BASE_PATH takes the place of the argument to --base-path.
+GIT_CVSSERVER_BASE_PATH takes the place of the argument to `--base-path`.
 
 GIT_CVSSERVER_ROOT specifies a single-directory whitelist. The
 repository must still be configured to allow access through
@@ -361,7 +361,7 @@ All the operations required for normal use are supported, including
 checkout, diff, status, update, log, add, remove, commit.
 
 Most CVS command arguments that read CVS tags or revision numbers
-(typically -r) work, and also support any git refspec
+(typically `-r`) work, and also support any git refspec
 (tag, branch, commit ID, etc).
 However, CVS revision numbers for non-default branches are not well
 emulated, and cvs log does not show tags or branches at
@@ -374,7 +374,7 @@ As described elsewhere on this page, the "module" parameter
 of cvs checkout is interpreted as a branch name, and it becomes
 the main branch.  It remains the main branch for a given sandbox
 even if you temporarily make another branch sticky with
-cvs update -r.  Alternatively, the -r argument can indicate
+cvs update -r.  Alternatively, the `-r` argument can indicate
 some other branch to actually checkout, even though the module
 is still the "main" branch.  Tradeoffs (as currently
 implemented): Each new "module" creates a new database on disk with
@@ -385,7 +385,7 @@ many operations, like cvs update.
 
 If you want to refer to a git refspec that has characters that are
 not allowed by CVS, you have two options.  First, it may just work
-to supply the git refspec directly to the appropriate CVS -r argument;
+to supply the git refspec directly to the appropriate CVS `-r` argument;
 some CVS clients don't seem to do much sanity checking of the argument.
 Second, if that fails, you can use a special character escape mechanism
 that only uses characters that are valid in CVS tags.  A sequence
@@ -415,7 +415,7 @@ Alternatively, if `gitcvs.usecrlfattr` config is not enabled
 or the attributes do not allow automatic detection for a filename, then
 the server uses the `gitcvs.allBinary` config for the default setting.
 If `gitcvs.allBinary` is set, then file not otherwise
-specified will default to '-kb' mode. Otherwise the `-k` mode
+specified will default to `-kb` mode. Otherwise the `-k` mode
 is left blank. But if `gitcvs.allBinary` is set to "guess", then
 the correct `-k` mode will be guessed based on the contents of
 the file.

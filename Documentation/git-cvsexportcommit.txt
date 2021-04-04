@@ -18,7 +18,7 @@ DESCRIPTION
 Exports a commit from Git to a CVS checkout, making it easier
 to merge patches from a Git repository into a CVS repository.
 
-Specify the name of a CVS checkout using the -w switch or execute it
+Specify the name of a CVS checkout using the `-w` switch or execute it
 from the root of the CVS working copy. In the latter case GIT_DIR must
 be defined. See examples below.
 
@@ -40,7 +40,7 @@ OPTIONS
 
 -p::
 	Be pedantic (paranoid) when applying patches. Invokes patch with
-	--fuzz=0
+	`--fuzz=0`
 
 -a::
 	Add authorship information. Adds Author line, and Committer (if
@@ -48,7 +48,7 @@ OPTIONS
 
 -d::
 	Set an alternative CVSROOT to use.  This corresponds to the CVS
-	-d parameter.  Usually users will not want to set this, except
+	`-d` parameter.  Usually users will not want to set this, except
 	if using CVS in an asymmetric fashion.
 
 -f::
@@ -99,7 +99,7 @@ $ git cvsexportcommit -v <commit-sha1>
 $ cvs commit -F .msg <files>
 ------------
 
-Merge one patch into CVS (-c and -w options). The working directory is within the Git Repo::
+Merge one patch into CVS (`-c` and `-w` options). The working directory is within the Git Repo::
 +
 ------------
 	$ git cvsexportcommit -v -c -w ~/project_cvs_checkout <commit-sha1>

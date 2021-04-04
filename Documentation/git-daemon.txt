@@ -55,14 +55,14 @@ OPTIONS
 --base-path=<path>::
 	Remap all the path requests as relative to the given path.
 	This is sort of "Git root" - if you run 'git daemon' with
-	'--base-path=/srv/git' on example.com, then if you later try to pull
+	`--base-path=/srv/git` on example.com, then if you later try to pull
 	'git://example.com/hello.git', 'git daemon' will interpret the path
 	as `/srv/git/hello.git`.
 
 --base-path-relaxed::
-	If --base-path is enabled and repo lookup fails, with this option
+	If `--base-path` is enabled and repo lookup fails, with this option
 	'git daemon' will attempt to lookup without prefixing the base path.
-	This is useful for switching to --base-path usage, while still
+	This is useful for switching to `--base-path` usage, while still
 	allowing the old paths.
 
 --interpolated-path=<pathtemplate>::
@@ -81,16 +81,16 @@ OPTIONS
 	do not have the 'git-daemon-export-ok' file.
 
 --inetd::
-	Have the server run as an inetd service. Implies --syslog (may be
+	Have the server run as an inetd service. Implies `--syslog` (may be
 	overridden with `--log-destination=`).
-	Incompatible with --detach, --port, --listen, --user and --group
+	Incompatible with `--detach`, `--port`, `--listen`, `--user` and `--group`
 	options.
 
 --listen=<host_or_ipaddr>::
 	Listen on a specific IP address or hostname.  IP addresses can
 	be either an IPv4 address or an IPv6 address if supported.  If IPv6
-	is not supported, then --listen=hostname is also not supported and
-	--listen must be given an IPv4 address.
+	is not supported, then `--listen=hostname` is also not supported and
+	`--listen` must be given an IPv4 address.
 	Can be given more than once.
 	Incompatible with `--inetd` option.
 
@@ -116,7 +116,7 @@ OPTIONS
 
 --log-destination=<destination>::
 	Send log messages to the specified destination.
-	Note that this option does not imply --verbose,
+	Note that this option does not imply `--verbose`,
 	thus by default only error conditions will be logged.
 	The <destination> must be one of:
 +
@@ -154,7 +154,7 @@ otherwise `stderr`.
 	old connections to time out.
 
 --detach::
-	Detach from the shell. Implies --syslog.
+	Detach from the shell. Implies `--syslog`.
 
 --pid-file=<file>::
 	Save the process id in 'file'.  Ignored when the daemon
@@ -200,7 +200,7 @@ Git configuration files in that directory are readable by `<user>`.
 	is more convenient for clients, but may leak information about
 	the existence of unexported repositories.  When informative
 	errors are not enabled, all errors report "access denied" to the
-	client. The default is --no-informative-errors.
+	client. The default is `--no-informative-errors`.
 
 --access-hook=<path>::
 	Every time a client connects, first run an external command
@@ -219,7 +219,7 @@ it declines the service.
 
 <directory>::
 	A directory to add to the whitelist of allowed directories. Unless
-	--strict-paths is specified this will also include subdirectories
+	`--strict-paths` is specified this will also include subdirectories
 	of each named directory.
 
 SERVICES

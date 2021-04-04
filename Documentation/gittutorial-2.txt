@@ -318,7 +318,7 @@ index a042389..513feba 100644
 ------------------------------------------------
 
 At any time, we can create a new commit using 'git commit' (without
-the "-a" option), and verify that the state committed only includes the
+the `-a` option), and verify that the state committed only includes the
 changes stored in the index file, not the additional change that is
 still only in our working tree:
 
@@ -336,7 +336,7 @@ index 513feba..ba3da7b 100644
 ------------------------------------------------
 
 So by default 'git commit' uses the index to create the commit, not
-the working tree; the "-a" option to commit tells it to first update
+the working tree; the `-a` option to commit tells it to first update
 the index with all changes in the working tree.
 
 Finally, it's worth looking at the effect of 'git add' on the index

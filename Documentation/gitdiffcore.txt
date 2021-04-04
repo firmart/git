@@ -55,7 +55,7 @@ is under consideration.
 
 The result of comparison is passed from these commands to what is
 internally called "diffcore", in a format similar to what is output
-when the -p option is not used.  E.g.
+when the `-p` option is not used.  E.g.
 
 ------------------------------------------------
 in-place edit  :100644 100644 bcd1234... 0123456... M file0
@@ -89,7 +89,7 @@ diffcore-break: For Splitting Up Complete Rewrites
 --------------------------------------------------
 
 The second transformation in the chain is diffcore-break, and is
-controlled by the -B option to the 'git diff-{asterisk}' commands.  This is
+controlled by the `-B` option to the 'git diff-{asterisk}' commands.  This is
 used to detect a filepair that represents "complete rewrite" and
 break such filepair into two filepairs that represent delete and
 create.  E.g.  If the input contained this filepair:
@@ -117,14 +117,14 @@ score defaults to 50% of the size of the smaller of the original
 and the result (i.e. if the edit shrinks the file, the size of
 the result is used; if the edit lengthens the file, the size of
 the original is used), and can be customized by giving a number
-after "-B" option (e.g. "-B75" to tell it to use 75%).
+after `-B` option (e.g. `-B75` to tell it to use 75%).
 
 
 diffcore-rename: For Detecting Renames and Copies
 -------------------------------------------------
 
 This transformation is used to detect renames and copies, and is
-controlled by the -M option (to detect renames) and the -C option
+controlled by the `-M` option (to detect renames) and the `-C` option
 (to detect copies as well) to the 'git diff-{asterisk}' commands.  If the
 input contained these filepairs:
 
@@ -141,9 +141,9 @@ merges these filepairs and creates:
 :100644 100644 0123456... 0123456... R100 fileX file0
 ------------------------------------------------
 
-When the "-C" option is used, the original contents of modified files,
+When the `-C` option is used, the original contents of modified files,
 and deleted files (and also unmodified files, if the
-"--find-copies-harder" option is used) are considered as candidates
+`--find-copies-harder` option is used) are considered as candidates
 of the source files in rename/copy operation.  If the input were like
 these filepairs, that talk about a modified file fileY and a newly
 created file file0:
@@ -166,7 +166,7 @@ In both rename and copy detection, the same "extent of changes"
 algorithm used in diffcore-break is used to determine if two
 files are "similar enough", and can be customized to use
 a similarity score different from the default of 50% by giving a
-number after the "-M" or "-C" option (e.g. "-M8" to tell it to use
+number after the `-M` or `-C` option (e.g. `-M8` to tell it to use
 8/10 = 80%).
 
 Note that when rename detection is on but both copy and break
@@ -189,7 +189,7 @@ preliminary pass; so if there are several remaining ext.txt files
 throughout the directory hierarchy after exact rename detection, this
 preliminary step may be skipped for those files.
 
-Note.  When the "-C" option is used with `--find-copies-harder`
+Note.  When the `-C` option is used with `--find-copies-harder`
 option, 'git diff-{asterisk}' commands feed unmodified filepairs to
 diffcore mechanism as well as modified ones.  This lets the copy
 detector consider unmodified files as copy source candidates at
@@ -222,13 +222,13 @@ transformation merges them back into the original
 The "extent of changes" parameter can be tweaked from the
 default 80% (that is, unless more than 80% of the original
 material is deleted, the broken pairs are merged back into a
-single modification) by giving a second number to -B option,
+single modification) by giving a second number to `-B` option,
 like these:
 
-* -B50/60 (give 50% "break score" to diffcore-break, use 60%
+* `-B50/60` (give 50% "break score" to diffcore-break, use 60%
   for diffcore-merge-broken).
 
-* -B/60 (the same as above, since diffcore-break defaults to 50%).
+* `-B/60` (the same as above, since diffcore-break defaults to 50%).
 
 Note that earlier implementation left a broken pair as a separate
 creation and deletion patches.  This was an unnecessary hack and
@@ -245,10 +245,10 @@ diffcore-pickaxe: For Detecting Addition/Deletion of Specified String
 
 This transformation limits the set of filepairs to those that change
 specified strings between the preimage and the postimage in a certain
-way.  -S<block of text> and -G<regular expression> options are used to
+way.  `-S<block of text>` and `-G<regular expression>` options are used to
 specify different ways these strings are sought.
 
-"-S<block of text>" detects filepairs whose preimage and postimage
+`-S<block of text>` detects filepairs whose preimage and postimage
 have different number of occurrences of the specified block of text.
 By definition, it will not detect in-file moves.  Also, when a
 changeset moves a file wholesale without affecting the interesting
@@ -258,7 +258,7 @@ rename-detected filepair).  When used with `--pickaxe-regex`, treat
 the <block of text> as an extended POSIX regular expression to match,
 instead of a literal string.
 
-"-G<regular expression>" (mnemonic: grep) detects filepairs whose
+`-G<regular expression>` (mnemonic: grep) detects filepairs whose
 textual diff has an added or a deleted line that matches the given
 regular expression.  This means that it will detect in-file (or what
 rename-detection considers the same file) moves, which is noise.  The
@@ -277,7 +277,7 @@ diffcore-order: For Sorting the Output Based on Filenames
 ---------------------------------------------------------
 
 This is used to reorder the filepairs according to the user's
-(or project's) taste, and is controlled by the -O option to the
+(or project's) taste, and is controlled by the `-O` option to the
 'git diff-{asterisk}' commands.
 
 This takes a text file each of whose lines is a shell glob

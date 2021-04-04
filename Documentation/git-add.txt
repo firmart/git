@@ -164,7 +164,7 @@ for "git add --no-all <pathspec>...", i.e. ignored removed files.
 	true to make this the default behaviour.
 
 --ignore-missing::
-	This option can only be used together with --dry-run. By using
+	This option can only be used together with `--dry-run`. By using
 	this option the user can check if any of the given files would
 	be ignored, no matter if they are already present in the work
 	tree or not.

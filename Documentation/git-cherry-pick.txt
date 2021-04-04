@@ -126,7 +126,7 @@ effect to your index in a row.
 	indicating that an explicit invocation of `git commit
 	--allow-empty` is required. This option overrides that
 	behavior, allowing empty commits to be preserved automatically
-	in a cherry-pick. Note that when "--ff" is in effect, empty
+	in a cherry-pick. Note that when `--ff` is in effect, empty
 	commits that meet the "fast-forward" requirement will be kept
 	even without this option.  Note also, that use of this option only
 	keeps commits that were initially empty (i.e. the commit recorded the

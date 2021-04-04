@@ -158,7 +158,7 @@ invocation of `git show`:
 	git show -s --pretty=reference <commit>
 ....
 
-or, on an older version of Git without support for --pretty=reference:
+or, on an older version of Git without support for `--pretty=reference`:
 
 ....
 	git show -s --date=short --pretty='format:%h (%s, %ad)' <commit>

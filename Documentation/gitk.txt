@@ -112,7 +112,7 @@ include::line-range-options.txt[]
 <path>...::
 
 	Limit commits to the ones touching files in the given paths. Note, to
-	avoid ambiguity with respect to revision names use "--" to separate the paths
+	avoid ambiguity with respect to revision names use `--` to separate the paths
 	from any preceding options.
 
 gitk-specific options
@@ -130,7 +130,7 @@ gitk-specific options
 --select-commit=<ref>::
 
 	Select the specified commit after loading the graph.
-	Default behavior is equivalent to specifying '--select-commit=HEAD'.
+	Default behavior is equivalent to specifying `--select-commit=HEAD`.
 
 Examples
 --------
@@ -142,7 +142,7 @@ gitk v2.6.12.. include/scsi drivers/scsi::
 gitk --since="2 weeks ago" \-- gitk::
 
 	Show the changes during the last two weeks to the file 'gitk'.
-	The "--" is necessary to avoid confusion with the *branch* named
+	The `--` is necessary to avoid confusion with the *branch* named
 	'gitk'
 
 gitk --max-count=100 --all \-- Makefile::

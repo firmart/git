@@ -233,7 +233,7 @@ behavior:
 	adjusting the hunk headers appropriately).
 
 --directory=<root>::
-	Prepend <root> to all filenames.  If a "-p" argument was also passed,
+	Prepend <root> to all filenames.  If a `-p` argument was also passed,
 	it is applied before prepending the new root.
 +
 For example, a patch that talks about updating `a/git-gui.sh` to `b/git-gui.sh`

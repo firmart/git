@@ -277,7 +277,7 @@ that specifies the expected current value of the ref explicitly are
 still experimental and their semantics may change as we gain experience
 with this feature.
 +
-"--no-force-with-lease" will cancel all the previous --force-with-lease on the
+`--no-force-with-lease` will cancel all the previous `--force-with-lease` on the
 command line.
 +
 A general note on safety: supplying this option without an expected
@@ -416,8 +416,8 @@ Specifying `--no-force-if-includes` disables this behavior.
 
 --[no-]verify::
 	Toggle the pre-push hook (see linkgit:githooks[5]).  The
-	default is --verify, giving the hook a chance to prevent the
-	push.  With --no-verify, the hook is bypassed completely.
+	default is `--verify`, giving the hook a chance to prevent the
+	push.  With `--no-verify`, the hook is bypassed completely.
 
 -4::
 --ipv4::
@@ -443,13 +443,13 @@ representing the status of a single ref. Each line is of the form:
  <flag> <summary> <from> -> <to> (<reason>)
 -------------------------------
 
-If --porcelain is used, then each line of the output is of the form:
+If `--porcelain` is used, then each line of the output is of the form:
 
 -------------------------------
  <flag> \t <from>:<to> \t <summary> (<reason>)
 -------------------------------
 
-The status of up-to-date refs is shown only if --porcelain or --verbose
+The status of up-to-date refs is shown only if `--porcelain` or `--verbose`
 option is used.
 
 flag::

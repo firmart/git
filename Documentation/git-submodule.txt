@@ -432,7 +432,7 @@ options carefully.
 
 --[no-]single-branch::
 	This option is only valid for the update command.
-	Clone only one branch during update: HEAD or one specified by --branch.
+	Clone only one branch during update: HEAD or one specified by `--branch`.
 
 <path>...::
 	Paths to submodule(s). When specified this will restrict the command

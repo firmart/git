@@ -459,14 +459,14 @@ $fallback_encoding::
 
 @diff_opts::
 	Rename detection options for git-diff and git-diff-tree. The default is
-	(\'-M'); set it to (\'-C') or (\'-C', \'-C') to also detect copies,
-	or set it to () i.e. empty list if you don't want to have renames
+	`('-M')`; set it to `('-C')` or `('-C', '-C')` to also detect copies,
+	or set it to `()` i.e. empty list if you don't want to have renames
 	detection.
 +
 *Note* that rename and especially copy detection can be quite
 CPU-intensive.  Note also that non Git tools can have problems with
 patches generated with options mentioned above, especially when they
-involve file copies (\'-C') or criss-cross renames (\'-B').
+involve file copies `('-C')` or criss-cross renames `('-B')`.
 
 
 Some optional features and policies

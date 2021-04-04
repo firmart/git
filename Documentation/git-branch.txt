@@ -280,7 +280,7 @@ start-point is either a local or remote-tracking branch.
 
 --sort=<key>::
 	Sort based on the key given. Prefix `-` to sort in descending
-	order of the value. You may use the --sort=<key> option
+	order of the value. You may use the `--sort=<key>` option
 	multiple times, in which case the last key becomes the primary
 	key. The keys supported are the same as those in `git
 	for-each-ref`. Sort order defaults to the value configured for the

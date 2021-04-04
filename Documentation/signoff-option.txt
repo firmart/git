@@ -14,5 +14,5 @@ endif::git-commit[]
 	leadership of the project to which you're contributing to
 	understand how the signoffs are used in that project.
 +
-The --no-signoff option can be used to countermand an earlier --signoff
+The `--no-signoff` option can be used to countermand an earlier `--signoff`
 option on the command line.

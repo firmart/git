@@ -566,9 +566,9 @@ Git Commits
 Git Diffs
 ~~~~~~~~~
 `GIT_DIFF_OPTS`::
-	Only valid setting is "--unified=??" or "-u??" to set the
+	Only valid setting is `--unified=??` or `-u??` to set the
 	number of context lines shown when a unified diff is created.
-	This takes precedence over any "-U" or "--unified" option
+	This takes precedence over any `-U` or `--unified` option
 	value passed on the Git diff command line.
 
 `GIT_EXTERNAL_DIFF`::

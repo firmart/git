@@ -163,7 +163,7 @@ Create this file by
       $ htpasswd -c /etc/apache2/passwd.git <user>
 
 You will be asked a password, and the file is created. Subsequent calls
-to htpasswd should omit the '-c' option, since you want to append to the
+to htpasswd should omit the `-c` option, since you want to append to the
 existing file.
 
 You need to restart Apache.

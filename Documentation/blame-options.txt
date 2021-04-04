@@ -50,7 +50,7 @@ include::line-range-format.txt[]
 --line-porcelain::
 	Show the porcelain format, but output commit information for
 	each line, not just the first time a commit is referenced.
-	Implies --porcelain.
+	Implies `--porcelain`.
 
 --incremental::
 	Show the result incrementally in a format designed for
@@ -71,11 +71,11 @@ include::line-range-format.txt[]
 	`-` to make the command read from the standard input).
 
 --date <format>::
-	Specifies the format used to output dates. If --date is not
+	Specifies the format used to output dates. If `--date` is not
 	provided, the value of the blame.date config variable is
 	used. If the blame.date config variable is also not set, the
 	iso format is used. For supported values, see the discussion
-	of the --date option at linkgit:git-log[1].
+	of the `--date` option at linkgit:git-log[1].
 
 --[no-]progress::
 	Progress status is reported on the standard error stream

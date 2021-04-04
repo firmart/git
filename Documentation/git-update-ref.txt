@@ -37,7 +37,7 @@ them and update them as a regular file (i.e. it will allow the
 filesystem to follow them, but will overwrite such a symlink to
 somewhere else with a regular filename).
 
-If --no-deref is given, <ref> itself is overwritten, rather than
+If `--no-deref` is given, <ref> itself is overwritten, rather than
 the result of following the symbolic pointers.
 
 In general, using
@@ -164,12 +164,12 @@ stored in <ref>, "newsha1" is the 40 character hexadecimal value of
 <newvalue> and "committer" is the committer's name, email address
 and date in the standard Git committer ident format.
 
-Optionally with -m:
+Optionally with `-m`:
 
     oldsha1 SP newsha1 SP committer TAB message LF
 
 Where all fields are as described above and "message" is the
-value supplied to the -m option.
+value supplied to the `-m` option.
 
 An update will fail (without changing <ref>) if the current user is
 unable to create a new log file, append to the existing log file

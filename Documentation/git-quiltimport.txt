@@ -21,7 +21,7 @@ in the quilt patchset.
 
 For each patch the code attempts to extract the author from the
 patch description.  If that fails it falls back to the author
-specified with --author.  If the --author flag was not given
+specified with `--author`.  If the `--author` flag was not given
 the patch description is displayed and the user is asked to
 interactively enter the author of the patch.
 

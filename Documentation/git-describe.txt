@@ -22,9 +22,9 @@ abbreviated object name of the most recent commit. The result
 is a "human-readable" object name which can also be used to
 identify the commit to other git commands.
 
-By default (without --all or --tags) `git describe` only shows
+By default (without `--all` or `--tags`) `git describe` only shows
 annotated tags.  For more information about creating annotated tags
-see the -a and -s options to linkgit:git-tag[1].
+see the `-a` and `-s` options to linkgit:git-tag[1].
 
 If the given object refers to a blob, it will be described
 as `<commit-ish>:<path>`, such that the blob can be found
@@ -60,7 +60,7 @@ OPTIONS
 --contains::
 	Instead of finding the tag that predates the commit, find
 	the tag that comes after the commit, and thus contains it.
-	Automatically implies --tags.
+	Automatically implies `--tags`.
 
 --abbrev=<n>::
 	Instead of using the default 7 hexadecimal digits as the
@@ -77,7 +77,7 @@ OPTIONS
 
 --exact-match::
 	Only output exact matches (a tag directly references the
-	supplied commit).  This is a synonym for --candidates=0.
+	supplied commit).  This is a synonym for `--candidates=0`.
 
 --debug::
 	Verbosely display information about the searching strategy
@@ -110,9 +110,9 @@ OPTIONS
 	excluding respectively "refs/heads/" and "refs/remotes/" prefix;
 	references of other types are never considered. If given multiple times,
 	a list of patterns will be accumulated and tags matching any of the
-	patterns will be excluded. When combined with --match a tag will be
-	considered when it matches at least one --match pattern and does not
-	match any of the --exclude patterns. Use `--no-exclude` to clear and
+	patterns will be excluded. When combined with `--match` a tag will be
+	considered when it matches at least one `--match` pattern and does not
+	match any of the `--exclude` patterns. Use `--no-exclude` to clear and
 	reset the list of patterns.
 
 --always::
@@ -150,7 +150,7 @@ Doing a 'git describe' on a tag-name will just show the tag name:
 	[torvalds@g5 git]$ git describe v1.0.4
 	v1.0.4
 
-With --all, the command can use branch heads as references, so
+With `--all`, the command can use branch heads as references, so
 the output shows the reference path as well:
 
 	[torvalds@g5 git]$ git describe --all --abbrev=4 v1.0.5^2
@@ -159,7 +159,7 @@ the output shows the reference path as well:
 	[torvalds@g5 git]$ git describe --all --abbrev=4 HEAD^
 	heads/lt/describe-7-g975b
 
-With --abbrev set to 0, the command can be used to find the
+With `--abbrev` set to 0, the command can be used to find the
 closest tagname without any suffix:
 
 	[torvalds@g5 git]$ git describe --abbrev=0 v1.0.5^2

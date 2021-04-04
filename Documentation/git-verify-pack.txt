@@ -38,7 +38,7 @@ OPTIONS
 
 OUTPUT FORMAT
 -------------
-When specifying the -v option the format used is:
+When specifying the `-v` option the format used is:
 
 	SHA-1 type size size-in-packfile offset-in-packfile
 

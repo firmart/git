@@ -93,8 +93,8 @@ confused as starting a new commit.
 +
 The 'raw' format shows the entire commit exactly as
 stored in the commit object.  Notably, the hashes are
-displayed in full, regardless of whether --abbrev or
---no-abbrev are used, and 'parents' information show the
+displayed in full, regardless of whether `--abbrev` or
+`--no-abbrev` are used, and 'parents' information show the
 true parent commits, without taking grafts or history
 simplification into account. Note that this format affects the way
 commits are displayed, but not the way the diff is shown e.g. with
@@ -144,7 +144,7 @@ The placeholders are:
 	    on the next placeholders until the color is switched
 	    again.
 '%m':: left (`<`), right (`>`) or boundary (`-`) mark
-'%w([<w>[,<i1>[,<i2>]]])':: switch line wrapping, like the -w option of
+'%w([<w>[,<i1>[,<i2>]]])':: switch line wrapping, like the `-w` option of
 			    linkgit:git-shortlog[1].
 '%<(<N>[,trunc|ltrunc|mtrunc])':: make the next placeholder take at
 				  least N columns, padding spaces on
@@ -183,7 +183,7 @@ The placeholders are:
 '%al':: author email local-part (the part before the '@' sign)
 '%aL':: author local-part (see '%al') respecting .mailmap, see
 	linkgit:git-shortlog[1] or linkgit:git-blame[1])
-'%ad':: author date (format respects --date= option)
+'%ad':: author date (format respects `--date=` option)
 '%aD':: author date, RFC2822 style
 '%ar':: author date, relative
 '%at':: author date, UNIX timestamp
@@ -199,14 +199,14 @@ The placeholders are:
 '%cl':: committer email local-part (the part before the '@' sign)
 '%cL':: committer local-part (see '%cl') respecting .mailmap, see
 	linkgit:git-shortlog[1] or linkgit:git-blame[1])
-'%cd':: committer date (format respects --date= option)
+'%cd':: committer date (format respects `--date=` option)
 '%cD':: committer date, RFC2822 style
 '%cr':: committer date, relative
 '%ct':: committer date, UNIX timestamp
 '%ci':: committer date, ISO 8601-like format
 '%cI':: committer date, strict ISO 8601 format
 '%cs':: committer date, short format (`YYYY-MM-DD`)
-'%d':: ref names, like the --decorate option of linkgit:git-log[1]
+'%d':: ref names, like the `--decorate` option of linkgit:git-log[1]
 '%D':: ref names without the " (", ")" wrapping.
 '%(describe[:options])':: human-readable name, like
 			  linkgit:git-describe[1]; empty string for

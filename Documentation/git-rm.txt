@@ -151,7 +151,7 @@ still uses a .git directory, `git rm` will move the submodules
 git directory into the superprojects git directory to protect
 the submodule's history. If it exists the submodule.<name> section
 in the linkgit:gitmodules[5] file will also be removed and that file
-will be staged (unless --cached or -n are used).
+will be staged (unless `--cached` or `-n` are used).
 
 A submodule is considered up to date when the HEAD is the same as
 recorded in the index, no tracked files are modified and no untracked

@@ -151,13 +151,13 @@ of it").
 -B <new_branch>::
 	Creates the branch `<new_branch>` and start it at `<start_point>`;
 	if it already exists, then reset it to `<start_point>`. This is
-	equivalent to running "git branch" with "-f"; see
+	equivalent to running "git branch" with `-f`; see
 	linkgit:git-branch[1] for details.
 
 -t::
 --track::
 	When creating a new branch, set up "upstream" configuration. See
-	"--track" in linkgit:git-branch[1] for details.
+	`--track` in linkgit:git-branch[1] for details.
 +
 If no `-b` option is given, the name of the new branch will be
 derived from the remote-tracking branch, by looking at the local part of

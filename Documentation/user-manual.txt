@@ -293,7 +293,7 @@ ref: refs/heads/master
 === Examining an old version without creating a new branch
 
 The `git switch` command normally expects a branch head, but will also
-accept an arbitrary commit when invoked with --detach; for example,
+accept an arbitrary commit when invoked with `--detach`; for example,
 you can check out the commit referenced by a tag:
 
 ------------------------------------------------
@@ -305,7 +305,7 @@ changes and commit them, and you can discard any commits you make in this
 state without impacting any branches by performing another switch.
 
 If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -c with the switch command again. Example:
+do so (now or later) by using `-c` with the switch command again. Example:
 
   git switch -c new_branch_name
 

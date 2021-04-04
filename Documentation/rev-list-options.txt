@@ -885,38 +885,38 @@ ifdef::git-rev-list[]
 	blobs) from the list of printed objects.  The '<filter-spec>'
 	may be one of the following:
 +
-The form '--filter=blob:none' omits all blobs.
+The form `--filter=blob:none` omits all blobs.
 +
-The form '--filter=blob:limit=<n>[kmg]' omits blobs larger than n bytes
+The form `--filter=blob:limit=<n>[kmg]` omits blobs larger than n bytes
 or units.  n may be zero.  The suffixes k, m, and g can be used to name
 units in KiB, MiB, or GiB.  For example, 'blob:limit=1k' is the same
 as 'blob:limit=1024'.
 +
-The form '--filter=sparse:oid=<blob-ish>' uses a sparse-checkout
+The form `--filter=sparse:oid=<blob-ish>` uses a sparse-checkout
 specification contained in the blob (or blob-expression) '<blob-ish>'
 to omit blobs that would not be not required for a sparse checkout on
 the requested refs.
 +
-The form '--filter=tree:<depth>' omits all blobs and trees whose depth
+The form `--filter=tree:<depth>` omits all blobs and trees whose depth
 from the root tree is >= <depth> (minimum depth if an object is located
 at multiple depths in the commits traversed). <depth>=0 will not include
 any trees or blobs unless included explicitly in the command-line (or
-standard input when --stdin is used). <depth>=1 will include only the
+standard input when `--stdin` is used). <depth>=1 will include only the
 tree and blobs which are referenced directly by a commit reachable from
 <commit> or an explicitly-given object. <depth>=2 is like <depth>=1
 while also including trees and blobs one more level removed from an
 explicitly-given commit or tree.
 +
-Note that the form '--filter=sparse:path=<path>' that wants to read
+Note that the form `--filter=sparse:path=<path>` that wants to read
 from an arbitrary path on the filesystem has been dropped for security
 reasons.
 +
-Multiple '--filter=' flags can be specified to combine filters. Only
+Multiple `--filter=` flags can be specified to combine filters. Only
 objects which are accepted by every filter are included.
 +
-The form '--filter=combine:<filter1>+<filter2>+...<filterN>' can also be
+The form `--filter=combine:<filter1>+<filter2>+...<filterN>` can also be
 used to combined several filters, but this is harder than just repeating
-the '--filter' flag and is usually not necessary. Filters are joined by
+the `--filter` flag and is usually not necessary. Filters are joined by
 '{plus}' and individual filters are %-encoded (i.e. URL-encoded).
 Besides the '{plus}' and '%' characters, the following characters are
 reserved and also must be encoded: `~!@#$^&*()[]{}\;",<>?`+&#39;&#96;+
@@ -938,18 +938,18 @@ equivalent.
 	A debug option to help with future "partial clone" development.
 	This option specifies how missing objects are handled.
 +
-The form '--missing=error' requests that rev-list stop with an error if
+The form `--missing=error` requests that rev-list stop with an error if
 a missing object is encountered.  This is the default action.
 +
-The form '--missing=allow-any' will allow object traversal to continue
+The form `--missing=allow-any` will allow object traversal to continue
 if a missing object is encountered.  Missing objects will silently be
 omitted from the results.
 +
-The form '--missing=allow-promisor' is like 'allow-any', but will only
+The form `--missing=allow-promisor` is like 'allow-any', but will only
 allow object traversal to continue for EXPECTED promisor missing objects.
 Unexpected missing objects will raise an error.
 +
-The form '--missing=print' is like 'allow-any', but will also print a
+The form `--missing=print` is like 'allow-any', but will also print a
 list of the missing objects.  Object IDs are prefixed with a ``?'' character.
 
 --exclude-promisor-objects::
@@ -1113,7 +1113,7 @@ This implies the `--topo-order` option by default, but the
 `--date-order` option may also be specified.
 
 --show-linear-break[=<barrier>]::
-	When --graph is not used, all history branches are flattened
+	When `--graph` is not used, all history branches are flattened
 	which can make it hard to see that the two consecutive commits
 	do not belong to a linear branch. This option puts a barrier
 	in between them in that case. If `<barrier>` is specified, it

@@ -13,7 +13,7 @@ You can customize the creation of patch text via the
 `GIT_EXTERNAL_DIFF` and the `GIT_DIFF_OPTS` environment variables
 (see linkgit:git[1]).
 
-What the -p option produces is slightly different from the traditional
+What the `-p` option produces is slightly different from the traditional
 diff format:
 
 1.   It is preceded with a "git diff" header that looks like this:
@@ -149,7 +149,7 @@ Similar to two-line header for traditional 'unified' diff
 format, `/dev/null` is used to signal created or deleted
 files.
 +
-However, if the --combined-all-paths option is provided, instead of a
+However, if the `--combined-all-paths` option is provided, instead of a
 two-line from-file/to-file you get a N+1 line from-file/to-file header,
 where N is the number of parents in the merge commit
 

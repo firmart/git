@@ -34,15 +34,15 @@ OPTIONS
 	Use a "stable" sum of hashes as the patch ID. With this option:
 	 - Reordering file diffs that make up a patch does not affect the ID.
 	   In particular, two patches produced by comparing the same two trees
-	   with two different settings for "-O<orderfile>" result in the same
+	   with two different settings for `-O<orderfile>` result in the same
 	   patch ID signature, thereby allowing the computed result to be used
 	   as a key to index some meta-information about the change between
 	   the two trees;
 
 	 - Result is different from the value produced by git 1.9 and older
-	   or produced when an "unstable" hash (see --unstable below) is
+	   or produced when an "unstable" hash (see `--unstable` below) is
 	   configured - even when used on a diff output taken without any use
-	   of "-O<orderfile>", thereby making existing databases storing such
+	   of `-O<orderfile>`, thereby making existing databases storing such
 	   "unstable" or historical patch-ids unusable.
 
 	This is the default if patchid.stable is set to true.

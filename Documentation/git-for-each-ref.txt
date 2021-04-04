@@ -40,7 +40,7 @@ OPTIONS
 --sort=<key>::
 	A field name to sort on.  Prefix `-` to sort in
 	descending order of the value.  When unspecified,
-	`refname` is used.  You may use the --sort=<key> option
+	`refname` is used.  You may use the `--sort=<key>` option
 	multiple times, in which case the last key becomes the primary
 	key.
 
@@ -309,7 +309,7 @@ Ref: %(*refname)
 
 
 A simple example showing the use of shell eval on the output,
-demonstrating the use of --shell.  List the prefixes of all heads:
+demonstrating the use of `--shell`.  List the prefixes of all heads:
 ------------
 #!/bin/sh
 

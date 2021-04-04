@@ -87,7 +87,7 @@ OPTIONS
 
 <refs>...::
 	When unspecified, all references, after filtering done
-	with --heads and --tags, are shown.  When <refs>... are
+	with `--heads` and `--tags`, are shown.  When <refs>... are
 	specified, only references matching the given patterns
 	are displayed.
 

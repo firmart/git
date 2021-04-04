@@ -45,7 +45,7 @@ Finally, runs of whitespace are normalized to a single ASCII space
 character.
 
 -b::
-	When -k is not in effect, all leading strings bracketed with '['
+	When `-k` is not in effect, all leading strings bracketed with '['
 	and ']' pairs are stripped.  This option limits the stripping to
 	only the pairs whose bracketed string contains the word "PATCH".
 
@@ -60,7 +60,7 @@ Note that the patch is always used as-is without charset
 conversion, even with this flag.
 
 --encoding=<encoding>::
-	Similar to -u.  But when re-coding, the charset specified here is
+	Similar to `-u`.  But when re-coding, the charset specified here is
 	used instead of the one specified by `i18n.commitEncoding` or UTF-8.
 
 -n::

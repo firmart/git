@@ -115,10 +115,10 @@ endif::git-pull[]
 	Before fetching, remove any remote-tracking references that no
 	longer exist on the remote.  Tags are not subject to pruning
 	if they are fetched only because of the default tag
-	auto-following or due to a --tags option.  However, if tags
+	auto-following or due to a `--tags` option.  However, if tags
 	are fetched due to an explicit refspec (either on the command
 	line or in the remote configuration, for example if the remote
-	was cloned with the --mirror option), then they are also
+	was cloned with the `--mirror` option), then they are also
 	subject to pruning. Supplying `--prune-tags` is a shorthand for
 	providing the tag refspec.
 ifndef::git-pull[]
@@ -164,7 +164,7 @@ endif::git-pull[]
 	Fetch all tags from the remote (i.e., fetch remote tags
 	`refs/tags/*` into local tags with the same name), in addition
 	to whatever else would otherwise be fetched.  Using this
-	option alone does not subject tags to pruning, even if --prune
+	option alone does not subject tags to pruning, even if `--prune`
 	is used (though tags may be pruned anyway if they are also the
 	destination of an explicit refspec; see `--prune`).
 
@@ -215,7 +215,7 @@ ifndef::git-pull[]
 
 --recurse-submodules-default=[yes|on-demand]::
 	This option is used internally to temporarily provide a
-	non-negative default value for the --recurse-submodules
+	non-negative default value for the `--recurse-submodules`
 	option.  All other methods of configuring fetch's submodule
 	recursion (such as settings in linkgit:gitmodules[5] and
 	linkgit:git-config[1]) override this option, as does
@@ -240,7 +240,7 @@ endif::git-pull[]
 ifndef::git-pull[]
 -q::
 --quiet::
-	Pass --quiet to git-fetch-pack and silence any other internally
+	Pass `--quiet` to git-fetch-pack and silence any other internally
 	used git commands. Progress is not reported to the standard error
 	stream.
 
@@ -267,14 +267,14 @@ endif::git-pull[]
 --show-forced-updates::
 	By default, git checks if a branch is force-updated during
 	fetch. This can be disabled through fetch.showForcedUpdates, but
-	the --show-forced-updates option guarantees this check occurs.
+	the `--show-forced-updates` option guarantees this check occurs.
 	See linkgit:git-config[1].
 
 --no-show-forced-updates::
 	By default, git checks if a branch is force-updated during
-	fetch. Pass --no-show-forced-updates or set fetch.showForcedUpdates
+	fetch. Pass `--no-show-forced-updates` or set fetch.showForcedUpdates
 	to false to skip this check for performance reasons. If used during
-	'git-pull' the --ff-only option will still check for forced updates
+	'git-pull' the `--ff-only` option will still check for forced updates
 	before attempting a fast-forward update. See linkgit:git-config[1].
 
 -4::

@@ -101,13 +101,13 @@ Incompatible with `--revs`, or options that imply `--revs` (such as
 	the pack are stored using delta compression.  The
 	objects are first internally sorted by type, size and
 	optionally names and compared against the other objects
-	within --window to see if using delta compression saves
-	space.  --depth limits the maximum delta depth; making
+	within `--window` to see if using delta compression saves
+	space.  `--depth` limits the maximum delta depth; making
 	it too deep affects the performance on the unpacker
 	side, because delta data needs to be applied that many
 	times to get to the necessary object.
 +
-The default value for --window is 10 and --depth is 50. The maximum
+The default value for `--window` is 10 and `--depth` is 50. The maximum
 depth is 4095.
 
 --window-memory=<n>::
@@ -165,19 +165,19 @@ depth is 4095.
 	the standard error stream is not directed to a terminal.
 
 --all-progress::
-	When --stdout is specified then progress report is
+	When `--stdout` is specified then progress report is
 	displayed during the object count and compression phases
 	but inhibited during the write-out phase. The reason is
 	that in some cases the output stream is directly linked
 	to another command which may wish to display progress
 	status of its own as it processes incoming pack data.
-	This flag is like --progress except that it forces progress
-	report for the write-out phase as well even if --stdout is
+	This flag is like `--progress` except that it forces progress
+	report for the write-out phase as well even if `--stdout` is
 	used.
 
 --all-progress-implied::
-	This is used to imply --all-progress whenever progress display
-	is activated.  Unlike --all-progress this flag doesn't actually
+	This is used to imply `--all-progress` whenever progress display
+	is activated.  Unlike `--all-progress` this flag doesn't actually
 	force any progress display by itself.
 
 -q::
@@ -194,7 +194,7 @@ depth is 4095.
 --no-reuse-object::
 	This flag tells the command not to reuse existing object data at all,
 	including non deltified object, forcing recompression of everything.
-	This implies --no-reuse-delta. Useful only in the obscure case where
+	This implies `--no-reuse-delta`. Useful only in the obscure case where
 	wholesale enforcement of a different compression level on the
 	packed data is desired.
 
@@ -203,12 +203,12 @@ depth is 4095.
 	generated pack.  If not specified,  pack compression level is
 	determined first by pack.compression,  then by core.compression,
 	and defaults to -1,  the zlib default,  if neither is set.
-	Add --no-reuse-object if you want to force a uniform compression
+	Add `--no-reuse-object` if you want to force a uniform compression
 	level on all data no matter the source.
 
 --[no-]sparse::
 	Toggle the "sparse" algorithm to determine which objects to include in
-	the pack, when combined with the "--revs" option. This algorithm
+	the pack, when combined with the `--revs` option. This algorithm
 	only walks trees that appear in paths that introduce new objects.
 	This can have significant performance benefits when computing
 	a pack to send a small change. However, it is possible that extra
@@ -220,7 +220,7 @@ depth is 4095.
 --thin::
 	Create a "thin" pack by omitting the common objects between a
 	sender and a receiver in order to reduce network transfer. This
-	option only makes sense in conjunction with --stdout.
+	option only makes sense in conjunction with `--stdout`.
 +
 Note: A thin pack violates the packed archive format by omitting
 required objects and is thus unusable by Git without making it
@@ -229,7 +229,7 @@ self-contained. Use `git index-pack --fix-thin`
 
 --shallow::
 	Optimize a pack that will be provided to a client with a shallow
-	repository.  This option, combined with --thin, can result in a
+	repository.  This option, combined with `--thin`, can result in a
 	smaller pack at the cost of speed.
 
 --delta-base-offset::
@@ -279,16 +279,16 @@ So does `git bundle` (see linkgit:git-bundle[1]) when it creates a bundle.
 	A debug option to help with future "partial clone" development.
 	This option specifies how missing objects are handled.
 +
-The form '--missing=error' requests that pack-objects stop with an error if
+The form `--missing=error` requests that pack-objects stop with an error if
 a missing object is encountered.  If the repository is a partial clone, an
 attempt to fetch missing objects will be made before declaring them missing.
 This is the default action.
 +
-The form '--missing=allow-any' will allow object traversal to continue
+The form `--missing=allow-any` will allow object traversal to continue
 if a missing object is encountered.  No fetch of a missing object will occur.
 Missing objects will silently be omitted from the results.
 +
-The form '--missing=allow-promisor' is like 'allow-any', but will only
+The form `--missing=allow-promisor` is like 'allow-any', but will only
 allow object traversal to continue for EXPECTED promisor missing objects.
 No fetch of a missing object will occur.  An unexpected missing object will
 raise an error.
@@ -302,7 +302,7 @@ raise an error.
 
 --keep-unreachable::
 	Objects unreachable from the refs in packs named with
-	--unpacked= option are added to the resulting pack, in
+	`--unpacked`= option are added to the resulting pack, in
 	addition to the reachable objects that are not in packs marked
 	with *.keep files. This implies `--revs`.
 
@@ -363,7 +363,7 @@ to recompute deltas on the fly due to crossing island boundaries.
 
 When repacking with delta islands the delta window tends to get
 clogged with candidates that are forbidden by the config. Repacking
-with a big --window helps (and doesn't take as long as it otherwise
+with a big `--window` helps (and doesn't take as long as it otherwise
 might because we can reject some object pairs based on islands before
 doing any computation on the content).
 

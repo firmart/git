@@ -238,8 +238,8 @@ populated with placeholder text.
 	`--subject-prefix` option) has ` v<n>` appended to it.  E.g.
 	`--reroll-count=4` may produce `v4-0001-add-makefile.patch`
 	file that has "Subject: [PATCH v4 1/20] Add makefile" in it.
-	`<n>` does not have to be an integer (e.g. "--reroll-count=4.4",
-	or "--reroll-count=4rev2" are allowed), but the downside of
+	`<n>` does not have to be an integer (e.g. `--reroll-count=4.4`,
+	or `--reroll-count=4rev2` are allowed), but the downside of
 	using such a reroll-count is that the range-diff/interdiff
 	with the previous version does not state exactly which
 	version the new interation is compared against.
@@ -346,7 +346,7 @@ set.
 	number.
 
 --signature-file=<file>::
-	Works just like --signature except the signature is read from a file.
+	Works just like `--signature` except the signature is read from a file.
 
 --suffix=.<sfx>::
 	Instead of using `.patch` as the suffix for generated

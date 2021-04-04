@@ -126,7 +126,7 @@ OPTIONS
 	default to color output.
 	Same as `--color=never`.
 
-Note that --more, --list, --independent and --merge-base options
+Note that `--more`, `--list`, `--independent` and `--merge-base` options
 are mutually exclusive.
 
 

@@ -111,7 +111,7 @@ options for details.
 
 --sort=<key>::
 	Sort based on the key given.  Prefix `-` to sort in
-	descending order of the value. You may use the --sort=<key> option
+	descending order of the value. You may use the `--sort=<key>` option
 	multiple times, in which case the last key becomes the primary
 	key. Also supports "version:refname" or "v:refname" (tag
 	names are treated as versions). The "version:refname" sort
@@ -236,7 +236,7 @@ On Re-tagging
 What should you do when you tag a wrong commit and you would
 want to re-tag?
 
-If you never pushed anything out, just re-tag it. Use "-f" to
+If you never pushed anything out, just re-tag it. Use `-f` to
 replace the old one. And you're done.
 
 But if you have pushed things out (or others could just read

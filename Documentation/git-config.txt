@@ -92,7 +92,7 @@ OPTIONS
 	Like get, but returns all values for a multi-valued key.
 
 --get-regexp::
-	Like --get-all, but interprets the name as a regular expression and
+	Like `--get-all`, but interprets the name as a regular expression and
 	writes out the key names.  Regular expression matching is currently
 	case-sensitive and done against a canonicalized version of the key
 	in which section and variable names are lowercased, but subsection
@@ -337,8 +337,8 @@ ENVIRONMENT
 
 GIT_CONFIG::
 	Take the configuration from the given file instead of .git/config.
-	Using the "--global" option forces this to ~/.gitconfig. Using the
-	"--system" option forces this to $(prefix)/etc/gitconfig.
+	Using the `--global` option forces this to ~/.gitconfig. Using the
+	`--system` option forces this to $(prefix)/etc/gitconfig.
 
 GIT_CONFIG_NOSYSTEM::
 	Whether to skip reading settings from the system-wide

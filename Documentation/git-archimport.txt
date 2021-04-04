@@ -98,7 +98,7 @@ OPTIONS
 
 -a::
 	Attempt to auto-register archives at `http://mirrors.sourcecontrol.net`
-	This is particularly useful with the -D option.
+	This is particularly useful with the `-D` option.
 
 -t <tmpdir>::
 	Override the default tempdir.
