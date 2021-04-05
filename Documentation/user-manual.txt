@@ -6,7 +6,7 @@ This manual is designed to be readable by someone with basic UNIX
 command-line skills, but no previous knowledge of Git.
 
 <<repositories-and-branches>> and <<exploring-git-history>> explain how
-to fetch and study a project using git--read these chapters to learn how
+to fetch and study a project using `git`--read these chapters to learn how
 to build and test a particular version of a software project, search for
 regressions, and so on.
 
@@ -212,7 +212,7 @@ each parent representing the most recent commit on one of the lines
 of development leading to that point.
 
 The best way to see how this works is using the linkgit:gitk[1]
-command; running gitk now on a Git repository and looking for merge
+command; running `gitk` now on a Git repository and looking for merge
 commits will help understand how Git organizes history.
 
 In the following, we say that commit X is "reachable" from commit Y
@@ -313,7 +313,7 @@ do so (now or later) by using `-c` with the switch command again. Example:
 ------------------------------------------------
 
 The `HEAD` then refers to the SHA-1 of the commit instead of to a branch,
-and git branch shows that you are no longer on a branch:
+and `git branch` shows that you are no longer on a branch:
 
 ------------------------------------------------
 $ cat .git/HEAD
@@ -401,7 +401,7 @@ references with the same shorthand name, see the "SPECIFYING
 REVISIONS" section of linkgit:gitrevisions[7].
 
 [[Updating-a-repository-With-git-fetch]]
-=== Updating a repository with git fetch
+=== Updating a repository with `git fetch`
 
 After you clone a repository and commit a few changes of your own, you
 may wish to check the original repository for updates.
@@ -663,7 +663,7 @@ commits since v2.5 which touch the `Makefile` or any file under `fs`:
 $ git log v2.5.. Makefile fs/
 -------------------------------------------------
 
-You can also ask git log to show patches:
+You can also ask `git log` to show patches:
 
 -------------------------------------------------
 $ git log -p
@@ -672,7 +672,7 @@ $ git log -p
 See the `--pretty` option in the linkgit:git-log[1] man page for more
 display options.
 
-Note that git log starts with the most recent commit and works
+Note that `git log` starts with the most recent commit and works
 backwards through the parents; however, since Git history can contain
 multiple independent lines of development, the particular order that
 commits are listed in may be somewhat arbitrary.
@@ -1214,7 +1214,7 @@ you resolve the conflicts manually, you can update the index
 with the contents and run Git commit, as you normally would when
 creating a new file.
 
-If you examine the resulting commit using gitk, you will see that it
+If you examine the resulting commit using `gitk`, you will see that it
 has two parents, one pointing to the top of the current branch, and
 one to the top of the other branch.
 
@@ -1668,7 +1668,7 @@ dangling objects can arise in other situations.
 == Sharing development with others
 
 [[getting-updates-With-git-pull]]
-=== Getting updates with git pull
+=== Getting updates with `git pull`
 
 After you clone a repository and commit a few changes of your own, you
 may wish to check the original repository for updates and merge them
@@ -1857,7 +1857,7 @@ $ git clone --bare ~/proj proj.git
 $ touch proj.git/git-daemon-export-ok
 -------------------------------------------------
 
-The resulting directory proj.git contains a "bare" git repository--it is
+The resulting directory proj.git contains a "bare" `git` repository--it is
 just the contents of the `.git` directory, without any files checked out
 around it.
 
@@ -1879,7 +1879,7 @@ repository>>", below.
 Otherwise, all you need to do is start linkgit:git-daemon[1]; it will
 listen on port 9418.  By default, it will allow access to any directory
 that looks like a Git directory and contains the magic file
-git-daemon-export-ok.  Passing some directory paths as `git daemon`
+`git-daemon-export-ok`.  Passing some directory paths as `git daemon`
 arguments will further restrict the exports to those paths.
 
 You can also run `git daemon` as an inetd service; see the
@@ -1887,7 +1887,7 @@ linkgit:git-daemon[1] man page for details.  (See especially the
 examples section.)
 
 [[exporting-via-http]]
-==== Exporting a git repository via HTTP
+==== Exporting a `git` repository via HTTP
 
 The Git protocol gives better performance and reliability, but on a
 host with a web server set up, HTTP exports may be simpler to set up.
@@ -2064,13 +2064,13 @@ advantages over the central shared repository:
 [[setting-up-gitweb]]
 ==== Allowing web browsing of a repository
 
-The gitweb cgi script provides users an easy way to browse your
+The `gitweb` cgi script provides users an easy way to browse your
 project's revisions, file contents and logs without having to install
 Git. Features like RSS/Atom feeds and blame/annotation details may
 optionally be enabled.
 
 The linkgit:git-instaweb[1] command provides a simple way to start
-browsing the repository using gitweb. The default server when using
+browsing the repository using `gitweb`. The default server when using
 instaweb is lighttpd.
 
 See the file gitweb/INSTALL in the Git source tree and
@@ -2438,7 +2438,7 @@ use them, and then explain some of the problems that can arise because
 you are rewriting history.
 
 [[using-git-rebase]]
-=== Keeping a patch series up to date using git rebase
+=== Keeping a patch series up to date using `git rebase`
 
 Suppose that you create a branch `mywork` on a remote-tracking branch
 `origin`, and create some commits on top of it:
@@ -3132,7 +3132,7 @@ to a "pack file", which stores a group of objects in an efficient
 compressed format; the details of how pack files are formatted can be
 found in link:technical/pack-format.html[pack format].
 
-To put the loose objects into a pack, just run git repack:
+To put the loose objects into a pack, just run `git repack`:
 
 ------------------------------------------------
 $ git repack

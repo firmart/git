@@ -61,10 +61,10 @@ be used.
    empty, $HOME/.config/git/ignore is used instead.
 
 The underlying Git plumbing tools, such as
-'git ls-files' and 'git read-tree', read
+`git ls-files` and `git read-tree`, read
 `gitignore` patterns specified by command-line options, or from
 files specified by command-line options.  Higher-level Git
-tools, such as 'git status' and 'git add',
+tools, such as `git status` and `git add`,
 use patterns from the sources specified above.
 
 PATTERN FORMAT
@@ -147,7 +147,7 @@ The purpose of gitignore files is to ensure that certain files
 not tracked by Git remain untracked.
 
 To stop tracking a file that is currently tracked, use
-'git rm --cached'.
+`git rm --cached`.
 
 EXAMPLES
 --------

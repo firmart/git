@@ -9,7 +9,7 @@ git-quiltimport - Applies a quilt patchset onto the current branch
 SYNOPSIS
 --------
 [verse]
-'git quiltimport' [--dry-run | -n] [--author <author>] [--patches <dir>]
+`git quiltimport` [--dry-run | -n] [--author <author>] [--patches <dir>]
 		[--series <file>] [--keep-non-patch]
 
 
@@ -57,7 +57,7 @@ or the value of the `$QUILT_SERIES` environment
 variable.
 
 --keep-non-patch::
-	Pass `-b` flag to 'git mailinfo' (see linkgit:git-mailinfo[1]).
+	Pass `-b` flag to `git mailinfo` (see linkgit:git-mailinfo[1]).
 
 GIT
 ---

@@ -112,10 +112,10 @@ Checking-out and checking-in
 
 These attributes affect how the contents stored in the
 repository are copied to the working tree files when commands
-such as 'git switch', 'git checkout'  and 'git merge' run.
+such as `git switch`, `git checkout`  and `git merge` run.
 They also affect how
 Git stores the contents you prepare in the working tree in the
-repository upon 'git add' and 'git commit'.
+repository upon `git add` and `git commit`.
 
 `text`
 ^^^^^^
@@ -247,8 +247,8 @@ $ git status        # Show files that will be normalized
 $ git commit -m "Introduce end-of-line normalization"
 -------------------------------------------------
 
-If any files that should not be normalized show up in 'git status',
-unset their `text` attribute before running 'git add -u'.
+If any files that should not be normalized show up in `git status`,
+unset their `text` attribute before running `git add -u`.
 
 ------------------------
 manual.pdf	-text
@@ -269,16 +269,16 @@ an irreversible conversion.  The safety triggers to prevent such
 a conversion done to the files in the work tree, but there are a
 few exceptions.  Even though...
 
-- 'git add' itself does not touch the files in the work tree, the
+- `git add` itself does not touch the files in the work tree, the
   next checkout would, so the safety triggers;
 
-- 'git apply' to update a text file with a patch does touch the files
+- `git apply` to update a text file with a patch does touch the files
   in the work tree, but the operation is about text files and CRLF
   conversion is about fixing the line ending inconsistencies, so the
   safety does not trigger;
 
-- 'git diff' itself does not touch the files in the work tree, it is
-  often run to inspect the changes you intend to next 'git add'.  To
+- `git diff` itself does not touch the files in the work tree, it is
+  often run to inspect the changes you intend to next `git add`.  To
   catch potential problems early, safety triggers.
 
 
@@ -288,7 +288,7 @@ few exceptions.  Even though...
 Git recognizes files encoded in ASCII or one of its supersets (e.g.
 UTF-8, ISO-8859-1, ...) as text files. Files encoded in certain other
 encodings (e.g. UTF-16) are interpreted as binary and consequently
-built-in Git text processing tools (e.g. 'git diff') as well as most Git
+built-in Git text processing tools (e.g. `git diff`) as well as most Git
 web front ends do not visualize the contents of these files by default.
 
 In these cases you can tell Git the encoding of a file in the working
@@ -331,7 +331,7 @@ That operation will fail and cause an error.
   default.
 
 - Reencoding content requires resources that might slow down certain
-  Git operations (e.g 'git checkout' or 'git add').
+  Git operations (e.g `git checkout` or `git add`).
 
 Use the `working-tree-encoding` attribute only if you cannot store a file
 in UTF-8 encoding and if you want Git to be able to process the content
@@ -497,7 +497,7 @@ command. This is achieved by using the long-running process protocol
 
 When Git encounters the first file that needs to be cleaned or smudged,
 it starts the filter and performs the handshake. In the handshake, the
-welcome message sent by Git is "git-filter-client", only version 2 is
+welcome message sent by Git is `git-filter-client`, only version 2 is
 supported, and the supported capabilities are "clean", "smudge", and
 "delay".
 

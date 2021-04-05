@@ -7,16 +7,16 @@ Fighting regressions with git bisect
 Abstract
 --------
 
-"git bisect" enables software users and developers to easily find the
+`git bisect` enables software users and developers to easily find the
 commit that introduced a regression. We show why it is important to
-have good tools to fight regressions. We describe how "git bisect"
+have good tools to fight regressions. We describe how `git bisect`
 works from the outside and the algorithms it uses inside. Then we
-explain how to take advantage of "git bisect" to improve current
-practices. And we discuss how "git bisect" could improve in the
+explain how to take advantage of `git bisect` to improve current
+practices. And we discuss how `git bisect` could improve in the
 future.
 
 
-Introduction to "git bisect"
+Introduction to `git bisect`
 ----------------------------
 
 Git is a Distributed Version Control system (DVCS) created by Linus
@@ -36,14 +36,14 @@ properly fix a problem when you only need to check a very small set of
 changes, than when you don't know where look in the first place.
 
 So to help people find commits that introduce a "bad" behavior, the
-"git bisect" set of commands was invented. And it follows of course
-that in "git bisect" parlance, commits where the "interesting
+`git bisect` set of commands was invented. And it follows of course
+that in `git bisect` parlance, commits where the "interesting
 behavior" is present are called "bad" commits, while other commits are
 called "good" commits. And a commit that introduce the behavior we are
 interested in is called a "first bad commit". Note that there could be
 more than one "first bad commit" in the commit space we are searching.
 
-So "git bisect" is designed to help find a "first bad commit". And to
+So `git bisect` is designed to help find a "first bad commit". And to
 be as efficient as possible, it tries to perform a binary search.
 
 
@@ -133,7 +133,7 @@ time. But this is not the end of the fight yet, as of course it
 continues after the release.
 
 And then this is what Ingo Molnar (a well known Linux kernel
-developer) says about his use of git bisect:
+developer) says about his use of `git bisect`:
 
 _____________
 I most actively use it during the merge window (when a lot of trees
@@ -152,7 +152,7 @@ Other tools to fight regressions
 
 So what are the tools used to fight regressions? They are nearly the
 same as those used to fight regular bugs. The only specific tools are
-test suites and tools similar as "git bisect".
+test suites and tools similar as `git bisect`.
 
 Test suites are very nice. But when they are used alone, they are
 supposed to be used so that all the tests are checked after each
@@ -180,17 +180,17 @@ emulate a bisection process or you will perhaps bluntly test each
 commit backward starting from the "bad" commit you have which may be
 very wasteful.
 
-"git bisect" overview
+`git bisect` overview
 ---------------------
 
 Starting a bisection
 ~~~~~~~~~~~~~~~~~~~~
 
-The first "git bisect" subcommand to use is "git bisect start" to
+The first `git bisect` subcommand to use is `git bisect start` to
 start the search. Then bounds must be set to limit the commit
 space. This is done usually by giving one "bad" and at least one
-"good" commit. They can be passed in the initial call to "git bisect
-start" like this:
+"good" commit. They can be passed in the initial call to `git bisect
+start` like this:
 
 -------------
 $ git bisect start [BAD [GOOD...]]
@@ -211,7 +211,7 @@ $ git bisect good [COMMIT...]
 where BAD, GOOD and COMMIT are all names that can be resolved to a
 commit.
 
-Then "git bisect" will checkout a commit of its choosing and ask the
+Then `git bisect` will checkout a commit of its choosing and ask the
 user to test it, like this:
 
 -------------
@@ -224,8 +224,8 @@ Note that the example that we will use is really a toy example, we
 will be looking for the first commit that has a version like
 "2.6.26-something", that is the commit that has a "SUBLEVEL = 26" line
 in the top level Makefile. This is a toy example because there are
-better ways to find this commit with Git than using "git bisect" (for
-example "git blame" or "git log -S<string>").
+better ways to find this commit with Git than using `git bisect` (for
+example `git blame` or `git log -S<string>`).
 
 Driving a bisection manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -236,7 +236,7 @@ script or a command.
 
 If the user is driving it, then at each step of the search, the user
 will have to test the current commit and say if it is "good" or "bad"
-using the "git bisect good" or "git bisect bad" commands respectively
+using the `git bisect good` or `git bisect bad` commands respectively
 that have been described above. For example:
 
 -------------
@@ -245,7 +245,7 @@ Bisecting: 5480 revisions left to test after this (roughly 13 steps)
 [66c0b394f08fd89236515c1c84485ea712a157be] KVM: kill file->f_count abuse in kvm
 -------------
 
-And after a few more steps like that, "git bisect" will eventually
+And after a few more steps like that, `git bisect` will eventually
 find a first bad commit:
 
 -------------
@@ -287,7 +287,7 @@ index 5cf8258..4492984 100644
  # *DOCUMENTATION*
 -------------
 
-And when we are finished we can use "git bisect reset" to go back to
+And when we are finished we can use `git bisect reset` to go back to
 the branch we were in before we started bisecting:
 
 -------------
@@ -300,10 +300,10 @@ Switched to branch 'master'
 Driving a bisection automatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The other way to drive the bisection process is to tell "git bisect"
+The other way to drive the bisection process is to tell `git bisect`
 to launch a script or command at each bisection step to know if the
-current commit is "good" or "bad". To do that, we use the "git bisect
-run" command. For example:
+current commit is "good" or "bad". To do that, we use the `git bisect
+run` command. For example:
 
 -------------
 $ git bisect start v2.6.27 v2.6.25
@@ -336,19 +336,19 @@ bisect run success
 -------------
 
 In this example, we passed "grep '^SUBLEVEL = 25' Makefile" as
-parameter to "git bisect run". This means that at each step, the grep
+parameter to `git bisect run`. This means that at each step, the grep
 command we passed will be launched. And if it exits with code 0 (that
-means success) then git bisect will mark the current state as
+means success) then `git bisect` will mark the current state as
 "good". If it exits with code 1 (or any code between 1 and 127
 included, except the special code 125), then the current state will be
 marked as "bad".
 
-Exit code between 128 and 255 are special to "git bisect run". They
+Exit code between 128 and 255 are special to `git bisect run`. They
 make it stop immediately the bisection process. This is useful for
 example if the command passed takes too long to complete, because you
 can kill it with a signal and it will stop the bisection process.
 
-It can also be useful in scripts passed to "git bisect run" to "exit
+It can also be useful in scripts passed to `git bisect run` to "exit
 255" if some very abnormal situation is detected.
 
 Avoiding untestable commits
@@ -357,15 +357,15 @@ Avoiding untestable commits
 Sometimes it happens that the current state cannot be tested, for
 example if it does not compile because there was a bug preventing it
 at that time. This is what the special exit code 125 is for. It tells
-"git bisect run" that the current commit should be marked as
+`git bisect run` that the current commit should be marked as
 untestable and that another one should be chosen and checked out.
 
-If the bisection process is driven manually, you can use "git bisect
-skip" to do the same thing. (In fact the special exit code 125 makes
-"git bisect run" use "git bisect skip" in the background.)
+If the bisection process is driven manually, you can use `git bisect
+skip` to do the same thing. (In fact the special exit code 125 makes
+`git bisect run` use `git bisect skip` in the background.)
 
 Or if you want more control, you can inspect the current state using
-for example "git bisect visualize". It will launch gitk (or "git log"
+for example `git bisect visualize`. It will launch gitk (or `git log`
 if the `DISPLAY` environment variable is not set) to help you find a
 better bisection point.
 
@@ -374,7 +374,7 @@ happen that the regression you are looking for has been introduced by
 one of these untestable commits. In this case it's not possible to
 tell for sure which commit introduced the regression.
 
-So if you used "git bisect skip" (or the run script exited with
+So if you used `git bisect skip` (or the run script exited with
 special code 125) you could get a result like this:
 
 -------------
@@ -415,7 +415,7 @@ best bisection commit to test at each step is not so simple. Anyway
 Linus found and implemented a "truly stupid" algorithm, later improved
 by Junio Hamano, that works quite well.
 
-So the algorithm used by "git bisect" to find the best bisection
+So the algorithm used by `git bisect` to find the best bisection
 commit when there are no skipped commits is the following:
 
 1) keep only the commits that:
@@ -530,7 +530,7 @@ Bisection algorithm debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For any commit graph, you can see the number associated with each
-commit using "git rev-list --bisect-all".
+commit using `git rev-list --bisect-all`.
 
 For example, for the above graph, a command like:
 
@@ -658,7 +658,7 @@ A-B-C-D-E-F         O
             4 3 2 1
 -------------
 
-but with the algorithm used by git bisect we get:
+but with the algorithm used by `git bisect` we get:
 
 -------------
             7 7 6 5
@@ -682,7 +682,7 @@ initially supposed.
 Skip algorithm
 ~~~~~~~~~~~~~~
 
-When some commits have been skipped (using "git bisect skip"), then
+When some commits have been skipped (using `git bisect skip`), then
 the bisection algorithm is the same for step 1) to 3). But then we use
 roughly the following steps:
 
@@ -709,7 +709,7 @@ Skip algorithm discussed
 
 After step 7) (in the skip algorithm), we could check if the second
 commit has been skipped and return it if it is not the case. And in
-fact that was the algorithm we used from when "git bisect skip" was
+fact that was the algorithm we used from when `git bisect skip` was
 developed in Git version 1.5.4 (released on February 1st 2008) until
 Git version 1.6.4 (released July 29th 2009).
 
@@ -852,10 +852,10 @@ usual after this step.
 Best bisecting practices
 ------------------------
 
-Using test suites and git bisect together
+Using test suites and `git bisect` together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you both have a test suite and use git bisect, then it becomes less
+If you both have a test suite and use `git bisect`, then it becomes less
 important to check that all tests pass after each commit. Though of
 course it is probably a good idea to have some checks to avoid
 breaking too many things because it could make bisecting other bugs
@@ -864,7 +864,7 @@ more difficult.
 You can focus your efforts to check at a few points (for example rc
 and beta releases) that all the T test cases pass for all the N
 configurations. And when some tests don't pass you can use "git
-bisect" (or better "git bisect run"). So you should perform roughly:
+bisect" (or better `git bisect run`). So you should perform roughly:
 
 -------------
 c * N * T + b * M * log2(M) tests
@@ -879,11 +879,11 @@ you would test everything after each commit.
 This means that test suites are good to prevent some bugs from being
 committed and they are also quite good to tell you that you have some
 bugs. But they are not so good to tell you where some bugs have been
-introduced. To tell you that efficiently, git bisect is needed.
+introduced. To tell you that efficiently, `git bisect` is needed.
 
 The other nice thing with test suites, is that when you have one, you
 already know how to test for bad behavior. So you can use this
-knowledge to create a new test case for "git bisect" when it appears
+knowledge to create a new test case for `git bisect` when it appears
 that there is a regression. So it will be easier to bisect the bug and
 fix it. And then you can add the test case you just created to your
 test suite.
@@ -893,7 +893,7 @@ subject to a virtuous circle:
 
 more tests => easier to create tests => easier to bisect => more tests
 
-So test suites and "git bisect" are complementary tools that are very
+So test suites and `git bisect` are complementary tools that are very
 powerful and efficient when used together.
 
 Bisecting build failures
@@ -907,7 +907,7 @@ $ git bisect start BAD GOOD
 $ git bisect run make
 -------------
 
-Passing sh -c "some commands" to "git bisect run"
+Passing sh -c "some commands" to `git bisect run`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For example:
@@ -925,7 +925,7 @@ Finding performance regressions
 Here is an example script that comes slightly modified from a real
 world script used by Junio Hamano <<4>>.
 
-This script can be passed to "git bisect run" to find the commit that
+This script can be passed to `git bisect run` to find the commit that
 introduced a performance regression:
 
 -------------
@@ -969,7 +969,7 @@ It is also a good idea when using any VCS to have only one small
 logical change in each commit.
 
 The smaller the changes in your commit, the most effective "git
-bisect" will be. And you will probably need "git bisect" less in the
+bisect" will be. And you will probably need `git bisect` less in the
 first place, as small changes are easier to review even if they are
 only reviewed by the committer.
 
@@ -996,7 +996,7 @@ misleading to know the first bad commit if it happens to be such a
 merge, because people might think that the bug comes from bad conflict
 resolution when it comes from a semantic change in one branch.
 
-Anyway "git rebase" can be used to linearize history. This can be used
+Anyway `git rebase` can be used to linearize history. This can be used
 either to avoid merging in the first place. Or it can be used to
 bisect on a linear history instead of the non linear one, as this
 should give more information in case of a semantic change in one
@@ -1016,7 +1016,7 @@ A special work-flow to process regressions can give great results.
 Here is an example of a work-flow used by Andreas Ericsson:
 
 * write, in the test suite, a test script that exposes the regression
-* use "git bisect run" to find the commit that introduced it
+* use `git bisect run` to find the commit that introduced it
 * fix the bug that is often made obvious by the previous step
 * commit both the fix and the test script (and if needed more tests)
 
@@ -1034,7 +1034,7 @@ due to how we now feel about writing tests).
 _____________
 
 Clearly this work-flow uses the virtuous circle between test suites
-and "git bisect". In fact it makes it the standard procedure to deal
+and `git bisect`. In fact it makes it the standard procedure to deal
 with regression.
 
 In other messages Andreas says that they also use the "best practices"
@@ -1048,7 +1048,7 @@ is making bisecting easier, more useful and standard.
 Involving QA people and if possible end users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-One nice about "git bisect" is that it is not only a developer
+One nice about `git bisect` is that it is not only a developer
 tool. It can effectively be used by QA people or even end users (if
 they have access to the source code or if they can get access to all
 the builds).
@@ -1091,7 +1091,7 @@ Here is what Ingo Molnar says about that <<7>>:
 
 _____________
 i have a fully automated bootup-hang bisection script. It is based on
-"git-bisect run". I run the script, it builds and boots kernels fully
+`git-bisect run`. I run the script, it builds and boots kernels fully
 automatically, and when the bootup fails (the script notices that via
 the serial log, which it continuously watches - or via a timeout, if
 the system does not come up within 10 minutes it's a "bad" kernel),
@@ -1100,28 +1100,28 @@ box. (yeah, i should make use of a managed power outlet to 100%
 automate it)
 _____________
 
-Combining test suites, git bisect and other systems together
+Combining test suites, `git bisect` and other systems together
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We have seen that test suites and git bisect are very powerful when
+We have seen that test suites and `git bisect` are very powerful when
 used together. It can be even more powerful if you can combine them
 with other systems.
 
 For example some test suites could be run automatically at night with
 some unusual (or even random) configurations. And if a regression is
-found by a test suite, then "git bisect" can be automatically
+found by a test suite, then `git bisect` can be automatically
 launched, and its result can be emailed to the author of the first bad
-commit found by "git bisect", and perhaps other people too. And a new
+commit found by `git bisect`, and perhaps other people too. And a new
 entry in the bug tracking system could be automatically created too.
 
 
 The future of bisecting
 -----------------------
 
-"git replace"
+`git replace`
 ~~~~~~~~~~~~~
 
-We saw earlier that "git bisect skip" is now using a PRNG to try to
+We saw earlier that `git bisect skip` is now using a PRNG to try to
 avoid areas in the commit graph where commits are untestable. The
 problem is that sometimes the first bad commit will be in an
 untestable area.
@@ -1177,26 +1177,26 @@ For example:
 $ git bisect start Z' Y
 -------------
 
-If you are using "git bisect run", you can use the same manual fix up
-as above, and then start another "git bisect run" in the special
-branch. Or as the "git bisect" man page says, the script passed to
-"git bisect run" can apply a patch before it compiles and test the
+If you are using `git bisect run`, you can use the same manual fix up
+as above, and then start another `git bisect run` in the special
+branch. Or as the `git bisect` man page says, the script passed to
+`git bisect run` can apply a patch before it compiles and test the
 software <<8>>. The patch should turn a current untestable commits
 into a testable one. So the testing will result in "good" or "bad" and
-"git bisect" will be able to find the first bad commit. And the script
+`git bisect` will be able to find the first bad commit. And the script
 should not forget to remove the patch once the testing is done before
 exiting from the script.
 
-(Note that instead of a patch you can use "git cherry-pick BFC" to
-apply the fix, and in this case you should use "git reset --hard
-HEAD^" to revert the cherry-pick after testing and before returning
+(Note that instead of a patch you can use `git cherry-pick BFC` to
+apply the fix, and in this case you should use `git reset --hard
+HEAD` to revert the cherry-pick after testing and before returning
 from the script.)
 
 But the above ways to work around untestable areas are a little bit
 clunky. Using special branches is nice because these branches can be
 shared by developers like usual branches, but the risk is that people
-will get many such branches. And it disrupts the normal "git bisect"
-work-flow. So, if you want to use "git bisect run" completely
+will get many such branches. And it disrupts the normal `git bisect`
+work-flow. So, if you want to use `git bisect run` completely
 automatically, you have to add special code in your script to restart
 bisection in the special branches.
 
@@ -1217,13 +1217,13 @@ With the example above that would give:
 ...-Y-BBC-X1-X2-X3-X4-X5-X6-BFC-Z
 -------------
 
-That's why the "git replace" command was created. Technically it
+That's why the `git replace` command was created. Technically it
 stores replacements "refs" in the "refs/replace/" hierarchy. These
 "refs" are like branches (that are stored in "refs/heads/") or tags
 (that are stored in "refs/tags"), and that means that they can
 automatically be shared like branches or tags among developers.
 
-"git replace" is a very powerful mechanism. It can be used to fix
+`git replace` is a very powerful mechanism. It can be used to fix
 commits in already released history, for example to change the commit
 message or the author. And it can also be used instead of git "grafts"
 to link a repository with another old repository.
@@ -1232,7 +1232,7 @@ In fact it's this last feature that "sold" it to the Git community, so
 it is now in the `master` branch of Git's Git repository and it should
 be released in Git 1.6.5 in October or November 2009.
 
-One problem with "git replace" is that currently it stores all the
+One problem with `git replace` is that currently it stores all the
 replacements refs in "refs/replace/", but it would be perhaps better
 if the replacement refs that are useful only for bisecting would be in
 "refs/replace/bisect/". This way the replacement refs could be used
@@ -1242,7 +1242,7 @@ be used nearly all the time.
 Bisecting sporadic bugs
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Another possible improvement to "git bisect" would be to optionally
+Another possible improvement to `git bisect` would be to optionally
 add some redundancy to the tests performed so that it would be more
 reliable when tracking sporadic bugs.
 
@@ -1250,7 +1250,7 @@ This has been requested by some kernel developers because some bugs
 called sporadic bugs do not appear in all the kernel builds because
 they are very dependent on the compiler output.
 
-The idea is that every 3 test for example, "git bisect" could ask the
+The idea is that every 3 test for example, `git bisect` could ask the
 user to test a commit that has already been found to be "good" or
 "bad" (because one of its descendants or one of its ancestors has been
 found to be "good" or "bad" respectively). If it happens that a commit
@@ -1264,7 +1264,7 @@ on Github that does something like that using Bayesian Search Theory
 <<9>>:
 
 _____________
-BBChop is like 'git bisect' (or equivalent), but works when your bug
+BBChop is like `git bisect` (or equivalent), but works when your bug
 is intermittent. That is, it works in the presence of false negatives
 (when a version happens to work this time even though it contains the
 bug). It assumes that there are no false positives (in principle, the
@@ -1283,12 +1283,12 @@ other tools, especially test suites, that are generally used to fight
 regressions. But it might be needed to change some work-flows and
 (bad) habits to get the most out of it.
 
-Some improvements to the algorithms inside "git bisect" are possible
+Some improvements to the algorithms inside `git bisect` are possible
 and some new features could help in some cases, but overall "git
 bisect" works already very well, is used a lot, and is already very
 useful. To back up that last claim, let's give the final word to Ingo
 Molnar when he was asked by the author how much time does he think
-"git bisect" saves him when he uses it:
+`git bisect` saves him when he uses it:
 
 _____________
 a _lot_.
@@ -1307,7 +1307,7 @@ manual help or when bisecting multiple, overlapping bugs, it's rarely
 more than an hour.
 
 In fact it's invaluable because there are bugs i would never even
-_try_ to debug if it wasn't for git bisect. In the past there were bug
+_try_ to debug if it wasn't for `git bisect`. In the past there were bug
 patterns that were immediately hopeless for me to debug - at best i
 could send the crash/bug signature to lkml and hope that someone else
 can think of something.
@@ -1316,7 +1316,7 @@ And even if a bisection fails today it tells us something valuable
 about the bug: that it's non-deterministic - timing or kernel image
 layout dependent.
 
-So git bisect is unconditional goodness - and feel free to quote that
+So `git bisect` is unconditional goodness - and feel free to quote that
 ;-)
 _____________
 
@@ -1325,16 +1325,16 @@ Acknowledgments
 
 Many thanks to Junio Hamano for his help in reviewing this paper, for
 reviewing the patches I sent to the Git mailing list, for discussing
-some ideas and helping me improve them, for improving "git bisect" a
+some ideas and helping me improve them, for improving `git bisect` a
 lot and for his awesome work in maintaining and developing Git.
 
 Many thanks to Ingo Molnar for giving me very useful information that
 appears in this paper, for commenting on this paper, for his
-suggestions to improve "git bisect" and for evangelizing "git bisect"
+suggestions to improve `git bisect` and for evangelizing `git bisect`
 on the linux kernel mailing lists.
 
 Many thanks to Linus Torvalds for inventing, developing and
-evangelizing "git bisect", Git and Linux.
+evangelizing `git bisect`, Git and Linux.
 
 Many thanks to the many other great people who helped one way or
 another when I worked on Git, especially to Andreas Ericsson, Johannes
@@ -1351,7 +1351,7 @@ References
 - [[[2]]] http://www.oracle.com/technetwork/java/codeconvtoc-136057.html['Code Conventions for the Java Programming Language'. Sun Microsystems.]
 - [[[3]]] https://en.wikipedia.org/wiki/Software_maintenance['Software maintenance'. Wikipedia.]
 - [[[4]]] https://lore.kernel.org/git/7vps5xsbwp.fsf_-_@assigned-by-dhcp.cox.net/[Junio C Hamano. 'Automated bisect success story'.]
-- [[[5]]] https://lwn.net/Articles/317154/[Christian Couder. 'Fully automated bisecting with "git bisect run"'. LWN.net.]
+- [[[5]]] https://lwn.net/Articles/317154/[Christian Couder. 'Fully automated bisecting with `git bisect run`'. LWN.net.]
 - [[[6]]] https://lwn.net/Articles/277872/[Jonathan Corbet. 'Bisection divides users and developers'. LWN.net.]
 - [[[7]]] https://lore.kernel.org/lkml/20071207113734.GA14598@elte.hu/[Ingo Molnar. 'Re: BUG 2.6.23-rc3 can't see sd partitions on Alpha'. Linux-kernel mailing list.]
 - [[[8]]] https://www.kernel.org/pub/software/scm/git/docs/git-bisect.html[Junio C Hamano and the git-list. 'git-bisect(1) Manual Page'. Linux Kernel Archives.]

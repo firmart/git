@@ -9,23 +9,23 @@ git-fast-export - Git data exporter
 SYNOPSIS
 --------
 [verse]
-'git fast-export [<options>]' | 'git fast-import'
+`git fast-export [<options>]` | `git fast-import`
 
 DESCRIPTION
 -----------
 This program dumps the given revisions in a form suitable to be piped
-into 'git fast-import'.
+into `git fast-import`.
 
 You can use it as a human-readable bundle replacement (see
 linkgit:git-bundle[1]), or as a format that can be edited before being
-fed to 'git fast-import' in order to do history rewrites (an ability
-relied on by tools like 'git filter-repo').
+fed to `git fast-import` in order to do history rewrites (an ability
+relied on by tools like `git filter-repo`).
 
 OPTIONS
 -------
 --progress=<n>::
 	Insert 'progress' statements every <n> objects, to be shown by
-	'git fast-import' during import.
+	`git fast-import` during import.
 
 --signed-tags=(verbatim|warn|warn-strip|strip|abort)::
 	Specify how to handle signed tags.  Since any transformation
@@ -139,7 +139,7 @@ by keeping the marks the same across runs.
 --show-original-ids::
 	Add an extra directive to the output for commits and blobs,
 	`original-oid <SHA1SUM>`.  While such directives will likely be
-	ignored by importers such as git-fast-import, it may be useful
+	ignored by importers such as `git-fast-import`, it may be useful
 	for intermediary filters (e.g. for rewriting commit messages
 	which refer to older commits, or for stripping blobs by id).
 
@@ -155,8 +155,8 @@ by keeping the marks the same across runs.
 	be specified.
 
 [<git-rev-list-args>...]::
-	A list of arguments, acceptable to 'git rev-parse' and
-	'git rev-list', that specifies the specific objects and references
+	A list of arguments, acceptable to `git rev-parse` and
+	`git rev-list`, that specifies the specific objects and references
 	to export.  For example, `master~10..master` causes the
 	current `master` reference to be exported along with all objects
 	added since its 10th ancestor commit and (unless the
@@ -191,14 +191,14 @@ referenced by that revision range contains the string
 ANONYMIZING
 -----------
 
-If the `--anonymize` option is given, git will attempt to remove all
+If the `--anonymize` option is given, `git` will attempt to remove all
 identifying information from the repository while still retaining enough
 of the original tree and history patterns to reproduce some bugs. The
-goal is that a git bug which is found on a private repository will
+goal is that a `git` bug which is found on a private repository will
 persist in the anonymized repository, and the latter can be shared with
-git developers to help solve the bug.
+`git` developers to help solve the bug.
 
-With this option, git will replace all refnames, paths, blob contents,
+With this option, `git` will replace all refnames, paths, blob contents,
 commit and tag messages, names, and email addresses in the output with
 anonymized data.  Two instances of the same string will be replaced
 equivalently (e.g., two commits with the same author will have the same
@@ -210,7 +210,7 @@ the tree is retained (e.g., if you have a root tree with 10 files and 3
 trees, so will the output), but their names and the contents of the
 files will be replaced.
 
-If you think you have found a git bug, you can start by exporting an
+If you think you have found a `git` bug, you can start by exporting an
 anonymized stream of the whole repository:
 
 ---------------------------------------------------
@@ -271,7 +271,7 @@ final pathname would be `publicdir/bar.c`.
 LIMITATIONS
 -----------
 
-Since 'git fast-import' cannot tag trees, you will not be
+Since `git fast-import` cannot tag trees, you will not be
 able to export the linux.git repository completely, as it contains
 a tag referencing a tree instead of a commit.
 

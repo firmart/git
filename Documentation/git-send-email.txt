@@ -9,8 +9,8 @@ git-send-email - Send a collection of patches as emails
 SYNOPSIS
 --------
 [verse]
-'git send-email' [<options>] <file|directory|rev-list options>...
-'git send-email' --dump-aliases
+`git send-email` [<options>] <file|directory|rev-list options>...
+`git send-email` --dump-aliases
 
 
 DESCRIPTION
@@ -19,7 +19,7 @@ Takes the patches given on the command line and emails them out.
 Patches can be specified as files, directories (which will send all
 files in the directory), or directly as a revision list.  In the
 last case, any format accepted by linkgit:git-format-patch[1] can
-be passed to git send-email.
+be passed to `git send-email`.
 
 The header of the email is configurable via command-line options.  If not
 specified on the command line, the user will be prompted with a ReadLine
@@ -66,7 +66,7 @@ This option may be specified multiple times.
 	Invoke a text editor (see GIT_EDITOR in linkgit:git-var[1])
 	to edit an introductory message for the patch series.
 +
-When `--compose` is used, git send-email will use the From, Subject, and
+When `--compose` is used, `git send-email` will use the From, Subject, and
 In-Reply-To headers specified in the message. If the body of the message
 (what you type after the headers and a blank line) only contains blank
 (or Git: prefixed) lines, the summary won't be sent, but From, Subject,
@@ -82,7 +82,7 @@ See the CONFIGURATION section for `sendemail.multiEdit`.
 	neither the command-line option nor `sendemail.from` are set, then the
 	user will be prompted for the value.  The default for the prompt will be
 	the value of GIT_AUTHOR_IDENT, or GIT_COMMITTER_IDENT if that is not
-	set, as returned by "git var -l".
+	set, as returned by `git var -l`.
 
 --reply-to=<address>::
 	Specify the address where replies from recipients should go to.
@@ -175,7 +175,7 @@ Sending
 --smtp-domain=<FQDN>::
 	Specifies the Fully Qualified Domain Name (FQDN) used in the
 	HELO/EHLO command to the SMTP server.  Some servers require the
-	FQDN to match your IP address.  If not set, git send-email attempts
+	FQDN to match your IP address.  If not set, `git send-email` attempts
 	to determine your FQDN automatically.  Default is the value of
 	`sendemail.smtpDomain`.
 
@@ -204,7 +204,7 @@ Furthermore, passwords need not be specified in configuration files
 or on the command line. If a username has been specified (with
 `--smtp-user` or a `sendemail.smtpUser`), but no password has been
 specified (with `--smtp-pass` or `sendemail.smtpPass`), then
-a password is obtained using 'git-credential'.
+a password is obtained using `git-credential`.
 
 --no-smtp-auth::
 	Disable SMTP authentication. Short hand for `--smtp-auth=none`
@@ -362,7 +362,7 @@ specified, as well as 'body' if `--no-signed-off-cc` is specified.
 --[no-]thread::
 	If this is set, the In-Reply-To and References headers will be
 	added to each email sent.  Whether each mail refers to the
-	previous email (`deep` threading per 'git format-patch'
+	previous email (`deep` threading per `git format-patch`
 	wording) or to the first email (`shallow` threading) is
 	governed by "--[no-]chain-reply-to".
 +
@@ -372,8 +372,8 @@ If disabled with `--no-thread`, those headers will not be added
 default to `--thread`.
 +
 It is up to the user to ensure that no In-Reply-To header already
-exists when 'git send-email' is asked to add it (especially note that
-'git format-patch' can be configured to do the threading itself).
+exists when `git send-email` is asked to add it (especially note that
+`git format-patch` can be configured to do the threading itself).
 Failure to do so may not produce the expected result in the
 recipient's MUA.
 
@@ -404,10 +404,10 @@ have been specified, in which case default to 'compose'.
 	When an argument may be understood either as a reference or as a file name,
 	choose to understand it as a format-patch argument (`--format-patch`)
 	or as a file name (`--no-format-patch`). By default, when such a conflict
-	occurs, git send-email will fail.
+	occurs, `git send-email` will fail.
 
 --quiet::
-	Make git-send-email less verbose.  One line per email should be
+	Make `git-send-email` less verbose.  One line per email should be
 	all that is output.
 
 --[no-]validate::
@@ -483,7 +483,7 @@ EXAMPLES
 --------
 Use gmail as the smtp server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To use 'git send-email' to send your patches through the GMail SMTP server,
+To use `git send-email` to send your patches through the GMail SMTP server,
 edit ~/.gitconfig to specify your account settings:
 
 ----
@@ -495,7 +495,7 @@ edit ~/.gitconfig to specify your account settings:
 ----
 
 If you have multi-factor authentication set up on your Gmail account, you will
-need to generate an app-specific password for use with 'git send-email'. Visit
+need to generate an app-specific password for use with `git send-email`. Visit
 https://security.google.com/settings/security/apppasswords to create it.
 
 If you do not have multi-factor authentication set up on your Gmail account,

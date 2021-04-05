@@ -8,8 +8,8 @@ gitnamespaces - Git namespaces
 SYNOPSIS
 --------
 [verse]
-GIT_NAMESPACE=<namespace> 'git upload-pack'
-GIT_NAMESPACE=<namespace> 'git receive-pack'
+GIT_NAMESPACE=<namespace> `git upload-pack`
+GIT_NAMESPACE=<namespace> `git receive-pack`
 
 
 DESCRIPTION
@@ -46,8 +46,8 @@ which could otherwise generate directory/file conflicts within the `refs`
 directory.
 
 linkgit:git-upload-pack[1] and linkgit:git-receive-pack[1] rewrite the
-names of refs as specified by `GIT_NAMESPACE`.  git-upload-pack and
-git-receive-pack will ignore all references outside the specified
+names of refs as specified by `GIT_NAMESPACE`.  `git-upload-pack` and
+`git-receive-pack` will ignore all references outside the specified
 namespace.
 
 The smart HTTP server, linkgit:git-http-backend[1], will pass

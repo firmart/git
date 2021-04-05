@@ -8,7 +8,7 @@ git-cherry - Find commits yet to be applied to upstream
 SYNOPSIS
 --------
 [verse]
-'git cherry' [-v] [<upstream> [<head> [<limit>]]]
+`git cherry` [-v] [<upstream> [<head> [<limit>]]]
 
 DESCRIPTION
 -----------
@@ -16,7 +16,7 @@ Determine whether there are commits in `<head>..<upstream>` that are
 equivalent to those in the range `<limit>..<head>`.
 
 The equivalence test is based on the diff, after removing whitespace
-and line numbers.  git-cherry therefore detects when commits have been
+and line numbers.  `git-cherry` therefore detects when commits have been
 "copied" by means of linkgit:git-cherry-pick[1], linkgit:git-am[1] or
 linkgit:git-rebase[1].
 
@@ -45,7 +45,7 @@ EXAMPLES
 Patch workflows
 ~~~~~~~~~~~~~~~
 
-git-cherry is frequently used in patch-based workflows (see
+`git-cherry` is frequently used in patch-based workflows (see
 linkgit:gitworkflows[7]) to determine if a series of patches has been
 applied by the upstream maintainer.  In such a workflow you might
 create and send a topic branch like this:
@@ -85,7 +85,7 @@ $ git log --graph --oneline --decorate --boundary origin/master...topic
 o 1234567 branch point
 ------------
 
-In such cases, git-cherry shows a concise summary of what has yet to
+In such cases, `git-cherry` shows a concise summary of what has yet to
 be applied:
 
 ------------

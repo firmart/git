@@ -9,14 +9,14 @@ git-gc - Cleanup unnecessary files and optimize the local repository
 SYNOPSIS
 --------
 [verse]
-'git gc' [--aggressive] [--auto] [--quiet] [--prune=<date> | --no-prune] [--force] [--keep-largest-pack]
+`git gc` [--aggressive] [--auto] [--quiet] [--prune=<date> | --no-prune] [--force] [--keep-largest-pack]
 
 DESCRIPTION
 -----------
 Runs a number of housekeeping tasks within the current repository,
 such as compressing file revisions (to reduce disk space and increase
 performance), removing unreachable objects which may have been
-created from prior invocations of 'git add', packing refs, pruning
+created from prior invocations of `git add`, packing refs, pruning
 reflog, rerere metadata or stale working trees. May also update ancillary
 indexes such as the commit-graph.
 
@@ -35,14 +35,14 @@ OPTIONS
 -------
 
 --aggressive::
-	Usually 'git gc' runs very quickly while providing good disk
+	Usually `git gc` runs very quickly while providing good disk
 	space utilization and performance.  This option will cause
-	'git gc' to more aggressively optimize the repository at the expense
+	`git gc` to more aggressively optimize the repository at the expense
 	of taking much more time.  The effects of this optimization are
 	mostly persistent. See the "AGGRESSIVE" section below for details.
 
 --auto::
-	With this option, 'git gc' checks whether any housekeeping is
+	With this option, `git gc` checks whether any housekeeping is
 	required; if not, it exits without performing any work.
 +
 See the `gc.auto` option in the "CONFIGURATION" section below for how
@@ -114,19 +114,19 @@ include::config/gc.txt[]
 NOTES
 -----
 
-'git gc' tries very hard not to delete objects that are referenced
+`git gc` tries very hard not to delete objects that are referenced
 anywhere in your repository. In particular, it will keep not only
 objects referenced by your current set of branches and tags, but also
 objects referenced by the index, remote-tracking branches, reflogs
 (which may reference commits in branches that were later amended or
 rewound), and anything else in the refs/* namespace. Note that a note
-(of the kind created by 'git notes') attached to an object does not
+(of the kind created by `git notes`) attached to an object does not
 contribute in keeping the object alive. If you are expecting some
 objects to be deleted and they aren't, check all of those locations
 and decide whether it makes sense in your case to remove those
 references.
 
-On the other hand, when 'git gc' runs concurrently with another process,
+On the other hand, when `git gc` runs concurrently with another process,
 there is a risk of it deleting an object that the other process is using
 but hasn't created a reference to. This may just cause the other process
 to fail or may corrupt the repository if the other process later adds a
@@ -147,7 +147,7 @@ seems to be low in practice).
 HOOKS
 -----
 
-The 'git gc --auto' command will run the 'pre-auto-gc' hook.  See
+The `git gc --auto` command will run the 'pre-auto-gc' hook.  See
 linkgit:githooks[5] for more information.
 
 

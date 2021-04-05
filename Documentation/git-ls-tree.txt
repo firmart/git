@@ -9,7 +9,7 @@ git-ls-tree - List the contents of a tree object
 SYNOPSIS
 --------
 [verse]
-'git ls-tree' [-d] [-r] [-t] [-l] [-z]
+`git ls-tree` [-d] [-r] [-t] [-l] [-z]
 	    [--name-only] [--name-status] [--full-name] [--full-tree] [--abbrev[=<n>]]
 	    <tree-ish> [<path>...]
 
@@ -25,8 +25,8 @@ in the current working directory.  Note that:
 
  - the behaviour is similar to that of "/bin/ls" in that the '<path>' is
    taken as relative to the current working directory.  E.g. when you are
-   in a directory 'sub' that has a directory 'dir', you can run 'git
-   ls-tree -r HEAD dir' to list the contents of the tree (that is
+   in a directory 'sub' that has a directory 'dir', you can run `git
+   ls-tree -r HEAD dir` to list the contents of the tree (that is
    `sub/dir` in `HEAD`).  You don't want to give a tree that is not at the
    root level (e.g. `git ls-tree -r HEAD:sub dir`) in this case, as that
    would result in asking for `sub/sub/dir` in the `HEAD` commit.
@@ -85,7 +85,7 @@ Output Format
         <mode> SP <type> SP <object> TAB <file>
 
 This output format is compatible with what `--index-info --stdin` of
-'git update-index' expects.
+`git update-index` expects.
 
 When the `-l` option is used, format changes to
 

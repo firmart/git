@@ -363,7 +363,7 @@ $ grep 9418 /etc/services
 git		9418/tcp		# Git Version Control System
 ------------
 
-Run git-daemon to serve /pub/scm from inetd.::
+Run `git-daemon` to serve /pub/scm from inetd.::
 +
 ------------
 $ grep git /etc/inetd.conf
@@ -373,7 +373,7 @@ git	stream	tcp	nowait	nobody \
 +
 The actual configuration line should be on one line.
 
-Run git-daemon to serve /pub/scm from xinetd.::
+Run `git-daemon` to serve /pub/scm from xinetd.::
 +
 ------------
 $ cat /etc/xinetd.d/git-daemon
@@ -396,7 +396,7 @@ service git
 Check your xinetd(8) documentation and setup, this is from a Fedora system.
 Others might be different.
 
-Give push/pull only access to developers using git-over-ssh.::
+Give push/pull only access to developers using `git-over-ssh`.::
 
 e.g. those using:
 `$ git push/pull ssh://host.xz/pub/scm/project`
@@ -442,7 +442,7 @@ refs/heads/doc-update	bob
 refs/tags/v[0-9]*	david
 ------------
 +
-<1> place the developers into the same git group.
+<1> place the developers into the same `git` group.
 <2> and make the shared repository writable by the group.
 <3> use update-hook example by Carl from Documentation/howto/
 for branch policy control.

@@ -9,16 +9,16 @@ git-merge-base - Find as good common ancestors as possible for a merge
 SYNOPSIS
 --------
 [verse]
-'git merge-base' [-a|--all] <commit> <commit>...
-'git merge-base' [-a|--all] --octopus <commit>...
-'git merge-base' --is-ancestor <commit> <commit>
-'git merge-base' --independent <commit>...
-'git merge-base' --fork-point <ref> [<commit>]
+`git merge-base` [-a|--all] <commit> <commit>...
+`git merge-base` [-a|--all] --octopus <commit>...
+`git merge-base` --is-ancestor <commit> <commit>
+`git merge-base` --independent <commit>...
+`git merge-base` --fork-point <ref> [<commit>]
 
 DESCRIPTION
 -----------
 
-'git merge-base' finds best common ancestor(s) between two commits to use
+`git merge-base` finds best common ancestor(s) between two commits to use
 in a three-way merge.  One common ancestor is 'better' than another common
 ancestor if the latter is an ancestor of the former.  A common ancestor
 that does not have any better common ancestor is a 'best common
@@ -43,14 +43,14 @@ from linkgit:git-show-branch[1] when used with the `--merge-base` option.
 --octopus::
 	Compute the best common ancestors of all supplied commits,
 	in preparation for an n-way merge.  This mimics the behavior
-	of 'git show-branch --merge-base'.
+	of `git show-branch --merge-base`.
 
 --independent::
 	Instead of printing merge bases, print a minimal subset of
 	the supplied commits with the same ancestors.  In other words,
 	among the commits given, list those which cannot be reached
-	from any other.  This mimics the behavior of 'git show-branch
-	--independent'.
+	from any other.  This mimics the behavior of `git show-branch
+	--independent`.
 
 --is-ancestor::
 	Check if the first <commit> is an ancestor of the second <commit>,
@@ -147,7 +147,7 @@ then
 fi
 ....
 
-In modern git, you can say this in a more direct way:
+In modern `git`, you can say this in a more direct way:
 
 ....
 if git merge-base --is-ancestor A B

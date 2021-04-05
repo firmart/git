@@ -8,13 +8,13 @@ git-help - Display help information about Git
 SYNOPSIS
 --------
 [verse]
-'git help' [-a|--all [--[no-]verbose]] [-g|--guides]
+`git help` [-a|--all [--[no-]verbose]] [-g|--guides]
 	   [-i|--info|-m|--man|-w|--web] [COMMAND|GUIDE]
 
 DESCRIPTION
 -----------
 
-With no options and no COMMAND or GUIDE given, the synopsis of the 'git'
+With no options and no COMMAND or GUIDE given, the synopsis of the `git`
 command and a list of the most commonly used Git commands are printed
 on the standard output.
 
@@ -29,7 +29,7 @@ guide is brought up. The 'man' program is used by default for this
 purpose, but this can be overridden by other options or configuration
 variables.
 
-If an alias is given, git shows the definition of the alias on
+If an alias is given, `git` shows the definition of the alias on
 standard output. To get the manual page for the aliased command, use
 `git COMMAND --help`.
 
@@ -38,7 +38,7 @@ former is internally converted into the latter.
 
 To display the linkgit:git[1] man page, use `git help git`.
 
-This page can be displayed with 'git help help' or `git help --help`
+This page can be displayed with `git help help` or `git help --help`
 
 OPTIONS
 -------
@@ -83,8 +83,8 @@ other display programs (see below).
 +
 The web browser can be specified using the configuration variable
 `help.browser`, or `web.browser` if the former is not set. If none of
-these config variables is set, the 'git web{litdd}browse' helper script
-(called by 'git help') will pick a suitable default. See
+these config variables is set, the `git web--browse` helper script
+(called by `git help`) will pick a suitable default. See
 linkgit:git-web{litdd}browse[1] for more information about this.
 
 CONFIGURATION VARIABLES
@@ -95,7 +95,7 @@ help.format
 
 If no command-line option is passed, the `help.format` configuration
 variable will be checked. The following values are supported for this
-variable; they make 'git help' behave as their corresponding command-
+variable; they make `git help` behave as their corresponding command-
 line option:
 
 * "man" corresponds to `-m`|`--man`,
@@ -150,7 +150,7 @@ man.<tool>.path
 You can explicitly provide a full path to your preferred man viewer by
 setting the configuration variable `man.<tool>.path`. For example, you
 can configure the absolute path to konqueror by setting
-`man.konqueror.path`. Otherwise, 'git help' assumes the tool is
+`man.konqueror.path`. Otherwise, `git help` assumes the tool is
 available in PATH.
 
 man.<tool>.cmd
@@ -185,7 +185,7 @@ the following:
 		cmd = A_PATH_TO/konqueror
 ------------------------------------------------
 
-Note about git config --global
+Note about `git config --global`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Note that all these configuration variables should probably be set

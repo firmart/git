@@ -9,14 +9,14 @@ git-tag - Create, list, delete or verify a tag object signed with GPG
 SYNOPSIS
 --------
 [verse]
-'git tag' [-a | -s | -u <keyid>] [-f] [-m <msg> | -F <file>] [-e]
+`git tag` [-a | -s | -u <keyid>] [-f] [-m <msg> | -F <file>] [-e]
 	<tagname> [<commit> | <object>]
-'git tag' -d <tagname>...
-'git tag' [-n[<num>]] -l [--contains <commit>] [--no-contains <commit>]
+`git tag` -d <tagname>...
+`git tag` [-n[<num>]] -l [--contains <commit>] [--no-contains <commit>]
 	[--points-at <object>] [--column[=<options>] | --no-column]
 	[--create-reflog] [--sort=<key>] [--format=<format>]
 	[--merged <commit>] [--no-merged <commit>] [<pattern>...]
-'git tag' -v [--format=<format>] <tagname>...
+`git tag` -v [--format=<format>] <tagname>...
 
 DESCRIPTION
 -----------
@@ -50,7 +50,7 @@ tagging message, and an optional GnuPG signature. Whereas a
 object).
 
 Annotated tags are meant for release while lightweight tags are meant
-for private or temporary object labels. For this reason, some git
+for private or temporary object labels. For this reason, some `git`
 commands for naming objects (like `git describe`) will ignore
 lightweight tags by default.
 
@@ -101,7 +101,7 @@ If the tag is not annotated, the commit message is displayed instead.
 	List tags. With optional `<pattern>...`, e.g. `git tag --list
 	'v-*'`, list only the tags that match the pattern(s).
 +
-Running "git tag" without arguments also lists all tags. The pattern
+Running `git tag` without arguments also lists all tags. The pattern
 is a shell wildcard (i.e., matched using fnmatch(3)). Multiple
 patterns may be given; if any of them matches, the tag is shown.
 +
@@ -213,7 +213,7 @@ This option is only applicable when listing tags without annotation lines.
 
 CONFIGURATION
 -------------
-By default, 'git tag' in sign-with-default mode (-s) will use your
+By default, `git tag` in sign-with-default mode (-s) will use your
 committer identity (of the form `Your Name <your@email.address>`) to
 find a key.  If you want to use a different default key, you can specify
 it in the repository configuration as follows:
@@ -252,12 +252,12 @@ the old tag. In that case you can do one of two things:
 
 . The insane thing.
   You really want to call the new version "X" too, 'even though'
-  others have already seen the old one. So just use 'git tag -f'
+  others have already seen the old one. So just use `git tag -f`
   again, as if you hadn't already published the old one.
 
 However, Git does *not* (and it should not) change tags behind
 users back. So if somebody already got the old tag, doing a
-'git pull' on your tree shouldn't just make them overwrite the old
+`git pull` on your tree shouldn't just make them overwrite the old
 one.
 
 If somebody got a release tag from you, you cannot just change
@@ -309,7 +309,7 @@ private anchor point tags from the other person.
 
 Often, "please pull" messages on the mailing list just provide
 two pieces of information: a repo URL and a branch name; this
-is designed to be easily cut&pasted at the end of a 'git fetch'
+is designed to be easily cut&pasted at the end of a `git fetch`
 command line:
 
 ------------
@@ -363,7 +363,7 @@ If you have imported some changes from another VCS and would like
 to add tags for major releases of your work, it is useful to be able
 to specify the date to embed inside of the tag object; such data in
 the tag object affects, for example, the ordering of tags in the
-gitweb interface.
+`gitweb` interface.
 
 To set the date used in future tag objects, set the environment
 variable GIT_COMMITTER_DATE (see the later discussion of possible

@@ -9,8 +9,8 @@ git-commit-graph - Write and verify Git commit-graph files
 SYNOPSIS
 --------
 [verse]
-'git commit-graph verify' [--object-dir <dir>] [--shallow] [--[no-]progress]
-'git commit-graph write' <options> [--object-dir <dir>] [--[no-]progress]
+`git commit-graph verify` [--object-dir <dir>] [--shallow] [--[no-]progress]
+`git commit-graph write` <options> [--object-dir <dir>] [--[no-]progress]
 
 
 DESCRIPTION

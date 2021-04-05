@@ -8,10 +8,10 @@ git-check-ref-format - Ensures that a reference name is well formed
 SYNOPSIS
 --------
 [verse]
-'git check-ref-format' [--normalize]
+`git check-ref-format` [--normalize]
        [--[no-]allow-onelevel] [--refspec-pattern]
        <refname>
-'git check-ref-format' --branch <branchname-shorthand>
+`git check-ref-format` --branch <branchname-shorthand>
 
 DESCRIPTION
 -----------
@@ -73,7 +73,7 @@ reference name expressions (see linkgit:gitrevisions[7]):
 . A colon `:` is used as in `srcref:dstref` to mean "use srcref\'s
   value and store it in dstref" in fetch and push operations.
   It may also be used to select a specific object such as with
-  'git cat-file': "git cat-file blob v1.3.3:refs.c".
+  `git cat-file`: `git cat-file blob v1.3.3:refs.c`.
 
 . at-open-brace `@{` is used as a notation to access a reflog entry.
 
@@ -88,7 +88,7 @@ but it is explicitly forbidden at the beginning of a branch name).
 When run with `--branch` option in a repository, the input is first
 expanded for the ``previous checkout syntax''
 `@{-n}`.  For example, `@{-1}` is a way to refer the last thing that
-was checked out using "git switch" or "git checkout" operation.
+was checked out using `git switch` or `git checkout` operation.
 This option should be
 used by porcelains to accept this syntax anywhere a branch name is
 expected, so they can act as if you typed the branch name. As an

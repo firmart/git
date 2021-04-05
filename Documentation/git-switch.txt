@@ -8,10 +8,10 @@ git-switch - Switch branches
 SYNOPSIS
 --------
 [verse]
-'git switch' [<options>] [--no-guess] <branch>
-'git switch' [<options>] --detach [<start-point>]
-'git switch' [<options>] (-c|-C) <new-branch> [<start-point>]
-'git switch' [<options>] --orphan <new-branch>
+`git switch` [<options>] [--no-guess] <branch>
+`git switch` [<options>] --detach [<start-point>]
+`git switch` [<options>] (-c|-C) <new-branch> [<start-point>]
+`git switch` [<options>] --orphan <new-branch>
 
 DESCRIPTION
 -----------
@@ -47,7 +47,7 @@ OPTIONS
 	from some other point.)
 +
 You can use the `@{-N}` syntax to refer to the N-th last
-branch/commit switched to using "git switch" or "git checkout"
+branch/commit switched to using `git switch` or `git checkout`
 operation. You may also specify `-` which is synonymous to `@{-1}`.
 This is often used to switch quickly between two branches, or to undo
 a branch switch by mistake.

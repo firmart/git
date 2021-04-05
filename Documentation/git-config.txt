@@ -9,21 +9,21 @@ git-config - Get and set repository or global options
 SYNOPSIS
 --------
 [verse]
-'git config' [<file-option>] [--type=<type>] [--fixed-value] [--show-origin] [--show-scope] [-z|--null] name [value [value-pattern]]
-'git config' [<file-option>] [--type=<type>] --add name value
-'git config' [<file-option>] [--type=<type>] [--fixed-value] --replace-all name value [value-pattern]
-'git config' [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] --get name [value-pattern]
-'git config' [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] --get-all name [value-pattern]
-'git config' [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] [--name-only] --get-regexp name_regex [value-pattern]
-'git config' [<file-option>] [--type=<type>] [-z|--null] --get-urlmatch name URL
-'git config' [<file-option>] [--fixed-value] --unset name [value-pattern]
-'git config' [<file-option>] [--fixed-value] --unset-all name [value-pattern]
-'git config' [<file-option>] --rename-section old_name new_name
-'git config' [<file-option>] --remove-section name
-'git config' [<file-option>] [--show-origin] [--show-scope] [-z|--null] [--name-only] -l | --list
-'git config' [<file-option>] --get-color name [default]
-'git config' [<file-option>] --get-colorbool name [stdout-is-tty]
-'git config' [<file-option>] -e | --edit
+`git config` [<file-option>] [--type=<type>] [--fixed-value] [--show-origin] [--show-scope] [-z|--null] name [value [value-pattern]]
+`git config` [<file-option>] [--type=<type>] --add name value
+`git config` [<file-option>] [--type=<type>] [--fixed-value] --replace-all name value [value-pattern]
+`git config` [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] --get name [value-pattern]
+`git config` [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] --get-all name [value-pattern]
+`git config` [<file-option>] [--type=<type>] [--show-origin] [--show-scope] [-z|--null] [--fixed-value] [--name-only] --get-regexp name_regex [value-pattern]
+`git config` [<file-option>] [--type=<type>] [-z|--null] --get-urlmatch name URL
+`git config` [<file-option>] [--fixed-value] --unset name [value-pattern]
+`git config` [<file-option>] [--fixed-value] --unset-all name [value-pattern]
+`git config` [<file-option>] --rename-section old_name new_name
+`git config` [<file-option>] --remove-section name
+`git config` [<file-option>] [--show-origin] [--show-scope] [-z|--null] [--name-only] -l | --list
+`git config` [<file-option>] --get-color name [default]
+`git config` [<file-option>] --get-colorbool name [stdout-is-tty]
+`git config` [<file-option>] -e | --edit
 
 DESCRIPTION
 -----------
@@ -41,7 +41,7 @@ prepend a single exclamation mark in front (see also <<EXAMPLES>>),
 but note that this only works when the `--fixed-value` option is not
 in use.
 
-The `--type=<type>` option instructs 'git config' to ensure that incoming and
+The `--type=<type>` option instructs `git config` to ensure that incoming and
 outgoing values are canonicalize-able under the given <type>.  If no
 `--type=<type>` is given, no canonicalization will be performed. Callers may
 unset an existing `--type` specifier with `--no-type`.
@@ -175,7 +175,7 @@ See also <<FILES>>.
 	is exactly equal to the `value-pattern`.
 
 --type <type>::
-  'git config' will ensure that any input or output is valid under the given
+  `git config` will ensure that any input or output is valid under the given
   type constraint(s), and will canonicalize outgoing values in `<type>`'s
   canonical form.
 +
@@ -209,7 +209,7 @@ Valid `<type>`'s include:
 
 --no-type::
   Un-sets the previously set type specifier (if one was previously set). This
-  option requests that 'git config' not canonicalize the retrieved variable.
+  option requests that `git config` not canonicalize the retrieved variable.
   `--no-type` has no effect without `--type=<type>` or `--<type>`.
 
 -z::
@@ -284,7 +284,7 @@ FILES
 -----
 
 If not set explicitly with `--file`, there are four files where
-'git config' will search for configuration options:
+`git config` will search for configuration options:
 
 $(prefix)/etc/gitconfig::
 	System-wide configuration file.
@@ -311,7 +311,7 @@ $GIT_DIR/config.worktree::
 If no further options are given, all reading options will read all of these
 files that are available. If the global or the system-wide configuration
 file are not available they will be ignored. If the repository configuration
-file is not available or readable, 'git config' will exit with a non-zero
+file is not available or readable, `git config` will exit with a non-zero
 error code. However, in neither case will an error message be issued.
 
 The files are read in the order given above, with last value found taking
@@ -358,7 +358,7 @@ GIT_CONFIG_VALUE_<n>::
 	in configuration files, but will be overridden by any explicit options
 	passed via `git -c`.
 +
-This is useful for cases where you want to spawn multiple git commands
+This is useful for cases where you want to spawn multiple `git` commands
 with a common configuration but cannot depend on a configuration file,
 for example when writing scripts.
 

@@ -9,7 +9,7 @@ git-grep - Print lines matching a pattern
 SYNOPSIS
 --------
 [verse]
-'git grep' [-a | --text] [-I] [--textconv] [-i | --ignore-case] [-w | --word-regexp]
+`git grep` [-a | --text] [-I] [--textconv] [-i | --ignore-case] [-w | --word-regexp]
 	   [-v | --invert-match] [-h|-H] [--full-name]
 	   [-E | --extended-regexp] [-G | --basic-regexp]
 	   [-P | --perl-regexp]
@@ -66,8 +66,8 @@ grep.fullName::
 	If set to true, enable `--full-name` option by default.
 
 grep.fallbackToNoIndex::
-	If set to true, fall back to git grep `--no-index` if git grep
-	is executed outside of a git repository.  Defaults to false.
+	If set to true, fall back to `git grep --no-index` if `git grep`
+	is executed outside of a `git` repository.  Defaults to false.
 
 
 OPTIONS
@@ -191,13 +191,13 @@ providing this option will cause it to die.
 --files-without-match::
 	Instead of showing every matched line, show only the
 	names of files that contain (or do not contain) matches.
-	For better compatibility with 'git diff', `--name-only` is a
+	For better compatibility with `git diff`, `--name-only` is a
 	synonym for `--files-with-matches`.
 
 -O[<pager>]::
 --open-files-in-pager[=<pager>]::
 	Open the matching files in the pager (not the output of 'grep').
-	If the pager happens to be "less" or "vi", and the user
+	If the pager happens to be `less` or `vi`, and the user
 	specified only one pattern, the first file is positioned at
 	the first match automatically. The `pager` argument is
 	optional; if specified, it must be stuck to the option

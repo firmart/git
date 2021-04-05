@@ -8,14 +8,14 @@ git-column - Display data in columns
 SYNOPSIS
 --------
 [verse]
-'git column' [--command=<name>] [--[raw-]mode=<mode>] [--width=<width>]
+`git column` [--command=<name>] [--[raw-]mode=<mode>] [--width=<width>]
 	     [--indent=<string>] [--nl=<string>] [--padding=<n>]
 
 DESCRIPTION
 -----------
 This command formats the lines of its standard input into a table with
 multiple columns. Each input line occupies one cell of the table. It
-is used internally by other git commands to format output into
+is used internally by other `git` commands to format output into
 columns.
 
 OPTIONS

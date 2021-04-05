@@ -9,25 +9,25 @@ git-bisect - Use binary search to find the commit that introduced a bug
 SYNOPSIS
 --------
 [verse]
-'git bisect' <subcommand> <options>
+`git bisect` <subcommand> <options>
 
 DESCRIPTION
 -----------
 The command takes various subcommands, and different options depending
 on the subcommand:
 
- git bisect start [--term-{new,bad}=<term> --term-{old,good}=<term>]
-		  [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] [<paths>...]
- git bisect (bad|new|<term-new>) [<rev>]
- git bisect (good|old|<term-old>) [<rev>...]
- git bisect terms [--term-good | --term-bad]
- git bisect skip [(<rev>|<range>)...]
- git bisect reset [<commit>]
- git bisect (visualize|view)
- git bisect replay <logfile>
- git bisect log
- git bisect run <cmd>...
- git bisect help
+ `git bisect` start [--term-{new,bad}=<term> --term-{old,good}=<term>]
+ 	    	  [--no-checkout] [--first-parent] [<bad> [<good>...]] [--] [<paths>...]
+ `git bisect` (bad|new|<term-new>) [<rev>]
+ `git bisect` (good|old|<term-old>) [<rev>...]
+ `git bisect` terms [--term-good | --term-bad]
+ `git bisect` skip [(<rev>|<range>)...]
+ `git bisect` reset [<commit>]
+ `git bisect` (visualize|view)
+ `git bisect` replay <logfile>
+ `git bisect` log
+ `git bisect` run <cmd>...
+ `git bisect` help
 
 This command uses a binary search algorithm to find which commit in
 your project's history introduced a bug. You use it by first telling
@@ -196,7 +196,7 @@ of `git bisect good` and `git bisect bad` to mark commits.
 Bisect visualize/view
 ~~~~~~~~~~~~~~~~~~~~~
 
-To see the currently remaining suspects in 'gitk', issue the following
+To see the currently remaining suspects in `gitk`, issue the following
 command during the bisection process (the subcommand `view` can be used
 as an alternative to `visualize`):
 
@@ -204,7 +204,7 @@ as an alternative to `visualize`):
 $ git bisect visualize
 ------------
 
-If the `DISPLAY` environment variable is not set, 'git log' is used
+If the `DISPLAY` environment variable is not set, `git log` is used
 instead.  You can also give command-line options such as `-p` and
 `--stat`.
 
@@ -344,7 +344,7 @@ header file, or "revision that does not have this commit needs this
 patch applied to work around another problem this bisection is not
 interested in") applied to the revision being tested.
 
-To cope with such a situation, after the inner 'git bisect' finds the
+To cope with such a situation, after the inner `git bisect` finds the
 next revision to test, the script can apply the patch
 before compiling, run the real test, and afterwards decide if the
 revision (possibly with the needed patch) passed the test and then
@@ -475,9 +475,9 @@ $ git bisect run sh -c '
 $ git bisect reset                   # quit the bisect session
 ------------
 +
-In this case, when 'git bisect run' finishes, bisect/bad will refer to a commit that
+In this case, when `git bisect run` finishes, bisect/bad will refer to a commit that
 has at least one parent whose reachable graph is fully traversable in the sense
-required by 'git pack objects'.
+required by `git pack objects`.
 
 * Look for a fix instead of a regression in the code
 +
@@ -502,7 +502,7 @@ help` or `git bisect -h` to get a long usage description.
 
 SEE ALSO
 --------
-link:git-bisect-lk2009.html[Fighting regressions with git bisect],
+link:git-bisect-lk2009.html[Fighting regressions with `git bisect`],
 linkgit:git-blame[1].
 
 GIT

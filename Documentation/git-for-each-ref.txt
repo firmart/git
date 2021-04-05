@@ -8,7 +8,7 @@ git-for-each-ref - Output information on each ref
 SYNOPSIS
 --------
 [verse]
-'git for-each-ref' [--count=<count>] [--shell|--perl|--python|--tcl]
+`git for-each-ref` [--count=<count>] [--shell|--perl|--python|--tcl]
 		   [(--sort=<key>)...] [--format=<format>] [<pattern>...]
 		   [--points-at=<object>]
 		   [--merged[=<object>]] [--no-merged[=<object>]]
@@ -125,7 +125,7 @@ objecttype::
 	The type of the object (`blob`, `tree`, `commit`, `tag`).
 
 objectsize::
-	The size of the object (the same as 'git cat-file -s' reports).
+	The size of the object (the same as `git cat-file -s` reports).
 	Append `:disk` to get the size, in bytes, that the object takes up on
 	disk. See the note about on-disk sizes in the `CAVEATS` section below.
 objectname::

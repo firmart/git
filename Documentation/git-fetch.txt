@@ -9,10 +9,10 @@ git-fetch - Download objects and refs from another repository
 SYNOPSIS
 --------
 [verse]
-'git fetch' [<options>] [<repository> [<refspec>...]]
-'git fetch' [<options>] <group>
-'git fetch' --multiple [<options>] [(<repository> | <group>)...]
-'git fetch' --all [<options>]
+`git fetch` [<options>] [<repository> [<refspec>...]]
+`git fetch` [<options>] <group>
+`git fetch` --multiple [<options>] [(<repository> | <group>)...]
+`git fetch` --all [<options>]
 
 
 DESCRIPTION
@@ -30,7 +30,7 @@ configuring `remote.<name>.tagOpt`.  By using a refspec that fetches tags
 explicitly, you can fetch tags that do not point into branches you
 are interested in as well.
 
-'git fetch' can fetch from either a single named repository or URL,
+`git fetch` can fetch from either a single named repository or URL,
 or from several repositories at once if <group> is given and
 there is a `remotes.<group>` entry in the configuration file.
 (See linkgit:git-config[1]).
@@ -40,7 +40,7 @@ unless there's an upstream branch configured for the current branch.
 
 The names of refs that are fetched, together with the object names
 they point at, are written to `.git/FETCH_HEAD`.  This information
-may be used by scripts or other git commands, such as linkgit:git-pull[1].
+may be used by scripts or other `git` commands, such as linkgit:git-pull[1].
 
 OPTIONS
 -------
@@ -193,7 +193,7 @@ $ git fetch <url of origin> --prune 'refs/tags/*:refs/tags/*'
 OUTPUT
 ------
 
-The output of "git fetch" depends on the transport method used; this
+The output of `git fetch` depends on the transport method used; this
 section describes the output when fetching over the Git protocol
 (either locally or via ssh) and Smart HTTP protocol.
 

@@ -51,7 +51,7 @@ OPTIONS
 
 --summary::
 	Instead of applying the patch, output a condensed
-	summary of information obtained from git diff extended
+	summary of information obtained from `git diff` extended
 	headers, such as creations, renames and mode changes.
 	Turns off "apply".
 
@@ -92,7 +92,7 @@ OPTIONS
 	with the `--reject` and the `--cached` options.
 
 --build-fake-ancestor=<file>::
-	Newer 'git diff' output has embedded 'index information'
+	Newer `git diff` output has embedded 'index information'
 	for each blob to help identify the original version that
 	the patch applies to.  When this flag is given, and if
 	the original versions of the blobs are available locally,
@@ -106,7 +106,7 @@ the information is read from the current index instead.
 	Apply the patch in reverse.
 
 --reject::
-	For atomicity, 'git apply' by default fails the whole patch and
+	For atomicity, `git apply` by default fails the whole patch and
 	does not touch the working tree when some of the hunks
 	do not apply.  This option makes it apply
 	the parts of the patch that are applicable, and leave the
@@ -133,7 +133,7 @@ linkgit:git-config[1]).
 	ever ignored.
 
 --unidiff-zero::
-	By default, 'git apply' expects that the patch being
+	By default, `git apply` expects that the patch being
 	applied is a unified diff with at least one line of context.
 	This provides good safety measures, but breaks down when
 	applying a diff generated with `--unified=0`. To bypass these
@@ -144,7 +144,7 @@ discouraged.
 
 --apply::
 	If you use any of the options marked "Turns off
-	'apply'" above, 'git apply' reads and outputs the
+	'apply'" above, `git apply` reads and outputs the
 	requested information without actually applying the
 	patch.  Give this flag after those flags to also apply
 	the patch.
@@ -243,7 +243,7 @@ running `git apply --directory=modules/git-gui`.
 --unsafe-paths::
 	By default, a patch that affects outside the working area
 	(either a Git controlled working tree, or the current working
-	directory when "git apply" is used as a replacement of GNU
+	directory when `git apply` is used as a replacement of GNU
 	patch) is rejected as a mistake (or a mischief).
 +
 When `git apply` is used as a "better GNU patch", the user can pass
@@ -263,7 +263,7 @@ apply.whitespace::
 
 SUBMODULES
 ----------
-If the patch contains any changes to submodules then 'git apply'
+If the patch contains any changes to submodules then `git apply`
 treats these changes as follows.
 
 If `--index` is specified (explicitly or implicitly), then the submodule

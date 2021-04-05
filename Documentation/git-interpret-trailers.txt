@@ -8,8 +8,8 @@ git-interpret-trailers - Add or parse structured information in commit messages
 SYNOPSIS
 --------
 [verse]
-'git interpret-trailers' [<options>] [(--trailer <token>[(=|:)<value>])...] [<file>...]
-'git interpret-trailers' [<options>] [--parse] [<file>...]
+`git interpret-trailers` [<options>] [(--trailer <token>[(=|:)<value>])...] [<file>...]
+`git interpret-trailers` [<options>] [--parse] [<file>...]
 
 DESCRIPTION
 -----------
@@ -138,7 +138,7 @@ trailer.separators::
 	This option tells which characters are recognized as trailer
 	separators. By default only ':' is recognized as a trailer
 	separator, except that '=' is always accepted on the command
-	line for compatibility with other git commands.
+	line for compatibility with other `git` commands.
 +
 The first character given by this option will be the default character
 used when another separator is not specified in the config for this
@@ -358,8 +358,8 @@ See-also: fe3187489d69c4 (subject of related commit)
 * Configure a commit template with some trailers with empty values
   (using sed to show and keep the trailing spaces at the end of the
   trailers), then configure a commit-msg hook that uses
-  'git interpret-trailers' to remove trailers with empty values and
-  to add a 'git-version' trailer:
+  `git interpret-trailers` to remove trailers with empty values and
+  to add a `git-version` trailer:
 +
 ------------
 $ sed -e 's/ Z$/ /' >commit_template.txt <<EOF

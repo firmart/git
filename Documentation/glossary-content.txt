@@ -53,7 +53,7 @@
 	In <<def_SCM,SCM>> jargon, "cherry pick" means to choose a subset of
 	changes out of a series of changes (typically commits) and record them
 	as a new series of changes on top of a different codebase. In Git, this is
-	performed by the "git cherry-pick" command to extract the change introduced
+	performed by the `git cherry-pick` command to extract the change introduced
 	by an existing <<def_commit,commit>> and to record it based on the tip
 	of the current <<def_branch,branch>> as a new commit.
 
@@ -308,8 +308,8 @@ This commit is referred to as a "merge commit", or sometimes just a
 [[def_pathspec]]pathspec::
 	Pattern used to limit paths in Git commands.
 +
-Pathspecs are used on the command line of "git ls-files", "git
-ls-tree", "git add", "git grep", "git diff", "git checkout",
+Pathspecs are used on the command line of `git ls-files`, `git
+ls-tree`, `git add`, `git grep`, `git diff`, `git checkout`,
 and many other commands to
 limit the scope of operations to some subset of the tree or
 worktree.  See the documentation of each command for whether
@@ -454,7 +454,7 @@ exclude;;
 [[def_pseudoref]]pseudoref::
 	Pseudorefs are a class of files under `$GIT_DIR` which behave
 	like refs for the purposes of rev-parse, but which are treated
-	specially by git.  Pseudorefs both have names that are all-caps,
+	specially by `git`.  Pseudorefs both have names that are all-caps,
 	and always start with a line consisting of a
 	<<def_SHA1,SHA-1>> followed by whitespace.  So, `HEAD` is not a
 	pseudoref, because it is sometimes a symbolic ref.  They might

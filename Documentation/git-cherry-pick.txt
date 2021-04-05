@@ -8,9 +8,9 @@ git-cherry-pick - Apply the changes introduced by some existing commits
 SYNOPSIS
 --------
 [verse]
-'git cherry-pick' [--edit] [-n] [-m parent-number] [-s] [-x] [--ff]
+`git cherry-pick` [--edit] [-n] [-m parent-number] [-s] [-x] [--ff]
 		  [-S[<keyid>]] <commit>...
-'git cherry-pick' (--continue | --skip | --abort | --quit)
+`git cherry-pick` (--continue | --skip | --abort | --quit)
 
 DESCRIPTION
 -----------
@@ -52,7 +52,7 @@ OPTIONS
 
 -e::
 --edit::
-	With this option, 'git cherry-pick' will let you edit the commit
+	With this option, `git cherry-pick` will let you edit the commit
 	message prior to committing.
 
 --cleanup=<mode>::

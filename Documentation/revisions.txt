@@ -7,7 +7,7 @@ syntax.  Here are various ways to spell object names.  The
 ones listed near the end of this list name trees and
 blobs contained in a commit.
 
-NOTE: This document shows the "raw" syntax as seen by git. The shell
+NOTE: This document shows the "raw" syntax as seen by `git`. The shell
 and other UIs might require additional quoting to protect special
 characters and to avoid word splitting.
 

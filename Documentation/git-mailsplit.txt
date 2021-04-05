@@ -8,7 +8,7 @@ git-mailsplit - Simple UNIX mbox splitter program
 SYNOPSIS
 --------
 [verse]
-'git mailsplit' [-b] [-f<nn>] [-d<prec>] [--keep-cr] [--mboxrd]
+`git mailsplit` [-b] [-f<nn>] [-d<prec>] [--keep-cr] [--mboxrd]
 		-o<directory> [--] [(<mbox>|<Maildir>)...]
 
 DESCRIPTION

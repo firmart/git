@@ -9,8 +9,8 @@ git-stripspace - Remove unnecessary whitespace
 SYNOPSIS
 --------
 [verse]
-'git stripspace' [-s | --strip-comments]
-'git stripspace' [-c | --comment-lines]
+`git stripspace` [-s | --strip-comments]
+`git stripspace` [-c | --comment-lines]
 
 DESCRIPTION
 -----------
@@ -64,7 +64,7 @@ Given the following noisy input with '$' indicating the end of a line:
 |  $
 ---------
 
-Use 'git stripspace' with no arguments to obtain:
+Use `git stripspace` with no arguments to obtain:
 
 ---------
 |A brief introduction$
@@ -78,7 +78,7 @@ Use 'git stripspace' with no arguments to obtain:
 |The end.$
 ---------
 
-Use 'git stripspace --strip-comments' to obtain:
+Use `git stripspace --strip-comments` to obtain:
 
 ---------
 |A brief introduction$

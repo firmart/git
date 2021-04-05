@@ -9,9 +9,9 @@ git-shell - Restricted login shell for Git-only SSH access
 SYNOPSIS
 --------
 [verse]
-'chsh' -s $(command -v git-shell) <user>
-'git clone' <user>`@localhost:/path/to/repo.git`
-'ssh' <user>`@localhost`
+`chsh` -s $(command -v git-shell) <user>
+`git clone` <user>`@localhost:/path/to/repo.git`
+`ssh` <user>`@localhost`
 
 DESCRIPTION
 -----------
@@ -24,18 +24,18 @@ named `git-shell-commands` in the user's home directory.
 COMMANDS
 --------
 
-'git shell' accepts the following commands after the `-c` option:
+`git shell` accepts the following commands after the `-c` option:
 
-'git receive-pack <argument>'::
-'git upload-pack <argument>'::
-'git upload-archive <argument>'::
+`git receive-pack <argument>`::
+`git upload-pack <argument>`::
+`git upload-archive <argument>`::
 	Call the corresponding server-side command to support
-	the client's 'git push', 'git fetch', or 'git archive --remote'
+	the client's `git push`, `git fetch`, or `git archive --remote`
 	request.
 'cvs server'::
 	Imitate a CVS server.  See linkgit:git-cvsserver[1].
 
-If a `~/git-shell-commands` directory is present, 'git shell' will
+If a `~/git-shell-commands` directory is present, `git shell` will
 also handle other, custom commands by running
 "`git-shell-commands/<command> <arguments>`" from the user's home
 directory.
@@ -46,7 +46,7 @@ INTERACTIVE USE
 By default, the commands above can be executed only with the `-c`
 option; the shell is not interactive.
 
-If a `~/git-shell-commands` directory is present, 'git shell'
+If a `~/git-shell-commands` directory is present, `git shell`
 can also be run interactively (with no arguments).  If a `help`
 command is present in the `git-shell-commands` directory, it is
 run to provide the user with an overview of allowed actions.  Then a
@@ -79,9 +79,9 @@ EOF
 $ chmod +x $HOME/git-shell-commands/no-interactive-login
 ----------------
 
-To enable git-cvsserver access (which should generally have the
+To enable `git-cvsserver` access (which should generally have the
 `no-interactive-login` example above as a prerequisite, as creating
-the git-shell-commands directory allows interactive logins):
+the `git-shell`-commands directory allows interactive logins):
 
 ----------------
 $ cat >$HOME/git-shell-commands/cvs <<\EOF

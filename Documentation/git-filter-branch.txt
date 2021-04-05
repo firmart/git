@@ -8,7 +8,7 @@ git-filter-branch - Rewrite branches
 SYNOPSIS
 --------
 [verse]
-'git filter-branch' [--setup <command>] [--subdirectory-filter <directory>]
+`git filter-branch` [--setup <command>] [--subdirectory-filter <directory>]
 	[--env-filter <command>] [--tree-filter <command>]
 	[--index-filter <command>] [--parent-filter <command>]
 	[--msg-filter <command>] [--commit-filter <command>]
@@ -18,13 +18,13 @@ SYNOPSIS
 
 WARNING
 -------
-'git filter-branch' has a plethora of pitfalls that can produce non-obvious
+`git filter-branch` has a plethora of pitfalls that can produce non-obvious
 manglings of the intended history rewrite (and can leave you with little
 time to investigate such problems since it has such abysmal performance).
 These safety and performance issues cannot be backward compatibly fixed and
 as such, its use is not recommended.  Please use an alternative history
 filtering tool such as https://github.com/newren/git-filter-repo/[git
-filter-repo].  If you still need to use 'git filter-branch', please
+filter-repo].  If you still need to use `git filter-branch`, please
 carefully read <<SAFETY>> (and <<PERFORMANCE>>) to learn about the land
 mines of filter-branch, and then vigilantly avoid as many of the hazards
 listed there as reasonably possible.
@@ -145,7 +145,7 @@ OPTIONS
 --commit-filter <command>::
 	This is the filter for performing the commit.
 	If this filter is specified, it will be called instead of the
-	'git commit-tree' command, with arguments of the form
+	`git commit-tree` command, with arguments of the form
 	"<TREE_ID> [(-p <PARENT_COMMIT_ID>)...]" and the log message on
 	stdin.  The commit id is expected on stdout.
 +
@@ -156,7 +156,7 @@ have all of them as parents.
 You can use the 'map' convenience function in this filter, and other
 convenience functions, too.  For example, calling 'skip_commit "$@"'
 will leave out the current commit (but not its changes! If you want
-that, use 'git rebase' instead).
+that, use `git rebase` instead).
 +
 You can also use the `git_commit_non_empty_tree "$@"` instead of
 `git commit-tree "$@"` if you don't wish to keep commits with a single parent
@@ -187,7 +187,7 @@ to other tags will be rewritten to point to the underlying commit.
 
 --prune-empty::
 	Some filters will generate empty commits that leave the tree untouched.
-	This option instructs git-filter-branch to remove such commits if they
+	This option instructs `git-filter-branch` to remove such commits if they
 	have exactly one or zero non-pruned parents; merge commits will
 	therefore remain intact.  This option cannot be used together with
 	`--commit-filter`, though the same effect can be achieved by using the
@@ -207,7 +207,7 @@ to other tags will be rewritten to point to the underlying commit.
 
 -f::
 --force::
-	'git filter-branch' refuses to start with an existing temporary
+	`git filter-branch` refuses to start with an existing temporary
 	directory or when there are already refs starting with
 	'refs/original/', unless forced.
 
@@ -218,10 +218,10 @@ to other tags will be rewritten to point to the underlying commit.
 	trees. If '<branch>' does not exist it will be created.
 
 <rev-list options>...::
-	Arguments for 'git rev-list'.  All positive refs included by
+	Arguments for `git rev-list`.  All positive refs included by
 	these options are rewritten.  You may also specify options
 	such as `--all`, but you must use `--` to separate them from
-	the 'git filter-branch' options. Implies <<Remap_to_ancestor>>.
+	the `git filter-branch` options. Implies <<Remap_to_ancestor>>.
 
 
 [[Remap_to_ancestor]]
@@ -257,7 +257,7 @@ However, if the file is absent from the tree of some commit,
 a simple `rm filename` will fail for that tree and commit.
 Thus you may instead want to use `rm -f filename` as the script.
 
-Using `--index-filter` with 'git rm' yields a significantly faster
+Using `--index-filter` with `git rm` yields a significantly faster
 version.  Like with using `rm filename`, `git rm --cached filename`
 will fail if the file is absent from the tree of a commit.  If you
 want to "completely forget" a file, it does not matter when it entered
@@ -341,10 +341,10 @@ as their parents instead of the merge commit.
 *NOTE* the changes introduced by the commits, and which are not reverted
 by subsequent commits, will still be in the rewritten branch. If you want
 to throw out _changes_ together with the commits, you should use the
-interactive mode of 'git rebase'.
+interactive mode of `git rebase`.
 
 You can rewrite the commit log messages using `--msg-filter`.  For
-example, 'git svn-id' strings in a repository created by 'git svn' can
+example, `git svn-id` strings in a repository created by `git svn` can
 be removed this way:
 
 -------------------------------------------------------
@@ -383,7 +383,7 @@ git filter-branch --env-filter '
 
 To restrict rewriting to only part of the history, specify a revision
 range in addition to the new branch name.  The new branch name will
-point to the top-most revision that a 'git rev-list' of this range
+point to the top-most revision that a `git rev-list` of this range
 will print.
 
 Consider this history:
@@ -422,7 +422,7 @@ git filter-branch --index-filter \
 CHECKLIST FOR SHRINKING A REPOSITORY
 ------------------------------------
 
-git-filter-branch can be used to get rid of a subset of files,
+`git-filter-branch` can be used to get rid of a subset of files,
 usually with some combination of `--index-filter` and
 `--subdirectory-filter`.  People expect the resulting repository to
 be smaller than the original, but you need a few more steps to
@@ -434,7 +434,7 @@ objects until you tell it to.  First make sure that:
   can help you find renames.
 
 * You really filtered all refs: use `--tag-name-filter cat -- --all`
-  when calling git-filter-branch.
+  when calling `git-filter-branch`.
 
 Then there are two ways to get a smaller repository.  A safer way is
 to clone, that keeps your original intact.
@@ -448,30 +448,30 @@ following points instead (in this order).  This is a very destructive
 approach, so *make a backup* or go back to cloning it.  You have been
 warned.
 
-* Remove the original refs backed up by git-filter-branch: say `git
+* Remove the original refs backed up by `git-filter-branch`: say `git
   for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git
   update-ref -d`.
 
 * Expire all reflogs with `git reflog expire --expire=now --all`.
 
 * Garbage collect all unreferenced objects with `git gc --prune=now`
-  (or if your git-gc is not new enough to support arguments to
+  (or if your `git-gc` is not new enough to support arguments to
   `--prune`, use `git repack -ad; git prune` instead).
 
 [[PERFORMANCE]]
 PERFORMANCE
 -----------
 
-The performance of git-filter-branch is glacially slow; its design makes it
+The performance of `git-filter-branch` is glacially slow; its design makes it
 impossible for a backward-compatible implementation to ever be fast:
 
-* In editing files, git-filter-branch by design checks out each and
+* In editing files, `git-filter-branch` by design checks out each and
   every commit as it existed in the original repo.  If your repo has
   `10^5` files and `10^5` commits, but each commit only modifies five
-  files, then git-filter-branch will make you do `10^10` modifications,
+  files, then `git-filter-branch` will make you do `10^10` modifications,
   despite only having (at most) `5*10^5` unique blobs.
 
-* If you try and cheat and try to make git-filter-branch only work on
+* If you try and cheat and try to make `git-filter-branch` only work on
   files modified in a commit, then two things happen
 
   ** you run into problems with deletions whenever the user is simply
@@ -490,16 +490,16 @@ impossible for a backward-compatible implementation to ever be fast:
   remove some and thus can avoid checking out each file (i.e. you can
   use --index-filter), you still are passing shell snippets for your
   filters.  This means that for every commit, you have to have a
-  prepared git repo where those filters can be run.  That's a
+  prepared `git` repo where those filters can be run.  That's a
   significant setup.
 
 * Further, several additional files are created or updated per commit
-  by git-filter-branch.  Some of these are for supporting the
-  convenience functions provided by git-filter-branch (such as map()),
+  by `git-filter-branch`.  Some of these are for supporting the
+  convenience functions provided by `git-filter-branch` (such as map()),
   while others are for keeping track of internal state (but could have
   also been accessed by user filters; one of git-filter-branch's
   regression tests does so).  This essentially amounts to using the
-  filesystem as an IPC mechanism between git-filter-branch and the
+  filesystem as an IPC mechanism between `git-filter-branch` and the
   user-provided filters.  Disks tend to be a slow IPC mechanism, and
   writing these files also effectively represents a forced
   synchronization point between separate processes that we hit with
@@ -511,46 +511,46 @@ impossible for a backward-compatible implementation to ever be fast:
   of time between operating systems, but on any platform it is very
   slow relative to invoking a function.
 
-* git-filter-branch itself is written in shell, which is kind of slow.
+* `git-filter-branch` itself is written in shell, which is kind of slow.
   This is the one performance issue that could be backward-compatibly
   fixed, but compared to the above problems that are intrinsic to the
-  design of git-filter-branch, the language of the tool itself is a
+  design of `git-filter-branch`, the language of the tool itself is a
   relatively minor issue.
 
   ** Side note: Unfortunately, people tend to fixate on the
-     written-in-shell aspect and periodically ask if git-filter-branch
+     written-in-shell aspect and periodically ask if `git-filter-branch`
      could be rewritten in another language to fix the performance
      issues.  Not only does that ignore the bigger intrinsic problems
      with the design, it'd help less than you'd expect: if
-     git-filter-branch itself were not shell, then the convenience
+     `git-filter-branch` itself were not shell, then the convenience
      functions (map(), skip_commit(), etc) and the `--setup` argument
      could no longer be executed once at the beginning of the program
      but would instead need to be prepended to every user filter (and
      thus re-executed with every commit).
 
 The https://github.com/newren/git-filter-repo/[git filter-repo] tool is
-an alternative to git-filter-branch which does not suffer from these
+an alternative to `git-filter-branch` which does not suffer from these
 performance problems or the safety problems (mentioned below). For those
-with existing tooling which relies upon git-filter-branch, 'git
-filter-repo' also provides
+with existing tooling which relies upon `git-filter-branch`, `git
+filter-repo` also provides
 https://github.com/newren/git-filter-repo/blob/master/contrib/filter-repo-demos/filter-lamely[filter-lamely],
-a drop-in git-filter-branch replacement (with a few caveats).  While
+a drop-in `git-filter-branch` replacement (with a few caveats).  While
 filter-lamely suffers from all the same safety issues as
-git-filter-branch, it at least ameliorates the performance issues a
+`git-filter-branch`, it at least ameliorates the performance issues a
 little.
 
 [[SAFETY]]
 SAFETY
 ------
 
-git-filter-branch is riddled with gotchas resulting in various ways to
+`git-filter-branch` is riddled with gotchas resulting in various ways to
 easily corrupt repos or end up with a mess worse than what you started
 with:
 
 * Someone can have a set of "working and tested filters" which they
   document or provide to a coworker, who then runs them on a different
   OS where the same commands are not working/tested (some examples in
-  the git-filter-branch manpage are also affected by this).
+  the `git-filter-branch` manpage are also affected by this).
   BSD vs. GNU userland differences can really bite.  If lucky, error
   messages are spewed.  But just as likely, the commands either don't
   do the filtering requested, or silently corrupt by making some
@@ -563,7 +563,7 @@ with:
 
 * Filenames with spaces are often mishandled by shell snippets since
   they cause problems for shell pipelines.  Not everyone is familiar
-  with find -print0, xargs -0, git-ls-files -z, etc.  Even people who
+  with `find -print0`, `xargs -0`, `git-ls-files -z`, etc.  Even people who
   are familiar with these may assume such flags are not relevant
   because someone else renamed any such files in their repo back
   before the person doing the filtering joined the project.  And
@@ -590,7 +590,7 @@ with:
   problem.)
 
 * It's far too easy to accidentally mix up old and new history.  It's
-  still possible with any tool, but git-filter-branch almost
+  still possible with any tool, but `git-filter-branch` almost
   invites it.  If lucky, the only downside is users getting frustrated
   that they don't know how to shrink their repo and remove the old
   stuff.  If unlucky, they merge old and new history and end up with
@@ -612,7 +612,7 @@ with:
      need to understand that they need to rebase their changes for all
      their branches on top of new history (or delete and reclone), but
      that's only one of multiple concerns to consider.  See the
-     "DISCUSSION" section of the git filter-repo manual page for more
+     "DISCUSSION" section of the `git filter-repo` manual page for more
      details.
 
 * Annotated tags can be accidentally converted to lightweight tags,
@@ -620,16 +620,16 @@ with:
 
   ** Someone can do a history rewrite, realize they messed up, restore
      from the backups in refs/original/, and then redo their
-     git-filter-branch command.  (The backup in refs/original/ is not a
+     `git-filter-branch` command.  (The backup in refs/original/ is not a
      real backup; it dereferences tags first.)
 
-  ** Running git-filter-branch with either `--tags` or `--all` in your
+  ** Running `git-filter-branch` with either `--tags` or `--all` in your
      <rev-list options>.  In order to retain annotated tags as
      annotated, you must use `--tag-name-filter` (and must not have
      restored from refs/original/ in a previously botched rewrite).
 
 * Any commit messages that specify an encoding will become corrupted
-  by the rewrite; git-filter-branch ignores the encoding, takes the
+  by the rewrite; `git-filter-branch` ignores the encoding, takes the
   original bytes, and feeds it to commit-tree without telling it the
   proper encoding.  (This happens whether or not `--msg-filter` is
   used.)
@@ -665,12 +665,12 @@ with:
   update authors and committers, missing taggers.
 
 * If the user provides a `--tag-name-filter` that maps multiple tags to
-  the same name, no warning or error is provided; git-filter-branch
+  the same name, no warning or error is provided; `git-filter-branch`
   simply overwrites each tag in some undocumented pre-defined order
-  resulting in only one tag at the end.  (A git-filter-branch
+  resulting in only one tag at the end.  (A `git-filter-branch`
   regression test requires this surprising behavior.)
 
-Also, the poor performance of git-filter-branch often leads to safety
+Also, the poor performance of `git-filter-branch` often leads to safety
 issues:
 
 * Coming up with the correct shell snippet to do the filtering you
@@ -681,7 +681,7 @@ issues:
   circumstances (spaces in filenames, non-ascii filenames, funny
   author names or emails, invalid timezones, presence of grafts or
   replace objects, etc.), meaning they may have to wait a long time,
-  hit an error, then restart.  The performance of git-filter-branch is
+  hit an error, then restart.  The performance of `git-filter-branch` is
   so bad that this cycle is painful, reducing the time available to
   carefully re-check (to say nothing about what it does to the
   patience of the person doing the rewrite even if they do technically

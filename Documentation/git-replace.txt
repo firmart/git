@@ -8,12 +8,12 @@ git-replace - Create, list, delete refs to replace objects
 SYNOPSIS
 --------
 [verse]
-'git replace' [-f] <object> <replacement>
-'git replace' [-f] --edit <object>
-'git replace' [-f] --graft <commit> [<parent>...]
-'git replace' [-f] --convert-graft-file
-'git replace' -d <object>...
-'git replace' [--format=<format>] [-l [<pattern>]]
+`git replace` [-f] <object> <replacement>
+`git replace` [-f] --edit <object>
+`git replace` [-f] --graft <commit> [<parent>...]
+`git replace` [-f] --convert-graft-file
+`git replace` -d <object>...
+`git replace` [--format=<format>] [-l [<pattern>]]
 
 DESCRIPTION
 -----------
@@ -36,7 +36,7 @@ except those doing reachability traversal (prune, pack transfer and
 fsck).
 
 It is possible to disable use of replacement references for any
-command using the `--no-replace-objects` option just after 'git'.
+command using the `--no-replace-objects` option just after `git`.
 
 For example if commit 'foo' has been replaced by commit 'bar':
 
@@ -100,7 +100,7 @@ OPTIONS
 --list <pattern>::
 	List replace refs for objects that match the given pattern (or
 	all if no pattern is given).
-	Typing "git replace" without arguments, also lists all replace
+	Typing `git replace` without arguments, also lists all replace
 	refs.
 
 --format=<format>::
@@ -124,9 +124,9 @@ CREATING REPLACEMENT OBJECTS
 ----------------------------
 
 linkgit:git-hash-object[1], linkgit:git-rebase[1], and
-https://github.com/newren/git-filter-repo[git-filter-repo], among other git commands, can be used to
+https://github.com/newren/git-filter-repo[git-filter-repo], among other `git` commands, can be used to
 create replacement objects from existing objects. The `--edit` option
-can also be used with 'git replace' to create a replacement object by
+can also be used with `git replace` to create a replacement object by
 editing an existing object.
 
 If you want to replace many blobs, trees or commits that are part of a
@@ -142,7 +142,7 @@ replace them will not work properly. And using `git reset --hard` to
 go back to a replaced commit will move the branch to the replacement
 commit instead of the replaced commit.
 
-There may be other problems when using 'git rev-list' related to
+There may be other problems when using `git rev-list` related to
 pending objects.
 
 SEE ALSO

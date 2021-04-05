@@ -8,8 +8,8 @@ git-revert - Revert some existing commits
 SYNOPSIS
 --------
 [verse]
-'git revert' [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<keyid>]] <commit>...
-'git revert' (--continue | --skip | --abort | --quit)
+`git revert` [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<keyid>]] <commit>...
+`git revert` (--continue | --skip | --abort | --quit)
 
 DESCRIPTION
 -----------
@@ -19,7 +19,7 @@ related patches introduce, and record some new commits that record
 them.  This requires your working tree to be clean (no modifications
 from the `HEAD` commit).
 
-Note: 'git revert' is used to record some new commits to reverse the
+Note: `git revert` is used to record some new commits to reverse the
 effect of some earlier commits (often only a faulty one).  If you want to
 throw away all uncommitted changes in your working directory, you
 should see linkgit:git-reset[1], particularly the `--hard` option.  If
@@ -43,7 +43,7 @@ OPTIONS
 
 -e::
 --edit::
-	With this option, 'git revert' will let you edit the commit
+	With this option, `git revert` will let you edit the commit
 	message prior to committing the revert. This is the default if
 	you run the command from a terminal.
 
@@ -64,7 +64,7 @@ See the link:howto/revert-a-faulty-merge.html[revert-a-faulty-merge How-To] for
 more details.
 
 --no-edit::
-	With this option, 'git revert' will not start the commit
+	With this option, `git revert` will not start the commit
 	message editor.
 
 --cleanup=<mode>::

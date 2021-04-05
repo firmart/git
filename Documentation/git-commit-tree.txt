@@ -9,8 +9,8 @@ git-commit-tree - Create a new commit object
 SYNOPSIS
 --------
 [verse]
-'git commit-tree' <tree> [(-p <parent>)...]
-'git commit-tree' [(-p <parent>)...] [-S[<keyid>]] [(-m <message>)...]
+`git commit-tree` <tree> [(-p <parent>)...]
+`git commit-tree` [(-p <parent>)...] [-S[<keyid>]] [(-m <message>)...]
 		  [(-F <file>)...] <tree>
 
 
@@ -77,7 +77,7 @@ A commit encapsulates:
 - committer name and email and the commit time.
 
 A commit comment is read from stdin. If a changelog
-entry is not provided via "<" redirection, 'git commit-tree' will just wait
+entry is not provided via "<" redirection, `git commit-tree` will just wait
 for one to be entered and terminated with ^D.
 
 include::date-formats.txt[]

@@ -9,21 +9,21 @@ git-worktree - Manage multiple working trees
 SYNOPSIS
 --------
 [verse]
-'git worktree add' [-f] [--detach] [--checkout] [--lock] [-b <new-branch>] <path> [<commit-ish>]
-'git worktree list' [--porcelain]
-'git worktree lock' [--reason <string>] <worktree>
-'git worktree move' <worktree> <new-path>
-'git worktree prune' [-n] [-v] [--expire <expire>]
-'git worktree remove' [-f] <worktree>
-'git worktree repair' [<path>...]
-'git worktree unlock' <worktree>
+`git worktree add` [-f] [--detach] [--checkout] [--lock] [-b <new-branch>] <path> [<commit-ish>]
+`git worktree list` [--porcelain]
+`git worktree lock` [--reason <string>] <worktree>
+`git worktree move` <worktree> <new-path>
+`git worktree prune` [-n] [-v] [--expire <expire>]
+`git worktree remove` [-f] <worktree>
+`git worktree repair` [<path>...]
+`git worktree unlock` <worktree>
 
 DESCRIPTION
 -----------
 
 Manage multiple working trees attached to the same repository.
 
-A git repository can support multiple working trees, allowing you to check
+A `git` repository can support multiple working trees, allowing you to check
 out more than one branch at a time.  With `git worktree add` a new working
 tree is associated with the repository.  This new working tree is called a
 "linked working tree" as opposed to the "main working tree" prepared by

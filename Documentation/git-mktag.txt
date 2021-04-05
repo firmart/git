@@ -9,7 +9,7 @@ git-mktag - Creates a tag object with extra validation
 SYNOPSIS
 --------
 [verse]
-'git mktag'
+`git mktag`
 
 OPTIONS
 -------

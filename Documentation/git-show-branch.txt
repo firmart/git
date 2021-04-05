@@ -8,12 +8,12 @@ git-show-branch - Show branches and their commits
 SYNOPSIS
 --------
 [verse]
-'git show-branch' [-a|--all] [-r|--remotes] [--topo-order | --date-order]
+`git show-branch` [-a|--all] [-r|--remotes] [--topo-order | --date-order]
 		[--current] [--color[=<when>] | --no-color] [--sparse]
 		[--more=<n> | --list | --independent | --merge-base]
 		[--no-name | --sha1-name] [--topics]
 		[(<rev> | <glob>)...]
-'git show-branch' (-g|--reflog)[=<n>[,<base>]] [--list] [<ref>]
+`git show-branch` (-g|--reflog)[=<n>[,<base>]] [--list] [<ref>]
 
 DESCRIPTION
 -----------
@@ -104,9 +104,9 @@ OPTIONS
 	Shows only commits that are NOT on the first branch given.
 	This helps track topic branches by hiding any commit that
 	is already in the main line of development.  When given
-	"git show-branch --topics master topic1 topic2", this
-	will show the revisions given by "git rev-list {caret}master
-	topic1 topic2"
+	`git show-branch --topics master topic1 topic2`, this
+	will show the revisions given by `git rev-list {caret}master
+	topic1 topic2`
 
 -g::
 --reflog[=<n>[,<base>]] [<ref>]::
@@ -144,8 +144,8 @@ otherwise it shows a space.  Merge commits are denoted by
 a `-` sign.  Each commit shows a short name that
 can be used as an extended SHA-1 to name that commit.
 
-The following example shows three branches, "master", "fixes"
-and "mhf":
+The following example shows three branches, `master`, `fixes`
+and `mhf`:
 
 ------------------------------------------------
 $ git show-branch master fixes mhf
@@ -167,10 +167,10 @@ $ git show-branch master fixes mhf
 ------------------------------------------------
 
 These three branches all forked from a common commit, [master],
-whose commit message is "Add \'git show-branch'".
-The "fixes" branch adds one commit "Introduce "reset type" flag to
-"git reset"". The "mhf" branch adds many other commits.
-The current branch is "master".
+whose commit message is "Add `git show-branch`".
+The `fixes` branch adds one commit "Introduce "reset type" flag to
+`git reset`". The `mhf` branch adds many other commits.
+The current branch is `master`.
 
 
 EXAMPLES

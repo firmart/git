@@ -17,12 +17,12 @@ export CVS_SERVER="git cvsserver"
 pserver (/etc/inetd.conf):
 
 [verse]
-cvspserver stream tcp nowait nobody /usr/bin/git-cvsserver git-cvsserver pserver
+cvspserver stream tcp nowait nobody /usr/bin/git-cvsserver `git-cvsserver` pserver
 
 Usage:
 
 [verse]
-'git-cvsserver' [<options>] [pserver|server] [<directory> ...]
+`git-cvsserver` [<options>] [pserver|server] [<directory> ...]
 
 OPTIONS
 -------
@@ -74,7 +74,7 @@ LIMITATIONS
 
 CVS clients cannot tag, branch or perform Git merges.
 
-'git-cvsserver' maps Git branches to CVS modules. This is very different
+`git-cvsserver` maps Git branches to CVS modules. This is very different
 from what most CVS users would expect since in CVS modules usually represent
 one or more directories.
 
@@ -132,7 +132,7 @@ Then provide your password via the pserver method, for example:
 ------
 No special setup is needed for SSH access, other than having Git tools
 in the PATH. If you have clients that do not accept the CVS_SERVER
-environment variable, you can rename 'git-cvsserver' to `cvs`.
+environment variable, you can rename `git-cvsserver` to `cvs`.
 
 Note: Newer CVS versions (>= 1.12.11) also support specifying
 CVS_SERVER directly in CVSROOT like
@@ -142,9 +142,9 @@ cvs -d ":ext;CVS_SERVER=git cvsserver:user@server/path/repo.git" co <HEAD_name>
 ------
 This has the advantage that it will be saved in your 'CVS/Root' files and
 you don't need to worry about always setting the correct environment
-variable.  SSH users restricted to 'git-shell' don't need to override the default
-with CVS_SERVER (and shouldn't) as 'git-shell' understands `cvs` to mean
-'git-cvsserver' and pretends that the other end runs the real 'cvs' better.
+variable.  SSH users restricted to `git-shell` don't need to override the default
+with CVS_SERVER (and shouldn't) as `git-shell` understands `cvs` to mean
+`git-cvsserver` and pretends that the other end runs the real 'cvs' better.
 --
 2. For each repo that you want accessible from CVS you need to edit config in
    the repo and add the following section.
@@ -157,7 +157,7 @@ with CVS_SERVER (and shouldn't) as 'git-shell' understands `cvs` to mean
 	logFile=/path/to/logfile
 
 ------
-Note: you need to ensure each user that is going to invoke 'git-cvsserver' has
+Note: you need to ensure each user that is going to invoke `git-cvsserver` has
 write access to the log file and to the database (see
 <<dbbackend,Database Backend>>. If you want to offer write access over
 SSH, the users of course also need write access to the Git repository itself.
@@ -182,7 +182,7 @@ allowing access over SSH.
    automatically saving it in your 'CVS/Root' files, then you need to set them
    explicitly in your environment.  CVSROOT should be set as per normal, but the
    directory should point at the appropriate Git repo.  As above, for SSH clients
-   _not_ restricted to 'git-shell', CVS_SERVER should be set to 'git-cvsserver'.
+   _not_ restricted to `git-shell`, CVS_SERVER should be set to `git-cvsserver`.
 +
 --
 ------
@@ -210,32 +210,32 @@ allowing access over SSH.
 DATABASE BACKEND
 ----------------
 
-'git-cvsserver' uses one database per Git head (i.e. CVS module) to
+`git-cvsserver` uses one database per Git head (i.e. CVS module) to
 store information about the repository to maintain consistent
 CVS revision numbers. The database needs to be
 updated (i.e. written to) after every commit.
 
 If the commit is done directly by using `git` (as opposed to
-using 'git-cvsserver') the update will need to happen on the
-next repository access by 'git-cvsserver', independent of
+using `git-cvsserver`) the update will need to happen on the
+next repository access by `git-cvsserver`, independent of
 access method and requested operation.
 
 That means that even if you offer only read access (e.g. by using
-the pserver method), 'git-cvsserver' should have write access to
+the pserver method), `git-cvsserver` should have write access to
 the database to work reliably (otherwise you need to make sure
-that the database is up to date any time 'git-cvsserver' is executed).
+that the database is up to date any time `git-cvsserver` is executed).
 
 By default it uses SQLite databases in the Git directory, named
 `gitcvs.<module_name>.sqlite`. Note that the SQLite backend creates
 temporary files in the same directory as the database file on
 write so it might not be enough to grant the users using
-'git-cvsserver' write access to the database file without granting
+`git-cvsserver` write access to the database file without granting
 them write access to the directory, too.
 
 The database cannot be reliably regenerated in a
 consistent form after the branch it is tracking has changed.
-Example: For merged branches, 'git-cvsserver' only tracks
-one branch of development, and after a 'git merge' an
+Example: For merged branches, `git-cvsserver` only tracks
+one branch of development, and after a `git merge` an
 incrementally updated database may track a different branch
 than a database regenerated from scratch, causing inconsistent
 CVS revision numbers. `git-cvsserver` has no way of knowing which
@@ -250,7 +250,7 @@ configuration variables:
 Configuring database backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-'git-cvsserver' uses the Perl DBI module. Please also read
+`git-cvsserver` uses the Perl DBI module. Please also read
 its documentation if changing these variables, especially
 about `DBI->connect()`.
 
@@ -302,7 +302,7 @@ In `dbDriver` and `dbUser` you can use the following variables:
 %a::
 	access method (one of "ext" or "pserver")
 %u::
-	Name of the user running 'git-cvsserver'.
+	Name of the user running `git-cvsserver`.
 	If no name can be determined, the
 	numeric uid is used.
 
@@ -310,13 +310,13 @@ ENVIRONMENT
 -----------
 
 These variables obviate the need for command-line options in some
-circumstances, allowing easier restricted usage through git-shell.
+circumstances, allowing easier restricted usage through `git-shell`.
 
 GIT_CVSSERVER_BASE_PATH takes the place of the argument to `--base-path`.
 
 GIT_CVSSERVER_ROOT specifies a single-directory whitelist. The
 repository must still be configured to allow access through
-git-cvsserver, as described above.
+`git-cvsserver`, as described above.
 
 When these environment variables are set, the corresponding
 command-line arguments may not be used.
@@ -343,8 +343,8 @@ you will definitely want to have SSH keys setup.
 
 Alternatively, you can just use the non-standard extssh protocol that Eclipse
 offer. In that case CVS_SERVER is ignored, and you will have to replace
-the cvs utility on the server with 'git-cvsserver' or manipulate your `.bashrc`
-so that calling 'cvs' effectively calls 'git-cvsserver'.
+the cvs utility on the server with `git-cvsserver` or manipulate your `.bashrc`
+so that calling 'cvs' effectively calls `git-cvsserver`.
 
 CLIENTS KNOWN TO WORK
 ---------------------
@@ -361,12 +361,12 @@ All the operations required for normal use are supported, including
 checkout, diff, status, update, log, add, remove, commit.
 
 Most CVS command arguments that read CVS tags or revision numbers
-(typically `-r`) work, and also support any git refspec
+(typically `-r`) work, and also support any `git` refspec
 (tag, branch, commit ID, etc).
 However, CVS revision numbers for non-default branches are not well
 emulated, and cvs log does not show tags or branches at
 all.  (Non-main-branch CVS revision numbers superficially resemble CVS
-revision numbers, but they actually encode a git commit ID directly,
+revision numbers, but they actually encode a `git` commit ID directly,
 rather than represent the number of revisions since the branch point.)
 
 Note that there are two ways to checkout a particular branch.
@@ -383,9 +383,9 @@ operations against that main branch are fast.  Or alternatively,
 -r doesn't take any extra disk space, but may be significantly slower for
 many operations, like cvs update.
 
-If you want to refer to a git refspec that has characters that are
+If you want to refer to a `git` refspec that has characters that are
 not allowed by CVS, you have two options.  First, it may just work
-to supply the git refspec directly to the appropriate CVS `-r` argument;
+to supply the `git` refspec directly to the appropriate CVS `-r` argument;
 some CVS clients don't seem to do much sanity checking of the argument.
 Second, if that fails, you can use a special character escape mechanism
 that only uses characters that are valid in CVS tags.  A sequence
@@ -426,7 +426,7 @@ and `gitcvs.allBinary` to "guess".
 
 DEPENDENCIES
 ------------
-'git-cvsserver' depends on DBD::SQLite.
+`git-cvsserver` depends on DBD::SQLite.
 
 GIT
 ---

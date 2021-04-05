@@ -9,7 +9,7 @@ git-reflog - Manage reflog information
 SYNOPSIS
 --------
 [verse]
-'git reflog' <subcommand> <options>
+`git reflog` <subcommand> <options>
 
 DESCRIPTION
 -----------
@@ -17,13 +17,13 @@ The command takes various subcommands, and different options
 depending on the subcommand:
 
 [verse]
-'git reflog' ['show'] [log-options] [<ref>]
-'git reflog expire' [--expire=<time>] [--expire-unreachable=<time>]
+`git reflog` ['show'] [log-options] [<ref>]
+`git reflog expire` [--expire=<time>] [--expire-unreachable=<time>]
 	[--rewrite] [--updateref] [--stale-fix]
 	[--dry-run | -n] [--verbose] [--all [--single-worktree] | <refs>...]
-'git reflog delete' [--rewrite] [--updateref]
+`git reflog delete` [--rewrite] [--updateref]
 	[--dry-run | -n] [--verbose] ref@\{specifier\}...
-'git reflog exists' <ref>
+`git reflog exists` <ref>
 
 Reference logs, or "reflogs", record when the tips of branches and
 other references were updated in the local repository. Reflogs are
@@ -112,7 +112,7 @@ Options for `expire`
 	a missing commit, tree, or blob object.
 +
 This computation involves traversing all the reachable objects, i.e. it
-has the same cost as 'git prune'.  It is primarily intended to fix
+has the same cost as `git prune`.  It is primarily intended to fix
 corruption caused by garbage collecting using older versions of Git,
 which didn't protect objects referred to by reflogs.
 

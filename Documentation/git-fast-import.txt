@@ -9,14 +9,14 @@ git-fast-import - Backend for fast Git data importers
 SYNOPSIS
 --------
 [verse]
-frontend | 'git fast-import' [<options>]
+frontend | `git fast-import` [<options>]
 
 DESCRIPTION
 -----------
 This program is usually not what the end user wants to run directly.
 Most end users want to use one of the existing frontend programs,
 which parses a specific type of foreign source and feeds the contents
-stored there to 'git fast-import'.
+stored there to `git fast-import`.
 
 fast-import reads a mixed command/data stream from standard input and
 writes one or more packfiles directly into the current repository.
@@ -25,7 +25,7 @@ updated branch and tag refs, fully updating the current repository
 with the newly imported data.
 
 The fast-import backend itself can import into an empty repository (one that
-has already been initialized by 'git init') or incrementally
+has already been initialized by `git init`) or incrementally
 update an existing populated repository.  Whether or not incremental
 imports are supported from a particular foreign source depends on
 the frontend program in use.
@@ -115,7 +115,7 @@ Locations of Marks Files
 	After specifying `--relative-marks` the paths specified
 	with `--import-marks`= and `--export-marks`= are relative
 	to an internal directory in the current repository.
-	In git-fast-import this means that the paths are relative
+	In `git-fast-import` this means that the paths are relative
 	to the .git/info/fast-import directory. However, other
 	importers may use a different location.
 +
@@ -166,7 +166,7 @@ Performance and Compression Tuning
 	This information may be useful after importing projects
 	whose total object set exceeds the 4 GiB packfile limit,
 	as these commits can be used as edge points during calls
-	to 'git pack-objects'.
+	to `git pack-objects`.
 
 --max-pack-size=<n>::
 	Maximum size of each output packfile.
@@ -203,9 +203,9 @@ an ideal situation, given that most conversion tools are throw-away
 
 PARALLEL OPERATION
 ------------------
-Like 'git push' or 'git fetch', imports handled by fast-import are safe to
+Like `git push` or `git fetch`, imports handled by fast-import are safe to
 run alongside parallel `git repack -a -d` or `git gc` invocations,
-or any other Git operation (including 'git prune', as loose objects
+or any other Git operation (including `git prune`, as loose objects
 are never used by fast-import).
 
 fast-import does not lock the branch or tag refs it is actively importing.
@@ -307,7 +307,7 @@ and some sanity checks on the numeric values may also be performed.
 +
 An example value is ``Tue Feb 6 11:22:18 2007 -0500''.  The Git
 parser is accurate, but a little on the lenient side.  It is the
-same parser used by 'git am' when applying patches
+same parser used by `git am` when applying patches
 received from email.
 +
 Some malformed strings may be accepted as valid dates.  In some of
@@ -343,7 +343,7 @@ time zone.
 This particular format is supplied as it's short to implement and
 may be useful to a process that wants to create a new commit
 right now, without needing to use a working directory or
-'git update-index'.
+`git update-index`.
 +
 If separate `author` and `committer` commands are used in a `commit`
 the timestamps may not match, as the system clock will be polled
@@ -509,7 +509,7 @@ their syntax.
 ^^^^^^^^^^
 The optional `encoding` command indicates the encoding of the commit
 message.  Most commits are UTF-8 and the encoding is omitted, but this
-allows importing commit messages into git without first reencoding them.
+allows importing commit messages into `git` without first reencoding them.
 
 `from`
 ^^^^^^
@@ -859,7 +859,7 @@ recommended, as the frontend does not (easily) have access to the
 complete set of bytes which normally goes into such a signature.
 If signing is required, create lightweight tags from within fast-import with
 `reset`, then create the annotated versions of those tags offline
-with the standard 'git tag' process.
+with the standard `git tag` process.
 
 `reset`
 ~~~~~~~
@@ -1120,7 +1120,7 @@ The <dataref> represents the blob, tree, or commit object at <path>
 and can be used in later 'get-mark', 'cat-blob', 'filemodify', or
 'ls' commands.
 
-If there is no file or subtree at that path, 'git fast-import' will
+If there is no file or subtree at that path, `git fast-import` will
 instead report
 
 ====
@@ -1183,14 +1183,14 @@ done::
 	abruptly at a convenient point in the stream can go
 	undetected.  This may occur, for example, if an import
 	front end dies in mid-operation without emitting SIGTERM
-	or SIGKILL at its subordinate git fast-import instance.
+	or SIGKILL at its subordinate `git fast-import` instance.
 
 `option`
 ~~~~~~~~
-Processes the specified option so that git fast-import behaves in a
+Processes the specified option so that `git fast-import` behaves in a
 way that suits the frontend's needs.
 Note that options specified by the frontend are overridden by any
-options the user may specify to git fast-import itself.
+options the user may specify to `git fast-import` itself.
 
 ....
     'option' SP <option> LF
@@ -1396,7 +1396,7 @@ is not `refs/heads/TAG_FIXUP`).
 
 When committing fixups, consider using `merge` to connect the
 commit(s) which are supplying file revisions to the fixup branch.
-Doing so will allow tools such as 'git blame' to track
+Doing so will allow tools such as `git blame` to track
 through the real commit history and properly annotate the source
 files.
 
@@ -1425,7 +1425,7 @@ Repacking Historical Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 If you are repacking very old imported data (e.g. older than the
 last year), consider expending some extra CPU time and supplying
-`--window=50` (or higher) when you run 'git repack'.
+`--window=50` (or higher) when you run `git repack`.
 This will take longer, but will also produce a smaller packfile.
 You only need to expend the effort once, and everyone using your
 project will benefit from the smaller repository.
@@ -1558,7 +1558,7 @@ memory footprint (less than 2.7 MiB per active branch).
 
 SIGNALS
 -------
-Sending *SIGUSR1* to the 'git fast-import' process ends the current
+Sending *SIGUSR1* to the `git fast-import` process ends the current
 packfile early, simulating a `checkpoint` command.  The impatient
 operator can use this facility to peek at the objects and refs from an
 import in progress, at the cost of some added running time and worse

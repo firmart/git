@@ -9,7 +9,7 @@ git-pull - Fetch from and integrate with another repository or a local branch
 SYNOPSIS
 --------
 [verse]
-'git pull' [<options>] [<repository> [<refspec>...]]
+`git pull` [<options>] [<repository> [<refspec>...]]
 
 
 DESCRIPTION
@@ -19,10 +19,10 @@ Incorporates changes from a remote repository into the current
 branch.  In its default mode, `git pull` is shorthand for
 `git fetch` followed by `git merge FETCH_HEAD`.
 
-More precisely, 'git pull' runs 'git fetch' with the given
-parameters and calls 'git merge' to merge the retrieved branch
+More precisely, `git pull` runs `git fetch` with the given
+parameters and calls `git merge` to merge the retrieved branch
 heads into the current branch.
-With `--rebase`, it runs 'git rebase' instead of 'git merge'.
+With `--rebase`, it runs `git rebase` instead of `git merge`.
 
 <repository> should be the name of a remote repository as
 passed to linkgit:git-fetch[1].  <refspec> can name an
@@ -62,7 +62,7 @@ See linkgit:git-merge[1] for details, including how conflicts
 are presented and handled.
 
 In Git 1.7.0 or later, to cancel a conflicting merge, use
-`git reset --merge`.  *Warning*: In older versions of Git, running 'git pull'
+`git reset --merge`.  *Warning*: In older versions of Git, running `git pull`
 with uncommitted changes is discouraged: while possible, it leaves you
 in a state that may be hard to back out of in the case of a conflict.
 
@@ -76,13 +76,13 @@ OPTIONS
 
 -q::
 --quiet::
-	This is passed to both underlying git-fetch to squelch reporting of
-	during transfer, and underlying git-merge to squelch output during
+	This is passed to both underlying `git-fetch` to squelch reporting of
+	during transfer, and underlying `git-merge` to squelch output during
 	merging.
 
 -v::
 --verbose::
-	Pass `--verbose` to git-fetch and git-merge.
+	Pass `--verbose` to `git-fetch` and `git-merge`.
 
 --[no-]recurse-submodules[=yes|on-demand|no]::
 	This option controls if new commits of populated submodules should
@@ -232,7 +232,7 @@ $ git merge origin/next
 
 
 If you tried a pull which resulted in complex conflicts and
-would want to start over, you can recover with 'git reset'.
+would want to start over, you can recover with `git reset`.
 
 
 include::transfer-data-leaks.txt[]

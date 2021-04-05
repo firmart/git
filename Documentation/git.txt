@@ -9,7 +9,7 @@ git - the stupid content tracker
 SYNOPSIS
 --------
 [verse]
-'git' [--version] [--help] [-C <path>] [-c <name>=<value>]
+`git` [--version] [--help] [-C <path>] [-c <name>=<value>]
     [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
     [-p|--paginate|-P|--no-pager] [--no-replace-objects] [--bare]
     [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
@@ -29,7 +29,7 @@ in-depth introduction.
 
 After you mastered the basic concepts, you can come back to this
 page to learn what commands Git offers.  You can learn more about
-individual Git commands with "git help command".  linkgit:gitcli[7]
+individual Git commands with `git help command`.  linkgit:gitcli[7]
 manual page gives you an overview of the command-line command syntax.
 
 A formatted and hyperlinked copy of the latest Git documentation
@@ -40,7 +40,7 @@ or https://git-scm.com/docs.
 OPTIONS
 -------
 --version::
-	Prints the Git suite version that the 'git' program came from.
+	Prints the Git suite version that the `git` program came from.
 
 --help::
 	Prints the synopsis and a list of the most commonly used
@@ -54,7 +54,7 @@ because `git --help ...` is converted internally into `git
 help ...`.
 
 -C <path>::
-	Run as if git was started in '<path>' instead of the current working
+	Run as if `git` was started in '<path>' instead of the current working
 	directory.  When multiple `-C` options are given, each subsequent
 	non-absolute `-C <path>` is interpreted relative to the preceding `-C
 	<path>`.  If '<path>' is present but empty, e.g. `-C ""`, then the
@@ -72,7 +72,7 @@ example the following invocations are equivalent:
 	Pass a configuration parameter to the command. The value
 	given will override values from configuration files.
 	The <name> is expected in the same format as listed by
-	'git config' (subkeys separated by dots).
+	`git config` (subkeys separated by dots).
 +
 Note that omitting the `=` in `git -c foo.bar ...` is allowed and sets
 `foo.bar` to the boolean true value (just like `[foo]bar` would in a
@@ -91,7 +91,7 @@ foo.bar= ...`) sets `foo.bar` to the empty string which `git config
 	to avoid ambiguity with `<name>` containing one.
 +
 This is useful for cases where you want to pass transitory
-configuration options to git, but are doing so on OS's where
+configuration options to `git`, but are doing so on OS's where
 other processes might be able to read your cmdline
 (e.g. `/proc/self/cmdline`), but not your environ
 (e.g. `/proc/self/environ`). That behavior is the default on
@@ -105,7 +105,7 @@ sensitive information can be part of the key.
 --exec-path[=<path>]::
 	Path to wherever your core Git programs are installed.
 	This can also be controlled by setting the GIT_EXEC_PATH
-	environment variable. If no path is given, 'git' will print
+	environment variable. If no path is given, `git` will print
 	the current setting and then exit.
 
 --html-path::
@@ -147,7 +147,7 @@ should tell Git where the top-level of the working tree is,
 with the `--work-tree=<path>` option (or `GIT_WORK_TREE`
 environment variable)
 +
-If you just want to run git as if it was started in `<path>` then use
+If you just want to run `git` as if it was started in `<path>` then use
 `git -C <path>`.
 
 --work-tree=<path>::
@@ -207,7 +207,7 @@ If you just want to run git as if it was started in `<path>` then use
 	option and may change or be removed in the future. Supported
 	groups are: builtins, parseopt (builtin commands that use
 	parse-options), main (all commands in libexec directory),
-	others (all other commands in `$PATH` that have git- prefix),
+	others (all other commands in `$PATH` that have `git`- prefix),
 	list-<category> (see categories in command-list.txt),
 	nohelpers (exclude helper commands), alias and config
 	(retrieve command list from config variable `completion.commands`)
@@ -588,7 +588,7 @@ where:
 	<old|new>-mode:: are the octal representation of the file modes.
 +
 The file parameters can point at the user's working file
-(e.g. `new-file` in "git-diff-files"), `/dev/null` (e.g. `old-file`
+(e.g. `new-file` in `git-diff-files`), `/dev/null` (e.g. `old-file`
 when a new file is added), or a temporary file (e.g. `old-file` in the
 index).  `GIT_EXTERNAL_DIFF` should not worry about unlinking the
 temporary file --- it is removed when `GIT_EXTERNAL_DIFF` exits.
@@ -636,8 +636,8 @@ other
 
 `GIT_SSH`::
 `GIT_SSH_COMMAND`::
-	If either of these environment variables is set then 'git fetch'
-	and 'git push' will use the specified command instead of 'ssh'
+	If either of these environment variables is set then `git fetch`
+	and `git push` will use the specified command instead of 'ssh'
 	when they need to connect to a remote system.
 	The command-line parameters passed to the configured command are
 	determined by the ssh variant.  See `ssh.variant` option in
@@ -667,7 +667,7 @@ for further details.
 	option in linkgit:git-config[1].
 
 `GIT_TERMINAL_PROMPT`::
-	If this environment variable is set to `0`, git will not prompt
+	If this environment variable is set to `0`, `git` will not prompt
 	on the terminal (e.g., when asking for HTTP authentication).
 
 `GIT_CONFIG_NOSYSTEM`::
@@ -680,8 +680,8 @@ for further details.
 
 `GIT_FLUSH`::
 	If this environment variable is set to "1", then commands such
-	as 'git blame' (in incremental mode), 'git rev-list', 'git log',
-	'git check-attr' and 'git check-ignore' will
+	as `git blame` (in incremental mode), `git rev-list`, `git log`,
+	`git check-attr` and `git check-ignore` will
 	force a flush of the output stream after each record have been
 	flushed. If this
 	variable is set to "0", the output of these commands will be done
@@ -760,7 +760,7 @@ of clones and fetches.
 
 `GIT_TRACE_CURL`::
 	Enables a curl full trace dump of all incoming and outgoing data,
-	including descriptive information, of the git transport protocol.
+	including descriptive information, of the `git` transport protocol.
 	This is similar to doing curl `--trace-ascii` on the command line.
 	See `GIT_TRACE` for available trace output options.
 
@@ -855,7 +855,7 @@ for full details.
 `GIT_REF_PARANOIA`::
 	If set to `1`, include broken or badly named refs when iterating
 	over lists of refs. In a normal, non-corrupted repository, this
-	does nothing. However, enabling it may help git to detect and
+	does nothing. However, enabling it may help `git` to detect and
 	abort some operations in the presence of broken refs. Git sets
 	this variable automatically when performing destructive
 	operations like linkgit:git-prune[1]. You should not need to set
@@ -876,7 +876,7 @@ for full details.
 	Set to 0 to prevent protocols used by fetch/push/clone which are
 	configured to the `user` state.  This is useful to restrict recursive
 	submodule initialization from an untrusted repository or for programs
-	which feed potentially-untrusted URLS to git commands.  See
+	which feed potentially-untrusted URLS to `git` commands.  See
 	linkgit:git-config[1] for more details.
 
 `GIT_PROTOCOL`::

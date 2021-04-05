@@ -9,7 +9,7 @@ git-repack - Pack unpacked objects in a repository
 SYNOPSIS
 --------
 [verse]
-'git repack' [-a] [-A] [-d] [-f] [-F] [-l] [-n] [-q] [-b] [--window=<n>] [--depth=<n>] [--threads=<n>] [--keep-pack=<pack-name>]
+`git repack` [-a] [-A] [-d] [-f] [-F] [-l] [-n] [-q] [-b] [--window=<n>] [--depth=<n>] [--threads=<n>] [--keep-pack=<pack-name>]
 
 DESCRIPTION
 -----------
@@ -55,16 +55,16 @@ to the new separate pack will be written.
 	deleted by way of being left in the old pack and then
 	removed.  Instead, the loose unreachable objects
 	will be pruned according to normal expiry rules
-	with the next 'git gc' invocation. See linkgit:git-gc[1].
+	with the next `git gc` invocation. See linkgit:git-gc[1].
 
 -d::
 	After packing, if the newly created packs make some
 	existing packs redundant, remove the redundant packs.
-	Also run  'git prune-packed' to remove redundant
+	Also run  `git prune-packed` to remove redundant
 	loose object files.
 
 -l::
-	Pass the `--local` option to 'git pack-objects'. See
+	Pass the `--local` option to `git pack-objects`. See
 	linkgit:git-pack-objects[1].
 
 -f::
@@ -76,12 +76,12 @@ to the new separate pack will be written.
 	linkgit:git-pack-objects[1].
 
 -q::
-	Pass the `-q` option to 'git pack-objects'. See
+	Pass the `-q` option to `git pack-objects`. See
 	linkgit:git-pack-objects[1].
 
 -n::
 	Do not update the server information with
-	'git update-server-info'.  This option skips
+	`git update-server-info`.  This option skips
 	updating local catalog files needed to publish
 	this repository (or a direct copy of it)
 	over HTTP or FTP.  See linkgit:git-update-server-info[1].
@@ -195,7 +195,7 @@ Various configuration variables affect packing, see
 linkgit:git-config[1] (search for "pack" and "delta").
 
 By default, the command passes `--delta-base-offset` option to
-'git pack-objects'; this typically results in slightly smaller packs,
+`git pack-objects`; this typically results in slightly smaller packs,
 but the generated packs are incompatible with versions of Git older than
 version 1.4.4. If you need to share your repository with such ancient Git
 versions, either directly or via the dumb http protocol, then you

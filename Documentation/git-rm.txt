@@ -8,7 +8,7 @@ git-rm - Remove files from the working tree and from the index
 SYNOPSIS
 --------
 [verse]
-'git rm' [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]
+`git rm` [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch]
 	  [--quiet] [--pathspec-from-file=<file> [--pathspec-file-nul]]
 	  [--] [<pathspec>...]
 
@@ -148,7 +148,7 @@ with a Git version 1.7.8 or newer) will be removed from the work
 tree, as their repository lives inside the .git directory of the
 superproject. If a submodule (or one of those nested inside it)
 still uses a .git directory, `git rm` will move the submodules
-git directory into the superprojects git directory to protect
+`git` directory into the superprojects `git` directory to protect
 the submodule's history. If it exists the `submodule.<name>` section
 in the linkgit:gitmodules[5] file will also be removed and that file
 will be staged (unless `--cached` or `-n` are used).

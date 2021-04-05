@@ -9,7 +9,7 @@ git-init - Create an empty Git repository or reinitialize an existing one
 SYNOPSIS
 --------
 [verse]
-'git init' [-q | --quiet] [--bare] [--template=<template_directory>]
+`git init` [-q | --quiet] [--bare] [--template=<template_directory>]
 	  [--separate-git-dir <git dir>] [--object-format=<format>]
 	  [-b <branch-name> | --initial-branch=<branch-name>]
 	  [--shared[=<permissions>]] [directory]
@@ -32,9 +32,9 @@ If the object storage directory is specified via the
 are created underneath - otherwise the default `$GIT_DIR/objects`
 directory is used.
 
-Running 'git init' in an existing repository is safe. It will not
+Running `git init` in an existing repository is safe. It will not
 overwrite things that are already there. The primary reason for
-rerunning 'git init' is to pick up newly added templates (or to move
+rerunning `git init` is to pick up newly added templates (or to move
 the repository to another place if `--separate-git-dir` is given).
 
 OPTIONS
@@ -99,7 +99,7 @@ specified.
 
 'group' (or 'true')::
 
-Make the repository group-writable, (and g+sx, since the git group may be not
+Make the repository group-writable, (and g+sx, since the `git` group may be not
 the primary group of all users). This is used to loosen the permissions of an
 otherwise safe umask(2) value. Note that the umask still applies to the other
 permission bits (e.g. if umask is '0022', using 'group' will not remove read

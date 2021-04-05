@@ -9,7 +9,7 @@ git-update-index - Register file contents in the working tree to the index
 SYNOPSIS
 --------
 [verse]
-'git update-index'
+`git update-index`
 	     [--add] [--remove | --force-remove] [--replace]
 	     [--refresh] [-q] [--unmerged] [--ignore-missing]
 	     [(--cacheinfo <mode>,<object>,<file>)...]
@@ -36,7 +36,7 @@ any 'unmerged' or 'needs updating' state is cleared.
 See also linkgit:git-add[1] for a more user-friendly way to do some of
 the most common operations on the index.
 
-The way 'git update-index' handles files it is told about can be modified
+The way `git update-index` handles files it is told about can be modified
 using the various options:
 
 OPTIONS
@@ -58,7 +58,7 @@ OPTIONS
 -q::
         Quiet.  If `--refresh` finds that the index needs an update, the
         default behavior is to error out.  This option makes
-	'git update-index' continue anyway.
+	`git update-index` continue anyway.
 
 --ignore-submodules::
 	Do not try to update submodules.  This option is only respected
@@ -66,7 +66,7 @@ OPTIONS
 
 --unmerged::
         If `--refresh` finds unmerged changes in the index, the default
-	behavior is to error out.  This option makes 'git update-index'
+	behavior is to error out.  This option makes `git update-index`
         continue anyway.
 
 --ignore-missing::
@@ -126,7 +126,7 @@ you will need to handle the situation manually.
 
 -g::
 --again::
-	Runs 'git update-index' itself on the paths whose index
+	Runs `git update-index` itself on the paths whose index
 	entries are different from those from the `HEAD` commit.
 
 --unresolve::
@@ -144,7 +144,7 @@ you will need to handle the situation manually.
 
 --replace::
 	By default, when a file `path` exists in the index,
-	'git update-index' refuses an attempt to add `path/file`.
+	`git update-index` refuses an attempt to add `path/file`.
 	Similarly if a file `path/file` exists, a file `path`
 	cannot be added.  With `--replace` flag, existing entries
 	that conflict with the entry being added are
@@ -241,7 +241,7 @@ up to date for mode/content changes. But what it *does* do is to
 can refresh the index for a file that hasn't been changed but where
 the stat entry is out of date.
 
-For example, you'd want to do this after doing a 'git read-tree', to link
+For example, you'd want to do this after doing a `git read-tree`, to link
 up the stat index details with the proper files.
 
 USING --CACHEINFO OR --INFO-ONLY
@@ -280,7 +280,7 @@ This format is to stuff `git ls-tree` output into the index.
     . mode         SP sha1 SP stage TAB path
 +
 This format is to put higher order stages into the
-index file and matches 'git ls-files --stage' output.
+index file and matches `git ls-files --stage` output.
 
     . mode         SP sha1          TAB path
 +
@@ -344,8 +344,8 @@ have the "assume unchanged" bit set, use `git ls-files -v`
 The command looks at `core.ignorestat` configuration variable.  When
 this is true, paths updated with `git update-index paths...` and
 paths updated with other Git commands that update both index and
-working tree (e.g. 'git apply --index', 'git checkout-index -u',
-and 'git read-tree -u') are automatically marked as "assume
+working tree (e.g. `git apply --index`, `git checkout-index -u`,
+and `git read-tree -u`) are automatically marked as "assume
 unchanged".  Note that "assume unchanged" bit is *not* set if
 `git update-index --refresh` finds the working tree file matches
 the index (use `git update-index --really-refresh` if you want
@@ -468,8 +468,8 @@ the index.
 
 Before 2.17, the untracked cache had a bug where replacing a directory
 with a symlink to another directory could cause it to incorrectly show
-files tracked by git as untracked. See the "status: add a failing test
-showing a core.untrackedCache bug" commit to git.git. A workaround for
+files tracked by `git` as untracked. See the "status: add a failing test
+showing a `core.untrackedCache` bug" commit to git.git. A workaround for
 that is (and this might work for other undiscovered bugs in the
 future):
 
@@ -480,27 +480,27 @@ $ git -c core.untrackedCache=false status
 This bug has also been shown to affect non-symlink cases of replacing
 a directory with a file when it comes to the internal structures of
 the untracked cache, but no case has been reported where this resulted in
-wrong "git status" output.
+wrong `git status` output.
 
-There are also cases where existing indexes written by git versions
+There are also cases where existing indexes written by `git` versions
 before 2.17 will reference directories that don't exist anymore,
 potentially causing many "could not open directory" warnings to be
-printed on "git status". These are new warnings for existing issues
+printed on `git status`. These are new warnings for existing issues
 that were previously silently discarded.
 
-As with the bug described above the solution is to one-off do a "git
-status" run with `core.untrackedCache=false` to flush out the leftover
+As with the bug described above the solution is to one-off do a `git
+status` run with `core.untrackedCache=false` to flush out the leftover
 bad data.
 
 FILE SYSTEM MONITOR
 -------------------
 
-This feature is intended to speed up git operations for repos that have
+This feature is intended to speed up `git` operations for repos that have
 large working directories.
 
-It enables git to work together with a file system monitor (see the
+It enables `git` to work together with a file system monitor (see the
 "fsmonitor-watchman" section of linkgit:githooks[5]) that can
-inform it as to what files have been modified. This enables git to avoid
+inform it as to what files have been modified. This enables `git` to avoid
 having to lstat() every file to find modified files.
 
 When used in conjunction with the untracked cache, it can further improve
@@ -529,7 +529,7 @@ unreliable, this should be set to 'false' (see linkgit:git-config[1]).
 This causes the command to ignore differences in file modes recorded
 in the index and the file mode on the filesystem if they differ only on
 executable bit.   On such an unfortunate filesystem, you may
-need to use 'git update-index --chmod='.
+need to use `git update-index --chmod=`.
 
 Quite similarly, if `core.symlinks` configuration variable is set
 to 'false' (see linkgit:git-config[1]), symbolic links are checked out

@@ -249,7 +249,7 @@ boolean::
 		`0` and the empty string.
 +
 When converting a value to its canonical form using the `--type=bool` type
-specifier, 'git config' will ensure that the output is "true" or
+specifier, `git config` will ensure that the output is "true" or
 "false" (spelled in lowercase).
 
 integer::

@@ -9,7 +9,7 @@ git-pack-objects - Create a packed archive of objects
 SYNOPSIS
 --------
 [verse]
-'git pack-objects' [-q | --progress | --all-progress] [--all-progress-implied]
+`git pack-objects` [-q | --progress | --all-progress] [--all-progress-implied]
 	[--no-reuse-delta] [--delta-base-offset] [--non-empty]
 	[--local] [--incremental] [--window=<n>] [--depth=<n>]
 	[--revs [--unpacked | --all]] [--keep-pack=<pack-name>]
@@ -39,7 +39,7 @@ archive (.pack) in the pack/ subdirectory of $GIT_OBJECT_DIRECTORY (or
 any of the directories on $GIT_ALTERNATE_OBJECT_DIRECTORIES)
 enables Git to read from the pack archive.
 
-The 'git unpack-objects' command can read the packed archive and
+The `git unpack-objects` command can read the packed archive and
 expand the objects contained in the pack into "one-file
 one-object" format; this is typically done by the smart-pull
 commands when a pack is created on-the-fly for efficient network
@@ -63,7 +63,7 @@ base-name::
 --revs::
 	Read the revision arguments from the standard input, instead of
 	individual object names.  The revision arguments are processed
-	the same way as 'git rev-list' with the `--objects` flag
+	the same way as `git rev-list` with the `--objects` flag
 	uses its `commit` arguments to build the list of objects it
 	outputs.  The objects on the resulting list are packed.
 	Besides revisions, `--not` or `--shallow <SHA-1>` lines are
@@ -236,7 +236,7 @@ self-contained. Use `git index-pack --fix-thin`
 	A packed archive can express the base object of a delta as
 	either a 20-byte object name or as an offset in the
 	stream, but ancient versions of Git don't understand the
-	latter.  By default, 'git pack-objects' only uses the
+	latter.  By default, `git pack-objects` only uses the
 	former format for better compatibility.  This option
 	allows the command to use the latter format for
 	compactness.  Depending on the average delta chain

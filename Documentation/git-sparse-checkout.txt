@@ -11,7 +11,7 @@ given by a list of patterns.
 SYNOPSIS
 --------
 [verse]
-'git sparse-checkout <subcommand> [options]'
+`git sparse-checkout <subcommand> [options]`
 
 
 DESCRIPTION
@@ -83,7 +83,7 @@ C-style quoted strings.
 'disable'::
 	Disable the `core.sparseCheckout` config setting, and restore the
 	working directory to include all files. Leaves the sparse-checkout
-	file intact so a later 'git sparse-checkout init' command may
+	file intact so a later `git sparse-checkout init` command may
 	return the working directory to the same state.
 
 SPARSE CHECKOUT
@@ -193,7 +193,7 @@ A/B/C
 
 If `core.ignoreCase=true`, then the pattern-matching algorithm will use a
 case-insensitive check. This corrects for case mismatched filenames in the
-'git sparse-checkout set' command to reflect the expected cone in the working
+`git sparse-checkout set` command to reflect the expected cone in the working
 directory.
 
 

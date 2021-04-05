@@ -25,7 +25,7 @@ The following information is requested from the user:
 
 The following information is captured automatically:
 
- - 'git version --build-options'
+ - `git version --build-options`
  - uname sysname, release, version, and machine strings
  - Compiler-specific info string
  - A list of enabled hooks
@@ -46,7 +46,7 @@ OPTIONS
 -s <format>::
 --suffix <format>::
 	Specify an alternate suffix for the bugreport name, to create a file
-	named 'git-bugreport-<formatted suffix>'. This should take the form of a
+	named `git-bugreport-<formatted suffix>`. This should take the form of a
 	strftime(3) format string; the current local time will be used.
 
 GIT

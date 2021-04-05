@@ -9,8 +9,8 @@ git-cat-file - Provide content or type and size information for repository objec
 SYNOPSIS
 --------
 [verse]
-'git cat-file' (-t [--allow-unknown-type]| -s [--allow-unknown-type]| -e | -p | <type> | --textconv | --filters ) [--path=<path>] <object>
-'git cat-file' (--batch[=<format>] | --batch-check[=<format>]) [ --textconv | --filters ] [--follow-symlinks]
+`git cat-file` (-t [--allow-unknown-type]| -s [--allow-unknown-type]| -e | -p | <type> | --textconv | --filters ) [--path=<path>] <object>
+`git cat-file` (--batch[=<format>] | --batch-check[=<format>]) [ --textconv | --filters ] [--follow-symlinks]
 
 DESCRIPTION
 -----------
@@ -134,7 +134,7 @@ one in the tree.
 This option cannot (currently) be used unless `--batch` or
 `--batch-check` is used.
 +
-For example, consider a git repository containing:
+For example, consider a `git` repository containing:
 +
 --
 	f: a file containing "hello\n"

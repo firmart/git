@@ -481,7 +481,7 @@ git-psuh - Delight users' typo with a shy horse
 SYNOPSIS
 --------
 [verse]
-'git-psuh [<arg>...]'
+`git-psuh [<arg>...]`
 
 DESCRIPTION
 -----------
@@ -590,7 +590,7 @@ you the rest of the options afterwards, untouched.
 
 Now that you have a usage hint, you can teach Git how to show it in the general
 command list shown by `git help git` or `git help -a`, which is generated from
-`command-list.txt`. Find the line for 'git-pull' so you can add your 'git-psuh'
+`command-list.txt`. Find the line for `git-pull` so you can add your `git-psuh`
 line above it in alphabetical order. Now, we can add some attributes about the
 command which impacts where it shows up in the aforementioned help commands. The
 top of `command-list.txt` shares some information about what each attribute
@@ -652,7 +652,7 @@ Create a new file `t/t9999-psuh-tutorial.sh`. Begin with the header as so (see
 
 test_description='git-psuh test
 
-This test runs git-psuh and makes sure it does not crash.'
+This test runs `git-psuh` and makes sure it does not crash.'
 
 . ./test-lib.sh
 ----
@@ -971,7 +971,7 @@ Here's an example body for `psuh`:
 
 ----
 Our internal metrics indicate widespread interest in the command
-git-psuh - that is, many users are trying to use it, but finding it is
+`git-psuh` - that is, many users are trying to use it, but finding it is
 unavailable, using some unknown workaround instead.
 
 The following handful of patches add the psuh command and implement some

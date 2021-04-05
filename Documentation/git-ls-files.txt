@@ -9,7 +9,7 @@ git-ls-files - Show information about files in the index and the working tree
 SYNOPSIS
 --------
 [verse]
-'git ls-files' [-z] [-t] [-v] [-f]
+`git ls-files` [-z] [-t] [-v] [-f]
 		(--[cached|deleted|others|ignored|stage|unmerged|killed|modified])*
 		(-[c|d|o|i|s|u|k|m])*
 		[--eol]
@@ -196,15 +196,15 @@ followed by the  ("attr/<eolattr>").
 
 OUTPUT
 ------
-'git ls-files' just outputs the filenames unless `--stage` is specified in
+`git ls-files` just outputs the filenames unless `--stage` is specified in
 which case it outputs:
 
         [<tag> ]<mode> <object> <stage> <file>
 
-'git ls-files --eol' will show
+`git ls-files --eol` will show
 	i/<eolinfo><SPACES>w/<eolinfo><SPACES>attr/<eolattr><SPACE*><TAB><file>
 
-'git ls-files --unmerged' and 'git ls-files --stage' can be used to examine
+`git ls-files --unmerged` and `git ls-files --stage` can be used to examine
 detailed information on unmerged paths.
 
 For an unmerged path, instead of recording a single mode/SHA-1 pair,
@@ -222,7 +222,7 @@ verbatim and the line is terminated by a NUL byte.
 EXCLUDE PATTERNS
 ----------------
 
-'git ls-files' can use a list of "exclude patterns" when
+`git ls-files` can use a list of "exclude patterns" when
 traversing the directory tree and finding files to show when the
 flags `--others` or `--ignored` are specified.  linkgit:gitignore[5]
 specifies the format of exclude patterns.
@@ -238,7 +238,7 @@ These exclude patterns come from these places, in order:
      in the same order they appear in the file.
 
   3. The command-line flag `--exclude-per-directory=<name>` specifies
-     a name of the file in each directory 'git ls-files'
+     a name of the file in each directory `git ls-files`
      examines, normally `.gitignore`.  Files in deeper
      directories take precedence.  Patterns are ordered in the
      same order they appear in the files.

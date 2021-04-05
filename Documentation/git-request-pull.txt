@@ -8,7 +8,7 @@ git-request-pull - Generates a summary of pending changes
 SYNOPSIS
 --------
 [verse]
-'git request-pull' [-p] <start> <url> [<end>]
+`git request-pull` [-p] <start> <url> [<end>]
 
 DESCRIPTION
 -----------

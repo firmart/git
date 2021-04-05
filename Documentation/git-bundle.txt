@@ -9,11 +9,11 @@ git-bundle - Move objects and refs by archive
 SYNOPSIS
 --------
 [verse]
-'git bundle' create [-q | --quiet | --progress | --all-progress] [--all-progress-implied]
+`git bundle` create [-q | --quiet | --progress | --all-progress] [--all-progress-implied]
 		    [--version=<version>] <file> <git-rev-list-args>
-'git bundle' verify [-q | --quiet] <file>
-'git bundle' list-heads <file> [<refname>...]
-'git bundle' unbundle <file> [<refname>...]
+`git bundle` verify [-q | --quiet] <file>
+`git bundle` list-heads <file> [<refname>...]
+`git bundle` unbundle <file> [<refname>...]
 
 DESCRIPTION
 -----------
@@ -23,9 +23,9 @@ machine be replicated on another machine, but the two machines cannot
 be directly connected, and therefore the interactive Git protocols (git,
 ssh, http) cannot be used.
 
-The 'git bundle' command packages objects and references in an archive
+The `git bundle` command packages objects and references in an archive
 at the originating machine, which can then be imported into another
-repository using 'git fetch', 'git pull', or 'git clone',
+repository using `git fetch`, `git pull`, or `git clone`,
 after moving the archive by some means (e.g., by sneakernet).
 
 As no
@@ -40,7 +40,7 @@ OPTIONS
 create [options] <file> <git-rev-list-args>::
 	Used to create a bundle named 'file'.  This requires the
 	'<git-rev-list-args>' arguments to define the bundle contents.
-	'options' contains the options specific to the 'git bundle create'
+	'options' contains the options specific to the `git bundle create`
 	subcommand.
 
 verify <file>::
@@ -48,7 +48,7 @@ verify <file>::
 	cleanly to the current repository.  This includes checks on the
 	bundle format itself as well as checking that the prerequisite
 	commits exist and are fully linked in the current repository.
-	'git bundle' prints a list of missing commits, if any, and exits
+	`git bundle` prints a list of missing commits, if any, and exits
 	with a non-zero status.
 
 list-heads <file>::
@@ -57,15 +57,15 @@ list-heads <file>::
 	printed out.
 
 unbundle <file>::
-	Passes the objects in the bundle to 'git index-pack'
+	Passes the objects in the bundle to `git index-pack`
 	for storage in the repository, then prints the names of all
 	defined references. If a list of references is given, only
 	references matching those in the list are printed. This command is
-	really plumbing, intended to be called only by 'git fetch'.
+	really plumbing, intended to be called only by `git fetch`.
 
 <git-rev-list-args>::
-	A list of arguments, acceptable to 'git rev-parse' and
-	'git rev-list' (and containing a named ref, see SPECIFYING REFERENCES
+	A list of arguments, acceptable to `git rev-parse` and
+	`git rev-list` (and containing a named ref, see SPECIFYING REFERENCES
 	below), that specifies the specific objects and references
 	to transport.  For example, `master~10..master` causes the
 	current `master` reference to be packaged along with all objects
@@ -76,10 +76,10 @@ unbundle <file>::
 
 [<refname>...]::
 	A list of references used to limit the references reported as
-	available. This is principally of use to 'git fetch', which
+	available. This is principally of use to `git fetch`, which
 	expects to receive only those references asked for and not
-	necessarily everything in the pack (in this case, 'git bundle' acts
-	like 'git fetch-pack').
+	necessarily everything in the pack (in this case, `git bundle` acts
+	like `git fetch-pack`).
 
 --progress::
 	Progress status is reported on the standard error stream
@@ -117,8 +117,8 @@ unbundle <file>::
 SPECIFYING REFERENCES
 ---------------------
 
-'git bundle' will only package references that are shown by
-'git show-ref': this includes heads, tags, and remote heads.  References
+`git bundle` will only package references that are shown by
+`git show-ref`: this includes heads, tags, and remote heads.  References
 such as `master~1` cannot be packaged, but are perfectly suitable for
 defining the basis.  More than one reference may be packaged, and more
 than one basis can be specified.  The objects packaged are those not

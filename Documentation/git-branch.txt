@@ -8,7 +8,7 @@ git-branch - List, create, or delete branches
 SYNOPSIS
 --------
 [verse]
-'git branch' [--color[=<when>] | --no-color] [--show-current]
+`git branch` [--color[=<when>] | --no-color] [--show-current]
 	[-v [--abbrev=<n> | --no-abbrev]]
 	[--column[=<options>] | --no-column] [--sort=<key>]
 	[--merged [<commit>]] [--no-merged [<commit>]]
@@ -16,13 +16,13 @@ SYNOPSIS
 	[--points-at <object>] [--format=<format>]
 	[(-r | --remotes) | (-a | --all)]
 	[--list] [<pattern>...]
-'git branch' [--track | --no-track] [-f] <branchname> [<start-point>]
-'git branch' (--set-upstream-to=<upstream> | -u <upstream>) [<branchname>]
-'git branch' --unset-upstream [<branchname>]
-'git branch' (-m | -M) [<oldbranch>] <newbranch>
-'git branch' (-c | -C) [<oldbranch>] <newbranch>
-'git branch' (-d | -D) [-r] <branchname>...
-'git branch' --edit-description [<branchname>]
+`git branch` [--track | --no-track] [-f] <branchname> [<start-point>]
+`git branch` (--set-upstream-to=<upstream> | -u <upstream>) [<branchname>]
+`git branch` --unset-upstream [<branchname>]
+`git branch` (-m | -M) [<oldbranch>] <newbranch>
+`git branch` (-c | -C) [<oldbranch>] <newbranch>
+`git branch` (-d | -D) [-r] <branchname>...
+`git branch` --edit-description [<branchname>]
 
 DESCRIPTION
 -----------
@@ -60,12 +60,12 @@ can leave out at most one of `A` and `B`, in which case it defaults to
 `HEAD`.
 
 Note that this will create the new branch, but it will not switch the
-working tree to it; use "git switch <newbranch>" to switch to the
+working tree to it; use `git switch <newbranch>` to switch to the
 new branch.
 
 When a local branch is started off a remote-tracking branch, Git sets up the
 branch (specifically the `branch.<name>.remote` and `branch.<name>.merge`
-configuration entries) so that 'git pull' will appropriately merge from
+configuration entries) so that `git pull` will appropriately merge from
 the remote-tracking branch. This behavior may be changed via the global
 `branch.autoSetupMerge` configuration flag. That setting can be
 overridden by using the `--track` and `--no-track` options, and
@@ -87,7 +87,7 @@ has a reflog then the reflog will also be deleted.
 
 Use `-r` together with `-d` to delete remote-tracking branches. Note, that it
 only makes sense to delete remote-tracking branches if they no longer exist
-in the remote repository or if 'git fetch' was configured not to fetch
+in the remote repository or if `git fetch` was configured not to fetch
 them again. See also the 'prune' subcommand of linkgit:git-remote[1] for a
 way to clean up all obsolete remote-tracking branches.
 
@@ -116,7 +116,7 @@ OPTIONS
 -f::
 --force::
 	Reset <branchname> to <startpoint>, even if <branchname> exists
-	already. Without `-f`, 'git branch' refuses to change an existing branch.
+	already. Without `-f`, `git branch` refuses to change an existing branch.
 	In combination with `-d` (or `--delete`), allow deleting the
 	branch irrespective of its merged status. In combination with
 	`-m` (or `--move`), allow renaming the branch even if the new
@@ -209,7 +209,7 @@ This option is only applicable in non-verbose mode.
 	When creating a new branch, set up `branch.<name>.remote` and
 	`branch.<name>.merge` configuration entries to mark the
 	start-point branch as "upstream" from the new branch. This
-	configuration will tell git to show the relationship between the
+	configuration will tell `git` to show the relationship between the
 	two branches in `git status` and `git branch -v`. Furthermore,
 	it directs `git pull` without arguments to pull from the
 	upstream when the new branch is checked out.
@@ -351,7 +351,7 @@ NOTES
 -----
 
 If you are creating a branch that you want to switch to immediately,
-it is easier to use the "git switch" command with its `-c` option to
+it is easier to use the `git switch` command with its `-c` option to
 do the same thing with a single command.
 
 The options `--contains`, `--no-contains`, `--merged` and `--no-merged`

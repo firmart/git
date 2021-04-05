@@ -8,22 +8,22 @@ git-checkout - Switch branches or restore working tree files
 SYNOPSIS
 --------
 [verse]
-'git checkout' [-q] [-f] [-m] [<branch>]
-'git checkout' [-q] [-f] [-m] --detach [<branch>]
-'git checkout' [-q] [-f] [-m] [--detach] <commit>
-'git checkout' [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]
-'git checkout' [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>...
-'git checkout' [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]
-'git checkout' (-p|--patch) [<tree-ish>] [--] [<pathspec>...]
+`git checkout` [-q] [-f] [-m] [<branch>]
+`git checkout` [-q] [-f] [-m] --detach [<branch>]
+`git checkout` [-q] [-f] [-m] [--detach] <commit>
+`git checkout` [-q] [-f] [-m] [[-b|-B|--orphan] <new_branch>] [<start_point>]
+`git checkout` [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>...
+`git checkout` [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]
+`git checkout` (-p|--patch) [<tree-ish>] [--] [<pathspec>...]
 
 DESCRIPTION
 -----------
 Updates files in the working tree to match the version in the index
-or the specified tree.  If no pathspec was given, 'git checkout' will
+or the specified tree.  If no pathspec was given, `git checkout` will
 also update `HEAD` to set the specified branch as the current
 branch.
 
-'git checkout' [<branch>]::
+`git checkout` [<branch>]::
 	To prepare for working on `<branch>`, switch to it by updating
 	the index and the files in the working tree, and by pointing
 	`HEAD` at the branch. Local modifications to the files in the
@@ -43,12 +43,12 @@ You could omit `<branch>`, in which case the command degenerates to
 rather expensive side-effects to show only the tracking information,
 if exists, for the current branch.
 
-'git checkout' -b|-B <new_branch> [<start point>]::
+`git checkout` -b|-B <new_branch> [<start point>]::
 
 	Specifying `-b` causes a new branch to be created as if
 	linkgit:git-branch[1] were called and then checked out.  In
 	this case you can use the `--track` or `--no-track` options,
-	which will be passed to 'git branch'.  As a convenience,
+	which will be passed to `git branch`.  As a convenience,
 	`--track` without `-b` implies branch creation; see the
 	description of `--track` below.
 +
@@ -60,11 +60,11 @@ $ git branch -f <branch> [<start point>]
 $ git checkout <branch>
 ------------
 +
-that is to say, the branch is not reset/created unless "git checkout" is
+that is to say, the branch is not reset/created unless `git checkout` is
 successful.
 
-'git checkout' --detach [<branch>]::
-'git checkout' [--detach] <commit>::
+`git checkout` --detach [<branch>]::
+`git checkout` [--detach] <commit>::
 
 	Prepare to work on top of `<commit>`, by detaching `HEAD` at it
 	(see "DETACHED HEAD" section), and updating the index and the
@@ -79,8 +79,8 @@ be used to detach `HEAD` at the tip of the branch (`git checkout
 +
 Omitting `<branch>` detaches `HEAD` at the tip of the current branch.
 
-'git checkout' [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>...::
-'git checkout' [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]::
+`git checkout` [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>...::
+`git checkout` [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]::
 
 	Overwrite the contents of the files that match the pathspec.
 	When the `<tree-ish>` (most often a commit) is not given,
@@ -96,7 +96,7 @@ specific side of the merge can be checked out of the index by
 using `--ours` or `--theirs`.  With `-m`, changes made to the working tree
 file can be discarded to re-create the original conflicted merge result.
 
-'git checkout' (-p|--patch) [<tree-ish>] [--] [<pathspec>...]::
+`git checkout` (-p|--patch) [<tree-ish>] [--] [<pathspec>...]::
 	This is similar to the previous mode, but lets you use the
 	interactive interface to show the "diff" output and choose which
 	hunks to use in the result.  See below for the description of
@@ -151,7 +151,7 @@ of it").
 -B <new_branch>::
 	Creates the branch `<new_branch>` and start it at `<start_point>`;
 	if it already exists, then reset it to `<start_point>`. This is
-	equivalent to running "git branch" with `-f`; see
+	equivalent to running `git branch` with `-f`; see
 	linkgit:git-branch[1] for details.
 
 -t::
@@ -333,7 +333,7 @@ Note that this option uses the no overlay mode by default (see also
 	any branch (see below for details).
 +
 You can use the `@{-N}` syntax to refer to the N-th last
-branch/commit checked out using "git checkout" operation. You may
+branch/commit checked out using `git checkout` operation. You may
 also specify `-` which is synonymous to `@{-1}`.
 +
 As a special case, you may use `A...B` as a shortcut for the
@@ -384,7 +384,7 @@ a---b---c  branch 'master' (refers to commit 'c')
 ------------
 
 When a commit is created in this state, the branch is updated to refer to
-the new commit. Specifically, 'git commit' creates a new commit `d`, whose
+the new commit. Specifically, `git commit` creates a new commit `d`, whose
 parent is commit `c`, and then updates branch `master` to refer to new
 commit `d`. `HEAD` still refers to branch `master` and so indirectly now refers
 to commit `d`:
@@ -493,7 +493,7 @@ $ git tag foo           <3>
     leaving `HEAD` detached.
 
 If we have moved away from commit `f`, then we must first recover its object
-name (typically by using git reflog), and then we can create a reference to
+name (typically by using `git reflog`), and then we can create a reference to
 it. For example, to see the last two commits to which `HEAD` referred, we
 can use either of these commands:
 

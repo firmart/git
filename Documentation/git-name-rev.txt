@@ -9,13 +9,13 @@ git-name-rev - Find symbolic names for given revs
 SYNOPSIS
 --------
 [verse]
-'git name-rev' [--tags] [--refs=<pattern>]
+`git name-rev` [--tags] [--refs=<pattern>]
 	       ( --all | --stdin | <commit-ish>... )
 
 DESCRIPTION
 -----------
 Finds symbolic names suitable for human digestion for revisions given in any
-format parsable by 'git rev-parse'.
+format parsable by `git rev-parse`.
 
 
 OPTIONS
@@ -69,7 +69,7 @@ wrote you about that fantastic commit 33db5f4d9027a10e477ccf054b2c1ab94f74c85a.
 Of course, you look into the commit, but that only tells you what happened, but
 not the context.
 
-Enter 'git name-rev':
+Enter `git name-rev`:
 
 ------------
 % git name-rev 33db5f4d9027a10e477ccf054b2c1ab94f74c85a
