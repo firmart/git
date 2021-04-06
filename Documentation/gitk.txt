@@ -158,7 +158,7 @@ User configuration and preferences are stored at:
 * `$HOME/.gitk` if it exists
 
 If neither of the above exist then `$XDG_CONFIG_HOME/git/gitk` is created and
-used by default. If '$XDG_CONFIG_HOME' is not set it defaults to
+used by default. If `$XDG_CONFIG_HOME` is not set it defaults to
 `$HOME/.config` in all cases.
 
 History

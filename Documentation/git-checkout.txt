@@ -327,7 +327,7 @@ Note that this option uses the no overlay mode by default (see also
 
 <branch>::
 	Branch to checkout; if it refers to a branch (i.e., a name that,
-	when prepended with "refs/heads/", is a valid ref), then that
+	when prepended with `refs/heads/`, is a valid ref), then that
 	branch is checked out. Otherwise, if it refers to a valid
 	commit, your `HEAD` becomes "detached" and you are no longer on
 	any branch (see below for details).

@@ -286,27 +286,27 @@ FILES
 If not set explicitly with `--file`, there are four files where
 `git config` will search for configuration options:
 
-$(prefix)/etc/gitconfig::
+`$(prefix)/etc/gitconfig`::
 	System-wide configuration file.
 
-$XDG_CONFIG_HOME/git/config::
-	Second user-specific configuration file. If $XDG_CONFIG_HOME is not set
+`$XDG_CONFIG_HOME/git/config`::
+	Second user-specific configuration file. If `$XDG_CONFIG_HOME` is not set
 	or empty, `$HOME/.config/git/config` will be used. Any single-valued
 	variable set in this file will be overwritten by whatever is in
 	`~/.gitconfig`.  It is a good idea not to create this file if
 	you sometimes use older versions of Git, as support for this
 	file was added fairly recently.
 
-~/.gitconfig::
+`~/.gitconfig`::
 	User-specific configuration file. Also called "global"
 	configuration file.
 
-$GIT_DIR/config::
+`$GIT_DIR/config`::
 	Repository specific configuration file.
 
-$GIT_DIR/config.worktree::
+`$GIT_DIR/config.worktree`::
 	This is optional and is only searched when
-	`extensions.worktreeConfig` is present in $GIT_DIR/config.
+	`extensions.worktreeConfig` is present in `$GIT_DIR/config`.
 
 If no further options are given, all reading options will read all of these
 files that are available. If the global or the system-wide configuration
@@ -338,11 +338,11 @@ ENVIRONMENT
 GIT_CONFIG::
 	Take the configuration from the given file instead of `.git/config`.
 	Using the `--global` option forces this to `~/.gitconfig`. Using the
-	`--system` option forces this to $(prefix)/etc/gitconfig.
+	`--system` option forces this to `$(prefix)/etc/gitconfig`.
 
 GIT_CONFIG_NOSYSTEM::
 	Whether to skip reading settings from the system-wide
-	$(prefix)/etc/gitconfig file. See linkgit:git[1] for details.
+	`$(prefix)/etc/gitconfig` file. See linkgit:git[1] for details.
 
 See also <<FILES>>.
 

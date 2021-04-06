@@ -60,14 +60,14 @@ more exact; `gitweb` is not interested in a working area, and is best suited
 to showing "bare" repositories).
 
 The name of the repository in `gitweb` is the path to its `$GIT_DIR` (its object
-database) relative to `$projectroot`.  Therefore the repository $repo can be
-found at "$projectroot/$repo".
+database) relative to `$projectroot`.  Therefore the repository `$repo` can be
+found at `$projectroot`/`$repo`.
 
 
 Projects list file format
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Instead of having `gitweb` find repositories by scanning filesystem
-starting from $projectroot, you can provide a pre-generated list of
+starting from `$projectroot`, you can provide a pre-generated list of
 visible projects by setting `$projects_list` to point to a plain text
 file with a list of projects (with some additional info).
 
@@ -182,7 +182,7 @@ fetched from via `git://` protocol.
 * Finally, it is possible to specify an arbitrary perl subroutine that will
 be called for each repository to determine if it can be exported.  The
 subroutine receives an absolute path to the project (repository) as its only
-parameter (i.e. "$projectroot/$project").
+parameter (i.e. `$projectroot`/`$project`).
 +
 For example, if you use mod_perl to run the script, and have dumb
 HTTP protocol authentication configured for your repositories, you

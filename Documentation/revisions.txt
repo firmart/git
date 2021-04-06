@@ -23,27 +23,27 @@ characters and to avoid word splitting.
   followed by a dash and a number of commits, followed by a dash, a
   'g', and an abbreviated object name.
 
-'<refname>', e.g. `master`, 'heads/master', 'refs/heads/master'::
+'<refname>', e.g. `master`, 'heads/master', `refs/heads/master`::
   A symbolic ref name.  E.g. `master` typically means the commit
-  object referenced by 'refs/heads/master'.  If you
+  object referenced by `refs/heads/master`.  If you
   happen to have both 'heads/master' and 'tags/master', you can
   explicitly say 'heads/master' to tell Git which one you mean.
   When ambiguous, a '<refname>' is disambiguated by taking the
   first match in the following rules:
 
-  . If '$GIT_DIR/<refname>' exists, that is what you mean (this is usually
+  . If `$GIT_DIR/<refname>` exists, that is what you mean (this is usually
     useful only for `HEAD`, `FETCH_HEAD`, `ORIG_HEAD`, `MERGE_HEAD`
     and `CHERRY_PICK_HEAD`);
 
-  . otherwise, 'refs/<refname>' if it exists;
+  . otherwise, `refs/<refname>` if it exists;
 
-  . otherwise, 'refs/tags/<refname>' if it exists;
+  . otherwise, `refs/tags/<refname>` if it exists;
 
-  . otherwise, 'refs/heads/<refname>' if it exists;
+  . otherwise, `refs/heads/<refname>` if it exists;
 
-  . otherwise, 'refs/remotes/<refname>' if it exists;
+  . otherwise, `refs/remotes/<refname>` if it exists;
 
-  . otherwise, 'refs/remotes/<refname>/HEAD' if it exists.
+  . otherwise, `refs/remotes/<refname>/HEAD` if it exists.
 +
 `HEAD` names the commit on which you based the changes in the working tree.
 `FETCH_HEAD` records the branch which you fetched from a remote repository
@@ -57,7 +57,7 @@ when you run `git merge`.
 `CHERRY_PICK_HEAD` records the commit which you are cherry-picking
 when you run `git cherry-pick`.
 +
-Note that any of the 'refs/*' cases above may come either from
+Note that any of the `refs/*` cases above may come either from
 the `$GIT_DIR/refs` directory or from the `$GIT_DIR/packed-refs` file.
 While the ref name encoding is unspecified, UTF-8 is preferred as
 some output processing may assume ref names in UTF-8.
@@ -72,7 +72,7 @@ some output processing may assume ref names in UTF-8.
   second ago}' or '{1979-02-26 18:30:00}') specifies the value
   of the ref at a prior point in time.  This suffix may only be
   used immediately following a ref name and the ref must have an
-  existing log ('$GIT_DIR/logs/<ref>'). Note that this looks up the state
+  existing log (`$GIT_DIR/logs/<ref>`). Note that this looks up the state
   of your *local* ref at a given time; e.g., what was in your local
   `master` branch last week. If you want to look at commits made during
   certain times, see `--since` and `--until`.
@@ -84,7 +84,7 @@ some output processing may assume ref names in UTF-8.
   is the immediate prior value of `master` while `master@{5}`
   is the 5th prior value of `master`. This suffix may only be used
   immediately following a ref name and the ref must have an existing
-  log ('$GIT_DIR/logs/<refname>').
+  log (`$GIT_DIR/logs/<refname>`).
 
 '@{<n>}', e.g. '@\{1\}'::
   You can use the '@' construct with an empty ref part to get at a

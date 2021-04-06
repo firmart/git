@@ -17,7 +17,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-Fetch branches and/or tags (collectively, "refs") from one or more
+Fetch branches and/or tags (collectively, `refs`) from one or more
 other repositories, along with the objects necessary to complete their
 histories.  Remote-tracking branches are updated (see the description
 of <refspec> below for ways to control this behavior).

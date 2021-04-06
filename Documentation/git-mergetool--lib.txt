@@ -29,7 +29,7 @@ FUNCTIONS
 ---------
 get_merge_tool::
 	returns a merge tool. the return code is 1 if we returned a guessed
-	merge tool, else 0. '$GIT_MERGETOOL_GUI' may be set to 'true' to
+	merge tool, else 0. `$GIT_MERGETOOL_GUI` may be set to 'true' to
 	search for the appropriate guitool.
 
 get_merge_tool_cmd::
@@ -45,7 +45,7 @@ initialize_merge_tool::
 run_merge_tool::
 	launches a merge tool given the tool name and a true/false
 	flag to indicate whether a merge base is present.
-	'$MERGED', '$LOCAL', '$REMOTE', and '$BASE' must be defined
+	`$MERGED`, `$LOCAL`, `$REMOTE`, and `$BASE` must be defined
 	for use by the merge tool.
 
 GIT

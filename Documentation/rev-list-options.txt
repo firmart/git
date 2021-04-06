@@ -163,7 +163,7 @@ endif::git-log[]
 
 --glob=<glob-pattern>::
 	Pretend as if all the refs matching shell glob '<glob-pattern>'
-	are listed on the command line as '<commit>'. Leading 'refs/',
+	are listed on the command line as '<commit>'. Leading `refs/`,
 	is automatically prepended if missing. If pattern lacks '?', '{asterisk}',
 	or '[', '/{asterisk}' at the end is implied.
 

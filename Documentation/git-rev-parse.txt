@@ -157,7 +157,7 @@ for another option.
 	explicitly disambiguating "heads/master" form, when you
 	want to name the `master` branch when there is an
 	unfortunately named tag "master"), and show them as full
-	refnames (e.g. "refs/heads/master").
+	refnames (e.g. `refs/heads/master`).
 
 Options for Objects
 ~~~~~~~~~~~~~~~~~~~
@@ -243,10 +243,10 @@ print a message to stderr and exit with nonzero status.
 	to the real repository is printed.
 
 --git-path <path>::
-	Resolve "$GIT_DIR/<path>" and takes other path relocation
-	variables such as $GIT_OBJECT_DIRECTORY,
-	$GIT_INDEX_FILE... into account. For example, if
-	$GIT_OBJECT_DIRECTORY is set to /foo/bar then `git rev-parse
+	Resolve `$GIT_DIR/<path>` and takes other path relocation
+	variables such as `$GIT_OBJECT_DIRECTORY`,
+	`$GIT_INDEX_FILE`... into account. For example, if
+	`$GIT_OBJECT_DIRECTORY` is set to /foo/bar then `git rev-parse
 	--git-path objects/abc` returns /foo/bar/abc.
 
 --show-toplevel::
@@ -461,13 +461,13 @@ EXAMPLES
 $ git rev-parse --verify HEAD
 ------------
 
-* Print the commit object name from the revision in the $REV shell variable:
+* Print the commit object name from the revision in the `$REV` shell variable:
 +
 ------------
 $ git rev-parse --verify --end-of-options $REV^{commit}
 ------------
 +
-This will error out if $REV is empty or not a valid revision.
+This will error out if `$REV` is empty or not a valid revision.
 
 * Similar to above:
 +
@@ -475,7 +475,7 @@ This will error out if $REV is empty or not a valid revision.
 $ git rev-parse --default master --verify --end-of-options $REV
 ------------
 +
-but if $REV is empty, the commit object name from `master` will be printed.
+but if `$REV` is empty, the commit object name from `master` will be printed.
 
 GIT
 ---

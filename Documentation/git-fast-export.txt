@@ -185,7 +185,7 @@ This makes a new branch called `other` from `master~5`..`master`
 
 Note that this assumes that none of the blobs and commit messages
 referenced by that revision range contains the string
-'refs/heads/master'.
+`refs/heads/master`.
 
 
 ANONYMIZING

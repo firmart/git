@@ -61,7 +61,7 @@ rewriting published history.)
 
 Always verify that the rewritten version is correct: The original refs,
 if different from the rewritten ones, will be stored in the namespace
-'refs/original/'.
+`refs/original/`.
 
 Note that since this operation is very I/O expensive, it might
 be a good idea to redirect the temporary directory off-disk with the
@@ -195,7 +195,7 @@ to other tags will be rewritten to point to the underlying commit.
 
 --original <namespace>::
 	Use this option to set the namespace where the original commits
-	will be stored. The default value is 'refs/original'.
+	will be stored. The default value is `refs/original`.
 
 -d <directory>::
 	Use this option to set the path to the temporary directory used for
@@ -209,7 +209,7 @@ to other tags will be rewritten to point to the underlying commit.
 --force::
 	`git filter-branch` refuses to start with an existing temporary
 	directory or when there are already refs starting with
-	'refs/original/', unless forced.
+	`refs/original/`, unless forced.
 
 --state-branch <branch>::
 	This option will cause the mapping from old to new objects to

@@ -7,7 +7,7 @@ gitmodules - Defining submodule properties
 
 SYNOPSIS
 --------
-$GIT_WORK_TREE/.gitmodules
+`$GIT_WORK_TREE/.gitmodules`
 
 
 DESCRIPTION

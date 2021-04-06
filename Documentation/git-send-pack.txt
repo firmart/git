@@ -29,7 +29,7 @@ OPTIONS
 	Path to the `git-receive-pack` program on the remote
 	end.  Sometimes useful when pushing to a remote
 	repository over ssh, and you do not have the program in
-	a directory on the default $PATH.
+	a directory on the default `$PATH`.
 
 --exec=<git-receive-pack>::
 	Same as `--receive-pack`=<git-receive-pack>.
@@ -133,7 +133,7 @@ name. See linkgit:git-rev-parse[1].
 
  - If <dst> does not match any remote ref, either
 
-   * it has to start with "refs/"; <dst> is used as the
+   * it has to start with `refs/`; <dst> is used as the
      destination literally in this case.
 
    * <src> == <dst> and the ref that matched the <src> must not

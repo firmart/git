@@ -178,7 +178,7 @@ may not support it yet.
 --no-split-index::
 	Enable or disable split index mode. If split-index mode is
 	already enabled and `--split-index` is given again, all
-	changes in $GIT_DIR/index are pushed back to the shared index
+	changes in `$GIT_DIR/index` are pushed back to the shared index
 	file.
 +
 These options take effect whatever the value of the `core.splitIndex`
@@ -415,9 +415,9 @@ SPLIT INDEX
 This mode is designed for repositories with very large indexes, and
 aims at reducing the time it takes to repeatedly write these indexes.
 
-In this mode, the index is split into two files, $GIT_DIR/index and
-$GIT_DIR/sharedindex.<SHA-1>. Changes are accumulated in
-$GIT_DIR/index, the split index, while the shared index file contains
+In this mode, the index is split into two files, `$GIT_DIR/index` and
+`$GIT_DIR/sharedindex.<SHA-1>`. Changes are accumulated in
+`$GIT_DIR/index`, the split index, while the shared index file contains
 all index entries and stays unchanged.
 
 All changes in the split index are pushed back to the shared index

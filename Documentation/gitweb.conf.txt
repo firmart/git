@@ -7,7 +7,7 @@ gitweb.conf - Gitweb (Git web interface) configuration file
 
 SYNOPSIS
 --------
-/etc/gitweb.conf, /etc/gitweb-common.conf, $GITWEBDIR/gitweb_config.perl
+`/etc/gitweb.conf`, `/etc/gitweb-common.conf`, `$GITWEBDIR/gitweb_config.perl`
 
 DESCRIPTION
 -----------
@@ -117,7 +117,7 @@ Git repositories, and how repositories are displayed and accessed.
 
 See also "Repositories" and later subsections in linkgit:gitweb[1] manpage.
 
-$projectroot::
+`$projectroot`::
 	Absolute filesystem path which will be prepended to project path;
 	the path to repository is `$projectroot/$project`.  Set to
 	`$GITWEB_PROJECTROOT` during installation.  This variable has to be
@@ -144,7 +144,7 @@ http://git.example.com/gitweb.cgi/foo/bar.git
 +
 will map to the path `/srv/git/foo/bar.git` on the filesystem.
 
-$projects_list::
+`$projects_list`::
 	Name of a plain text file listing projects, or a name of directory
 	to be scanned for projects.
 +
@@ -159,7 +159,7 @@ The default value of this variable is determined by the `GITWEB_LIST`
 makefile variable at installation time.  If this variable is empty, `gitweb`
 will fall back to scanning the `$projectroot` directory for repositories.
 
-$project_maxdepth::
+`$project_maxdepth`::
 	If `$projects_list` variable is unset, `gitweb` will recursively
 	scan filesystem for Git repositories.  The `$project_maxdepth`
 	is used to limit traversing depth, relative to `$projectroot`
@@ -174,7 +174,7 @@ The default value of this variable is determined by the build-time
 configuration variable `GITWEB_PROJECT_MAXDEPTH`, which defaults to
 2007.
 
-$export_ok::
+`$export_ok`::
 	Show repository only if this file exists (in repository).  Only
 	effective if this variable evaluates to true.  Can be set when
 	building `gitweb` by setting `GITWEB_EXPORT_OK`.  This path is
@@ -182,13 +182,13 @@ $export_ok::
 	unless started with `--export-all`.  By default this variable is
 	not set, which means that this feature is turned off.
 
-$export_auth_hook::
+`$export_auth_hook`::
 	Function used to determine which repositories should be shown.
 	This subroutine should take one parameter, the full path to
 	a project, and if it returns true, that project will be included
 	in the projects list and can be accessed through `gitweb` as long
-	as it fulfills the other requirements described by $export_ok,
-	$projects_list, and $projects_maxdepth.  Example:
+	as it fulfills the other requirements described by `$export_ok`,
+	`$projects_list`, and `$projects_maxdepth`.  Example:
 +
 ----------------------------------------------------------------------------
 our $export_auth_hook = sub { return -e "$_[0]/git-daemon-export-ok"; };
@@ -205,7 +205,7 @@ If not set (default), it means that this feature is disabled.
 See also more involved example in "Controlling access to Git repositories"
 subsection on linkgit:gitweb[1] manpage.
 
-$strict_export::
+`$strict_export`::
 	Only allow viewing of repositories also shown on the overview page.
 	This for example makes `$export_ok` file decide if repository is
 	available and not only if it is shown.  If `$projects_list` points to
@@ -213,7 +213,7 @@ $strict_export::
 	available for `gitweb`.  Can be set during building `gitweb` via
 	`GITWEB_STRICT_EXPORT`.  By default this variable is not set, which
 	means that you can directly access those repositories that are hidden
-	from projects list page (e.g. the are not listed in the $projects_list
+	from projects list page (e.g. the are not listed in the `$projects_list`
 	file).
 
 
@@ -222,7 +222,7 @@ Finding files
 The following configuration variables tell `gitweb` where to find files.
 The values of these variables are paths on the filesystem.
 
-$GIT::
+`$GIT`::
 	Core `git` executable to use.  By default set to `$GIT_BINDIR/git`, which
 	in turn is by default set to `$(bindir)/git`.  If you use Git installed
 	from a binary package, you should usually set this to "/usr/bin/git".
@@ -232,7 +232,7 @@ $GIT::
 	which one to use.  Must be (correctly) set for `gitweb` to be able to
 	work.
 
-$mimetypes_file::
+`$mimetypes_file`::
 	File to use for (filename extension based) guessing of MIME types before
 	trying `/etc/mime.types`.  *NOTE* that this path, if relative, is taken
 	as relative to the current Git repository, not to CGI script.  If unset,
@@ -240,7 +240,7 @@ $mimetypes_file::
 	file is found, mimetype guessing based on extension of file is disabled.
 	Unset by default.
 
-$highlight_bin::
+`$highlight_bin`::
 	Path to the highlight executable to use (it must be the one from
 	http://www.andre-simon.de[] due to assumptions about parameters and output).
 	By default set to 'highlight'; set it to full path to highlight
@@ -305,7 +305,7 @@ i.e. if CSS minifier is used during build).
 used by older `gitweb`.  If `$stylesheet` variable is defined, only CSS stylesheet
 given by this variable is used by `gitweb`.
 
-$logo::
+`$logo`::
 	Points to the location where you put 'git-logo.png' on your web
 	server, or to be more the generic URI of logo, 72x27 size).  This image
 	is displayed in the top right corner of each `gitweb` page and used as
@@ -313,7 +313,7 @@ $logo::
 	Can be adjusted when building `gitweb` using `GITWEB_LOGO` variable
 	By default set to `static/git-logo.png`.
 
-$favicon::
+`$favicon`::
 	Points to the location where you put 'git-favicon.png' on your web
 	server, or to be more the generic URI of favicon, which will be served
 	as "image/png" type.  Web browsers that support favicons (website icons)
@@ -322,7 +322,7 @@ $favicon::
 	build time using `GITWEB_FAVICON` variable.
 	By default set to `static/git-favicon.png`.
 
-$javascript::
+`$javascript`::
 	Points to the location where you put 'gitweb.js' on your web server,
 	or to be more generic the URI of JavaScript code used by `gitweb`.
 	Relative to the base URI of `gitweb`.  Can be set at build time using
@@ -333,13 +333,13 @@ the `JSMIN` build variable was defined, i.e. if JavaScript minifier was used
 at build time.  *Note* that this single file is generated from multiple
 individual JavaScript "modules".
 
-$home_link::
+`$home_link`::
 	Target of the home link on the top of all pages (the first part of view
 	"breadcrumbs").  By default it is set to the absolute URI of a current page
-	(to the value of `$my_uri` variable, or to "/" if `$my_uri` is undefined
+	(to the value of `$my_uri` variable, or to `/` if `$my_uri` is undefined
 	or is an empty string).
 
-$home_link_str::
+`$home_link_str`::
 	Label for the "home link" at the top of all pages, leading to `$home_link`
 	(usually the main `gitweb` page, which contains the projects list).  It is
 	used as the first component of gitweb's "breadcrumb trail":
@@ -367,8 +367,8 @@ For example, the following setting produces a breadcrumb trail like
     );
 ----------------------------------------------------------------------------
 
-$logo_url::
-$logo_label::
+`$logo_url`::
+`$logo_label`::
 	URI and label (title) for the Git logo link (or your site logo,
 	if you chose to use different logo image). By default, these both
 	refer to Git homepage, https://git-scm.com[]; in the past, they pointed
@@ -382,48 +382,48 @@ below.  You can change the site name, add common headers and footers for all
 pages, and add a description of this `gitweb` installation on its main page
 (which is the projects list page), etc.
 
-$site_name::
+`$site_name`::
 	Name of your site or organization, to appear in page titles.  Set it
 	to something descriptive for clearer bookmarks etc.  If this variable
 	is not set or is, then `gitweb` uses the value of the `SERVER_NAME`
-	`CGI` environment variable, setting site name to "$SERVER_NAME Git",
+	`CGI` environment variable, setting site name to "`$SERVER_NAME` Git",
 	or "Untitled Git" if this variable is not set (e.g. if running `gitweb`
 	as standalone script).
 +
 Can be set using the `GITWEB_SITENAME` at build time.  Unset by default.
 
-$site_html_head_string::
+`$site_html_head_string`::
 	HTML snippet to be included in the <head> section of each page.
 	Can be set using `GITWEB_SITE_HTML_HEAD_STRING` at build time.
 	No default value.
 
-$site_header::
+`$site_header`::
 	Name of a file with HTML to be included at the top of each page.
 	Relative to the directory containing the 'gitweb.cgi' script.
 	Can be set using `GITWEB_SITE_HEADER` at build time.  No default
 	value.
 
-$site_footer::
+`$site_footer`::
 	Name of a file with HTML to be included at the bottom of each page.
 	Relative to the directory containing the 'gitweb.cgi' script.
 	Can be set using `GITWEB_SITE_FOOTER` at build time.  No default
 	value.
 
-$home_text::
+`$home_text`::
 	Name of a HTML file which, if it exists, is included on the
 	`gitweb` projects overview page ("projects_list" view).  Relative to
 	the directory containing the gitweb.cgi script.  Default value
 	can be adjusted during build time using `GITWEB_HOMETEXT` variable.
 	By default set to 'indextext.html'.
 
-$projects_list_description_width::
+`$projects_list_description_width`::
 	The width (in characters) of the "Description" column of the projects list.
 	Longer descriptions will be truncated (trying to cut at word boundary);
 	the full description is available in the 'title' attribute (usually shown on
 	mouseover).  The default is 25, which might be too small if you
 	use long project descriptions.
 
-$default_projects_order::
+`$default_projects_order`::
 	Default value of ordering of projects on projects list page, which
 	means the ordering used if you don't explicitly sort projects list
 	(if there is no "o" CGI query parameter in the URL).  Valid values
@@ -439,7 +439,7 @@ Changing gitweb's behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 These configuration variables control _internal_ `gitweb` behavior.
 
-$default_blob_plain_mimetype::
+`$default_blob_plain_mimetype`::
 	Default mimetype for the blob_plain (raw) view, if mimetype checking
 	doesn't result in some other type; by default "text/plain".
 	Gitweb guesses mimetype of a file to display based on extension
@@ -447,11 +447,11 @@ $default_blob_plain_mimetype::
 	and `/etc/mime.types` files (see *mime.types*(5) manpage; only
 	filename extension rules are supported by `gitweb`).
 
-$default_text_plain_charset::
+`$default_text_plain_charset`::
 	Default charset for text files. If this is not set, the web server
 	configuration will be used.  Unset by default.
 
-$fallback_encoding::
+`$fallback_encoding`::
 	Gitweb assumes this charset when a line contains non-UTF-8 characters.
 	The fallback decoding is used without error checking, so it can be even
 	"utf-8". The value must be a valid encoding; see the *Encoding::Supported*(3pm)
@@ -496,26 +496,26 @@ time by setting the `GITWEB_BASE_URL` build-time configuration variable.
 By default it is set to (), i.e. an empty list.  This means that `gitweb`
 would not try to create project URL (to fetch) from project name.
 
-$projects_list_group_categories::
+`$projects_list_group_categories`::
 	Whether to enable the grouping of projects by category on the project
 	list page. The category of a project is determined by the
 	`$GIT_DIR/category` file or the `gitweb.category` variable in each
 	repository's configuration.  Disabled by default (set to 0).
 
-$project_list_default_category::
+`$project_list_default_category`::
 	Default category for projects for which none is specified.  If this is
 	set to the empty string, such projects will remain uncategorized and
 	listed at the top, above categorized projects.  Used only if project
 	categories are enabled, which means if `$projects_list_group_categories`
 	is true.  By default set to "" (empty string).
 
-$prevent_xss::
+`$prevent_xss`::
 	If true, some `gitweb` features are disabled to prevent content in
 	repositories from launching cross-site scripting (XSS) attacks.  Set this
 	to true if you don't trust the content of your repositories.
 	False by default (set to 0).
 
-$maxload::
+`$maxload`::
 	Used to set the maximum load that we will still respond to `gitweb` queries.
 	If the server load exceeds this value then `gitweb` will return
 	"503 Service Unavailable" error.  The server load is taken to be 0
@@ -527,14 +527,14 @@ $maxload::
 Set `$maxload` to undefined value (`undef`) to turn this feature off.
 The default value is 300.
 
-$omit_age_column::
+`$omit_age_column`::
 	If true, omit the column with date of the most current commit on the
 	projects list page. It can save a bit of I/O and a fork per repository.
 
-$omit_owner::
+`$omit_owner`::
 	If true prevents displaying information about repository owner.
 
-$per_request_config::
+`$per_request_config`::
 	If this is set to code reference, it will be run once for each request.
 	You can set parts of configuration that change per session this way.
 	For example, one might use the following code in a `gitweb` configuration
@@ -567,7 +567,7 @@ variables described below; they should be automatically set by `gitweb` to
 correct value.
 
 
-$version::
+`$version`::
 	Gitweb version, set automatically when creating gitweb.cgi from
 	gitweb.perl. You might want to modify it if you are running modified
 	`gitweb`, for example
@@ -580,19 +580,19 @@ if you run modified version of `gitweb` with caching support.  This variable
 is purely informational, used e.g. in the "generator" meta header in HTML
 header.
 
-$my_url::
-$my_uri::
+`$my_url`::
+`$my_uri`::
 	Full URL and absolute URL of the `gitweb` script;
 	in earlier versions of `gitweb` you might have need to set those
 	variables, but now there should be no need to do it.  See
 	`$per_request_config` if you need to set them still.
 
-$base_url::
+`$base_url`::
 	Base URL for relative URLs in pages generated by `gitweb`,
 	(e.g. `$logo`, `$favicon`, `@stylesheets` if they are relative URLs),
 	needed and used '<base href="$base_url">' only for URLs with nonempty
 	PATH_INFO.  Usually `gitweb` sets its value correctly,
-	and there is no need to set this variable, e.g. to $my_uri or "/".
+	and there is no need to set this variable, e.g. to `$my_uri` or "/".
 	See `$per_request_config` if you need to override it anyway.
 
 
@@ -805,7 +805,7 @@ The "default" value consists of a list of triplets in the form
 `("<label>", "<link>", "<position>")` where "position" is the label
 after which to insert the link, "link" is a format string where `%n`
 expands to the project name, `%f` to the project path within the
-filesystem (i.e. "$projectroot/$project"), `%h` to the current hash
+filesystem (i.e. `$projectroot`/`$project`), `%h` to the current hash
 (\'h' `gitweb` parameter) and `%b` to the current hash base
 (\'hb' `gitweb` parameter); `%%` expands to \'%'.
 +
@@ -860,7 +860,7 @@ time zones in the form of "+/-HHMM", such as "+0200".
 Project specific override is not supported.
 
 extra-branch-refs::
-	List of additional directories under "refs" which are going to
+	List of additional directories under `refs` which are going to
 	be used as branch refs. For example if you have a gerrit setup
 	where all branches under refs/heads/ are official,
 	push-after-review ones and branches under refs/sandbox/,

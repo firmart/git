@@ -74,7 +74,7 @@ This:
 1. Creates an empty Git repository in a subdirectory called 'project'.
 +
 2. Imports the full contents of the head revision from the given p4
-   depot path into a single commit in the Git branch 'refs/remotes/p4/master'.
+   depot path into a single commit in the Git branch `refs/remotes/p4/master`.
 +
 3. Creates a local branch, `master` from this remote and checks it out.
 
@@ -103,11 +103,11 @@ $ git init
 $ git p4 sync //path/in/your/perforce/depot
 ------------
 This imports the specified depot into
-'refs/remotes/p4/master' in an existing Git repository.  The
+`refs/remotes/p4/master` in an existing Git repository.  The
 `--branch` option can be used to specify a different branch to
 be used for the p4 content.
 
-If a Git repository includes branches 'refs/remotes/origin/p4', these
+If a Git repository includes branches `refs/remotes/origin/p4`, these
 will be fetched and consulted first during a `git p4 sync`.  Since
 importing directly from p4 is considerably slower than pulling changes
 from a Git remote, this can be useful in a multi-developer environment.
@@ -155,7 +155,7 @@ $ git p4 submit --commit <sha1>
 $ git p4 submit --commit <sha1..sha1>
 ------------
 
-The upstream reference is generally 'refs/remotes/p4/master', but can
+The upstream reference is generally `refs/remotes/p4/master`, but can
 be overridden using the `--origin=` command-line option.
 
 The p4 changes will be created as the user invoking `git p4 submit`. The
@@ -254,10 +254,10 @@ Git repository:
 	Import labels from p4 into Git.
 
 --import-local::
-	By default, p4 branches are stored in 'refs/remotes/p4/',
+	By default, p4 branches are stored in `refs/remotes/p4/`,
 	where they will be treated as remote-tracking branches by
 	linkgit:git-branch[1] and other commands.  This option instead
-	puts p4 branches in 'refs/heads/p4/'.  Note that future
+	puts p4 branches in `refs/heads/p4/`.  Note that future
 	sync operations must specify `--import-local` as well so that
 	they can find the p4 branches in refs/heads.
 
@@ -524,7 +524,7 @@ Then this `git p4 clone` command:
 ----
 git p4 clone --detect-branches //depot@all
 ----
-produces a separate branch in 'refs/remotes/p4/' for //depot/main,
+produces a separate branch in `refs/remotes/p4/` for //depot/main,
 called `master`, and one for //depot/branch1 called `depot/branch1`.
 
 However, it is not necessary to create branches in p4 to be able to use
@@ -593,7 +593,7 @@ Clone and sync variables
 git-p4.syncFromOrigin::
 	Because importing commits from other Git repositories is much faster
 	than importing them from p4, a mechanism exists to find p4 changes
-	first in Git remotes.  If branches exist under 'refs/remote/origin/p4',
+	first in Git remotes.  If branches exist under `refs/remote/origin/p4`,
 	those will be fetched and used when syncing from p4.  This
 	variable can be set to 'false' to disable this behavior.
 
@@ -719,7 +719,7 @@ git-p4.allowSubmit::
 	By default, any branch can be used as the source for a `git p4
 	submit` operation.  This configuration variable, if set, permits only
 	the named branches to be used as submit sources.  Branch names
-	must be the short names (no "refs/heads/"), and should be
+	must be the short names (no `refs/heads/`), and should be
 	separated by commas (","), with no spaces.
 
 git-p4.skipUserNameCheck::

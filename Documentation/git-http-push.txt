@@ -74,7 +74,7 @@ destination side.
 
  - If <dst> does not match any remote ref, either
 
-   * it has to start with "refs/"; <dst> is used as the
+   * it has to start with `refs/`; <dst> is used as the
      destination literally in this case.
 
    * <src> == <dst> and the ref that matched the <src> must not

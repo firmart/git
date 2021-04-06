@@ -32,7 +32,7 @@ ref file by starting with the four-byte header sequence of
 More importantly, it allows the update of a ref file to follow
 these symbolic pointers, whether they are symlinks or these
 "regular file symbolic refs".  It follows *real* symlinks only
-if they start with "refs/": otherwise it will just try to read
+if they start with `refs/`: otherwise it will just try to read
 them and update them as a regular file (i.e. it will allow the
 filesystem to follow them, but will overwrite such a symlink to
 somewhere else with a regular filename).
@@ -49,7 +49,7 @@ should be a _lot_ safer than doing
 	echo "$head" > "$GIT_DIR/HEAD"
 
 both from a symlink following standpoint *and* an error checking
-standpoint.  The "refs/" rule for symlinks means that symlinks
+standpoint.  The `refs/` rule for symlinks means that symlinks
 that point to "outside" the tree are safe: they'll be followed
 for reading but not for writing (so we'll never write through a
 ref symlink to some other tree, if you have copied a whole
@@ -150,10 +150,10 @@ still see a subset of the modifications.
 LOGGING UPDATES
 ---------------
 If config parameter `core.logAllRefUpdates` is true and the ref is one
-under "refs/heads/", "refs/remotes/", "refs/notes/", or a pseudoref
-like `HEAD` or `ORIG_HEAD`; or the file "$GIT_DIR/logs/<ref>" exists then
+under `refs/heads/`, `refs/remotes/`, `refs/notes/`, or a pseudoref
+like `HEAD` or `ORIG_HEAD`; or the file `$GIT_DIR/logs/<ref>` exists then
 `git update-ref` will append a line to the log file
-"$GIT_DIR/logs/<ref>" (dereferencing all symbolic refs before creating
+`$GIT_DIR/logs/<ref>` (dereferencing all symbolic refs before creating
 the log name) describing the change in ref value.  Log lines are
 formatted as:
 

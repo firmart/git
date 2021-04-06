@@ -217,9 +217,9 @@ The placeholders are:
 			  the same time.
 +
 ** 'match=<pattern>': Only consider tags matching the given
-   `glob(7)` pattern, excluding the "refs/tags/" prefix.
+   `glob(7)` pattern, excluding the `refs/tags/` prefix.
 ** 'exclude=<pattern>': Do not consider tags matching the given
-   `glob(7)` pattern, excluding the "refs/tags/" prefix.
+   `glob(7)` pattern, excluding the `refs/tags/` prefix.
 
 '%S':: ref name given on the command line by which the commit was reached
        (like `git log --source`), only works with `git log`

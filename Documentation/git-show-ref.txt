@@ -40,9 +40,9 @@ OPTIONS
 --heads::
 --tags::
 
-	Limit to "refs/heads" and "refs/tags", respectively.  These options
+	Limit to `refs/heads` and `refs/tags`, respectively.  These options
 	are not mutually exclusive; when given both, references stored in
-	"refs/heads" and "refs/tags" are displayed.
+	`refs/heads` and `refs/tags` are displayed.
 
 -d::
 --dereference::
@@ -89,9 +89,9 @@ OPTIONS
 
 	Show references matching one or more patterns. Patterns are matched from
 	the end of the full name, and only complete parts are matched, e.g.
-	'master' matches 'refs/heads/master', 'refs/remotes/origin/master',
-	'refs/tags/jedi/master' but not 'refs/heads/mymaster' or
-	'refs/remotes/master/jedi'.
+	'master' matches `refs/heads/master`, `refs/remotes/origin/master`,
+	`refs/tags/jedi/master` but not `refs/heads/mymaster` or
+	`refs/remotes/master/jedi`.
 
 OUTPUT
 ------
@@ -131,7 +131,7 @@ use:
 	git show-ref master
 -----------------------------------------------------------------------------
 
-This will show "refs/heads/master" but also "refs/remote/other-repo/master",
+This will show `refs/heads/master` but also `refs/remote/other-repo/master`,
 if such references exists.
 
 When using the `--verify` flag, the command requires an exact path:

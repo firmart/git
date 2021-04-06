@@ -95,9 +95,9 @@ OPTIONS
 
 --match <pattern>::
 	Only consider tags matching the given `glob(7)` pattern,
-	excluding the "refs/tags/" prefix. If used with `--all`, it also
+	excluding the `refs/tags/` prefix. If used with `--all`, it also
 	considers local branches and remote-tracking references matching the
-	pattern, excluding respectively "refs/heads/" and "refs/remotes/"
+	pattern, excluding respectively `refs/heads/` and `refs/remotes/`
 	prefix; references of other types are never considered. If given
 	multiple times, a list of patterns will be accumulated, and tags
 	matching any of the patterns will be considered.  Use `--no-match` to
@@ -105,9 +105,9 @@ OPTIONS
 
 --exclude <pattern>::
 	Do not consider tags matching the given `glob(7)` pattern, excluding
-	the "refs/tags/" prefix. If used with `--all`, it also does not consider
+	the `refs/tags/` prefix. If used with `--all`, it also does not consider
 	local branches and remote-tracking references matching the pattern,
-	excluding respectively "refs/heads/" and "refs/remotes/" prefix;
+	excluding respectively `refs/heads/` and `refs/remotes/` prefix;
 	references of other types are never considered. If given multiple times,
 	a list of patterns will be accumulated and tags matching any of the
 	patterns will be excluded. When combined with `--match` a tag will be

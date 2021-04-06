@@ -164,8 +164,8 @@ A few more notes on matching via `gitdir` and `gitdir/i`:
  * Symlinks in `$GIT_DIR` are not resolved before matching.
 
  * Both the symlink & realpath versions of paths will be matched
-   outside of `$GIT_DIR`. E.g. if ~/git is a symlink to
-   /mnt/storage/git, both `gitdir:~/git` and `gitdir:/mnt/storage/git`
+   outside of `$GIT_DIR`. E.g. if `~/git` is a symlink to
+   `/mnt/storage/git`, both `gitdir:~/git` and `gitdir:/mnt/storage/git`
    will match.
 +
 This was not the case in the initial release of this feature in
@@ -173,7 +173,7 @@ v2.13.0, which only matched the realpath version. Configuration that
 wants to be compatible with the initial release of this feature needs
 to either specify only the realpath version, or both versions.
 
- * Note that "../" is not special and will match literally, which is
+ * Note that `../` is not special and will match literally, which is
    unlikely what you want.
 
 Example
@@ -204,15 +204,15 @@ Example
 	path = foo.inc ; find "foo.inc" relative to the current file
 	path = ~/foo.inc ; find "foo.inc" in your `$HOME` directory
 
-; include if $GIT_DIR is /path/to/foo/.git
+; include if `$GIT_DIR` is /path/to/foo/.git
 [includeIf "gitdir:/path/to/foo/.git"]
 	path = /path/to/foo.inc
 
-; include for all repositories inside /path/to/group
+; include for all repositories inside `/path/to/group`
 [includeIf "gitdir:/path/to/group/"]
 	path = /path/to/foo.inc
 
-; include for all repositories inside $HOME/to/group
+; include for all repositories inside `$HOME/to/group`
 [includeIf "gitdir:~/to/group/"]
 	path = /path/to/foo.inc
 

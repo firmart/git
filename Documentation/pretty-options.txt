@@ -75,15 +75,15 @@ with `refs/notes/`; when it begins with `notes/`, `refs/` and otherwise
 +
 Multiple `--notes` options can be combined to control which notes are
 being displayed. Examples: `--notes=foo` will show only notes from
-"refs/notes/foo"; `--notes=foo --notes` will show both notes from
-"refs/notes/foo" and from the default notes ref(s).
+`refs/notes/foo`; `--notes=foo --notes` will show both notes from
+`refs/notes/foo` and from the default notes ref(s).
 
 --no-notes::
 	Do not show notes. This negates the above `--notes` option, by
 	resetting the list of notes refs from which notes are shown.
 	Options are parsed in the order given on the command line, so e.g.
 	`--notes --notes=foo --no-notes --notes=bar` will only show notes
-	from "refs/notes/bar".
+	from `refs/notes/bar`.
 
 --show-notes[=<ref>]::
 --[no-]standard-notes::

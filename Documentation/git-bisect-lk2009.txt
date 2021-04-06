@@ -1218,9 +1218,9 @@ With the example above that would give:
 -------------
 
 That's why the `git replace` command was created. Technically it
-stores replacements "refs" in the "refs/replace/" hierarchy. These
-"refs" are like branches (that are stored in "refs/heads/") or tags
-(that are stored in "refs/tags"), and that means that they can
+stores replacements `refs` in the `refs/replace/` hierarchy. These
+`refs` are like branches (that are stored in `refs/heads/`) or tags
+(that are stored in `refs/tags`), and that means that they can
 automatically be shared like branches or tags among developers.
 
 `git replace` is a very powerful mechanism. It can be used to fix
@@ -1233,10 +1233,10 @@ it is now in the `master` branch of Git's Git repository and it should
 be released in Git 1.6.5 in October or November 2009.
 
 One problem with `git replace` is that currently it stores all the
-replacements refs in "refs/replace/", but it would be perhaps better
+replacements refs in `refs/replace/`, but it would be perhaps better
 if the replacement refs that are useful only for bisecting would be in
-"refs/replace/bisect/". This way the replacement refs could be used
-only for bisecting, while other refs directly in "refs/replace/" would
+`refs/replace/bisect/`. This way the replacement refs could be used
+only for bisecting, while other refs directly in `refs/replace/` would
 be used nearly all the time.
 
 Bisecting sporadic bugs

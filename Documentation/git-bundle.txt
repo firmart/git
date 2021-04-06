@@ -168,7 +168,7 @@ machineB$ git clone -b master /home/me/tmp/file.bundle R2
 ----------------
 
 This will define a remote called `origin` in the resulting repository that
-lets you fetch and pull from the bundle. The $GIT_DIR/config file in R2 will
+lets you fetch and pull from the bundle. The `$GIT_DIR/config` file in R2 will
 have an entry like this:
 
 ------------------------
