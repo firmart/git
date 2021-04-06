@@ -64,8 +64,8 @@ BUGS
 ----
 
 Older documentation written before the packed-refs mechanism was
-introduced may still say things like ".git/refs/heads/<branch> file
-exists" when it means "branch <branch> exists".
+introduced may still say things like "`.git/refs/heads/<branch>` file
+exists" when it means branch <branch> exists.
 
 
 GIT

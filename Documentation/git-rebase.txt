@@ -48,7 +48,7 @@ It is possible that a merge failure will prevent this process from being
 completely automatic.  You will have to resolve any such merge failure
 and run `git rebase --continue`.  Another option is to bypass the commit
 that caused the merge failure with `git rebase --skip`.  To check out the
-original <branch> and remove the .git/rebase-apply working files, use the
+original <branch> and remove the `.git/rebase-apply` working files, use the
 command `git rebase --abort` instead.
 
 Assume the following history exists and the current branch is `topic`:
@@ -800,7 +800,7 @@ completeness:
   them to stderr.
 
 * State directories: The two backends keep their state in different
-  directories under .git/
+  directories under `.git/`
 
 include::merge-strategies.txt[]
 

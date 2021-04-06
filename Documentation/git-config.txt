@@ -148,7 +148,7 @@ See also <<FILES>>.
 --blob blob::
 	Similar to `--file` but use the given blob instead of a file. E.g.
 	you can use 'master:.gitmodules' to read values from the file
-	'.gitmodules' in the `master` branch. See "SPECIFYING REVISIONS"
+	`.gitmodules` in the `master` branch. See "SPECIFYING REVISIONS"
 	section in linkgit:gitrevisions[7] for a more complete list of
 	ways to spell blob names.
 
@@ -336,8 +336,8 @@ ENVIRONMENT
 -----------
 
 GIT_CONFIG::
-	Take the configuration from the given file instead of .git/config.
-	Using the `--global` option forces this to ~/.gitconfig. Using the
+	Take the configuration from the given file instead of `.git/config`.
+	Using the `--global` option forces this to `~/.gitconfig`. Using the
 	`--system` option forces this to $(prefix)/etc/gitconfig.
 
 GIT_CONFIG_NOSYSTEM::
@@ -367,7 +367,7 @@ for example when writing scripts.
 EXAMPLES
 --------
 
-Given a .git/config like this:
+Given a `.git/config` like this:
 
 ------------
 #

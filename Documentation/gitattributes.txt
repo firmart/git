@@ -7,7 +7,7 @@ gitattributes - Defining attributes per path
 
 SYNOPSIS
 --------
-$GIT_DIR/info/attributes, .gitattributes
+$GIT_DIR/info/attributes, `.gitattributes`
 
 
 DESCRIPTION
@@ -430,7 +430,7 @@ variable to `true`.
 Note: Whenever the clean filter is changed, the repo should be renormalized:
 $ git add --renormalize .
 
-For example, in .gitattributes, you would assign the `filter`
+For example, in `.gitattributes`, you would assign the `filter`
 attribute for paths.
 
 ------------------------
@@ -438,7 +438,7 @@ attribute for paths.
 ------------------------
 
 Then you would define a `filter.indent.clean` and `filter.indent.smudge`
-configuration in your .git/config to specify a pair of commands to
+configuration in your `.git/config` to specify a pair of commands to
 modify the contents of C programs when the source files are checked
 in ("clean" is run) and checked out (no change is made because the
 command is "cat").
@@ -771,7 +771,7 @@ matches what GNU 'diff -p' output uses.  This default selection however
 is not suited for some contents, and you can use a customized pattern
 to make a selection.
 
-First, in .gitattributes, you would assign the `diff` attribute
+First, in `.gitattributes`, you would assign the `diff` attribute
 for paths.
 
 ------------------------

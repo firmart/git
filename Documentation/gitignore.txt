@@ -7,7 +7,7 @@ gitignore - Specifies intentionally untracked files to ignore
 
 SYNOPSIS
 --------
-$XDG_CONFIG_HOME/git/ignore, $GIT_DIR/info/exclude, .gitignore
+$XDG_CONFIG_HOME/git/ignore, $GIT_DIR/info/exclude, `.gitignore`
 
 DESCRIPTION
 -----------
@@ -211,7 +211,7 @@ Another example:
     $ echo '!/vmlinux*' >arch/foo/kernel/.gitignore
 --------------------------------------------------------------
 
-The second .gitignore prevents Git from ignoring
+The second `.gitignore` prevents Git from ignoring
 `arch/foo/kernel/vmlinux.lds.S`.
 
 Example to exclude everything except a specific directory `foo/bar`

@@ -221,7 +221,7 @@ config key: `svn-remote.<name>.include-paths`
 
 --placeholder-filename=<filename>;;
 	Set the name of placeholder files created by `--preserve-empty-dirs`.
-	Default: ".gitignore"
+	Default: "`.gitignore`"
 
 `rebase`::
 	This fetches revisions from the SVN parent of the current `HEAD`
@@ -432,7 +432,7 @@ Any other arguments are passed directly to `git log`
 
 `create-ignore`::
 	Recursively finds the svn:ignore property on directories and
-	creates matching .gitignore files. The resulting files are staged to
+	creates matching `.gitignore` files. The resulting files are staged to
 	be committed, but are not committed. Use `-r`/`--revision` to refer to a
 	specific revision.
 

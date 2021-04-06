@@ -512,7 +512,7 @@ set by Git if the remote helper has the 'option' capability.
 	repository is guaranteed empty).
 
 'option update-shallow' {'true'|'false'}::
-	Allow to extend .git/shallow if the new refs require it.
+	Allow to extend `.git/shallow` if the new refs require it.
 
 'option pushcert' {'true'|'false'}::
 	GPG sign pushes.

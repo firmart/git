@@ -642,7 +642,7 @@ parameter.
 
 *Notice* that in this case you don't need special settings for
 `@stylesheets`, `$my_uri` and `$home_link`, but you lose "dumb client"
-access to your project .git dirs (described in "Single URL for `gitweb` and
+access to your project `.git` dirs (described in "Single URL for `gitweb` and
 for fetching" section).  A possible workaround for the latter is the
 following: in your project root dir (e.g. `/pub/git`) have the projects
 named *without* a .git extension (e.g. `/pub/git/project` instead of

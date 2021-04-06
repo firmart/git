@@ -192,11 +192,11 @@ OPTIONS
 --commit::
 	Finalize an in-progress `git notes merge`. Use this option
 	when you have resolved the conflicts that `git notes merge`
-	stored in .git/NOTES_MERGE_WORKTREE. This amends the partial
+	stored in `.git/NOTES_MERGE_WORKTREE`. This amends the partial
 	merge commit created by `git notes merge` (stored in
-	.git/NOTES_MERGE_PARTIAL) by adding the notes in
-	.git/NOTES_MERGE_WORKTREE. The notes ref stored in the
-	.git/NOTES_MERGE_REF symref is updated to the resulting commit.
+	`.git/NOTES_MERGE_PARTIAL`) by adding the notes in
+	`.git/NOTES_MERGE_WORKTREE`. The notes ref stored in the
+	`.git/NOTES_MERGE_REF` symref is updated to the resulting commit.
 
 --abort::
 	Abort/reset an in-progress `git notes merge`, i.e. a notes merge

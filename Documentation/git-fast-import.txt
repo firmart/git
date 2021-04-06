@@ -116,7 +116,7 @@ Locations of Marks Files
 	with `--import-marks`= and `--export-marks`= are relative
 	to an internal directory in the current repository.
 	In `git-fast-import` this means that the paths are relative
-	to the .git/info/fast-import directory. However, other
+	to the `.git/info/fast-import` directory. However, other
 	importers may use a different location.
 +
 Relative and non-relative marks may be combined by interweaving

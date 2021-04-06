@@ -86,8 +86,8 @@ care about this output and want to speed it up further.
 	Be chatty.
 
 --lost-found::
-	Write dangling objects into .git/lost-found/commit/ or
-	.git/lost-found/other/, depending on type.  If the object is
+	Write dangling objects into `.git/lost-found/commit/` or
+	`.git/lost-found/other/`, depending on type.  If the object is
 	a blob, the contents are written into the file, rather than
 	its object name.
 
