@@ -607,7 +607,7 @@ Writing Documentation:
  or commands:
 
  Literal examples (e.g. use of command-line options, command names,
- branch names, URLs, pathnames (files and directories), configuration and
+ branch names, dummy URLs, pathnames (files and directories), configuration and
  environment variables) must be typeset in monospace (i.e. wrapped with
  backticks):
    `--pretty=oneline`

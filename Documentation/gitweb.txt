@@ -586,7 +586,7 @@ These configurations enable two things. First, each unix user (`<user>`) of
 the server will be able to browse through `gitweb` Git repositories found in
 `~/public_git/` with the following url:
 
-  http://git.example.org/~<user>/
+  `http://git.example.org/~<user>/`
 
 If you do not want this feature on your server just remove the second
 rewrite rule.
@@ -610,7 +610,7 @@ $feature{'pathinfo'}{'default'} = [1];
 in your `gitweb` configuration file, it is possible to set up your server so
 that it consumes and produces URLs in the form
 
-  http://git.example.com/project.git/shortlog/sometag
+  `http://git.example.com/project.git/shortlog/sometag`
 
 i.e. without 'gitweb.cgi' part, by using a configuration such as the
 following.  This configuration assumes that `/var/www/gitweb` is the
@@ -670,19 +670,19 @@ named *without* a .git extension (e.g. `/pub/git/project` instead of
 
 The additional AliasMatch makes it so that
 
-  http://git.example.com/project.git
+  `http://git.example.com/project.git`
 
 will give raw access to the project's Git dir (so that the project can be
 cloned), while
 
-  http://git.example.com/project
+  `http://git.example.com/project`
 
 will provide human-friendly `gitweb` access.
 
 This solution is not 100% bulletproof, in the sense that if some project has
 a named ref (branch, tag) starting with `git/`, then paths such as
 
-  http://git.example.com/project/command/abranch..git/abranch
+  `http://git.example.com/project/command/abranch..git/abranch`
 
 will fail with a 404 error.
 

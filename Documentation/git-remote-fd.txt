@@ -22,7 +22,7 @@ to be pipes connected to a remote Git server (<infd> being the inbound pipe
 and <outfd> being the outbound pipe.
 
 It is assumed that any handshaking procedures have already been completed
-(such as sending service request for git://) before this helper is started.
+(such as sending service request for `git://`) before this helper is started.
 
 <anything> can be any string. It is ignored. It is meant for providing
 information to user in the URL in case that URL is displayed in some

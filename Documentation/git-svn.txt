@@ -798,8 +798,8 @@ svn-remote.<name>.useSvnsyncprops::
 svn-remote.<name>.rewriteRoot::
 	This allows users to create repositories from alternate
 	URLs.  For example, an administrator could run `git svn` on the
-	server locally (accessing via file://) but wish to distribute
-	the repository with a public http:// or svn:// URL in the
+	server locally (accessing via `file://`) but wish to distribute
+	the repository with a public `http://` or `svn://` URL in the
 	metadata so users of it will see the public URL.
 
 svn-remote.<name>.rewriteUUID::

@@ -55,8 +55,8 @@ OPTIONS
 --base-path=<path>::
 	Remap all the path requests as relative to the given path.
 	This is sort of "Git root" - if you run `git daemon` with
-	`--base-path=/srv/git` on example.com, then if you later try to pull
-	'git://example.com/hello.git', `git daemon` will interpret the path
+	`--base-path=/srv/git` on `example.com`, then if you later try to pull
+	`git://example.com/hello.git`, `git daemon` will interpret the path
 	as `/srv/git/hello.git`.
 
 --base-path-relaxed::
@@ -139,7 +139,7 @@ otherwise `stderr`.
 --user-path=<path>::
 	Allow {tilde}user notation to be used in requests.  When
 	specified with no parameter, requests to
-	git://host/{tilde}alice/foo is taken as a request to access
+	`git://host/~alice/foo` is taken as a request to access
 	'foo' repository in the home directory of user `alice`.
 	If `--user-path=path` is specified, the same request is
 	taken as a request to access `path/foo` repository in

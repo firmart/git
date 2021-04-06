@@ -140,8 +140,8 @@ How do I use multiple accounts with the same hosting provider using HTTP?::
 	Usually the easiest way to distinguish between these accounts is to use
 	the username in the URL.  For example, if you have the accounts `author`
 	and `committer` on `git.example.org`, you can use the URLs
-	https://author@git.example.org/org1/project1.git and
-	https://committer@git.example.org/org2/project2.git.  This way, when you
+	`https://author@git.example.org/org1/project1.git` and
+	`https://committer@git.example.org/org2/project2.git`.  This way, when you
 	use a credential helper, it will automatically try to look up the
 	correct credentials for your account.  If you already have a remote set
 	up, you can change the URL with something like `git remote set-url
