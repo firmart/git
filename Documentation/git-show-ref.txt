@@ -35,7 +35,7 @@ OPTIONS
 
 --head::
 
-	Show the HEAD reference, even if it would normally be filtered out.
+	Show the `HEAD` reference, even if it would normally be filtered out.
 
 --heads::
 --tags::

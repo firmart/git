@@ -209,7 +209,7 @@ This option is only applicable when listing tags without annotation lines.
 <commit>::
 <object>::
 	The object that the new tag will refer to, usually a commit.
-	Defaults to HEAD.
+	Defaults to `HEAD`.
 
 CONFIGURATION
 -------------

@@ -128,7 +128,7 @@ HEAD::
 	describing the currently active branch.  It does not mean
 	much if the repository is not associated with any working tree
 	(i.e. a 'bare' repository), but a valid Git repository
-	*must* have the HEAD file; some porcelains may use it to
+	*must* have the `HEAD` file; some porcelains may use it to
 	guess the designated "default" branch of the repository
 	(usually 'master').  It is legal if the named branch
 	'name' does not (yet) exist.  In some legacy setups, it is
@@ -137,7 +137,7 @@ HEAD::
 +
 HEAD can also record a specific commit directly, instead of
 being a symref to point at the current branch.  Such a state
-is often called 'detached HEAD.'  See linkgit:git-checkout[1]
+is often called 'detached `HEAD`.'  See linkgit:git-checkout[1]
 for details.
 
 config::

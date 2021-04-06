@@ -39,7 +39,7 @@ add [-b <branch>] [-f|--force] [--name <name>] [--reference <repository>] [--dep
 	to the changeset to be committed next to the current
 	project: the current project is termed the "superproject".
 +
-<repository> is the URL of the new submodule's origin repository.
+<repository> is the URL of the new submodule's `origin` repository.
 This may be either an absolute URL, or (if it begins with ./
 or ../), the location relative to the superproject's default remote
 repository (Please note that to specify a repository 'foo.git'
@@ -50,7 +50,7 @@ of relative URLs in Git is identical to that of relative directories).
 +
 The default remote is the remote of the remote-tracking branch
 of the current branch. If no such remote-tracking branch exists or
-the HEAD is detached, "origin" is assumed to be the default remote.
+the `HEAD` is detached, `origin` is assumed to be the default remote.
 If the superproject doesn't have a default remote configured
 the superproject is its own authoritative upstream and the current
 working directory is used instead.
@@ -88,7 +88,7 @@ If `--recursive` is specified, this command will recurse into nested
 submodules, and show their status as well.
 +
 If you are only interested in changes of the currently initialized
-submodules with respect to the commit recorded in the index or the HEAD,
+submodules with respect to the commit recorded in the index or the `HEAD`,
 linkgit:git-status[1] and linkgit:git-diff[1] will provide that information
 too (and can also report changes to a submodule's work tree).
 
@@ -147,7 +147,7 @@ The 'update' procedures supported both from the command line as well as
 through the `submodule.<name>.update` configuration are:
 
 	checkout;; the commit recorded in the superproject will be
-	    checked out in the submodule on a detached HEAD.
+	    checked out in the submodule on a detached `HEAD`.
 +
 If `--force` is specified, the submodule will be checked out (using
 `git checkout --force`), even if the commit specified
@@ -183,7 +183,7 @@ set-branch (-d|--default) [--] <path>::
 	Sets the default remote tracking branch for the submodule. The
 	`--branch` option allows the remote branch to be specified. The
 	`--default` option removes the submodule.<name>.branch configuration
-	key, which causes the tracking branch to default to the remote 'HEAD'.
+	key, which causes the tracking branch to default to the remote `HEAD`.
 
 set-url [--] <path> <newurl>::
 	Sets the URL of the specified submodule to <newurl>. Then, it will
@@ -191,7 +191,7 @@ set-url [--] <path> <newurl>::
 	configuration.
 
 summary [--cached|--files] [(-n|--summary-limit) <n>] [commit] [--] [<path>...]::
-	Show commit summary between the given commit (defaults to HEAD) and
+	Show commit summary between the given commit (defaults to `HEAD`) and
 	working tree/index. For a submodule in question, a series of commits
 	in the submodule between the given super project commit and the
 	index or working tree (switched by `--cached`) are shown. If the option
@@ -284,7 +284,7 @@ OPTIONS
 	`.gitmodules` for `update --remote`.  A special value of `.` is used to
 	indicate that the name of the branch in the submodule should be the
 	same name as the current branch in the current repository.  If the
-	option is not specified, it defaults to the remote 'HEAD'.
+	option is not specified, it defaults to the remote `HEAD`.
 
 -f::
 --force::
@@ -301,12 +301,12 @@ OPTIONS
 
 --cached::
 	This option is only valid for status and summary commands.  These
-	commands typically use the commit found in the submodule HEAD, but
+	commands typically use the commit found in the submodule `HEAD`, but
 	with this option, the commit stored in the index is used instead.
 
 --files::
 	This option is only valid for the summary command. This command
-	compares the commit in the index with that in the submodule HEAD
+	compares the commit in the index with that in the submodule `HEAD`
 	when this option is used.
 
 -n::
@@ -339,7 +339,7 @@ SHA-1.  If you don't want to fetch, you should use `submodule update
 --remote --no-fetch`.
 +
 Use this option to integrate changes from the upstream subproject with
-your submodule's current HEAD.  Alternatively, you can run `git pull`
+your submodule's current `HEAD`.  Alternatively, you can run `git pull`
 from the submodule, which is equivalent except for the remote branch
 name: `update --remote` uses the default upstream repository and
 `submodule.<name>.branch`, while `git pull` uses the submodule's
@@ -355,7 +355,7 @@ the submodule itself.
 
 --checkout::
 	This option is only valid for the update command.
-	Checkout the commit recorded in the superproject on a detached HEAD
+	Checkout the commit recorded in the superproject on a detached `HEAD`
 	in the submodule. This is the default behavior, the main use of
 	this option is to override `submodule.$name.update` when set to
 	a value other than `checkout`.
@@ -365,7 +365,7 @@ the submodule itself.
 --merge::
 	This option is only valid for the update command.
 	Merge the commit recorded in the superproject into the current branch
-	of the submodule. If this option is given, the submodule's HEAD will
+	of the submodule. If this option is given, the submodule's `HEAD` will
 	not be detached. If a merge failure prevents this process, you will
 	have to resolve the resulting conflicts within the submodule with the
 	usual conflict resolution tools.
@@ -375,7 +375,7 @@ the submodule itself.
 --rebase::
 	This option is only valid for the update command.
 	Rebase the current branch onto the commit recorded in the
-	superproject. If this option is given, the submodule's HEAD will not
+	superproject. If this option is given, the submodule's `HEAD` will not
 	be detached. If a merge failure prevents this process, you will have
 	to resolve these failures with linkgit:git-rebase[1].
 	If the key `submodule.$name.update` is set to `rebase`, this option is
@@ -432,7 +432,7 @@ options carefully.
 
 --[no-]single-branch::
 	This option is only valid for the update command.
-	Clone only one branch during update: HEAD or one specified by `--branch`.
+	Clone only one branch during update: `HEAD` or one specified by `--branch`.
 
 <path>...::
 	Paths to submodule(s). When specified this will restrict the command

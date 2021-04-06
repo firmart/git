@@ -31,10 +31,10 @@ OPTIONS
 
 <upstream>::
 	Upstream branch to search for equivalent commits.
-	Defaults to the upstream branch of HEAD.
+	Defaults to the upstream branch of `HEAD`.
 
 <head>::
-	Working branch; defaults to HEAD.
+	Working branch; defaults to `HEAD`.
 
 <limit>::
 	Do not report commits up to (and including) limit.

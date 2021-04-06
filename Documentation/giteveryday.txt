@@ -104,8 +104,8 @@ modification will be caught if you do `git commit -a` later.
 <6> look at all your changes including the previous commit.
 <7> amend the previous commit, adding all your new changes,
 using your original message.
-<8> switch to the master branch.
-<9> merge a topic branch into your master branch.
+<8> switch to the `master` branch.
+<9> merge a topic branch into your `master` branch.
 <10> review commit logs; other forms to limit output can be
 combined and include `-10` (to show up to 10 commits),
 `--until=2005-12-10`, etc.
@@ -123,7 +123,7 @@ addition to the ones needed by a standalone developer.
   * linkgit:git-clone[1] from the upstream to prime your local
     repository.
 
-  * linkgit:git-pull[1] and linkgit:git-fetch[1] from "origin"
+  * linkgit:git-pull[1] and linkgit:git-fetch[1] from `origin`
     to keep up-to-date with the upstream.
 
   * linkgit:git-push[1] to shared repository, if you adopt CVS
@@ -160,9 +160,9 @@ $ git reset --hard ORIG_HEAD <10>
 $ git gc <11>
 ------------
 +
-<1> checkout a new branch `mine` from master.
+<1> checkout a new branch `mine` from `master`.
 <2> repeat as needed.
-<3> extract patches from your branch, relative to master,
+<3> extract patches from your branch, relative to `master`,
 <4> and email them.
 <5> return to `master`, ready to see what's new
 <6> `git pull` fetches from `origin` by default and merges into the
@@ -210,7 +210,7 @@ remote-tracking branches on the mothership machine.  You could use this
 as a back-up method. Likewise, you can pretend that mothership
 "fetched" from you (useful when access is one sided).
 <5> on mothership machine, merge the work done on the satellite
-machine into the master branch.
+machine into the `master` branch.
 
 Branch off of a specific tag.::
 +
@@ -305,7 +305,7 @@ master or exposed as a part of a stable branch.
 <8> and bundle topic branches still cooking.
 <9> backport a critical fix.
 <10> create a signed tag.
-<11> make sure master was not accidentally rewound beyond that
+<11> make sure `master` was not accidentally rewound beyond that
 already pushed out.
 <12> In the output from `git show-branch`, `master` should have
 everything `ko/master` has, and `next` should have
@@ -446,7 +446,7 @@ refs/tags/v[0-9]*	david
 <2> and make the shared repository writable by the group.
 <3> use update-hook example by Carl from Documentation/howto/
 for branch policy control.
-<4> alice and cindy can push into master, only bob can push into doc-update.
+<4> alice and cindy can push into `master`, only bob can push into `doc-update`.
 david is the release manager and is the only person who can
 create and push version tags.
 

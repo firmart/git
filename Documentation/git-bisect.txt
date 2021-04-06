@@ -98,7 +98,7 @@ Bisect reset
 ~~~~~~~~~~~~
 
 After a bisect session, to clean up the bisection state and return to
-the original HEAD, issue the following command:
+the original `HEAD`, issue the following command:
 
 ------------------------------------------------
 $ git bisect reset
@@ -379,7 +379,7 @@ branch contained broken or non-buildable commits, but the merge itself was OK.
 EXAMPLES
 --------
 
-* Automatically bisect a broken build between v1.2 and HEAD:
+* Automatically bisect a broken build between v1.2 and `HEAD`:
 +
 ------------
 $ git bisect start HEAD v1.2 --      # HEAD is bad, v1.2 is good
@@ -387,7 +387,7 @@ $ git bisect run make                # "make" builds the app
 $ git bisect reset                   # quit the bisect session
 ------------
 
-* Automatically bisect a test failure between origin and HEAD:
+* Automatically bisect a test failure between `origin` and `HEAD`:
 +
 ------------
 $ git bisect start HEAD origin --    # HEAD is bad, origin is good

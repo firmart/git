@@ -30,8 +30,8 @@ currently active branch.
 
 After the clone, a plain `git fetch` without arguments will update
 all the remote-tracking branches, and a `git pull` without
-arguments will in addition merge the remote master branch into the
-current master branch, if any (this is untrue when `--single-branch`
+arguments will in addition merge the remote `master` branch into the
+current `master` branch, if any (this is untrue when `--single-branch`
 is given; see below).
 
 This default configuration is achieved by creating references to
@@ -147,7 +147,7 @@ objects from the source repository into a pack in the cloned repository.
 
 -n::
 --no-checkout::
-	No checkout of HEAD is performed after the clone is complete.
+	No checkout of `HEAD` is performed after the clone is complete.
 
 --[no-]reject-shallow::
 	Fail if the source repository is a shallow repository.
@@ -198,11 +198,11 @@ objects from the source repository into a pack in the cloned repository.
 
 -b <name>::
 --branch <name>::
-	Instead of pointing the newly created HEAD to the branch pointed
-	to by the cloned repository's HEAD, point to `<name>` branch
+	Instead of pointing the newly created `HEAD` to the branch pointed
+	to by the cloned repository's `HEAD`, point to `<name>` branch
 	instead. In a non-bare repository, this is the branch that will
 	be checked out.
-	`--branch` can also take tags and detaches the HEAD at that commit
+	`--branch` can also take tags and detaches the `HEAD` at that commit
 	in the resulting repository.
 
 -u <upload-pack>::
@@ -224,7 +224,7 @@ objects from the source repository into a pack in the cloned repository.
 	linkgit:git-config[1] (e.g., `core.eol=true`). If multiple
 	values are given for the same key, each value will be written to
 	the config file. This makes it safe, for example, to add
-	additional fetch refspecs to the origin remote.
+	additional fetch refspecs to the `origin` remote.
 +
 Due to limitations of the current implementation, some configuration
 variables do not take effect until after the initial fetch and checkout.
@@ -253,7 +253,7 @@ corresponding `--mirror` and `--no-tags` options instead.
 	branch remote's `HEAD` points at.
 	Further fetches into the resulting repository will only update the
 	remote-tracking branch for the branch this option was used for the
-	initial cloning.  If the HEAD at the remote did not point at any
+	initial cloning.  If the `HEAD` at the remote did not point at any
 	branch when `--single-branch` clone was made, no remote-tracking
 	branch is created.
 

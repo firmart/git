@@ -280,7 +280,7 @@ a summary of the commands:
 	create a new branch `<new>` referencing `<start-point>`, and
 	check it out.
 
-The special symbol "HEAD" can always be used to refer to the current
+The special symbol `HEAD` can always be used to refer to the current
 branch.  In fact, Git uses a file named `HEAD` in the `.git` directory
 to remember which branch is current:
 
@@ -300,7 +300,7 @@ you can check out the commit referenced by a tag:
 $ git switch --detach v2.6.17
 Note: checking out 'v2.6.17'.
 
-You are in 'detached HEAD' state. You can look around, make experimental
+You are in 'detached `HEAD`' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
 state without impacting any branches by performing another switch.
 
@@ -309,10 +309,10 @@ do so (now or later) by using `-c` with the switch command again. Example:
 
   git switch -c new_branch_name
 
-HEAD is now at 427abfa Linux v2.6.17
+`HEAD` is now at 427abfa Linux v2.6.17
 ------------------------------------------------
 
-The HEAD then refers to the SHA-1 of the commit instead of to a branch,
+The `HEAD` then refers to the SHA-1 of the commit instead of to a branch,
 and git branch shows that you are no longer on a branch:
 
 ------------------------------------------------
@@ -323,7 +323,7 @@ $ git branch
   master
 ------------------------------------------------
 
-In this case we say that the HEAD is "detached".
+In this case we say that the `HEAD` is "detached".
 
 This is an easy way to check out a particular version without having to
 make up a name for the new branch.   You can still create a new branch
@@ -332,8 +332,8 @@ make up a name for the new branch.   You can still create a new branch
 [[examining-remote-branches]]
 === Examining branches from a remote repository
 
-The "master" branch that was created at the time you cloned is a copy
-of the HEAD in the repository that you cloned from.  That repository
+The `master` branch that was created at the time you cloned is a copy
+of the `HEAD` in the repository that you cloned from.  That repository
 may also have had other branches, though, and your local repository
 keeps branches which track each of those remote branches, called
 remote-tracking branches, which you
@@ -351,7 +351,7 @@ $ git branch -r
   origin/todo
 ------------------------------------------------
 
-In this example, "origin" is called a remote repository, or "remote"
+In this example, `origin` is called a remote repository, or "remote"
 for short. The branches of this repository are called "remote
 branches" from our point of view. The remote-tracking branches listed
 above were created based on the remote branches at clone time and will
@@ -368,7 +368,7 @@ $ git switch -c my-todo-copy origin/todo
 You can also check out `origin/todo` directly to examine it or
 write a one-off patch.  See <<detached-head,detached head>>.
 
-Note that the name "origin" is just the name that Git uses by default
+Note that the name `origin` is just the name that Git uses by default
 to refer to the repository that you cloned from.
 
 [[how-git-stores-references]]
@@ -391,9 +391,9 @@ under the path given by their name.  However, for efficiency reasons
 they may also be packed together in a single file; see
 linkgit:git-pack-refs[1]).
 
-As another useful shortcut, the "HEAD" of a repository can be referred
-to just using the name of that repository.  So, for example, "origin"
-is usually a shortcut for the HEAD branch in the repository "origin".
+As another useful shortcut, the `HEAD` of a repository can be referred
+to just using the name of that repository.  So, for example, `origin`
+is usually a shortcut for the HEAD branch in the repository `origin`.
 
 For the complete list of paths which Git checks for references, and
 the order it uses to decide which to choose when there are multiple
@@ -491,9 +491,9 @@ Bisecting: 3537 revisions left to test after this
 -------------------------------------------------
 
 If you run `git branch` at this point, you'll see that Git has
-temporarily moved you in "(no branch)". HEAD is now detached from any
+temporarily moved you in "(no branch)". `HEAD` is now detached from any
 branch and points directly to a commit (with commit id 65934) that
-is reachable from "master" but not from v2.6.18. Compile and test it,
+is reachable from `master` but not from v2.6.18. Compile and test it,
 and see whether it crashes. Assume it does crash. Then:
 
 -------------------------------------------------
@@ -566,7 +566,7 @@ We have seen several ways of naming commits already:
 	- tag name: refers to the commit pointed to by the given tag
 	  (we've seen branches and tags are special cases of
 	  <<how-git-stores-references,references>>).
-	- HEAD: refers to the head of the current branch
+	- `HEAD`: refers to the head of the current branch
 
 There are many more; see the "SPECIFYING REVISIONS" section of the
 linkgit:gitrevisions[7] man page for the complete list of ways to
@@ -589,24 +589,24 @@ $ git show HEAD^1   # show the first parent of HEAD
 $ git show HEAD^2   # show the second parent of HEAD
 -------------------------------------------------
 
-In addition to HEAD, there are several other special names for
+In addition to `HEAD`, there are several other special names for
 commits:
 
 Merges (to be discussed later), as well as operations such as
 `git reset`, which change the currently checked-out commit, generally
-set ORIG_HEAD to the value HEAD had before the current operation.
+set `ORIG_HEAD` to the value `HEAD` had before the current operation.
 
 The `git fetch` operation always stores the head of the last fetched
-branch in FETCH_HEAD.  For example, if you run `git fetch` without
+branch in `FETCH_HEAD`.  For example, if you run `git fetch` without
 specifying a local branch as the target of the operation
 
 -------------------------------------------------
 $ git fetch git://example.com/proj.git theirbranch
 -------------------------------------------------
 
-the fetched commits will still be available from FETCH_HEAD.
+the fetched commits will still be available from `FETCH_HEAD`.
 
-When we discuss merges we'll also see the special name MERGE_HEAD,
+When we discuss merges we'll also see the special name `MERGE_HEAD`,
 which refers to the other branch that we're merging in to the current
 branch.
 
@@ -914,7 +914,7 @@ any version of a project; for example:
 $ git archive -o latest.tar.gz --prefix=project/ HEAD
 -------------------------------------------------
 
-will use HEAD to produce a gzipped tar archive in which each filename
+will use `HEAD` to produce a gzipped tar archive in which each filename
 is preceded by `project/`.  The output file format is inferred from
 the output file extension if possible, see linkgit:git-archive[1] for
 details.
@@ -1037,8 +1037,8 @@ at step 3, Git maintains a snapshot of the tree's contents in a
 special staging area called "the index."
 
 At the beginning, the content of the index will be identical to
-that of the HEAD.  The command `git diff --cached`, which shows
-the difference between the HEAD and the index, should therefore
+that of the `HEAD`.  The command `git diff --cached`, which shows
+the difference between the `HEAD` and the index, should therefore
 produce no output at that point.
 
 Modifying the index is easy:
@@ -1061,7 +1061,7 @@ After each step you can verify that
 $ git diff --cached
 -------------------------------------------------
 
-always shows the difference between the HEAD and the index file--this
+always shows the difference between the `HEAD` and the index file--this
 is what you'd commit if you created the commit now--and that
 
 -------------------------------------------------
@@ -1283,8 +1283,8 @@ index 802992c,2b60207..0000000
 
 Recall that the commit which will be committed after we resolve this
 conflict will have two parents instead of the usual one: one parent
-will be HEAD, the tip of the current branch; the other will be the
-tip of the other branch, which is stored temporarily in MERGE_HEAD.
+will be `HEAD`, the tip of the current branch; the other will be the
+tip of the other branch, which is stored temporarily in `MERGE_HEAD`.
 
 During the merge, the index holds three versions of each file.  Each of
 these three "file stages" represents a different version of the file:
@@ -1348,8 +1348,8 @@ $ git log --merge
 $ gitk --merge
 -------------------------------------------------
 
-These will display all commits which exist only on HEAD or on
-MERGE_HEAD, and which touch an unmerged file.
+These will display all commits which exist only on `HEAD` or on
+`MERGE_HEAD`, and which touch an unmerged file.
 
 You may also use linkgit:git-mergetool[1], which lets you merge the
 unmerged files using external tools such as Emacs or kdiff3.
@@ -1433,7 +1433,7 @@ commit; for example, to revert the most recent commit:
 $ git revert HEAD
 -------------------------------------------------
 
-This will create a new commit which undoes the change in HEAD.  You
+This will create a new commit which undoes the change in `HEAD`.  You
 will be given a chance to edit the commit message for the new commit.
 
 You can also revert an earlier change, for example, the next-to-last:
@@ -1486,7 +1486,7 @@ linkgit:git-restore[1]. The command
 $ git restore --source=HEAD^ path/to/file
 -------------------------------------------------
 
-replaces path/to/file by the contents it had in the commit HEAD^, and
+replaces path/to/file by the contents it had in the commit `HEAD^`, and
 also updates the index to match.  It does not change branches.
 
 If you just want to look at an old version of the file, without
@@ -1600,13 +1600,13 @@ $ gitk master@{"1 week ago"}	# ... or last week
 $ git log --walk-reflogs master	# show reflog entries for master
 -------------------------------------------------
 
-A separate reflog is kept for the HEAD, so
+A separate reflog is kept for the `HEAD`, so
 
 -------------------------------------------------
 $ git show HEAD@{"1 week ago"}
 -------------------------------------------------
 
-will show what HEAD pointed to one week ago, not what the current branch
+will show what `HEAD` pointed to one week ago, not what the current branch
 pointed to one week ago.  This allows you to see the history of what
 you've checked out.
 
@@ -1677,7 +1677,7 @@ into your own work.
 We have already seen <<Updating-a-repository-With-git-fetch,how to
 keep remote-tracking branches up to date>> with linkgit:git-fetch[1],
 and how to merge two branches.  So you can merge in changes from the
-original repository's master branch with:
+original repository's `master` branch with:
 
 -------------------------------------------------
 $ git fetch
@@ -1692,7 +1692,7 @@ $ git pull origin master
 -------------------------------------------------
 
 In fact, if you have `master` checked out, then this branch has been
-configured by `git clone` to get changes from the HEAD branch of the
+configured by `git clone` to get changes from the `HEAD` branch of the
 origin repository.  So often you can
 accomplish the above with just a simple
 
@@ -2568,7 +2568,7 @@ You can also edit a patch series with an interactive rebase.  This is
 the same as <<reordering-patch-series,reordering a patch series using
 `format-patch`>>, so use whichever interface you like best.
 
-Rebase your current HEAD on the last commit you want to retain as-is.
+Rebase your current `HEAD` on the last commit you want to retain as-is.
 For example, if you want to reorder the last 5 commits, use:
 
 -------------------------------------------------
@@ -2980,7 +2980,7 @@ file data at changing paths suggests a rename.  (See, for example, the
 `-M` option to linkgit:git-diff[1]).
 
 A commit is usually created by linkgit:git-commit[1], which creates a
-commit whose parent is normally the current HEAD, and whose tree is
+commit whose parent is normally the current `HEAD`, and whose tree is
 taken from the content currently stored in the index.
 
 [[tree-object]]
@@ -3507,7 +3507,7 @@ $ ls -a
 The `git submodule add <repo> <path>` command does a couple of things:
 
 - It clones the submodule from `<repo>` to the given `<path>` under the
-  current directory and by default checks out the master branch.
+  current directory and by default checks out the `master` branch.
 - It adds the submodule's clone path to the linkgit:gitmodules[5] file and
   adds this file to the index, ready to be committed.
 - It adds the submodule's current commit ID to the index, ready to be
@@ -3540,7 +3540,7 @@ $ git submodule status
 -------------------------------------------------
 
 NOTE: The commit object names shown above would be different for you, but they
-should match the HEAD commit object names of your repositories.  You can check
+should match the `HEAD` commit object names of your repositories.  You can check
 it by running `git ls-remote ../a`.
 
 Pulling down the submodules is a two-step process. First run `git submodule
@@ -4334,7 +4334,7 @@ $ git branch new		# create branch "new" starting at current HEAD
 $ git branch -d new		# delete branch "new"
 -----------------------------------------------
 
-Instead of basing a new branch on current HEAD (the default), use:
+Instead of basing a new branch on current `HEAD` (the default), use:
 
 -----------------------------------------------
 $ git branch new test    # branch named "test"

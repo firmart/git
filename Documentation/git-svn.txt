@@ -140,7 +140,7 @@ repository, either don't use this option or you should both use it in
 the same local time zone.
 
 --parent;;
-	Fetch only from the SVN parent of the current HEAD.
+	Fetch only from the SVN parent of the current `HEAD`.
 
 --ignore-refs=<regex>;;
 	Ignore refs for branches or tags matching the Perl regular
@@ -224,7 +224,7 @@ config key: svn-remote.<name>.include-paths
 	Default: ".gitignore"
 
 'rebase'::
-	This fetches revisions from the SVN parent of the current HEAD
+	This fetches revisions from the SVN parent of the current `HEAD`
 	and rebases the current (uncommitted to SVN) work against it.
 +
 This works similarly to `svn update` or 'git pull' except that
@@ -394,7 +394,7 @@ Any other arguments are passed directly to 'git log'
 	output of this mode is format-compatible with the output of
 	`svn blame' by default. Like the SVN blame command,
 	local uncommitted changes in the working tree are ignored;
-	the version of the file in the HEAD revision is annotated. Unknown
+	the version of the file in the `HEAD` revision is annotated. Unknown
 	arguments are passed directly to 'git blame'.
 +
 --git-format;;
@@ -558,7 +558,7 @@ git svn fetch
        r2---r3---A---B master
 ------------
 +
-Then fixup "master" with 'git rebase'.
+Then fixup `master` with 'git rebase'.
 Do NOT use 'git merge' or your history will not be compatible with a
 future 'dcommit'!
 +
@@ -954,7 +954,7 @@ HANDLING OF SVN BRANCHES
 If 'git svn' is configured to fetch branches (and `--follow-branches`
 is in effect), it sometimes creates multiple Git branches for one
 SVN branch, where the additional branches have names of the form
-'branchname@nnn' (with nnn an SVN revision number).  These additional
+`branchname@nnn` (with nnn an SVN revision number).  These additional
 branches are created if 'git svn' cannot find a parent commit for the
 first commit in an SVN branch, to connect the branch to the history of
 the other branches.
@@ -976,7 +976,7 @@ branch was copied from and create appropriate Git commits.  This is
 indicated by the message "Initializing parent: <branchname>".
 
 Additionally, it will create a special branch named
-'<branchname>@<SVN-Revision>', where <SVN-Revision> is the SVN revision
+`<branchname>@<SVN-Revision>`, where <SVN-Revision> is the SVN revision
 number the branch was copied from.  This branch will point to the newly
 created parent commit of the branch.  If in SVN the branch was deleted
 and later recreated from a different version, there will be multiple
@@ -988,12 +988,12 @@ single SVN revision.
 An example: in an SVN repository with a standard
 trunk/tags/branches layout, a directory trunk/sub is created in r.100.
 In r.200, trunk/sub is branched by copying it to branches/. 'git svn
-clone -s' will then create a branch 'sub'. It will also create new Git
+clone -s' will then create a branch `sub`. It will also create new Git
 commits for r.100 through r.199 and use these as the history of branch
-'sub'. Thus there will be two Git commits for each revision from r.100
+`sub`. Thus there will be two Git commits for each revision from r.100
 to r.199 (one containing trunk/, one containing trunk/sub/). Finally,
-it will create a branch 'sub@200' pointing to the new parent commit of
-branch 'sub' (i.e. the commit for r.200 and trunk/sub/).
+it will create a branch `sub@200` pointing to the new parent commit of
+branch `sub` (i.e. the commit for r.200 and trunk/sub/).
 
 CAVEATS
 -------

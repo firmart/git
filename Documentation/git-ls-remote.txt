@@ -59,7 +59,7 @@ OPTIONS
 --symref::
 	In addition to the object pointed by it, show the underlying
 	ref pointed by it when showing a symbolic ref.  Currently,
-	upload-pack only shows the symref HEAD, so it will be the only
+	upload-pack only shows the symref `HEAD`, so it will be the only
 	one shown by ls-remote.
 
 --sort=<key>::

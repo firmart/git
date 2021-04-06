@@ -42,7 +42,7 @@ OPTIONS
 <start-point>::
 	The starting point for the new branch. Specifying a
 	`<start-point>` allows you to create a branch based on some
-	other point in history than where HEAD currently points. (Or,
+	other point in history than where `HEAD` currently points. (Or,
 	in the case of `--detach`, allows you to inspect and detach
 	from some other point.)
 +
@@ -99,7 +99,7 @@ the `checkout.defaultRemote` configuration variable, we'll use that
 one for the purposes of disambiguation, even if the `<branch>` isn't
 unique across all remotes. Set it to e.g. `checkout.defaultRemote=origin`
 to always checkout remote branches from there if `<branch>` is
-ambiguous but exists on the 'origin' remote. See also
+ambiguous but exists on the `origin` remote. See also
 `checkout.defaultRemote` in linkgit:git-config[1].
 +
 `--guess` is the default behavior. Use `--no-guess` to disable it.
@@ -193,7 +193,7 @@ name, the guessing is aborted.  You can explicitly give a name with
 EXAMPLES
 --------
 
-The following command switches to the "master" branch:
+The following command switches to the `master` branch:
 
 ------------
 $ git switch master
@@ -228,14 +228,14 @@ registered in your index file, so `git diff` would show you what
 changes you made since the tip of the new branch.
 
 To switch back to the previous branch before we switched to mytopic
-(i.e. "master" branch):
+(i.e. `master` branch):
 
 ------------
 $ git switch -
 ------------
 
 You can grow a new branch from any commit. For example, switch to
-"HEAD~3" and create branch "fixup":
+`HEAD~3` and create branch `fixup`:
 
 ------------
 $ git switch -c fixup HEAD~3

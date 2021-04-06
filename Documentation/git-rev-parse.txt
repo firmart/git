@@ -155,7 +155,7 @@ for another option.
 	This is similar to `--symbolic`, but it omits input that
 	are not refs (i.e. branch or tag names; or more
 	explicitly disambiguating "heads/master" form, when you
-	want to name the "master" branch when there is an
+	want to name the `master` branch when there is an
 	unfortunately named tag "master"), and show them as full
 	refnames (e.g. "refs/heads/master").
 
@@ -475,7 +475,7 @@ This will error out if $REV is empty or not a valid revision.
 $ git rev-parse --default master --verify --end-of-options $REV
 ------------
 +
-but if $REV is empty, the commit object name from master will be printed.
+but if $REV is empty, the commit object name from `master` will be printed.
 
 GIT
 ---

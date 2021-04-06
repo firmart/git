@@ -35,7 +35,7 @@ Please see the section <<issues,ISSUES>> for further reference.
 
 You should *never* do any work of your own on the branches that are
 created by 'git cvsimport'.  By default initial import will create and populate a
-"master" branch from the CVS repository's main branch which you're free
+`master` branch from the CVS repository's main branch which you're free
 to work with; after that, you need to 'git merge' incremental imports, or
 any CVS branches, yourself.  It is advisable to specify a named remote via
 `-r` to separate and protect the incoming branches.
@@ -71,11 +71,11 @@ OPTIONS
 -r <remote>::
 	The Git remote to import this CVS repository into.
 	Moves all CVS branches into remotes/<remote>/<branch>
-	akin to the way 'git clone' uses 'origin' by default.
+	akin to the way 'git clone' uses `origin` by default.
 
 -o <branch-for-HEAD>::
 	When no remote is specified (via `-r`) the `HEAD` branch
-	from CVS is imported to the 'origin' branch within the Git
+	from CVS is imported to the `origin` branch within the Git
 	repository, as `HEAD` already has a special meaning for Git.
 	When a remote is specified the `HEAD` branch is named
 	remotes/<remote>/master mirroring 'git clone' behaviour.
@@ -200,7 +200,7 @@ Problems related to timestamps:
    to be used for ordering commits changes may show up in the wrong
    order.
  * If any files were ever "cvs import"ed more than once (e.g., import of
-   more than one vendor release) the HEAD contains the wrong content.
+   more than one vendor release) the `HEAD` contains the wrong content.
  * If the timestamp order of different files cross the revision order
    within the commit matching time window the order of commits may be
    wrong.

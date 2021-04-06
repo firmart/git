@@ -65,8 +65,8 @@ $ git fetch origin master
 $ git fmt-merge-msg --log <$GIT_DIR/FETCH_HEAD
 ---------
 
-Print a log message describing a merge of the "master" branch from
-the "origin" remote.
+Print a log message describing a merge of the `master` branch from
+the `origin` remote.
 
 
 SEE ALSO

@@ -68,7 +68,7 @@ unbundle <file>::
 	'git rev-list' (and containing a named ref, see SPECIFYING REFERENCES
 	below), that specifies the specific objects and references
 	to transport.  For example, `master~10..master` causes the
-	current master reference to be packaged along with all objects
+	current `master` reference to be packaged along with all objects
 	added since its 10th ancestor commit.  There is no explicit
 	limit to the number of references and objects that may be
 	packaged.
@@ -146,7 +146,7 @@ Assume you want to transfer the history from a repository R1 on machine A
 to another repository R2 on machine B.
 For whatever reason, direct connection between A and B is not allowed,
 but we can move data from A to B via some mechanism (CD, email, etc.).
-We want to update R2 with development made on the branch master in R1.
+We want to update R2 with development made on the branch `master` in R1.
 
 To bootstrap the process, you can first create a bundle that does not have
 any basis. You can use a tag to remember up to what commit you last
@@ -167,7 +167,7 @@ create a new repository on machine B by cloning from it:
 machineB$ git clone -b master /home/me/tmp/file.bundle R2
 ----------------
 
-This will define a remote called "origin" in the resulting repository that
+This will define a remote called `origin` in the resulting repository that
 lets you fetch and pull from the bundle. The $GIT_DIR/config file in R2 will
 have an entry like this:
 

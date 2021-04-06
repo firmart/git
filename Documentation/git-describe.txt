@@ -30,17 +30,17 @@ If the given object refers to a blob, it will be described
 as `<commit-ish>:<path>`, such that the blob can be found
 at `<path>` in the `<commit-ish>`, which itself describes the
 first commit in which this blob occurs in a reverse revision walk
-from HEAD.
+from `HEAD`.
 
 OPTIONS
 -------
 <commit-ish>...::
-	Commit-ish object names to describe.  Defaults to HEAD if omitted.
+	Commit-ish object names to describe.  Defaults to `HEAD` if omitted.
 
 --dirty[=<mark>]::
 --broken[=<mark>]::
 	Describe the state of the working tree.  When the working
-	tree matches HEAD, the output is the same as "git describe
+	tree matches `HEAD`, the output is the same as "git describe
 	HEAD".  If the working tree has local modification "-dirty"
 	is appended to it.  If a repository is corrupt and Git
 	cannot determine if there is local modification, Git will

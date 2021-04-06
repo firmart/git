@@ -76,10 +76,10 @@ variables respectively.
 DISCUSSION
 ----------
 
-When your topic branch modifies an overlapping area that your
-master branch (or upstream) touched since your topic branch
-forked from it, you may want to test it with the latest master,
-even before your topic branch is ready to be pushed upstream:
+When your `topic` branch modifies an overlapping area that your
+`master` branch (or upstream) touched since your `topic` branch
+forked from it, you may want to test it with the latest `master`,
+even before your `topic` branch is ready to be pushed upstream:
 
 ------------
               o---*---o topic
@@ -87,8 +87,8 @@ even before your topic branch is ready to be pushed upstream:
     o---o---o---*---o---o master
 ------------
 
-For such a test, you need to merge master and topic somehow.
-One way to do it is to pull master into the topic branch:
+For such a test, you need to merge `master` and `topic` somehow.
+One way to do it is to pull `master` into the `topic` branch:
 
 ------------
 	$ git switch topic
@@ -106,9 +106,9 @@ work-in-progress still works with what is in the latest master.
 
 After this test merge, there are two ways to continue your work
 on the topic.  The easiest is to build on top of the test merge
-commit `+`, and when your work in the topic branch is finally
-ready, pull the topic branch into master, and/or ask the
-upstream to pull from you.  By that time, however, the master or
+commit `+`, and when your work in the `topic` branch is finally
+ready, pull the `topic` branch into `master`, and/or ask the
+upstream to pull from you.  By that time, however, the `master` or
 the upstream might have been advanced since the test merge `+`,
 in which case the final commit graph would look like this:
 
@@ -124,14 +124,14 @@ in which case the final commit graph would look like this:
     o---o---o---*---o---o---o---o---+ master
 ------------
 
-When your topic branch is long-lived, however, your topic branch
-would end up having many such "Merge from master" commits on it,
+When your `topic` branch is long-lived, however, your `topic` branch
+would end up having many such "Merge from `master`" commits on it,
 which would unnecessarily clutter the development history.
 Readers of the Linux kernel mailing list may remember that Linus
 complained about such too frequent test merges when a subsystem
 maintainer asked to pull from a branch full of "useless merges".
 
-As an alternative, to keep the topic branch clean of test
+As an alternative, to keep the `topic` branch clean of test
 merges, you could blow away the test merge, and keep building on
 top of the tip before the test merge:
 
@@ -148,8 +148,8 @@ top of the tip before the test merge:
     o---o---o---*---o---o---o---o---+ master
 ------------
 
-This would leave only one merge commit when your topic branch is
-finally ready and merged into the master branch.  This merge
+This would leave only one merge commit when your `topic` branch is
+finally ready and merged into the `master` branch.  This merge
 would require you to resolve the conflict, introduced by the
 commits marked with `*`.  However, this conflict is often the
 same conflict you resolved when you created the test merge you
@@ -163,7 +163,7 @@ usual conflict markers `<<<<<<<`, `=======`, and `>>>>>>>` in
 them.  Later, after you are done resolving the conflicts,
 running 'git rerere' again will record the resolved state of these
 files.  Suppose you did this when you created the test merge of
-master into the topic branch.
+`master` into the `topic` branch.
 
 Next time, after seeing the same conflicted automerge,
 running 'git rerere' will perform a three-way merge between the
@@ -185,12 +185,12 @@ the rerere.enabled config variable).
 
 In our example, when you do the test merge, the manual
 resolution is recorded, and it will be reused when you do the
-actual merge later with the updated master and topic branch, as long
+actual merge later with the updated `master` and `topic` branch, as long
 as the recorded resolution is still applicable.
 
 The information 'git rerere' records is also used when running
 'git rebase'.  After blowing away the test merge and continuing
-development on the topic branch:
+development on the `topic` branch:
 
 ------------
               o---*---o-------o---o topic

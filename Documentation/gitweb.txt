@@ -291,7 +291,7 @@ action::
 	is not set, and to 'summary' otherwise.
 
 revision::
-	Revision shown.  Defaults to HEAD.
+	Revision shown.  Defaults to `HEAD`.
 
 path::
 	The path within the <repository> that the action is performed on,
@@ -385,7 +385,7 @@ The 'shortlog' view is more compact; it shows one commit per line.
 
 history::
 	Shows history of the file or directory in a given repository path,
-	starting from given revision (defaults to HEAD, i.e. default branch).
+	starting from given revision (defaults to `HEAD`, i.e. default branch).
 +
 This view is similar to 'shortlog' view.
 

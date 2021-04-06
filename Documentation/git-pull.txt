@@ -211,7 +211,7 @@ $ git pull
 $ git pull origin
 ------------------------------------------------
 +
-Normally the branch merged in is the HEAD of the remote repository,
+Normally the branch merged in is the `HEAD` of the remote repository,
 but the choice is determined by the branch.<name>.remote and
 branch.<name>.merge options; see linkgit:git-config[1] for details.
 
@@ -221,7 +221,7 @@ branch.<name>.merge options; see linkgit:git-config[1] for details.
 $ git pull origin next
 ------------------------------------------------
 +
-This leaves a copy of `next` temporarily in FETCH_HEAD, and
+This leaves a copy of `next` temporarily in `FETCH_HEAD`, and
 updates the remote-tracking branch `origin/next`.
 The same can be done by invoking fetch and merge:
 +

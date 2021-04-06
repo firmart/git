@@ -113,16 +113,16 @@ to point at the new commit.
 [[def_detached_HEAD]]detached HEAD::
 	Normally the <<def_HEAD,HEAD>> stores the name of a
 	<<def_branch,branch>>, and commands that operate on the
-	history HEAD represents operate on the history leading to the
-	tip of the branch the HEAD points at.  However, Git also
+	history `HEAD` represents operate on the history leading to the
+	tip of the branch the `HEAD` points at.  However, Git also
 	allows you to <<def_checkout,check out>> an arbitrary
 	<<def_commit,commit>> that isn't necessarily the tip of any
-	particular branch.  The HEAD in such a state is called
+	particular branch.  The `HEAD` in such a state is called
 	"detached".
 +
 Note that commands that operate on the history of the current branch
 (e.g. `git commit` to build a new history on top of it) still work
-while the HEAD is detached. They update the HEAD to point at the tip
+while the `HEAD` is detached. They update the `HEAD` to point at the tip
 of the updated history without affecting any branch.  Commands that
 update or inquire information _about_ the current branch (e.g. `git
 branch --set-upstream-to` that sets what remote-tracking branch the
@@ -193,7 +193,7 @@ for a more flexible and robust system to do the same thing.
 [[def_HEAD]]HEAD::
 	The current <<def_branch,branch>>.  In more detail: Your <<def_working_tree,
 	working tree>> is normally derived from the state of the tree
-	referred to by HEAD.  HEAD is a reference to one of the
+	referred to by `HEAD`.  `HEAD` is a reference to one of the
 	<<def_head,heads>> in your repository, except when using a
 	<<def_detached_HEAD,detached HEAD>>, in which case it directly
 	references an arbitrary commit.
@@ -456,7 +456,7 @@ exclude;;
 	like refs for the purposes of rev-parse, but which are treated
 	specially by git.  Pseudorefs both have names that are all-caps,
 	and always start with a line consisting of a
-	<<def_SHA1,SHA-1>> followed by whitespace.  So, HEAD is not a
+	<<def_SHA1,SHA-1>> followed by whitespace.  So, `HEAD` is not a
 	pseudoref, because it is sometimes a symbolic ref.  They might
 	optionally contain some additional data.  `MERGE_HEAD` and
 	`CHERRY_PICK_HEAD` are examples.  Unlike

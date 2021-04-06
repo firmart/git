@@ -35,13 +35,13 @@ description on `--fork-point` below); or by `git log HEAD`, if the
 
 The current branch is reset to <upstream>, or <newbase> if the
 `--onto` option was supplied.  This has the exact same effect as
-`git reset --hard <upstream>` (or <newbase>).  ORIG_HEAD is set
+`git reset --hard <upstream>` (or <newbase>).  `ORIG_HEAD` is set
 to point at the tip of the branch before the reset.
 
 The commits that were previously saved into the temporary area are
 then reapplied to the current branch, one by one, in order. Note that
-any commits in HEAD which introduce the same textual changes as a commit
-in HEAD..<upstream> are omitted (i.e., a patch already accepted upstream
+any commits in `HEAD` which introduce the same textual changes as a commit
+in `HEAD`..<upstream> are omitted (i.e., a patch already accepted upstream
 with a different commit message or timestamp will be skipped).
 
 It is possible that a merge failure will prevent this process from being
@@ -51,7 +51,7 @@ that caused the merge failure with `git rebase --skip`.  To check out the
 original <branch> and remove the .git/rebase-apply working files, use the
 command `git rebase --abort` instead.
 
-Assume the following history exists and the current branch is "topic":
+Assume the following history exists and the current branch is `topic`:
 
 ------------
           A---B---C topic
@@ -101,9 +101,9 @@ Here is how you would transplant a topic branch based on one
 branch to another, to pretend that you forked the topic branch
 from the latter branch, using `rebase --onto`.
 
-First let's assume your 'topic' is based on branch 'next'.
-For example, a feature developed in 'topic' depends on some
-functionality which is found in 'next'.
+First let's assume your `topic` is based on branch `next`.
+For example, a feature developed in `topic` depends on some
+functionality which is found in `next'.
 
 ------------
     o---o---o---o---o  master
@@ -113,9 +113,9 @@ functionality which is found in 'next'.
                             o---o---o  topic
 ------------
 
-We want to make 'topic' forked from branch 'master'; for example,
-because the functionality on which 'topic' depends was merged into the
-more stable 'master' branch. We want our tree to look like this:
+We want to make `topic` forked from branch `master`; for example,
+because the functionality on which `topic` depends was merged into the
+more stable `master` branch. We want our tree to look like this:
 
 ------------
     o---o---o---o---o  master
@@ -216,7 +216,7 @@ OPTIONS
 +
 As a special case, you may use "A\...B" as a shortcut for the
 merge base of A and B if there is exactly one merge base. You can
-leave out at most one of A and B, in which case it defaults to HEAD.
+leave out at most one of A and B, in which case it defaults to `HEAD`.
 
 --keep-base::
 	Set the starting point at which to create the new commits to the
@@ -242,20 +242,20 @@ See also INCOMPATIBLE OPTIONS below.
 	upstream for the current branch.
 
 <branch>::
-	Working branch; defaults to HEAD.
+	Working branch; defaults to `HEAD`.
 
 --continue::
 	Restart the rebasing process after having resolved a merge conflict.
 
 --abort::
-	Abort the rebase operation and reset HEAD to the original
+	Abort the rebase operation and reset `HEAD` to the original
 	branch. If <branch> was provided when the rebase operation was
-	started, then HEAD will be reset to <branch>. Otherwise HEAD
+	started, then `HEAD` will be reset to <branch>. Otherwise `HEAD`
 	will be reset to where it was when the rebase operation was
 	started.
 
 --quit::
-	Abort the rebase operation but HEAD is not reset back to the
+	Abort the rebase operation but `HEAD` is not reset back to the
 	original branch. The index and working tree are also left
 	unchanged as a result. If a temporary stash entry was created
 	using `--autostash`, it will be saved to the stash list.
@@ -905,7 +905,7 @@ when a command fails due to merge errors. When you are done editing
 and/or resolving conflicts you can continue with `git rebase --continue`.
 
 For example, if you want to reorder the last 5 commits, such that what
-was HEAD~4 becomes the new HEAD. To achieve that, you would call
+was `HEAD~4` becomes the new `HEAD`. To achieve that, you would call
 'git rebase' like this:
 
 ----------------------
@@ -925,8 +925,8 @@ like this:
 ---o---O---P---Q
 ------------------
 
-Suppose you want to rebase the side branch starting at "A" to "Q". Make
-sure that the current HEAD is "B", and call
+Suppose you want to rebase the side branch starting at `A` to `Q`. Make
+sure that the current `HEAD` is `B`, and call
 
 -----------------------------
 $ git rebase -i -r --onto Q O
@@ -990,7 +990,7 @@ add other commits.  This can be used to split a commit into two:
 - Mark the commit you want to split with the action "edit".
 
 - When it comes to editing that commit, execute `git reset HEAD^`.  The
-  effect is that the HEAD is rewound by one, and the index follows suit.
+  effect is that the `HEAD` is rewound by one, and the index follows suit.
   However, the working tree stays the same.
 
 - Now add the changes to the index that you want to have in the first
@@ -1020,8 +1020,8 @@ from the downstream's point of view.  The real fix, however, would be
 to avoid rebasing the upstream in the first place.
 
 To illustrate, suppose you are in a situation where someone develops a
-'subsystem' branch, and you are working on a 'topic' that is dependent
-on this 'subsystem'.  You might end up with a history like the
+`subsystem` branch, and you are working on a `topic` that is dependent
+on this `subsystem`.  You might end up with a history like the
 following:
 
 ------------
@@ -1032,7 +1032,7 @@ following:
 			    *---*---*  topic
 ------------
 
-If 'subsystem' is rebased against 'master', the following happens:
+If `subsystem` is rebased against `master`, the following happens:
 
 ------------
     o---o---o---o---o---o---o---o  master
@@ -1042,8 +1042,8 @@ If 'subsystem' is rebased against 'master', the following happens:
 			    *---*---*  topic
 ------------
 
-If you now continue development as usual, and eventually merge 'topic'
-to 'subsystem', the commits from 'subsystem' will remain duplicated forever:
+If you now continue development as usual, and eventually merge `topic`
+to `subsystem`, the commits from `subsystem` will remain duplicated forever:
 
 ------------
     o---o---o---o---o---o---o---o  master
@@ -1055,20 +1055,20 @@ to 'subsystem', the commits from 'subsystem' will remain duplicated forever:
 
 Such duplicates are generally frowned upon because they clutter up
 history, making it harder to follow.  To clean things up, you need to
-transplant the commits on 'topic' to the new 'subsystem' tip, i.e.,
-rebase 'topic'.  This becomes a ripple effect: anyone downstream from
-'topic' is forced to rebase too, and so on!
+transplant the commits on `topic` to the new `subsystem` tip, i.e.,
+rebase `topic`.  This becomes a ripple effect: anyone downstream from
+`topic` is forced to rebase too, and so on!
 
 There are two kinds of fixes, discussed in the following subsections:
 
 Easy case: The changes are literally the same.::
 
-	This happens if the 'subsystem' rebase was a simple rebase and
+	This happens if the `subsystem` rebase was a simple rebase and
 	had no conflicts.
 
 Hard case: The changes are not the same.::
 
-	This happens if the 'subsystem' rebase had conflicts, or used
+	This happens if the `subsystem` rebase had conflicts, or used
 	`--interactive` to omit, edit, squash, or fixup commits; or
 	if the upstream used one of `commit --amend`, `reset`, or
 	a full history rewriting command like
@@ -1079,13 +1079,13 @@ The easy case
 ~~~~~~~~~~~~~
 
 Only works if the changes (patch IDs based on the diff contents) on
-'subsystem' are literally the same before and after the rebase
-'subsystem' did.
+`subsystem` are literally the same before and after the rebase
+`subsystem` did.
 
 In that case, the fix is easy because 'git rebase' knows to skip
 changes that are already present in the new upstream (unless
 `--reapply-cherry-picks` is given). So if you say
-(assuming you're on 'topic')
+(assuming you're on `topic`)
 ------------
     $ git rebase subsystem
 ------------
@@ -1102,7 +1102,7 @@ you will end up with the fixed history
 The hard case
 ~~~~~~~~~~~~~
 
-Things get more complicated if the 'subsystem' changes do not exactly
+Things get more complicated if the `subsystem` changes do not exactly
 correspond to the ones before the rebase.
 
 NOTE: While an "easy case recovery" sometimes appears to be successful
@@ -1110,26 +1110,26 @@ NOTE: While an "easy case recovery" sometimes appears to be successful
       example, a commit that was removed via `git rebase
       --interactive` will be **resurrected**!
 
-The idea is to manually tell 'git rebase' "where the old 'subsystem'
-ended and your 'topic' began", that is, what the old merge base
+The idea is to manually tell 'git rebase' "where the old `subsystem`
+ended and your `topic` began", that is, what the old merge base
 between them was.  You will have to find a way to name the last commit
-of the old 'subsystem', for example:
+of the old `subsystem`, for example:
 
-* With the 'subsystem' reflog: after 'git fetch', the old tip of
-  'subsystem' is at `subsystem@{1}`.  Subsequent fetches will
+* With the `subsystem` reflog: after 'git fetch', the old tip of
+  `subsystem` is at `subsystem@{1}`.  Subsequent fetches will
   increase the number.  (See linkgit:git-reflog[1].)
 
-* Relative to the tip of 'topic': knowing that your 'topic' has three
-  commits, the old tip of 'subsystem' must be `topic~3`.
+* Relative to the tip of `topic`: knowing that your `topic` has three
+  commits, the old tip of `subsystem` must be `topic~3`.
 
-You can then transplant the old `subsystem..topic` to the new tip by
-saying (for the reflog case, and assuming you are on 'topic' already):
+You can then transplant the old `subsystem`..`topic` to the new tip by
+saying (for the reflog case, and assuming you are on `topic` already):
 ------------
     $ git rebase --onto subsystem subsystem@{1}
 ------------
 
 The ripple effect of a "hard case" recovery is especially bad:
-'everyone' downstream from 'topic' will now have to perform a "hard
+'everyone' downstream from `topic` will now have to perform a "hard
 case" recovery too!
 
 REBASING MERGES
@@ -1193,7 +1193,7 @@ merge -C 6f5e4d report-a-bug # Merge 'report-a-bug'
 In contrast to a regular interactive rebase, there are `label`, `reset`
 and `merge` commands in addition to `pick` ones.
 
-The `label` command associates a label with the current HEAD when that
+The `label` command associates a label with the current `HEAD` when that
 command is executed. These labels are created as worktree-local refs
 (`refs/rewritten/<label>`) that will be deleted when the rebase
 finishes. That way, rebase operations in multiple worktrees linked to
@@ -1201,7 +1201,7 @@ the same repository do not interfere with one another. If the `label`
 command fails, it is rescheduled immediately, with a helpful message how
 to proceed.
 
-The `reset` command resets the HEAD, index and worktree to the specified
+The `reset` command resets the `HEAD`, index and worktree to the specified
 revision. It is similar to an `exec git reset --hard <label>`, but
 refuses to overwrite untracked files. If the `reset` command fails, it is
 rescheduled immediately, with a helpful message how to edit the todo list
@@ -1209,7 +1209,7 @@ rescheduled immediately, with a helpful message how to edit the todo list
 list manually and contains a typo).
 
 The `merge` command will merge the specified revision(s) into whatever
-is HEAD at that time. With `-C <original-commit>`, the commit message of
+is `HEAD` at that time. With `-C <original-commit>`, the commit message of
 the specified merge commit will be used. When the `-C` is changed to
 a lower-case `-c`, the message will be opened in an editor after a
 successful merge so that the user can edit the message.

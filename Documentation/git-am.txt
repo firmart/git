@@ -176,7 +176,7 @@ default.   You can use `--no-utf8` to override this.
 	Restore the original branch and abort the patching operation.
 
 --quit::
-	Abort the patching operation but keep HEAD and the index
+	Abort the patching operation but keep `HEAD` and the index
 	untouched.
 
 --show-current-patch[=(diff|raw)]::
@@ -229,7 +229,7 @@ operation is finished, so if you decide to start over from scratch,
 run `git am --abort` before running the command with mailbox
 names.
 
-Before any patches are applied, ORIG_HEAD is set to the tip of the
+Before any patches are applied, `ORIG_HEAD` is set to the tip of the
 current branch.  This is useful if you have problems with multiple
 commits, like running 'git am' on the wrong branch or an error in the
 commits that is more easily fixed by changing the mailbox (e.g.

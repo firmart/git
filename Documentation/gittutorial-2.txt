@@ -132,7 +132,7 @@ and the contents of these files is just the compressed data plus a
 header identifying their length and their type.  The type is either a
 blob, a tree, a commit, or a tag.
 
-The simplest commit to find is the HEAD commit, which we can find
+The simplest commit to find is the `HEAD` commit, which we can find
 from .git/HEAD:
 
 ------------------------------------------------

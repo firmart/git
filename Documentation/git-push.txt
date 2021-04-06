@@ -667,9 +667,9 @@ made on `satellite`.
 	(e.g. `refs/heads/experimental`), and delete it.
 
 `git push origin +dev:master`::
-	Update the origin repository's master branch with the dev branch,
+	Update the `origin` repository's `master` branch with the `dev` branch,
 	allowing non-fast-forward updates.  *This can leave unreferenced
-	commits dangling in the origin repository.*  Consider the
+	commits dangling in the `origin` repository.*  Consider the
 	following situation, where a fast-forward is not possible:
 +
 ----
@@ -678,7 +678,7 @@ made on `satellite`.
 		      X---Y---Z  dev
 ----
 +
-The above command would change the origin repository to
+The above command would change the `origin` repository to
 +
 ----
 		      A---B  (unnamed branch)
@@ -688,7 +688,7 @@ The above command would change the origin repository to
 +
 Commits A and B would no longer belong to a branch with a symbolic name,
 and so would be unreachable.  As such, these commits would be removed by
-a `git gc` command on the origin repository.
+a `git gc` command on the `origin` repository.
 
 include::transfer-data-leaks.txt[]
 

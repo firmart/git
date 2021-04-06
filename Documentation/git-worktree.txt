@@ -97,7 +97,7 @@ list::
 List details of each working tree.  The main working tree is listed first,
 followed by each of the linked working trees.  The output details include
 whether the working tree is bare, the revision currently checked out, the
-branch currently checked out (or "detached HEAD" if none), "locked" if
+branch currently checked out (or "detached `HEAD`" if none), "locked" if
 the worktree is locked, "prunable" if the worktree can be pruned by `prune`
 command.
 

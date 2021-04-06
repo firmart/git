@@ -87,10 +87,10 @@ This configuration is used in two ways:
   <refspec>s given on the command line determine what are to be
   fetched (e.g. `master` in the example,
   which is a short-hand for `master:`, which in turn means
-  "fetch the 'master' branch but I do not explicitly say what
+  "fetch the `master` branch but I do not explicitly say what
   remote-tracking branch to update with it from the command line"),
   and the example command will
-  fetch _only_ the 'master' branch.  The `remote.<repository>.fetch`
+  fetch _only_ the `master` branch.  The `remote.<repository>.fetch`
   values determine which
   remote-tracking branch, if any, is updated.  When used in this
   way, the `remote.<repository>.fetch` values do not have any

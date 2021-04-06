@@ -175,7 +175,7 @@ This option is only applicable in non-verbose mode.
 	the pattern(s).
 
 --show-current::
-	Print the name of the current branch. In detached HEAD state,
+	Print the name of the current branch. In detached `HEAD` state,
 	nothing is printed.
 
 -v::
@@ -186,7 +186,7 @@ This option is only applicable in non-verbose mode.
 	relationship to upstream branch (if any). If given twice, print
 	the path of the linked worktree (if any) and the name of the upstream
 	branch, as well (see also `git remote show <remote>`).  Note that the
-	current worktree's HEAD will not have its path printed (it will always
+	current worktree's `HEAD` will not have its path printed (it will always
 	be your current directory).
 
 -q::
@@ -250,15 +250,15 @@ start-point is either a local or remote-tracking branch.
 
 --no-contains [<commit>]::
 	Only list branches which don't contain the specified commit
-	(HEAD if not specified). Implies `--list`.
+	(`HEAD` if not specified). Implies `--list`.
 
 --merged [<commit>]::
 	Only list branches whose tips are reachable from the
-	specified commit (HEAD if not specified). Implies `--list`.
+	specified commit (`HEAD` if not specified). Implies `--list`.
 
 --no-merged [<commit>]::
 	Only list branches whose tips are not reachable from the
-	specified commit (HEAD if not specified). Implies `--list`.
+	specified commit (`HEAD` if not specified). Implies `--list`.
 
 <branchname>::
 	The name of the branch to create or delete.
@@ -269,7 +269,7 @@ start-point is either a local or remote-tracking branch.
 <start-point>::
 	The new branch head will point to this commit.  It may be
 	given as a branch name, a commit-id, or a tag.  If this
-	option is omitted, the current HEAD will be used instead.
+	option is omitted, the current `HEAD` will be used instead.
 
 <oldbranch>::
 	The name of an existing branch to rename.
@@ -286,7 +286,7 @@ start-point is either a local or remote-tracking branch.
 	for-each-ref`. Sort order defaults to the value configured for the
 	`branch.sort` variable if exists, or to sorting based on the
 	full refname (including `refs/...` prefix). This lists
-	detached HEAD (if present) first, then local branches and
+	detached `HEAD` (if present) first, then local branches and
 	finally remote-tracking branches. See linkgit:git-config[1].
 
 
@@ -328,10 +328,10 @@ $ git branch -d -r origin/todo origin/html origin/man   <1>
 $ git branch -D test                                    <2>
 ------------
 +
-<1> Delete the remote-tracking branches "todo", "html" and "man". The next
+<1> Delete the remote-tracking branches `todo`, `html` and `man`. The next
     'fetch' or 'pull' will create them again unless you configure them not to.
     See linkgit:git-fetch[1].
-<2> Delete the "test" branch even if the "master" branch (or whichever branch
+<2> Delete the `test` branch even if the `master` branch (or whichever branch
     is currently checked out) does not have all commits from the test branch.
 
 Listing branches from a specific remote::
@@ -365,10 +365,10 @@ serve four related but different purposes:
   contain the specified <commit>.
 
 - `--merged` is used to find all branches which can be safely deleted,
-  since those branches are fully contained by HEAD.
+  since those branches are fully contained by `HEAD`.
 
 - `--no-merged` is used to find branches which are candidates for merging
-  into HEAD, since those branches are not fully contained by HEAD.
+  into `HEAD`, since those branches are not fully contained by `HEAD`.
 
 include::ref-reachability-filters.txt[]
 

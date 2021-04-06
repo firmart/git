@@ -252,7 +252,7 @@ to list all commits on only one side of them is with
 `--left-right` (see the example below in the description of
 the `--left-right` option). However, it shows the commits that were
 cherry-picked from the other branch (for example, ``3rd on b'' may be
-cherry-picked from branch A). With this option, such pairs of commits are
+cherry-picked from branch `A`). With this option, such pairs of commits are
 excluded from the output.
 
 --left-only::

@@ -330,7 +330,7 @@ object name for the commit to its standard output.
 
 And this is where we create the `.git/refs/heads/master` file
 which is pointed at by `HEAD`. This file is supposed to contain
-the reference to the top-of-tree of the master branch, and since
+the reference to the top-of-tree of the `master` branch, and since
 that's exactly what 'git commit-tree' spits out, we can do this
 all with a sequence of simple shell commands:
 
@@ -402,7 +402,7 @@ In other words, 'git diff-index' normally compares a tree against the
 working tree, but when given the `--cached` flag, it is told to
 instead compare against just the index cache contents, and ignore the
 current working tree state entirely. Since we just wrote the index
-file to HEAD, doing `git diff-index --cached -p HEAD` should thus return
+file to `HEAD`, doing `git diff-index --cached -p HEAD` should thus return
 an empty set of differences, and that's exactly what it does.
 
 [NOTE]
@@ -446,7 +446,7 @@ flag or not, since now the index is coherent with the working tree.
 Now, since we've updated `hello` in the index, we can commit the new
 version. We could do it by writing the tree by hand again, and
 committing the tree (this time we'd have to use the `-p HEAD` flag to
-tell commit that the HEAD was the *parent* of the new commit, and that
+tell commit that the `HEAD` was the *parent* of the new commit, and that
 this wasn't an initial commit any more), but you've done that once
 already, so let's just use the helpful script this time:
 
@@ -822,7 +822,7 @@ commit log message from the command line.
 
 Now, to make it a bit more interesting, let's assume that somebody else
 does some work in the original branch, and simulate that by going back
-to the master branch, and editing the same file differently there:
+to the `master` branch, and editing the same file differently there:
 
 ------------
 $ git switch master
@@ -838,7 +838,7 @@ $ echo "Lots of fun" >>example
 $ git commit -m "Some fun." -i hello example
 ------------
 
-since the master branch is obviously in a much better mood.
+since the `master` branch is obviously in a much better mood.
 
 Now, you've got two branches, and you decide that you want to merge the
 work done. Before we do that, let's introduce a cool graphical tool that
@@ -933,21 +933,21 @@ shows an ordinary commit on the current branch, `-` is a merge commit), which
 means they are now part of the `master` branch. Only the "Some
 work" commit has the plus `+` character in the second column,
 because `mybranch` has not been merged to incorporate these
-commits from the master branch.  The string inside brackets
+commits from the `master` branch.  The string inside brackets
 before the commit log message is a short name you can use to
-name the commit.  In the above example, 'master' and 'mybranch'
-are branch heads.  'master^' is the first parent of 'master'
+name the commit.  In the above example, `master` and `mybranch`
+are branch heads.  `master^` is the first parent of `master`
 branch head.  Please see linkgit:gitrevisions[7] if you want to
 see more complex cases.
 
 [NOTE]
 Without the `--more=1` option, 'git show-branch' would not output the
 '[master^]' commit, as '[mybranch]' commit is a common ancestor of
-both 'master' and 'mybranch' tips.  Please see linkgit:git-show-branch[1]
+both `master` and `mybranch` tips.  Please see linkgit:git-show-branch[1]
 for details.
 
 [NOTE]
-If there were more commits on the 'master' branch after the merge, the
+If there were more commits on the `master` branch after the merge, the
 merge commit itself would not be shown by 'git show-branch' by
 default.  You would need to provide `--sparse` option to make the
 merge commit visible in this case.
@@ -1523,7 +1523,7 @@ like this:
    the initial cloning is stored in the remote.origin.url
    configuration variable.
 
-2. Do your work in your repository on 'master' branch.
+2. Do your work in your repository on `master` branch.
 
 3. Run `git fetch origin` from the public repository of your
    upstream every once in a while. This does only the first
@@ -1559,9 +1559,9 @@ using branches with Git.
 We have already seen how branches work previously,
 with "fun and work" example using two branches.  The idea is the
 same if there are more than two branches.  Let's say you started
-out from "master" head, and have some new code in the "master"
-branch, and two independent fixes in the "commit-fix" and
-"diff-fix" branches:
+out from `master` head, and have some new code in the `master`
+branch, and two independent fixes in the `commit-fix` and
+`diff-fix` branches:
 
 ------------
 $ git show-branch
@@ -1577,8 +1577,8 @@ $ git show-branch
 ------------
 
 Both fixes are tested well, and at this point, you want to merge
-in both of them.  You could merge in 'diff-fix' first and then
-'commit-fix' next, like this:
+in both of them.  You could merge in `diff-fix` first and then
+`commit-fix` next, like this:
 
 ------------
 $ git merge -m "Merge fix in diff-fix" diff-fix
@@ -1607,8 +1607,8 @@ first and the other next, when what you have are a set of truly
 independent changes (if the order mattered, then they are not
 independent by definition).  You could instead merge those two
 branches into the current branch at once.  First let's undo what
-we just did and start over.  We would want to get the master
-branch before these two merges by resetting it to 'master~2':
+we just did and start over.  We would want to get the `master`
+branch before these two merges by resetting it to `master~2`:
 
 ------------
 $ git reset --hard master~2

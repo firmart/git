@@ -76,18 +76,18 @@ OPTIONS
 
 --merged[=<object>]::
 	Only list refs whose tips are reachable from the
-	specified commit (HEAD if not specified).
+	specified commit (`HEAD` if not specified).
 
 --no-merged[=<object>]::
 	Only list refs whose tips are not reachable from the
-	specified commit (HEAD if not specified).
+	specified commit (`HEAD` if not specified).
 
 --contains[=<object>]::
-	Only list refs which contain the specified commit (HEAD if not
+	Only list refs which contain the specified commit (`HEAD` if not
 	specified).
 
 --no-contains[=<object>]::
-	Only list refs which don't contain the specified commit (HEAD
+	Only list refs which don't contain the specified commit (`HEAD`
 	if not specified).
 
 --ignore-case::
@@ -169,7 +169,7 @@ push::
 	ref is configured.
 
 HEAD::
-	'*' if HEAD matches current ref (the checked out branch), ' '
+	'*' if `HEAD` matches current ref (the checked out branch), ' '
 	otherwise.
 
 color::
@@ -201,7 +201,7 @@ if::
 	everything after %(else) is printed. We ignore space when
 	evaluating the string before %(then), this is useful when we
 	use the %(HEAD) atom which prints either "*" or " " and we
-	want to apply the 'if' condition only on the 'HEAD' ref.
+	want to apply the 'if' condition only on the `HEAD` ref.
 	Append ":equals=<string>" or ":notequals=<string>" to compare
 	the value between the %(if:...) and %(then) atoms with the
 	given string.

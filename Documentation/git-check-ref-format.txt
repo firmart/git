@@ -80,7 +80,7 @@ reference name expressions (see linkgit:gitrevisions[7]):
 With the `--branch` option, the command takes a name and checks if
 it can be used as a valid branch name (e.g. when creating a new
 branch). But be cautious when using the
-previous checkout syntax that may refer to a detached HEAD state.
+previous checkout syntax that may refer to a detached `HEAD` state.
 The rule `git check-ref-format --branch $name` implements
 may be stricter than what `git check-ref-format refs/heads/$name`
 says (e.g. a dash may appear at the beginning of a ref component,

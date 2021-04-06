@@ -118,7 +118,7 @@ OPTIONS
 --[no-]recurse-submodules::
 	Using `--recurse-submodules` will update the content of all active
 	submodules according to the commit recorded in the superproject by
-	calling read-tree recursively, also setting the submodules' HEAD to be
+	calling read-tree recursively, also setting the submodules' `HEAD` to be
 	detached at that commit.
 
 --no-sparse-checkout::
@@ -356,7 +356,7 @@ $ git fetch git://.... linus
 $ LT=`git rev-parse FETCH_HEAD`
 ----------------
 
-Your work tree is still based on your HEAD ($JC), but you have
+Your work tree is still based on your `HEAD` ($JC), but you have
 some edits since.  Three-way merge makes sure that you have not
 added or modified index entries since $JC, and if you haven't,
 then does the right thing.  So with the following sequence:

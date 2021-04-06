@@ -189,7 +189,7 @@ one for the purposes of disambiguation, even if the `<branch>` isn't
 unique across all remotes. Set it to
 e.g. `checkout.defaultRemote=origin` to always checkout remote
 branches from there if `<branch>` is ambiguous but exists on the
-'origin' remote. See also `checkout.defaultRemote` in
+`origin` remote. See also `checkout.defaultRemote` in
 linkgit:git-config[1].
 +
 `--guess` is the default behavior. Use `--no-guess` to disable it.

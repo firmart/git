@@ -267,7 +267,7 @@ history, so we also add `--ignore-unmatch`:
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch filename' HEAD
 --------------------------------------------------------------------------
 
-Now, you will get the rewritten history saved in HEAD.
+Now, you will get the rewritten history saved in `HEAD`.
 
 To rewrite the repository to look as if `foodir/` had been its project
 root, and discard all other history:

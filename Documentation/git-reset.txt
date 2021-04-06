@@ -3,7 +3,7 @@ git-reset(1)
 
 NAME
 ----
-git-reset - Reset current HEAD to the specified state
+git-reset - Reset current `HEAD` to the specified state
 
 SYNOPSIS
 --------
@@ -92,7 +92,7 @@ but carries forward unmerged index entries.
 	When the working tree is updated, using `--recurse-submodules` will
 	also recursively reset the working tree of all active submodules
 	according to the commit recorded in the superproject, also setting
-	the submodules' HEAD to be detached at that commit.
+	the submodules' `HEAD` to be detached at that commit.
 --
 
 See "Reset, restore and revert" in linkgit:git[1] for the differences
@@ -187,7 +187,7 @@ $ git switch topic/wip          <3>
     to be in the `master` branch.  You want to continue polishing
     them in a topic branch, so create `topic/wip` branch off of the
     current `HEAD`.
-<2> Rewind the master branch to get rid of those three commits.
+<2> Rewind the `master` branch to get rid of those three commits.
 <3> Switch to `topic/wip` branch and keep working.
 
 Undo commits permanently::

@@ -31,7 +31,7 @@ include::diff-options.txt[]
 
 --merge-base::
 	Instead of comparing <tree-ish> directly, use the merge base
-	between <tree-ish> and HEAD instead.  <tree-ish> must be a
+	between <tree-ish> and `HEAD` instead.  <tree-ish> must be a
 	commit.
 
 -m::
@@ -53,7 +53,7 @@ CACHED MODE
 -----------
 If `--cached` is specified, it allows you to ask:
 
-	show me the differences between HEAD and the current index
+	show me the differences between `HEAD` and the current index
 	contents (the ones I'd write using 'git write-tree')
 
 For example, let's say that you have worked on your working directory, updated
@@ -89,7 +89,7 @@ the more useful of the two in that what it does can't be emulated with
 a 'git write-tree' + 'git diff-tree'. Thus that's the default mode.
 The non-cached version asks the question:
 
-  show me the differences between HEAD and the currently checked out
+  show me the differences between `HEAD` and the currently checked out
   tree - index contents _and_ files that aren't up to date
 
 which is obviously a very useful question too, since that tells you what

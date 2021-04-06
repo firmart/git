@@ -767,8 +767,8 @@ They cannot be on a branch that has no link with the branch of the
 bad commit and yet not be neither one of its ancestor nor one of its
 descendants.
 
-For example, there can be a "main" branch, and a "dev" branch that was
-forked of the main branch at a commit named "D" like this:
+For example, there can be a `main` branch, and a `dev` branch that was
+forked of the `main` branch at a commit named "D" like this:
 
 -------------
 A-B-C-D-E-F-G  <--main
@@ -776,7 +776,7 @@ A-B-C-D-E-F-G  <--main
         H-I-J  <--dev
 -------------
 
-The commit "D" is called a "merge base" for branch "main" and "dev"
+The commit "D" is called a "merge base" for branch `main` and `dev`
 because it's the best common ancestor for these branches for a merge.
 
 Now let's suppose that commit J is bad and commit G is good and that
@@ -794,7 +794,7 @@ H-I-J
 -------------
 
 But what happens if the first bad commit is "B" and if it has been
-fixed in the "main" branch by commit "F"?
+fixed in the `main` branch by commit "F"?
 
 The result of such a bisection would be that we would find that H is
 the first bad commit, when in fact it's B. So that would be wrong!
@@ -1229,7 +1229,7 @@ message or the author. And it can also be used instead of git "grafts"
 to link a repository with another old repository.
 
 In fact it's this last feature that "sold" it to the Git community, so
-it is now in the "master" branch of Git's Git repository and it should
+it is now in the `master` branch of Git's Git repository and it should
 be released in Git 1.6.5 in October or November 2009.
 
 One problem with "git replace" is that currently it stores all the

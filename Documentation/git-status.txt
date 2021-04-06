@@ -14,7 +14,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 Displays paths that have differences between the index file and the
-current HEAD commit, paths that have differences between the working
+current `HEAD` commit, paths that have differences between the working
 tree and the index file, and paths in the working tree that are not
 tracked by Git (and are not ignored by linkgit:gitignore[5]). The first
 are what you _would_ commit by running `git commit`; the second and
@@ -88,7 +88,7 @@ configuration variable documented in linkgit:git-config[1].
 	Ignore changes to submodules when looking for changes. <when> can be
 	either "none", "untracked", "dirty" or "all", which is the default.
 	Using "none" will consider the submodule modified when it either contains
-	untracked or modified files or its HEAD differs from the commit recorded
+	untracked or modified files or its `HEAD` differs from the commit recorded
 	in the superproject and can be used to override any settings of the
 	'ignore' option in linkgit:git-config[1] or linkgit:gitmodules[5]. When
 	"untracked" is used submodules are not considered dirty when they only
@@ -242,7 +242,7 @@ U           U    unmerged, both modified
 ....
 
 Submodules have more state and instead report
-		M    the submodule has a different HEAD than
+		M    the submodule has a different `HEAD` than
 		     recorded in the index
 		m    the submodule has modified content
 		?    the submodule has untracked files
@@ -341,10 +341,10 @@ Field       Meaning
 	    <c> is "C" if the commit changed; otherwise ".".
 	    <m> is "M" if it has tracked changes; otherwise ".".
 	    <u> is "U" if there are untracked changes; otherwise ".".
-<mH>        The octal file mode in HEAD.
+<mH>        The octal file mode in `HEAD`.
 <mI>        The octal file mode in the index.
 <mW>        The octal file mode in the worktree.
-<hH>        The object name in HEAD.
+<hH>        The object name in `HEAD`.
 <hI>        The object name in the index.
 <X><score>  The rename or copy score (denoting the percentage
 	    of similarity between the source and target of the
@@ -354,7 +354,7 @@ Field       Meaning
 <sep>       When the `-z` option is used, the 2 pathnames are separated
 	    with a NUL (ASCII 0x00) byte; otherwise, a tab (ASCII 0x09)
 	    byte separates them.
-<origPath>  The pathname in the commit at HEAD or in the index.
+<origPath>  The pathname in the commit at `HEAD` or in the index.
 	    This is only present in a renamed/copied entry, and
 	    tells where the renamed/copied contents came from.
 --------------------------------------------------------

@@ -37,7 +37,7 @@ OPTIONS
 	The repository URL to be pulled from.
 
 <end>::
-	Commit to end at (defaults to HEAD).  This names the commit
+	Commit to end at (defaults to `HEAD`).  This names the commit
 	at the tip of the history you are asking to be pulled.
 +
 When the repository named by `<url>` has the commit at a tip of a

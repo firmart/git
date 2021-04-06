@@ -39,7 +39,7 @@ OPTIONS
 -q::
 --quiet::
 	Do not issue an error message if the <name> is not a
-	symbolic ref but a detached HEAD; instead exit with
+	symbolic ref but a detached `HEAD`; instead exit with
 	non-zero status silently.
 
 --short::
