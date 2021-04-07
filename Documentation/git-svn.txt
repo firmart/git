@@ -1,4 +1,4 @@
-git-svn(1)
+g-it-svn(1)
 ==========
 
 NAME
@@ -57,7 +57,7 @@ COMMANDS
 	as well, they take precedence.
 --no-metadata;;
 	Set the 'noMetadata' option in the [svn-remote] config.
-	This option is not recommended, please read the 'svn.noMetadata'
+	This option is not recommended, please read the `svn.noMetadata`
 	section of this manpage before using this option.
 --use-svm-props;;
 	Set the 'useSvmProps' option in the [svn-remote] config.
@@ -149,7 +149,7 @@ the same local time zone.
 	can be used to allow only certain refs.
 +
 [verse]
-config key: svn-remote.<name>.ignore-refs
+config key: `svn-remote.<name>.ignore-refs`
 +
 If the ignore-refs configuration key is set, and the command-line
 option is also given, both regular expressions will be used.
@@ -162,7 +162,7 @@ option is also given, both regular expressions will be used.
 	'rebase', etc) on a given repository.
 +
 [verse]
-config key: svn-remote.<name>.ignore-paths
+config key: `svn-remote.<name>.ignore-paths`
 +
 If the ignore-paths configuration key is set, and the command-line
 option is also given, both regular expressions will be used.
@@ -192,7 +192,7 @@ Skip "branches" and "tags" of first level directories;;
 	precedence over `--include-paths`.
 +
 [verse]
-config key: svn-remote.<name>.include-paths
+config key: `svn-remote.<name>.include-paths`
 
 --log-window-size=<n>;;
 	Fetch <n> log entries per request when scanning Subversion history.
@@ -268,12 +268,12 @@ Use of 'dcommit' is preferred to 'set-tree' (below).
 	method (e.g. `svn+ssh://` or `https://`) for commit.
 +
 [verse]
-config key: svn-remote.<name>.commiturl
-config key: svn.commiturl (overwrites all svn-remote.<name>.commiturl options)
+config key: `svn-remote.<name>.commiturl`
+config key: `svn.commiturl` (overwrites all `svn-remote.<name>.commiturl` options)
 +
 Note that the SVN URL of the commiturl config key includes the SVN branch.
 If you rather want to set the commit URL for an entire SVN repository use
-svn-remote.<name>.pushurl instead.
+`svn-remote.<name>.pushurl` instead.
 +
 Using this option for any other purpose (don't ask) is very strongly
 discouraged.
@@ -287,7 +287,7 @@ discouraged.
 	(`--mergeinfo="/branches/foo:1-10 /branches/bar:3,5-6,8"`)
 +
 [verse]
-config key: svn.pushmergeinfo
+config key: `svn.pushmergeinfo`
 +
 This option will cause git-svn to attempt to automatically populate the
 svn:mergeinfo property in the SVN repository when possible. Currently, this can
@@ -447,7 +447,7 @@ Any other arguments are passed directly to 'git log'
 	Empty directories are automatically recreated when using
 	"git svn clone" and "git svn rebase", so "mkdirs" is intended
 	for use after commands like "git checkout" or "git reset".
-	(See the svn-remote.<name>.automkdirs config file option for
+	(See the `svn-remote.<name>.automkdirs` config file option for
 	more information.)
 
 'commit-diff'::
@@ -609,7 +609,7 @@ cannot version empty directories.  Enabling this flag will make
 the commit to SVN act like Git.
 +
 [verse]
-config key: svn.rmdir
+config key: `svn.rmdir`
 
 -e::
 --edit::
@@ -620,7 +620,7 @@ default for objects that are commits, and forced on when committing
 tree objects.
 +
 [verse]
-config key: svn.edit
+config key: `svn.edit`
 
 -l<num>::
 --find-copies-harder::
@@ -630,8 +630,8 @@ They are both passed directly to 'git diff-tree'; see
 linkgit:git-diff-tree[1] for more information.
 +
 [verse]
-config key: svn.l
-config key: svn.findcopiesharder
+config key: `svn.l`
+config key: `svn.findcopiesharder`
 
 -A<filename>::
 --authors-file=<filename>::
@@ -649,7 +649,7 @@ appropriate entry.  Re-running the previous 'git svn' command
 after the authors-file is modified should continue operation.
 +
 [verse]
-config key: svn.authorsfile
+config key: `svn.authorsfile`
 
 --authors-prog=<filename>::
 	If this option is specified, for each SVN committer name that
@@ -665,7 +665,7 @@ to the root of the working tree for 'fetch'. If 'filename' is
 not found, it is searched like any other command in '$PATH'.
 +
 [verse]
-config key: svn.authorsProg
+config key: `svn.authorsProg`
 
 -q::
 --quiet::
@@ -705,7 +705,7 @@ creating the branch or tag.
 	in the log message and use that as the author string.
 +
 [verse]
-config key: svn.useLogAuthor
+config key: `svn.useLogAuthor`
 
 --add-author-from::
 	When committing to svn from Git (as part of 'set-tree' or 'dcommit'
@@ -715,7 +715,7 @@ config key: svn.useLogAuthor
 	will retrieve a valid author string for all commits.
 +
 [verse]
-config key: svn.addAuthorFrom
+config key: `svn.addAuthorFrom`
 
 ADVANCED OPTIONS
 ----------------
@@ -750,7 +750,7 @@ ADVANCED OPTIONS
 	`--no-follow-parent` to disable it.
 +
 [verse]
-config key: svn.followparent
+config key: `svn.followparent`
 
 CONFIG FILE-ONLY OPTIONS
 ------------------------
@@ -774,7 +774,7 @@ reports, and archives.  If you plan to eventually migrate from SVN to
 Git and are certain about dropping SVN history, consider
 https://github.com/newren/git-filter-repo[git-filter-repo] instead.
 filter-repo also allows reformatting of metadata for ease-of-reading
-and rewriting authorship info for non-"svn.authorsFile" users.
+and rewriting authorship info for non-`svn.authorsFile` users.
 
 svn.useSvmProps::
 svn-remote.<name>.useSvmProps::
@@ -1159,7 +1159,7 @@ $GIT_DIR/svn/\**/.rev_map.*::
 	Mapping between Subversion revision numbers and Git commit
 	names.  In a repository where the noMetadata option is not set,
 	this can be rebuilt from the git-svn-id: lines that are at the
-	end of every commit (see the 'svn.noMetadata' section above for
+	end of every commit (see the `svn.noMetadata` section above for
 	details).
 +
 'git svn fetch' and 'git svn rebase' automatically update the rev_map

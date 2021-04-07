@@ -21,7 +21,7 @@ If <branch> is specified, 'git rebase' will perform an automatic
 it remains on the current branch.
 
 If <upstream> is not specified, the upstream configured in
-branch.<name>.remote and branch.<name>.merge options will be used (see
+`branch.<name>.remote` and `branch.<name>.merge` options will be used (see
 linkgit:git-config[1] for details) and the `--fork-point` option is
 assumed.  If you are currently not on any branch or if the current
 branch does not have a configured upstream, the rebase will abort.
@@ -404,7 +404,7 @@ See also INCOMPATIBLE OPTIONS below.
 
 --stat::
 	Show a diffstat of what changed upstream since the last rebase. The
-	diffstat is also controlled by the configuration option rebase.stat.
+	diffstat is also controlled by the configuration option `rebase.stat`.
 
 -n::
 --no-stat::
@@ -509,7 +509,7 @@ See also INCOMPATIBLE OPTIONS below.
 	split commits (see SPLITTING COMMITS below).
 +
 The commit list format can be changed by setting the configuration option
-rebase.instructionFormat.  A customized instruction format will automatically
+`rebase.instructionFormat`.  A customized instruction format will automatically
 have the long commit hash prepended to the format.
 +
 See also INCOMPATIBLE OPTIONS below.
@@ -721,7 +721,7 @@ order to apply the changes to the right lines.  However, if multiple
 areas of the code have the same surrounding lines of context, the
 wrong one can be picked.  There are real-world cases where this has
 caused commits to be reapplied incorrectly with no conflicts reported.
-Setting diff.context to a larger value may prevent such types of
+Setting `diff.context` to a larger value may prevent such types of
 problems, but increases the chance of spurious conflicts (since it
 will require more lines of matching context to apply).
 
@@ -737,7 +737,7 @@ content came from.  Since the apply backend drops the original
 information about the rebased commits and their parents (and instead
 generates new fake commits based off limited information in the
 generated patches), those commits cannot be identified; instead it has
-to fall back to a commit summary.  Also, when merge.conflictStyle is
+to fall back to a commit summary.  Also, when `merge.conflictStyle` is
 set to diff3, the apply backend will use "constructed merge base" to
 label the content from the merge base, and thus provide no information
 about the merge base commit whatsoever.

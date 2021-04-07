@@ -150,7 +150,7 @@ man.<tool>.path
 You can explicitly provide a full path to your preferred man viewer by
 setting the configuration variable `man.<tool>.path`. For example, you
 can configure the absolute path to konqueror by setting
-'man.konqueror.path'. Otherwise, 'git help' assumes the tool is
+`man.konqueror.path`. Otherwise, 'git help' assumes the tool is
 available in PATH.
 
 man.<tool>.cmd
@@ -170,7 +170,7 @@ When 'konqueror' is specified in the `man.viewer` configuration
 variable, we launch 'kfmclient' to try to open the man page on an
 already opened konqueror in a new tab if possible.
 
-For consistency, we also try such a trick if 'man.konqueror.path' is
+For consistency, we also try such a trick if `man.konqueror.path` is
 set to something like `A_PATH_TO/konqueror`. That means we will try to
 launch `A_PATH_TO/kfmclient` instead.
 

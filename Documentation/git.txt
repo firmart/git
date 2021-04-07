@@ -154,8 +154,8 @@ If you just want to run git as if it was started in `<path>` then use
 	Set the path to the working tree. It can be an absolute path
 	or a path relative to the current working directory.
 	This can also be controlled by setting the GIT_WORK_TREE
-	environment variable and the core.worktree configuration
-	variable (see core.worktree in linkgit:git-config[1] for a
+	environment variable and the `core.worktree` configuration
+	variable (see `core.worktree` in linkgit:git-config[1] for a
 	more detailed discussion).
 
 --namespace=<path>::
@@ -210,7 +210,7 @@ If you just want to run git as if it was started in `<path>` then use
 	others (all other commands in `$PATH` that have git- prefix),
 	list-<category> (see categories in command-list.txt),
 	nohelpers (exclude helper commands), alias and config
-	(retrieve command list from config variable completion.commands)
+	(retrieve command list from config variable `completion.commands`)
 
 GIT COMMANDS
 ------------
@@ -482,7 +482,7 @@ double-quotes and respecting backslash escapes. E.g., the value
 `GIT_WORK_TREE`::
 	Set the path to the root of the working tree.
 	This can also be controlled by the `--work-tree` command-line
-	option and the core.worktree configuration variable.
+	option and the `core.worktree` configuration variable.
 
 `GIT_NAMESPACE`::
 	Set the Git namespace; see linkgit:gitnamespaces[7] for details.
@@ -609,7 +609,7 @@ other
 ~~~~~
 `GIT_MERGE_VERBOSITY`::
 	A number controlling the amount of output shown by
-	the recursive merge strategy.  Overrides merge.verbosity.
+	the recursive merge strategy.  Overrides `merge.verbosity`.
 	See linkgit:git-merge[1]
 
 `GIT_PAGER`::

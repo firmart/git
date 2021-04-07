@@ -7,7 +7,7 @@
 ifndef::git-pull[]
 <group>::
 	A name referring to a list of repositories as the value
-	of remotes.<group> in the configuration file.
+	of `remotes.<group>` in the configuration file.
 	(See linkgit:git-config[1]).
 endif::git-pull[]
 

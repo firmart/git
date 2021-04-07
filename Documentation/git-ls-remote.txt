@@ -53,7 +53,7 @@ OPTIONS
 
 --get-url::
 	Expand the URL of the given remote repository taking into account any
-	"url.<base>.insteadOf" config setting (See linkgit:git-config[1]) and
+	`url.<base>.insteadOf` config setting (See linkgit:git-config[1]) and
 	exit without talking to the remote.
 
 --symref::
@@ -66,7 +66,7 @@ OPTIONS
 	Sort based on the key given. Prefix `-` to sort in descending order
 	of the value. Supports "version:refname" or "v:refname" (tag names
 	are treated as versions). The "version:refname" sort order can also
-	be affected by the "versionsort.suffix" configuration variable.
+	be affected by the `versionsort.suffix` configuration variable.
 	See linkgit:git-for-each-ref[1] for more sort options, but be aware
 	keys like `committerdate` that require access to the objects
 	themselves will not work for refs whose objects have not yet been

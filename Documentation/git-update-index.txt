@@ -422,12 +422,12 @@ all index entries and stays unchanged.
 
 All changes in the split index are pushed back to the shared index
 file when the number of entries in the split index reaches a level
-specified by the splitIndex.maxPercentChange config variable (see
+specified by the `splitIndex.maxPercentChange` config variable (see
 linkgit:git-config[1]).
 
 Each time a new shared index file is created, the old shared index
 files are deleted if their modification time is older than what is
-specified by the splitIndex.sharedIndexExpire config variable (see
+specified by the `splitIndex.sharedIndexExpire` config variable (see
 linkgit:git-config[1]).
 
 To avoid deleting a shared index file that is still used, its

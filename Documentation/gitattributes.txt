@@ -199,7 +199,7 @@ convert them to CRLF when files are checked out.
 
 If you simply want to have CRLF line endings in your working directory
 regardless of the repository you are working with, you can set the
-config variable "core.autocrlf" without using any attributes.
+config variable `core.autocrlf` without using any attributes.
 
 ------------------------
 [core]
@@ -424,7 +424,7 @@ filter driver definition in the config, or a filter driver that exits with
 a non-zero status, is not an error but makes the filter a no-op passthru.
 
 You can declare that a filter turns a content that by itself is unusable
-into a usable content by setting the filter.<driver>.required configuration
+into a usable content by setting the `filter.<driver>.required` configuration
 variable to `true`.
 
 Note: Whenever the clean filter is changed, the repo should be renormalized:
@@ -437,7 +437,7 @@ attribute for paths.
 *.c	filter=indent
 ------------------------
 
-Then you would define a "filter.indent.clean" and "filter.indent.smudge"
+Then you would define a `filter.indent.clean` and `filter.indent.smudge`
 configuration in your .git/config to specify a pair of commands to
 modify the contents of C programs when the source files are checked
 in ("clean" is run) and checked out (no change is made because the
@@ -723,7 +723,7 @@ Unspecified::
 
 	A path to which the `diff` attribute is unspecified
 	first gets its contents inspected, and if it looks like
-	text and is smaller than core.bigFileThreshold, it is treated
+	text and is smaller than `core.bigFileThreshold`, it is treated
 	as text. Otherwise it would generate `Binary files differ`.
 
 String::
@@ -778,7 +778,7 @@ for paths.
 *.tex	diff=tex
 ------------------------
 
-Then, you would define a "diff.tex.xfuncname" configuration to
+Then, you would define a `diff.tex.xfuncname` configuration to
 specify a regular expression that matches a line that you would
 want to appear as the hunk header "TEXT". Add a section to your
 `$GIT_DIR/config` file (or `$HOME/.gitconfig` file) like this:

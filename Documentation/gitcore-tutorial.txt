@@ -1479,7 +1479,7 @@ on that project and has an own "public repository" goes like this:
 
 1. Prepare your work repository, by running 'git clone' on the public
    repository of the "project lead". The URL used for the
-   initial cloning is stored in the remote.origin.url
+   initial cloning is stored in the `remote.origin.url`
    configuration variable.
 
 2. Prepare a public repository accessible to others, just like
@@ -1520,7 +1520,7 @@ like this:
 1. Prepare your work repository, by 'git clone' the public
    repository of the "project lead" (or a "subsystem
    maintainer", if you work on a subsystem). The URL used for
-   the initial cloning is stored in the remote.origin.url
+   the initial cloning is stored in the `remote.origin.url`
    configuration variable.
 
 2. Do your work in your repository on `master` branch.

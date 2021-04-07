@@ -411,7 +411,7 @@ Specifying `--no-force-if-includes` disables this behavior.
 	also be aborted and exit with non-zero status. If 'only' is used all
 	submodules will be recursively pushed while the superproject is left
 	unpushed. A value of 'no' or using `--no-recurse-submodules` can be used
-	to override the push.recurseSubmodules configuration variable when no
+	to override the `push.recurseSubmodules` configuration variable when no
 	submodule recursion is required.
 
 --[no-]verify::

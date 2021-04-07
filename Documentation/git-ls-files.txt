@@ -173,7 +173,7 @@ a space) at the start of each line:
 --eol::
 	Show <eolinfo> and <eolattr> of files.
 	<eolinfo> is the file content identification used by Git when
-	the "text" attribute is "auto" (or not set and core.autocrlf is not false).
+	the "text" attribute is "auto" (or not set and `core.autocrlf` is not false).
 	<eolinfo> is either "-text", "none", "lf", "crlf", "mixed" or "".
 +
 "" means the file is not a regular file, it is not in the index or

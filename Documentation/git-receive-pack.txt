@@ -29,7 +29,7 @@ the send-pack end, it is updating the remote.  Confused?)
 There are other real-world examples of using update and
 post-update hooks found in the Documentation/howto directory.
 
-'git-receive-pack' honours the receive.denyNonFastForwards config
+'git-receive-pack' honours the `receive.denyNonFastForwards` config
 option, which tells it if updates to a ref should be denied if they
 are not fast-forwards.
 

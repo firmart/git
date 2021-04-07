@@ -101,7 +101,7 @@ init [--] [<path>...]::
 	repository will be assumed to be upstream.
 +
 Optional <path> arguments limit which submodules will be initialized.
-If no path is specified and submodule.active has been configured, submodules
+If no path is specified and `submodule.active` has been configured, submodules
 configured to be active will be initialized, otherwise all submodules are
 initialized.
 +
@@ -182,7 +182,7 @@ set-branch (-b|--branch) <branch> [--] <path>::
 set-branch (-d|--default) [--] <path>::
 	Sets the default remote tracking branch for the submodule. The
 	`--branch` option allows the remote branch to be specified. The
-	`--default` option removes the submodule.<name>.branch configuration
+	`--default` option removes the `submodule.<name>.branch` configuration
 	key, which causes the tracking branch to default to the remote `HEAD`.
 
 set-url [--] <path> <newurl>::

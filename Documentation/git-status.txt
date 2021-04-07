@@ -80,7 +80,7 @@ Consider enabling untracked cache and split index if supported (see
 --split-index`), Otherwise you can use `no` to have `git status`
 return more quickly without showing untracked files.
 
-The default can be changed using the status.showUntrackedFiles
+The default can be changed using the `status.showUntrackedFiles`
 configuration variable documented in linkgit:git-config[1].
 --
 
@@ -163,7 +163,7 @@ at any time.
 The paths mentioned in the output, unlike many other Git commands, are
 made relative to the current directory if you are working in a
 subdirectory (this is on purpose, to help cutting and pasting). See
-the status.relativePaths config option below.
+the `status.relativePaths` config option below.
 
 Short Format
 ~~~~~~~~~~~~
@@ -265,10 +265,10 @@ based on user configuration. This makes it ideal for parsing by scripts.
 The description of the short format above also describes the porcelain
 format, with a few exceptions:
 
-1. The user's color.status configuration is not respected; color will
+1. The user's `color.status` configuration is not respected; color will
    always be off.
 
-2. The user's status.relativePaths configuration is not respected; paths
+2. The user's `status.relativePaths` configuration is not respected; paths
    shown will always be relative to the repository root.
 
 There is also an alternate `-z` format recommended for machine parsing. In

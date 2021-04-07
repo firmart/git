@@ -44,9 +44,9 @@ using the `--notes` option. Such notes are added as a patch commentary
 after a three dash separator line.
 
 To change which notes are shown by 'git log', see the
-"notes.displayRef" configuration in linkgit:git-log[1].
+`notes.displayRef` configuration in linkgit:git-log[1].
 
-See the "notes.rewrite.<command>" configuration for a way to carry
+See the `notes.rewrite.<command>` configuration for a way to carry
 notes across commands that rewrite commits.
 
 
@@ -161,7 +161,7 @@ OPTIONS
 
 --ref <ref>::
 	Manipulate the notes tree in <ref>.  This overrides
-	`GIT_NOTES_REF` and the "core.notesRef" configuration.  The ref
+	`GIT_NOTES_REF` and the `core.notesRef` configuration.  The ref
 	specifies the full refname when it begins with `refs/notes/`; when it
 	begins with `notes/`, `refs/` and otherwise `refs/notes/` is prefixed
 	to form a full name of the ref.
@@ -185,7 +185,7 @@ OPTIONS
 	When merging notes, resolve notes conflicts using the given
 	strategy. The following strategies are recognized: "manual"
 	(default), "ours", "theirs", "union" and "cat_sort_uniq".
-	This option overrides the "notes.mergeStrategy" configuration setting.
+	This option overrides the `notes.mergeStrategy` configuration setting.
 	See the "NOTES MERGE STRATEGIES" section below for more
 	information on each notes merge strategy.
 
@@ -251,7 +251,7 @@ When done, the user can either finalize the merge with
 'git notes merge --abort'.
 
 Users may select an automated merge strategy from among the following using
-either `-s`/`--strategy` option or configuring notes.mergeStrategy accordingly:
+either `-s`/`--strategy` option or configuring `notes.mergeStrategy` accordingly:
 
 "ours" automatically resolves conflicting notes in favor of the local
 version (i.e. the current notes ref).
@@ -327,7 +327,7 @@ This setting can be overridden by passing the `--strategy` option.
 notes.<name>.mergeStrategy::
 	Which merge strategy to choose when doing a notes merge into
 	refs/notes/<name>.  This overrides the more general
-	"notes.mergeStrategy".  See the "NOTES MERGE STRATEGIES" section above
+	`notes.mergeStrategy`.  See the "NOTES MERGE STRATEGIES" section above
 	for more information on each available strategy.
 
 notes.displayRef::

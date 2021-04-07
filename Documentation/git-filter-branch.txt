@@ -365,7 +365,7 @@ git filter-branch --msg-filter '
 
 The `--env-filter` option can be used to modify committer and/or author
 identity.  For example, if you found out that your commits have the wrong
-identity due to a misconfigured user.email, you can make a correction,
+identity due to a misconfigured `user.email`, you can make a correction,
 before publishing the project, like this:
 
 --------------------------------------------------------
@@ -577,7 +577,7 @@ with:
   ls-files will only quote filenames if needed, so folks may not
   notice that one of the files didn't match the regex (at least not
   until it's much too late).  Yes, someone who knows about
-  core.quotePath can avoid this (unless they have other special
+  `core.quotePath` can avoid this (unless they have other special
   characters like \t, \n, or "), and people who use ls-files -z with
   something other than grep can avoid this, but that doesn't mean they
   will.

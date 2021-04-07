@@ -188,8 +188,8 @@ actually prune them.
 
 Fetch updates for remotes or remote groups in the repository as defined by
 `remotes.<group>`. If neither group nor remote is specified on the command line,
-the configuration parameter remotes.default will be used; if
-remotes.default is not defined, all remotes which do not have the
+the configuration parameter `remotes.default` will be used; if
+`remotes.default` is not defined, all remotes which do not have the
 configuration parameter `remote.<name>.skipDefaultUpdate` set to true will
 be updated.  (See linkgit:git-config[1]).
 +

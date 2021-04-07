@@ -149,7 +149,7 @@ still see a subset of the modifications.
 
 LOGGING UPDATES
 ---------------
-If config parameter "core.logAllRefUpdates" is true and the ref is one
+If config parameter `core.logAllRefUpdates` is true and the ref is one
 under "refs/heads/", "refs/remotes/", "refs/notes/", or a pseudoref
 like `HEAD` or `ORIG_HEAD`; or the file "$GIT_DIR/logs/<ref>" exists then
 `git update-ref` will append a line to the log file

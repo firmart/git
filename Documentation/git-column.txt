@@ -21,11 +21,11 @@ columns.
 OPTIONS
 -------
 --command=<name>::
-	Look up layout mode using configuration variable column.<name> and
-	column.ui.
+	Look up layout mode using configuration variable `column.<name>` and
+	`column.ui`.
 
 --mode=<mode>::
-	Specify layout mode. See configuration variable column.ui for option
+	Specify layout mode. See configuration variable `column.ui` for option
 	syntax in linkgit:git-config[1].
 
 --raw-mode=<n>::

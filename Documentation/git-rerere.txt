@@ -181,7 +181,7 @@ records the hand resolve when it is a new conflict, or reuses the earlier hand
 resolve when it is not.  'git commit' also invokes 'git rerere'
 when committing a merge result.  What this means is that you do
 not have to do anything special yourself (besides enabling
-the rerere.enabled config variable).
+the `rerere.enabled` config variable).
 
 In our example, when you do the test merge, the manual
 resolution is recorded, and it will be reused when you do the
