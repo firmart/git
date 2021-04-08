@@ -254,7 +254,7 @@ This is per-repository enhancement / version of global prefix-based
 `@git_base_url_list` `gitweb` configuration variable (see
 linkgit:gitweb.conf[5]).
 
-gitweb.owner::
+`gitweb.owner`::
 	You can use the `gitweb.owner` repository configuration variable to set
 	repository's owner.  It is displayed in the project list and summary
 	page.

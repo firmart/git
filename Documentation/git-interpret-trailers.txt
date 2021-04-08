@@ -134,7 +134,7 @@ OPTIONS
 CONFIGURATION VARIABLES
 -----------------------
 
-trailer.separators::
+`trailer.separators`::
 	This option tells which characters are recognized as trailer
 	separators. By default only ':' is recognized as a trailer
 	separator, except that '=' is always accepted on the command
@@ -151,7 +151,7 @@ the default separator used, so by default trailers will appear like:
 '<token>% <value>' (one percent sign and one space will appear between
 the token and the value).
 
-trailer.where::
+`trailer.where`::
 	This option tells where a new trailer will be added.
 +
 This can be `end`, which is the default, `start`, `after` or `before`.
@@ -168,7 +168,7 @@ last trailer with the same <token>.
 If it is `before`, then each new trailer will appear just before the
 first trailer with the same <token>.
 
-trailer.ifexists::
+`trailer.ifexists`::
 	This option makes it possible to choose what action will be
 	performed when there is already at least one trailer with the
 	same <token> in the message.
@@ -194,7 +194,7 @@ will be added.
 With `doNothing`, nothing will be done; that is no new trailer will be
 added if there is already one with the same <token> in the message.
 
-trailer.ifmissing::
+`trailer.ifmissing`::
 	This option makes it possible to choose what action will be
 	performed when there is not yet any trailer with the same
 	<token> in the message.
@@ -206,7 +206,7 @@ With `add`, a new trailer will be added.
 +
 With `doNothing`, nothing will be done.
 
-trailer.<token>.key::
+`trailer.<token>.key`::
 	This `key` will be used instead of <token> in the trailer. At
 	the end of this key, a separator can appear and then some
 	space characters. By default the only valid separator is ':',
@@ -216,22 +216,22 @@ trailer.<token>.key::
 If there is a separator, then the key will be used instead of both the
 <token> and the default separator when adding the trailer.
 
-trailer.<token>.where::
+`trailer.<token>.where`::
 	This option takes the same values as the `trailer.where`
 	configuration variable and it overrides what is specified by
 	that option for trailers with the specified <token>.
 
-trailer.<token>.ifexists::
+`trailer.<token>.ifexists`::
 	This option takes the same values as the `trailer.ifexists`
 	configuration variable and it overrides what is specified by
 	that option for trailers with the specified <token>.
 
-trailer.<token>.ifmissing::
+`trailer.<token>.ifmissing`::
 	This option takes the same values as the `trailer.ifmissing`
 	configuration variable and it overrides what is specified by
 	that option for trailers with the specified <token>.
 
-trailer.<token>.command::
+`trailer.<token>.command`::
 	This option can be used to specify a shell command that will
 	be called to automatically add or modify a trailer with the
 	specified <token>.

@@ -145,7 +145,7 @@ for details.
 	if `$GIT_COMMON_DIR` is set and `$GIT_COMMON_DIR/config` will be
 	used instead.
 
-config.worktree::
+`config.worktree`::
 	Working directory specific configuration file for the main
 	working directory in multiple working directory setup (see
 	linkgit:git-worktree[1]).
@@ -182,7 +182,7 @@ config.worktree::
 	The current index file for the repository.  It is
 	usually not found in a bare repository.
 
-sharedindex.<SHA-1>::
+`sharedindex.<SHA-1>`::
 	The shared index part, to be referenced by `$GIT_DIR/index` and
 	other temporary index files. Only valid in split index mode.
 

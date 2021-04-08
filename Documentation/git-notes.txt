@@ -310,13 +310,13 @@ some special-purpose tools to do something useful with them.
 CONFIGURATION
 -------------
 
-core.notesRef::
+`core.notesRef`::
 	Notes ref to read and manipulate instead of
 	`refs/notes/commits`.  Must be an unabbreviated ref name.
 	This setting can be overridden through the environment and
 	command line.
 
-notes.mergeStrategy::
+`notes.mergeStrategy`::
 	Which merge strategy to choose by default when resolving notes
 	conflicts.  Must be one of `manual`, `ours`, `theirs`, `union`, or
 	`cat_sort_uniq`.  Defaults to `manual`.  See "NOTES MERGE STRATEGIES"
@@ -324,13 +324,13 @@ notes.mergeStrategy::
 +
 This setting can be overridden by passing the `--strategy` option.
 
-notes.<name>.mergeStrategy::
+`notes.<name>.mergeStrategy`::
 	Which merge strategy to choose when doing a notes merge into
 	refs/notes/<name>.  This overrides the more general
 	`notes.mergeStrategy`.  See the "NOTES MERGE STRATEGIES" section above
 	for more information on each available strategy.
 
-notes.displayRef::
+`notes.displayRef`::
 	Which ref (or refs, if a glob or specified more than once), in
 	addition to the default set by `core.notesRef` or
 	`GIT_NOTES_REF`, to read notes from when showing commit
@@ -339,7 +339,7 @@ notes.displayRef::
 	`GIT_NOTES_DISPLAY_REF` environment variable.
 	See linkgit:git-log[1].
 
-notes.rewrite.<command>::
+`notes.rewrite.<command>`::
 	When rewriting commits with <command> (currently `amend` or
 	`rebase`), if this variable is `false`, `git` will not copy
 	notes from the original to the rewritten commit.  Defaults to
@@ -348,7 +348,7 @@ notes.rewrite.<command>::
 This setting can be overridden by the `GIT_NOTES_REWRITE_REF`
 environment variable.
 
-notes.rewriteMode::
+`notes.rewriteMode`::
 	When copying notes during a rewrite, what to do if the target
 	commit already has a note.  Must be one of `overwrite`,
 	`concatenate`, `cat_sort_uniq`, or `ignore`.  Defaults to
@@ -357,7 +357,7 @@ notes.rewriteMode::
 This setting can be overridden with the `GIT_NOTES_REWRITE_MODE`
 environment variable.
 
-notes.rewriteRef::
+`notes.rewriteRef`::
 	When copying notes during a rewrite, specifies the (fully
 	qualified) ref whose notes should be copied.  May be a glob,
 	in which case notes in all matching refs will be copied.  You

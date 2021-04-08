@@ -34,7 +34,7 @@ SERVICES
 These services can be enabled/disabled using the per-repository
 configuration file:
 
-http.getanyfile::
+`http.getanyfile`::
 	This serves Git clients older than version 1.6.6 that are unable to use the
 	upload pack service.  When enabled, clients are able to read
 	any file within the repository, including objects that are
@@ -42,12 +42,12 @@ http.getanyfile::
 	It is enabled by default, but a repository can disable it
 	by setting this configuration item to `false`.
 
-http.uploadpack::
+`http.uploadpack`::
 	This serves `git fetch-pack` and `git ls-remote` clients.
 	It is enabled by default, but a repository can disable it
 	by setting this configuration item to `false`.
 
-http.receivepack::
+`http.receivepack`::
 	This serves `git send-pack` clients, allowing push.  It is
 	disabled by default for anonymous users, and enabled by
 	default for users authenticated by the web server.  It can be

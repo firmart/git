@@ -755,8 +755,8 @@ config key: `svn.followparent`
 CONFIG FILE-ONLY OPTIONS
 ------------------------
 
-svn.noMetadata::
-svn-remote.<name>.noMetadata::
+`svn.noMetadata`::
+`svn-remote.<name>.noMetadata`::
 	This gets rid of the 'git-svn-id:' lines at the end of every commit.
 +
 This option can only be used for one-shot imports as `git svn`
@@ -776,8 +776,8 @@ https://github.com/newren/git-filter-repo[git-filter-repo] instead.
 filter-repo also allows reformatting of metadata for ease-of-reading
 and rewriting authorship info for non-`svn.authorsFile` users.
 
-svn.useSvmProps::
-svn-remote.<name>.useSvmProps::
+`svn.useSvmProps`::
+`svn-remote.<name>.useSvmProps`::
 	This allows `git svn` to re-map repository URLs and UUIDs from
 	mirrors created using SVN::Mirror (or svk) for metadata.
 +
@@ -789,26 +789,26 @@ introduce a helper function that returns the original identity
 URL and UUID, and use it when generating metadata in commit
 messages.
 
-svn.useSvnsyncProps::
-svn-remote.<name>.useSvnsyncprops::
+`svn.useSvnsyncProps`::
+`svn-remote.<name>.useSvnsyncprops`::
 	Similar to the useSvmProps option; this is for users
 	of the svnsync(1) command distributed with SVN 1.4.x and
 	later.
 
-svn-remote.<name>.rewriteRoot::
+`svn-remote.<name>.rewriteRoot`::
 	This allows users to create repositories from alternate
 	URLs.  For example, an administrator could run `git svn` on the
 	server locally (accessing via `file://`) but wish to distribute
 	the repository with a public `http://` or `svn://` URL in the
 	metadata so users of it will see the public URL.
 
-svn-remote.<name>.rewriteUUID::
+`svn-remote.<name>.rewriteUUID`::
 	Similar to the useSvmProps option; this is for users who need
 	to remap the UUID manually. This may be useful in situations
 	where the original UUID is not available via either useSvmProps
 	or useSvnsyncProps.
 
-svn-remote.<name>.pushurl::
+`svn-remote.<name>.pushurl`::
 
 	Similar to Git's `remote.<name>.pushurl`, this key is designed
 	to be used in cases where 'url' points to an SVN repository
@@ -818,7 +818,7 @@ svn-remote.<name>.pushurl::
 	either 'commiturl' or 'pushurl' could be used, 'commiturl'
 	takes precedence.
 
-svn.brokenSymlinkWorkaround::
+`svn.brokenSymlinkWorkaround`::
 	This disables potentially expensive checks to workaround
 	broken symlinks checked into SVN by broken clients.  Set this
 	option to "false" if you track a SVN repository with many
@@ -827,13 +827,13 @@ svn.brokenSymlinkWorkaround::
 	revision fetched.  If unset, `git svn` assumes this option to
 	be "true".
 
-svn.pathnameencoding::
+`svn.pathnameencoding`::
 	This instructs `git svn` to recode pathnames to a given encoding.
 	It can be used by windows users and by those who work in non-utf8
 	locales to avoid corrupted file names with non-ASCII characters.
 	Valid encodings are the ones supported by Perl's Encode module.
 
-svn-remote.<name>.automkdirs::
+`svn-remote.<name>.automkdirs`::
 	Normally, the `git svn clone` and `git svn rebase` commands
 	attempt to recreate empty directories that are in the
 	Subversion repository.  If this option is set to "false", then

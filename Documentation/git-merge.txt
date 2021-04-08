@@ -358,7 +358,7 @@ CONFIGURATION
 -------------
 include::config/merge.txt[]
 
-branch.<name>.mergeOptions::
+`branch.<name>.mergeOptions`::
 	Sets default options for merging into branch <name>. The syntax and
 	supported options are the same as those of `git merge`, but option
 	values containing whitespace characters are currently not supported.

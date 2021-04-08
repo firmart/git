@@ -53,7 +53,7 @@ CONFIGURATION
 -------------
 include::config/fmt-merge-msg.txt[]
 
-merge.summary::
+`merge.summary`::
 	Synonym to `merge.log`; this is deprecated and will be removed in
 	the future.
 

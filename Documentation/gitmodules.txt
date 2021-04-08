@@ -23,13 +23,13 @@ submodule has been added unless it was customized with the `--name`
 option of `git submodule add`. Each submodule section also contains the
 following required keys:
 
-submodule.<name>.path::
+`submodule.<name>.path`::
 	Defines the path, relative to the top-level directory of the Git
 	working tree, where the submodule is expected to be checked out.
 	The path name must not end with a `/`. All submodule paths must
 	be unique within the `.gitmodules` file.
 
-submodule.<name>.url::
+`submodule.<name>.url`::
 	Defines a URL from which the submodule repository can be cloned.
 	This may be either an absolute URL ready to be passed to
 	linkgit:git-clone[1] or (if it begins with `./` or `../`) a location
@@ -37,7 +37,7 @@ submodule.<name>.url::
 
 In addition, there are a number of optional keys:
 
-submodule.<name>.update::
+`submodule.<name>.update`::
 	Defines the default update procedure for the named submodule,
 	i.e. how the submodule is updated by the `git submodule update`
 	command in the superproject. This is only used by `git
@@ -47,7 +47,7 @@ submodule.<name>.update::
 	linkgit:git-submodule[1] for their meaning. For security
 	reasons, the '!command' form is not accepted here.
 
-submodule.<name>.branch::
+`submodule.<name>.branch`::
 	A remote branch name for tracking updates in the upstream submodule.
 	If the option is not specified, it defaults to the remote `HEAD`.
 	A special value of `.` is used to indicate that the name of the branch
@@ -55,7 +55,7 @@ submodule.<name>.branch::
 	current repository.  See the `--remote` documentation in
 	linkgit:git-submodule[1] for details.
 
-submodule.<name>.fetchRecurseSubmodules::
+`submodule.<name>.fetchRecurseSubmodules`::
 	This option can be used to control recursive fetching of this
 	submodule. If this option is also present in the submodule's entry in
 	`.git/config` of the superproject, the setting there will override the
@@ -63,7 +63,7 @@ submodule.<name>.fetchRecurseSubmodules::
 	Both settings can be overridden on the command line by using the
 	`--[no-]recurse-submodules` option to `git fetch` and `git pull`.
 
-submodule.<name>.ignore::
+`submodule.<name>.ignore`::
 	Defines under what circumstances `git status` and the diff family show
 	a submodule as modified. The following values are supported:
 +
@@ -93,7 +93,7 @@ Both settings can be overridden on the command line by using the
 affected by this setting.
 --
 
-submodule.<name>.shallow::
+`submodule.<name>.shallow`::
 	When set to true, a clone of this submodule will be performed as a
 	shallow clone (with a history depth of 1) unless the user explicitly
 	asks for a non-shallow clone.

@@ -84,7 +84,7 @@ OPTIONS
 
 CONFIGURATION
 -------------
-cvsexportcommit.cvsdir::
+`cvsexportcommit.cvsdir`::
 	The default location of the CVS checkout to use for the export.
 
 EXAMPLES

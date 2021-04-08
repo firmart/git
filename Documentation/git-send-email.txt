@@ -443,11 +443,11 @@ Information
 CONFIGURATION
 -------------
 
-sendemail.aliasesFile::
+`sendemail.aliasesFile`::
 	To avoid typing long email addresses, point this to one or more
 	email aliases files.  You must also supply `sendemail.aliasFileType`.
 
-sendemail.aliasFileType::
+`sendemail.aliasFileType`::
 	Format of the file(s) specified in `sendemail.aliasesFile`. Must be
 	one of 'mutt', 'mailrc', 'pine', 'elm', or 'gnus', or 'sendmail'.
 +
@@ -468,13 +468,13 @@ described below:
 	recognized by the parser.
 --
 
-sendemail.multiEdit::
+`sendemail.multiEdit`::
 	If true (default), a single editor instance will be spawned to edit
 	files you have to edit (patches when `--annotate` is used, and the
 	summary when `--compose` is used). If false, files will be edited one
 	after the other, spawning a new editor each time.
 
-sendemail.confirm::
+`sendemail.confirm`::
 	Sets the default for whether to confirm before sending. Must be
 	one of 'always', 'never', 'cc', 'compose', or 'auto'. See `--confirm`
 	in the previous section for the meaning of these values.

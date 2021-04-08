@@ -559,30 +559,30 @@ They all are in the `git-p4` section.
 
 General variables
 ~~~~~~~~~~~~~~~~~
-git-p4.user::
+`git-p4.user`::
 	User specified as an option to all p4 commands, with `-u <user>`.
 	The environment variable `P4USER` can be used instead.
 
-git-p4.password::
+`git-p4.password`::
 	Password specified as an option to all p4 commands, with
 	`-P <password>`.
 	The environment variable `P4PASS` can be used instead.
 
-git-p4.port::
+`git-p4.port`::
 	Port specified as an option to all p4 commands, with
 	`-p <port>`.
 	The environment variable `P4PORT` can be used instead.
 
-git-p4.host::
+`git-p4.host`::
 	Host specified as an option to all p4 commands, with
 	`-h <host>`.
 	The environment variable `P4HOST` can be used instead.
 
-git-p4.client::
+`git-p4.client`::
 	Client specified as an option to all p4 commands, with
 	`-c <client>`, including the client spec.
 
-git-p4.retries::
+`git-p4.retries`::
 	Specifies the number of times to retry a p4 command (notably,
 	`p4 sync`) if the network times out. The default value is 3.
 	Set the value to 0 to disable retries or if your p4 version
@@ -590,20 +590,20 @@ git-p4.retries::
 
 Clone and sync variables
 ~~~~~~~~~~~~~~~~~~~~~~~~
-git-p4.syncFromOrigin::
+`git-p4.syncFromOrigin`::
 	Because importing commits from other Git repositories is much faster
 	than importing them from p4, a mechanism exists to find p4 changes
 	first in Git remotes.  If branches exist under `refs/remote/origin/p4`,
 	those will be fetched and used when syncing from p4.  This
 	variable can be set to 'false' to disable this behavior.
 
-git-p4.branchUser::
+`git-p4.branchUser`::
 	One phase in branch detection involves looking at p4 branches
 	to find new ones to import.  By default, all branches are
 	inspected.  This option limits the search to just those owned
 	by the single user named in the variable.
 
-git-p4.branchList::
+`git-p4.branchList`::
 	List of branches to be imported when branch detection is
 	enabled.  Each entry should be a pair of branch names separated
 	by a colon (:).  This example declares that both branchA and
@@ -614,31 +614,31 @@ git config       git-p4.branchList main:branchA
 git config --add git-p4.branchList main:branchB
 -------------
 
-git-p4.ignoredP4Labels::
+`git-p4.ignoredP4Labels`::
 	List of p4 labels to ignore. This is built automatically as
 	unimportable labels are discovered.
 
-git-p4.importLabels::
+`git-p4.importLabels`::
 	Import p4 labels into `git`, as per `--import-labels`.
 
-git-p4.labelImportRegexp::
+`git-p4.labelImportRegexp`::
 	Only p4 labels matching this regular expression will be imported. The
 	default value is '[a-zA-Z0-9_\-.]+$'.
 
-git-p4.useClientSpec::
+`git-p4.useClientSpec`::
 	Specify that the p4 client spec should be used to identify p4
 	depot paths of interest.  This is equivalent to specifying the
 	option `--use-client-spec`.  See the "CLIENT SPEC" section above.
 	This variable is a boolean, not the name of a p4 client.
 
-git-p4.pathEncoding::
+`git-p4.pathEncoding`::
 	Perforce keeps the encoding of a path as given by the originating OS.
 	Git expects paths encoded as UTF-8. Use this config to tell `git-p4`
 	what encoding Perforce had used for the paths. This encoding is used
 	to transcode the paths to UTF-8. As an example, Perforce on Windows
 	often uses "cp1252" to encode path names.
 
-git-p4.largeFileSystem::
+`git-p4.largeFileSystem`::
 	Specify the system that is used for large (binary) files. Please note
 	that large file systems do not support the `git p4 submit` command.
 	Only Git LFS is implemented right now (see https://git-lfs.github.com/
@@ -649,30 +649,30 @@ git-p4.largeFileSystem::
 git config       git-p4.largeFileSystem GitLFS
 -------------
 
-git-p4.largeFileExtensions::
+`git-p4.largeFileExtensions`::
 	All files matching a file extension in the list will be processed
 	by the large file system. Do not prefix the extensions with '.'.
 
-git-p4.largeFileThreshold::
+`git-p4.largeFileThreshold`::
 	All files with an uncompressed size exceeding the threshold will be
 	processed by the large file system. By default the threshold is
 	defined in bytes. Add the suffix k, m, or g to change the unit.
 
-git-p4.largeFileCompressedThreshold::
+`git-p4.largeFileCompressedThreshold`::
 	All files with a compressed size exceeding the threshold will be
 	processed by the large file system. This option might slow down
 	your clone/sync process. By default the threshold is defined in
 	bytes. Add the suffix k, m, or g to change the unit.
 
-git-p4.largeFilePush::
+`git-p4.largeFilePush`::
 	Boolean variable which defines if large files are automatically
 	pushed to a server.
 
-git-p4.keepEmptyCommits::
+`git-p4.keepEmptyCommits`::
 	A changelist that contains only excluded files will be imported
 	as an empty commit if this boolean option is set to true.
 
-git-p4.mapUser::
+`git-p4.mapUser`::
 	Map a P4 user to a name and email address in Git. Use a string
 	with the following format to create a mapping:
 +
@@ -685,69 +685,69 @@ multiple P4 user can be defined.
 
 Submit variables
 ~~~~~~~~~~~~~~~~
-git-p4.detectRenames::
+`git-p4.detectRenames`::
 	Detect renames.  See linkgit:git-diff[1].  This can be true,
 	false, or a score as expected by `git diff -M`.
 
-git-p4.detectCopies::
+`git-p4.detectCopies`::
 	Detect copies.  See linkgit:git-diff[1].  This can be true,
 	false, or a score as expected by `git diff -C`.
 
-git-p4.detectCopiesHarder::
+`git-p4.detectCopiesHarder`::
 	Detect copies harder.  See linkgit:git-diff[1].  A boolean.
 
-git-p4.preserveUser::
+`git-p4.preserveUser`::
 	On submit, re-author changes to reflect the Git author,
 	regardless of who invokes `git p4 submit`.
 
-git-p4.allowMissingP4Users::
+`git-p4.allowMissingP4Users`::
 	When 'preserveUser' is true, `git p4` normally dies if it
 	cannot find an author in the p4 user map.  This setting
 	submits the change regardless.
 
-git-p4.skipSubmitEdit::
+`git-p4.skipSubmitEdit`::
 	The submit process invokes the editor before each p4 change
 	is submitted.  If this setting is true, though, the editing
 	step is skipped.
 
-git-p4.skipSubmitEditCheck::
+`git-p4.skipSubmitEditCheck`::
 	After editing the p4 change message, `git p4` makes sure that
 	the description really was changed by looking at the file
 	modification time.  This option disables that test.
 
-git-p4.allowSubmit::
+`git-p4.allowSubmit`::
 	By default, any branch can be used as the source for a `git p4
 	submit` operation.  This configuration variable, if set, permits only
 	the named branches to be used as submit sources.  Branch names
 	must be the short names (no `refs/heads/`), and should be
 	separated by commas (","), with no spaces.
 
-git-p4.skipUserNameCheck::
+`git-p4.skipUserNameCheck`::
 	If the user running `git p4 submit` does not exist in the p4
 	user map, `git p4` exits.  This option can be used to force
 	submission regardless.
 
-git-p4.attemptRCSCleanup::
+`git-p4.attemptRCSCleanup`::
 	If enabled, `git p4 submit` will attempt to cleanup RCS keywords
 	($Header$, etc). These would otherwise cause merge conflicts and prevent
 	the submit going ahead. This option should be considered experimental at
 	present.
 
-git-p4.exportLabels::
+`git-p4.exportLabels`::
 	Export Git tags to p4 labels, as per `--export-labels`.
 
-git-p4.labelExportRegexp::
+`git-p4.labelExportRegexp`::
 	Only p4 labels matching this regular expression will be exported. The
 	default value is '[a-zA-Z0-9_\-.]+$'.
 
-git-p4.conflict::
+`git-p4.conflict`::
 	Specify submit behavior when a conflict with p4 is found, as per
 	`--conflict`.  The default behavior is 'ask'.
 
-git-p4.disableRebase::
+`git-p4.disableRebase`::
     Do not rebase the tree against p4/master following a submit.
 
-git-p4.disableP4Sync::
+`git-p4.disableP4Sync`::
     Do not sync p4/master with Perforce following a submit. Implies `git-p4.disableRebase`.
 
 IMPLEMENTATION DETAILS
