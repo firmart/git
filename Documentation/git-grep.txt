@@ -49,7 +49,7 @@ CONFIGURATION
 
 `grep.patternType`::
 	Set the default matching behavior. Using a value of 'basic', 'extended',
-	'fixed', or 'perl' will enable the `--basic-regexp`, `--extended-regexp`,
+	'fixed', or `perl` will enable the `--basic-regexp`, `--extended-regexp`,
 	`--fixed-strings`, or `--perl-regexp` option accordingly, while the
 	value 'default' will return to the default matching behavior.
 
@@ -196,7 +196,7 @@ providing this option will cause it to die.
 
 `-O[<pager>]`::
 `--open-files-in-pager[=<pager>]`::
-	Open the matching files in the pager (not the output of 'grep').
+	Open the matching files in the pager (not the output of `grep`).
 	If the pager happens to be `less` or `vi`, and the user
 	specified only one pattern, the first file is positioned at
 	the first match automatically. The `pager` argument is

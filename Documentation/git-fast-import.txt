@@ -1118,7 +1118,7 @@ Output uses the same format as `git ls-tree <tree> -- <path>`:
 
 The <dataref> represents the blob, tree, or commit object at <path>
 and can be used in later 'get-mark', 'cat-blob', 'filemodify', or
-'ls' commands.
+`ls` commands.
 
 If there is no file or subtree at that path, `git fast-import` will
 instead report
@@ -1164,7 +1164,7 @@ The <feature> part of the command may be any one of the following:
 `cat-blob`::
 `ls`::
 	Require that the backend support the 'get-mark', 'cat-blob',
-	or 'ls' command respectively.
+	or `ls` command respectively.
 	Versions of fast-import not supporting the specified command
 	will exit with a message indicating so.
 	This lets the import error out early with a clear message,

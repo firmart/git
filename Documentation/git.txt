@@ -122,7 +122,7 @@ sensitive information can be part of the key.
 
 `-p`::
 `--paginate`::
-	Pipe all output into 'less' (or if set, `$PAGER`) if standard
+	Pipe all output into `less` (or if set, `$PAGER`) if standard
 	output is a terminal.  This overrides the `pager.<cmd>`
 	configuration options (see the "Configuration Mechanism" section
 	below).
@@ -637,7 +637,7 @@ other
 `GIT_SSH`::
 `GIT_SSH_COMMAND`::
 	If either of these environment variables is set then `git fetch`
-	and `git push` will use the specified command instead of 'ssh'
+	and `git push` will use the specified command instead of `ssh`
 	when they need to connect to a remote system.
 	The command-line parameters passed to the configured command are
 	determined by the ssh variant.  See `ssh.variant` option in

@@ -69,7 +69,7 @@ Initialized empty Git repository in .git/
 which is just Git's way of saying that you haven't been doing anything
 strange, and that it will have created a local `.git` directory setup for
 your new project. You will now have a `.git` directory, and you can
-inspect that with 'ls'. For your new empty project, it should show you
+inspect that with `ls`. For your new empty project, it should show you
 three entries, among other things:
 
  - a file called `HEAD`, that has `ref: refs/heads/master` in it.
@@ -635,7 +635,7 @@ in the new repository to make sure that the index file is up to date.
 
 Note that the second point is true even across machines. You can
 duplicate a remote Git repository with *any* regular copy mechanism, be it
-'scp', 'rsync' or 'wget'.
+`scp`, `rsync` or `wget`.
 
 When copying a remote repository, you'll want to at a minimum update the
 index cache when you do this, and especially with other peoples'
@@ -1028,7 +1028,7 @@ Local directory::
 +
 This transport is the same as SSH transport but uses 'sh' to run
 both ends on the local machine instead of running other end on
-the remote machine via 'ssh'.
+the remote machine via `ssh`.
 
 Git Native::
 	`git://remote.machine/path/to/repo.git/`
