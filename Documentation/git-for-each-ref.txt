@@ -132,7 +132,7 @@ For all objects, the following names can be used:
 	The object name (aka SHA-1).
 	For a non-ambiguous abbreviation of the object name append `:short`.
 	For an abbreviation of the object name with desired length append
-	`:short=<length>`, where the minimum length is MINIMUM_ABBREV. The
+	`:short=<length>`, where the minimum length is `MINIMUM_ABBREV`. The
 	length may be exceeded to ensure unique object names.
 `deltabase`::
 	This expands to the object name of the delta base for the

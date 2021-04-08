@@ -93,7 +93,7 @@ TAB and LF, (used to separate fields in a record).
 
 * Currently recognized fields are:
 `<repository path>`::
-	path to repository GIT_DIR, relative to `$projectroot`
+	path to repository `GIT_DIR`, relative to `$projectroot`
 `<repository owner>`::
 	displayed as repository owner, preferably full name, or email,
 	or both
@@ -122,7 +122,7 @@ listed in projects list file will be accessible).
 Generating projects list using `gitweb`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We assume that GITWEB_CONFIG has its default Makefile value, namely
+We assume that `GITWEB_CONFIG` has its default Makefile value, namely
 'gitweb_config.perl'. Put the following in 'gitweb_make_index.perl' file:
 ----------------------------------------------------------------------------
 read_config_file("gitweb_config.perl");
@@ -130,7 +130,7 @@ $projects_list = $projectroot;
 ----------------------------------------------------------------------------
 
 Then create the following script to get list of project in the format
-suitable for GITWEB_LIST build configuration variable (or
+suitable for `GITWEB_LIST` build configuration variable (or
 `$projects_list` variable in `gitweb` config):
 
 ----------------------------------------------------------------------------
@@ -603,7 +603,7 @@ the third and the fourth.
 
 PATH_INFO usage
 ~~~~~~~~~~~~~~~
-If you enable PATH_INFO usage in `gitweb` by putting
+If you enable `PATH_INFO` usage in `gitweb` by putting
 ----------------------------------------------------------------------------
 $feature{'pathinfo'}{'default'} = [1];
 ----------------------------------------------------------------------------
@@ -637,7 +637,7 @@ complementary static files (stylesheet, favicon, JavaScript):
 </VirtualHost>
 ----------------------------------------------------------------------------
 The rewrite rule guarantees that existing static files will be properly
-served, whereas any other URL will be passed to `gitweb` as PATH_INFO
+served, whereas any other URL will be passed to `gitweb` as `PATH_INFO`
 parameter.
 
 *Notice* that in this case you don't need special settings for

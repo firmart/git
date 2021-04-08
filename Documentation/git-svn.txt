@@ -722,7 +722,7 @@ ADVANCED OPTIONS
 
 -i<GIT_SVN_ID>::
 --id <GIT_SVN_ID>::
-	This sets GIT_SVN_ID (instead of using the environment).  This
+	This sets `GIT_SVN_ID` (instead of using the environment).  This
 	allows the user to override the default refname to fetch from
 	when tracking a single URL.  The `log` and `dcommit` commands
 	no longer require this switch as an argument.

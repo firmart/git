@@ -52,9 +52,9 @@ index file, all SHA-1 references in `refs` namespace, and all reflogs
 	now aren't, but are still in that corresponding reflog.
 
 `--full`::
-	Check not just objects in GIT_OBJECT_DIRECTORY
+	Check not just objects in `GIT_OBJECT_DIRECTORY`
 	(`$GIT_DIR/objects`), but also the ones found in alternate
-	object pools listed in GIT_ALTERNATE_OBJECT_DIRECTORIES
+	object pools listed in `GIT_ALTERNATE_OBJECT_DIRECTORIES`
 	or `$GIT_DIR/objects/info/alternates`,
 	and in packed Git archives found in `$GIT_DIR/objects/pack`
 	and corresponding pack subdirectories in alternate
@@ -153,13 +153,13 @@ Extracted Diagnostics
 Environment Variables
 ---------------------
 
-GIT_OBJECT_DIRECTORY::
+`GIT_OBJECT_DIRECTORY`::
 	used to specify the object database root (usually `$GIT_DIR/objects`)
 
-GIT_INDEX_FILE::
+`GIT_INDEX_FILE`::
 	used to specify the index file of the index
 
-GIT_ALTERNATE_OBJECT_DIRECTORIES::
+`GIT_ALTERNATE_OBJECT_DIRECTORIES`::
 	used to specify additional object database roots (usually unset)
 
 GIT

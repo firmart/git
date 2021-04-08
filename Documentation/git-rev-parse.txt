@@ -208,7 +208,7 @@ Options for Files
 
 `--local-env-vars`::
 	List the GIT_* environment variables that are local to the
-	repository (e.g. GIT_DIR or GIT_WORK_TREE, but not GIT_EDITOR).
+	repository (e.g. `GIT_DIR` or `GIT_WORK_TREE`, but not `GIT_EDITOR`).
 	Only the names of the variables are listed, not their value,
 	even if they are set.
 
@@ -385,7 +385,7 @@ Example
 ~~~~~~~
 
 ------------
-OPTS_SPEC="\
+`OPTS_SPEC`="\
 some-command [<options>] <args>...
 
 some-command does foo and bar!

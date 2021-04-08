@@ -25,7 +25,7 @@ SYNOPSIS
 
 DESCRIPTION
 -----------
-A really simple TCP Git daemon that normally listens on port "DEFAULT_GIT_PORT"
+A really simple TCP Git daemon that normally listens on port `DEFAULT_GIT_PORT`
 aka 9418.  It waits for a connection asking for a service, and will serve
 that service if it is enabled.
 
@@ -149,7 +149,7 @@ otherwise `stderr`.
 	Log details about the incoming connections and requested files.
 
 `--reuseaddr`::
-	Use SO_REUSEADDR when binding the listening socket.
+	Use `SO_REUSEADDR` when binding the listening socket.
 	This allows the server to restart without waiting for
 	old connections to time out.
 
@@ -330,8 +330,8 @@ selectively enable/disable services per repository::
 
 ENVIRONMENT
 -----------
-`git daemon` will set REMOTE_ADDR to the IP address of the client
-that connected to it, if the IP address is available. REMOTE_ADDR will
+`git daemon` will set `REMOTE_ADDR` to the IP address of the client
+that connected to it, if the IP address is available. `REMOTE_ADDR` will
 be available in the environment of hooks called when
 services are performed.
 

@@ -143,7 +143,7 @@ See also <<FILES>>.
 
 `-f config-file`::
 `--file config-file`::
-	Use the given config file instead of the one specified by GIT_CONFIG.
+	Use the given config file instead of the one specified by `GIT_CONFIG`.
 
 `--blob blob`::
 	Similar to `--file` but use the given blob instead of a file. E.g.
@@ -335,25 +335,25 @@ can specify any filename you want.
 ENVIRONMENT
 -----------
 
-GIT_CONFIG::
+`GIT_CONFIG`::
 	Take the configuration from the given file instead of `.git/config`.
 	Using the `--global` option forces this to `~/.gitconfig`. Using the
 	`--system` option forces this to `$(prefix)/etc/gitconfig`.
 
-GIT_CONFIG_NOSYSTEM::
+`GIT_CONFIG_NOSYSTEM`::
 	Whether to skip reading settings from the system-wide
 	`$(prefix)/etc/gitconfig` file. See linkgit:git[1] for details.
 
 See also <<FILES>>.
 
-GIT_CONFIG_COUNT::
-GIT_CONFIG_KEY_<n>::
-GIT_CONFIG_VALUE_<n>::
-	If GIT_CONFIG_COUNT is set to a positive number, all environment pairs
-	GIT_CONFIG_KEY_<n> and GIT_CONFIG_VALUE_<n> up to that number will be
+`GIT_CONFIG_COUNT`::
+`GIT_CONFIG_KEY_`<n>::
+`GIT_CONFIG_VALUE_`<n>::
+	If `GIT_CONFIG_COUNT` is set to a positive number, all environment pairs
+	`GIT_CONFIG_KEY_`<n> and `GIT_CONFIG_VALUE_`<n> up to that number will be
 	added to the process's runtime configuration. The config pairs are
 	zero-indexed. Any missing key or value is treated as an error. An empty
-	GIT_CONFIG_COUNT is treated the same as GIT_CONFIG_COUNT=0, namely no
+	`GIT_CONFIG_COUNT` is treated the same as `GIT_CONFIG_COUNT`=0, namely no
 	pairs are processed. These environment variables will override values
 	in configuration files, but will be overridden by any explicit options
 	passed via `git -c`.

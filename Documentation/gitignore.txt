@@ -110,7 +110,7 @@ PATTERN FORMAT
    The character "`?`" matches any one character except "`/`".
    The range notation, e.g. `[a-zA-Z]`, can be used to match
    one of the characters in a range. See fnmatch(3) and the
-   FNM_PATHNAME flag for a more detailed description.
+   `FNM_PATHNAME` flag for a more detailed description.
 
 Two consecutive asterisks ("`**`") in patterns matched against
 full pathname may have special meaning:

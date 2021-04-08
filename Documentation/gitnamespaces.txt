@@ -8,8 +8,8 @@ gitnamespaces - Git namespaces
 SYNOPSIS
 --------
 [verse]
-GIT_NAMESPACE=<namespace> `git upload-pack`
-GIT_NAMESPACE=<namespace> `git receive-pack`
+`GIT_NAMESPACE`=<namespace> `git upload-pack`
+`GIT_NAMESPACE`=<namespace> `git receive-pack`
 
 
 DESCRIPTION
@@ -51,7 +51,7 @@ names of refs as specified by `GIT_NAMESPACE`.  `git-upload-pack` and
 namespace.
 
 The smart HTTP server, linkgit:git-http-backend[1], will pass
-GIT_NAMESPACE through to the backend programs; see
+`GIT_NAMESPACE` through to the backend programs; see
 linkgit:git-http-backend[1] for sample configuration to expose
 repository namespaces as repositories.
 

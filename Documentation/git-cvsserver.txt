@@ -11,7 +11,7 @@ SYNOPSIS
 SSH:
 
 [verse]
-export CVS_SERVER="git cvsserver"
+export `CVS_SERVER`="git cvsserver"
 'cvs' -d :ext:user@server/path/repo.git co <HEAD_name>
 
 pserver (/etc/inetd.conf):
@@ -131,11 +131,11 @@ Then provide your password via the pserver method, for example:
    cvs -d:pserver:someuser:somepassword <at> server/path/repo.git co <HEAD_name>
 ------
 No special setup is needed for SSH access, other than having Git tools
-in the PATH. If you have clients that do not accept the CVS_SERVER
+in the PATH. If you have clients that do not accept the `CVS_SERVER`
 environment variable, you can rename `git-cvsserver` to `cvs`.
 
 Note: Newer CVS versions (>= 1.12.11) also support specifying
-CVS_SERVER directly in CVSROOT like
+`CVS_SERVER` directly in CVSROOT like
 
 ------
 cvs -d ":ext;CVS_SERVER=git cvsserver:user@server/path/repo.git" co <HEAD_name>
@@ -143,7 +143,7 @@ cvs -d ":ext;CVS_SERVER=git cvsserver:user@server/path/repo.git" co <HEAD_name>
 This has the advantage that it will be saved in your 'CVS/Root' files and
 you don't need to worry about always setting the correct environment
 variable.  SSH users restricted to `git-shell` don't need to override the default
-with CVS_SERVER (and shouldn't) as `git-shell` understands `cvs` to mean
+with `CVS_SERVER` (and shouldn't) as `git-shell` understands `cvs` to mean
 `git-cvsserver` and pretends that the other end runs the real 'cvs' better.
 --
 2. For each repo that you want accessible from CVS you need to edit config in
@@ -182,7 +182,7 @@ allowing access over SSH.
    automatically saving it in your 'CVS/Root' files, then you need to set them
    explicitly in your environment.  CVSROOT should be set as per normal, but the
    directory should point at the appropriate Git repo.  As above, for SSH clients
-   _not_ restricted to `git-shell`, CVS_SERVER should be set to `git-cvsserver`.
+   _not_ restricted to `git-shell`, `CVS_SERVER` should be set to `git-cvsserver`.
 +
 --
 ------
@@ -192,8 +192,8 @@ allowing access over SSH.
 --
 4. For SSH clients that will make commits, make sure their server-side
    .ssh/environment files (or .bashrc, etc., according to their specific shell)
-   export appropriate values for GIT_AUTHOR_NAME, GIT_AUTHOR_EMAIL,
-   GIT_COMMITTER_NAME, and GIT_COMMITTER_EMAIL.  For SSH clients whose login
+   export appropriate values for `GIT_AUTHOR_NAME`, `GIT_AUTHOR_EMAIL`,
+   `GIT_COMMITTER_NAME`, and `GIT_COMMITTER_EMAIL`.  For SSH clients whose login
    shell is bash, .bashrc may be a reasonable alternative.
 
 5. Clients should now be able to check out the project. Use the CVS 'module'
@@ -312,9 +312,9 @@ ENVIRONMENT
 These variables obviate the need for command-line options in some
 circumstances, allowing easier restricted usage through `git-shell`.
 
-GIT_CVSSERVER_BASE_PATH takes the place of the argument to `--base-path`.
+`GIT_CVSSERVER_BASE_PATH` takes the place of the argument to `--base-path`.
 
-GIT_CVSSERVER_ROOT specifies a single-directory whitelist. The
+`GIT_CVSSERVER_ROOT` specifies a single-directory whitelist. The
 repository must still be configured to allow access through
 `git-cvsserver`, as described above.
 
@@ -337,12 +337,12 @@ To get a checkout with the Eclipse CVS client:
 
 Protocol notes: If you are using anonymous access via pserver, just select that.
 Those using SSH access should choose the 'ext' protocol, and configure 'ext'
-access on the Preferences->Team->CVS->ExtConnection pane. Set CVS_SERVER to
+access on the Preferences->Team->CVS->ExtConnection pane. Set `CVS_SERVER` to
 "`git cvsserver`". Note that password support is not good when using 'ext',
 you will definitely want to have SSH keys setup.
 
 Alternatively, you can just use the non-standard extssh protocol that Eclipse
-offer. In that case CVS_SERVER is ignored, and you will have to replace
+offer. In that case `CVS_SERVER` is ignored, and you will have to replace
 the cvs utility on the server with `git-cvsserver` or manipulate your `.bashrc`
 so that calling 'cvs' effectively calls `git-cvsserver`.
 

@@ -504,12 +504,12 @@ COMMIT INFORMATION
 Author and committer information is taken from the following environment
 variables, if set:
 
-	GIT_AUTHOR_NAME
-	GIT_AUTHOR_EMAIL
-	GIT_AUTHOR_DATE
-	GIT_COMMITTER_NAME
-	GIT_COMMITTER_EMAIL
-	GIT_COMMITTER_DATE
+	`GIT_AUTHOR_NAME`
+	`GIT_AUTHOR_EMAIL`
+	`GIT_AUTHOR_DATE`
+	`GIT_COMMITTER_NAME`
+	`GIT_COMMITTER_EMAIL`
+	`GIT_COMMITTER_DATE`
 
 (nb "<", ">" and "\n"s are stripped)
 

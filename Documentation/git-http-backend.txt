@@ -57,10 +57,10 @@ configuration file:
 URL TRANSLATION
 ---------------
 To determine the location of the repository on disk, `git http-backend`
-concatenates the environment variables PATH_INFO, which is set
-automatically by the web server, and GIT_PROJECT_ROOT, which must be set
-manually in the web server configuration.  If GIT_PROJECT_ROOT is not
-set, `git http-backend` reads PATH_TRANSLATED, which is also set
+concatenates the environment variables `PATH_INFO`, which is set
+automatically by the web server, and `GIT_PROJECT_ROOT`, which must be set
+manually in the web server configuration.  If `GIT_PROJECT_ROOT` is not
+set, `git http-backend` reads `PATH_TRANSLATED`, which is also set
 automatically by the web server.
 
 EXAMPLES
@@ -70,7 +70,7 @@ to `/var/www/git/foo/bar.git`.
 
 Apache 2.x::
 	Ensure mod_cgi, mod_alias, and mod_env are enabled, set
-	GIT_PROJECT_ROOT (or DocumentRoot) appropriately, and
+	`GIT_PROJECT_ROOT` (or DocumentRoot) appropriately, and
 	create a ScriptAlias to the CGI:
 +
 ----------------------------------------------------------------
@@ -244,12 +244,12 @@ ENVIRONMENT
 `git http-backend` relies upon the `CGI` environment variables set
 by the invoking web server, including:
 
-* PATH_INFO (if GIT_PROJECT_ROOT is set, otherwise PATH_TRANSLATED)
-* REMOTE_USER
-* REMOTE_ADDR
-* CONTENT_TYPE
-* QUERY_STRING
-* REQUEST_METHOD
+* `PATH_INFO` (if `GIT_PROJECT_ROOT` is set, otherwise `PATH_TRANSLATED`)
+* `REMOTE_USER`
+* `REMOTE_ADDR`
+* `CONTENT_TYPE`
+* `QUERY_STRING`
+* `REQUEST_METHOD`
 
 The `GIT_HTTP_EXPORT_ALL` environmental variable may be passed to
 `git-http-backend` to bypass the check for the `git-daemon-export-ok`

@@ -42,7 +42,7 @@ OPTIONS
 `--upload-pack=<exec>`::
 	Specify the full path of `git-upload-pack` on the remote
 	host. This allows listing references from repositories accessed via
-	SSH and where the SSH daemon does not use the PATH configured by the
+	SSH and where the SSH daemon does not use the `PATH` configured by the
 	user.
 
 `--exit-code`::
