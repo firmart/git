@@ -111,7 +111,7 @@ Magic Options
 Commands which have the enhanced option parser activated all understand a
 couple of magic command-line options:
 
--h::
+`-h`::
 	gives a pretty printed usage of the command.
 +
 ---------------------------------------------
@@ -132,7 +132,7 @@ when there are things on the command line other than `-h`, but `git
 subcmd -h` without anything else on the command line is meant to
 consistently give the usage.
 
---help-all::
+`--help-all`::
 	Some Git commands take options that are only used for plumbing or that
 	are deprecated, and such options are hidden from the default usage. This
 	option gives the full list of options.

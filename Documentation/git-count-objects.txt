@@ -18,8 +18,8 @@ them, to help you decide when it is a good time to repack.
 
 OPTIONS
 -------
--v::
---verbose::
+`-v`::
+`--verbose`::
 	Report in more detail:
 +
 count: the number of loose objects
@@ -44,8 +44,8 @@ multiple times, one line per path. Note that if the path contains
 non-printable characters, it may be surrounded by double-quotes and
 contain C-style backslashed escape sequences.
 
--H::
---human-readable::
+`-H`::
+`--human-readable`::
 
 Print sizes in human readable format
 

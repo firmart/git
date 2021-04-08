@@ -34,14 +34,14 @@ linkgit:git-fast-import[1] for more details on the import case.
 OPTIONS
 -------
 
---aggressive::
+`--aggressive`::
 	Usually `git gc` runs very quickly while providing good disk
 	space utilization and performance.  This option will cause
 	`git gc` to more aggressively optimize the repository at the expense
 	of taking much more time.  The effects of this optimization are
 	mostly persistent. See the "AGGRESSIVE" section below for details.
 
---auto::
+`--auto`::
 	With this option, `git gc` checks whether any housekeeping is
 	required; if not, it exits without performing any work.
 +
@@ -54,7 +54,7 @@ other housekeeping tasks (e.g. rerere, working trees, reflog...) will
 be performed as well.
 
 
---prune=<date>::
+`--prune=<date>`::
 	Prune loose objects older than date (default is 2 weeks ago,
 	overridable by the config variable `gc.pruneExpire`).
 	`--prune=now` prunes loose objects regardless of their age and
@@ -62,17 +62,17 @@ be performed as well.
 	the repository concurrently; see "NOTES" below. `--prune` is on by
 	default.
 
---no-prune::
+`--no-prune`::
 	Do not prune any loose objects.
 
---quiet::
+`--quiet`::
 	Suppress all progress reports.
 
---force::
+`--force`::
 	Force `git gc` to run even if there may be another `git gc`
 	instance running on this repository.
 
---keep-largest-pack::
+`--keep-largest-pack`::
 	All packs except the largest pack and those marked with a
 	`.keep` files are consolidated into a single pack. When this
 	option is used, `gc.bigPackThreshold` is ignored.

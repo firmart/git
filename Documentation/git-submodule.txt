@@ -146,7 +146,7 @@ the configuration variable. If neither is given, a 'checkout' is performed.
 The 'update' procedures supported both from the command line as well as
 through the `submodule.<name>.update` configuration are:
 
-	checkout;; the commit recorded in the superproject will be
+	`checkout`;; the commit recorded in the superproject will be
 	    checked out in the submodule on a detached `HEAD`.
 +
 If `--force` is specified, the submodule will be checked out (using
@@ -154,10 +154,10 @@ If `--force` is specified, the submodule will be checked out (using
 in the index of the containing repository already matches the commit
 checked out in the submodule.
 
-	rebase;; the current branch of the submodule will be rebased
+	`rebase`;; the current branch of the submodule will be rebased
 	    onto the commit recorded in the superproject.
 
-	merge;; the commit recorded in the superproject will be merged
+	`merge`;; the commit recorded in the superproject will be merged
 	    into the current branch in the submodule.
 
 The following 'update' procedures are only available via the
@@ -169,7 +169,7 @@ The following 'update' procedures are only available via the
 	    is set to '!command', the remainder after the exclamation mark
 	    is the custom command.
 
-	none;; the submodule is not updated.
+	`none`;; the submodule is not updated.
 
 If the submodule is not yet initialized, and you just want to use the
 setting as stored in `.gitmodules`, you can automatically initialize the
@@ -246,7 +246,7 @@ sync [--recursive] [--] [<path>...]::
 If `--recursive` is specified, this command will recurse into the
 registered submodules, and sync any nested submodules within.
 
-absorbgitdirs::
+`absorbgitdirs`::
 	If a `git` directory of a submodule is inside the submodule,
 	move the `git` directory of the submodule into its superproject's
 	`$GIT_DIR/modules` path and then connect the `git` directory and
@@ -262,18 +262,18 @@ This command is recursive by default.
 
 OPTIONS
 -------
--q::
---quiet::
+`-q`::
+`--quiet`::
 	Only print error messages.
 
---progress::
+`--progress`::
 	This option is only valid for add and update commands.
 	Progress status is reported on the standard error stream
 	by default when it is attached to a terminal, unless -q
 	is specified. This flag forces progress status even if the
 	standard error stream is not directed to a terminal.
 
---all::
+`--all`::
 	This option is only valid for the deinit command. Unregister all
 	submodules in the working tree.
 
@@ -286,8 +286,8 @@ OPTIONS
 	same name as the current branch in the current repository.  If the
 	option is not specified, it defaults to the remote `HEAD`.
 
--f::
---force::
+`-f`::
+`--force`::
 	This option is only valid for add, deinit and update commands.
 	When running add, allow adding an otherwise ignored submodule path.
 	When running deinit the submodule working trees will be removed even
@@ -299,25 +299,25 @@ OPTIONS
 	containing repository matches the commit checked out in the
 	submodule.
 
---cached::
+`--cached`::
 	This option is only valid for status and summary commands.  These
 	commands typically use the commit found in the submodule `HEAD`, but
 	with this option, the commit stored in the index is used instead.
 
---files::
+`--files`::
 	This option is only valid for the summary command. This command
 	compares the commit in the index with that in the submodule `HEAD`
 	when this option is used.
 
--n::
---summary-limit::
+`-n`::
+`--summary-limit`::
 	This option is only valid for the summary command.
 	Limit the summary size (number of commits shown in total).
 	Giving 0 will disable the summary; a negative number means unlimited
 	(the default). This limit only applies to modified submodules. The
 	size is always limited to 1 for added/deleted/typechanged submodules.
 
---remote::
+`--remote`::
 	This option is only valid for the update command.  Instead of using
 	the superproject's recorded SHA-1 to update the submodule, use the
 	status of the submodule's remote-tracking branch.  The remote used
@@ -348,12 +348,12 @@ to distribute the default upstream branch with the superproject and
 `branch.<name>.merge` if you want a more native feel while working in
 the submodule itself.
 
--N::
---no-fetch::
+`-N`::
+`--no-fetch`::
 	This option is only valid for the update command.
 	Don't fetch new objects from the remote site.
 
---checkout::
+`--checkout`::
 	This option is only valid for the update command.
 	Checkout the commit recorded in the superproject on a detached `HEAD`
 	in the submodule. This is the default behavior, the main use of
@@ -362,7 +362,7 @@ the submodule itself.
 	If the key `submodule.$name.update` is either not explicitly set or
 	set to `checkout`, this option is implicit.
 
---merge::
+`--merge`::
 	This option is only valid for the update command.
 	Merge the commit recorded in the superproject into the current branch
 	of the submodule. If this option is given, the submodule's `HEAD` will
@@ -372,7 +372,7 @@ the submodule itself.
 	If the key `submodule.$name.update` is set to `merge`, this option is
 	implicit.
 
---rebase::
+`--rebase`::
 	This option is only valid for the update command.
 	Rebase the current branch onto the commit recorded in the
 	superproject. If this option is given, the submodule's `HEAD` will not
@@ -381,12 +381,12 @@ the submodule itself.
 	If the key `submodule.$name.update` is set to `rebase`, this option is
 	implicit.
 
---init::
+`--init`::
 	This option is only valid for the update command.
 	Initialize all submodules for which `git submodule init` has not been
 	called so far before updating.
 
---name::
+`--name`::
 	This option is only valid for the add command. It sets the submodule's
 	name to the given string instead of defaulting to its path. The name
 	must be valid as a directory name and may not end with a '/'.
@@ -400,25 +400,25 @@ the submodule itself.
 for linkgit:git-clone[1]'s `--reference`, `--shared`, and `--dissociate`
 options carefully.
 
---dissociate::
+`--dissociate`::
 	This option is only valid for add and update commands.  These
 	commands sometimes need to clone a remote repository. In this case,
 	this option will be passed to the linkgit:git-clone[1] command.
 +
 *NOTE*: see the NOTE for the `--reference` option.
 
---recursive::
+`--recursive`::
 	This option is only valid for foreach, update, status and sync commands.
 	Traverse submodules recursively. The operation is performed not
 	only in the submodules of the current repo, but also
 	in any nested submodules inside those submodules (and so on).
 
---depth::
+`--depth`::
 	This option is valid for add and update commands. Create a 'shallow'
 	clone with a history truncated to the specified number of revisions.
 	See linkgit:git-clone[1]
 
---[no-]recommend-shallow::
+`--[no-]recommend-shallow`::
 	This option is only valid for the update command.
 	The initial clone of a submodule will use the recommended
 	`submodule.<name>.shallow` as provided by the `.gitmodules` file
@@ -430,7 +430,7 @@ options carefully.
 	Clone new submodules in parallel with as many jobs.
 	Defaults to the `submodule.fetchJobs` option.
 
---[no-]single-branch::
+`--[no-]single-branch`::
 	This option is only valid for the update command.
 	Clone only one branch during update: `HEAD` or one specified by `--branch`.
 

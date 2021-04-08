@@ -33,13 +33,13 @@ THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.
 
 OPTIONS
 -------
-<branch>::
+`<branch>`::
 	Branch to switch to.
 
-<new-branch>::
+`<new-branch>`::
 	Name for the new branch.
 
-<start-point>::
+`<start-point>`::
 	The starting point for the new branch. Specifying a
 	`<start-point>` allows you to create a branch based on some
 	other point in history than where `HEAD` currently points. (Or,
@@ -78,14 +78,14 @@ $ git branch -f <new-branch>
 $ git switch <new-branch>
 ------------
 
--d::
---detach::
+`-d`::
+`--detach`::
 	Switch to a commit for inspection and discardable
 	experiments. See the "DETACHED HEAD" section in
 	linkgit:git-checkout[1] for details.
 
---guess::
---no-guess::
+`--guess`::
+`--no-guess`::
 	If `<branch>` is not found but there does exist a tracking
 	branch in exactly one remote (call it `<remote>`) with a
 	matching name, treat as equivalent to
@@ -107,19 +107,19 @@ ambiguous but exists on the `origin` remote. See also
 The default behavior can be set via the `checkout.guess` configuration
 variable.
 
--f::
---force::
+`-f`::
+`--force`::
 	An alias for `--discard-changes`.
 
---discard-changes::
+`--discard-changes`::
 	Proceed even if the index or the working tree differs from
 	`HEAD`. Both the index and working tree are restored to match
 	the switching target. If `--recurse-submodules` is specified,
 	submodule content is also restored to match the switching
 	target. This is used to throw away local changes.
 
--m::
---merge::
+`-m`::
+`--merge`::
 	If you have local modifications to one or more files that are
 	different between the current branch and the branch to which
 	you are switching, the command refuses to switch branches in
@@ -133,26 +133,26 @@ paths are left unmerged, and you need to resolve the conflicts
 and mark the resolved paths with `git add` (or `git rm` if the merge
 should result in deletion of the path).
 
---conflict=<style>::
+`--conflict=<style>`::
 	The same as `--merge` option above, but changes the way the
 	conflicting hunks are presented, overriding the
 	`merge.conflictStyle` configuration variable.  Possible values are
 	"merge" (default) and "diff3" (in addition to what is shown by
 	"merge" style, shows the original contents).
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	Quiet, suppress feedback messages.
 
---progress::
---no-progress::
+`--progress`::
+`--no-progress`::
 	Progress status is reported on the standard error stream
 	by default when it is attached to a terminal, unless `--quiet`
 	is specified. This flag enables progress reporting even if not
 	attached to a terminal, regardless of `--quiet`.
 
--t::
---track::
+`-t`::
+`--track`::
 	When creating a new branch, set up "upstream" configuration.
 	`-c` is implied. See `--track` in linkgit:git-branch[1] for
 	details.
@@ -167,7 +167,7 @@ given name has no slash, or the above guessing results in an empty
 name, the guessing is aborted.  You can explicitly give a name with
 `-c` in such a case.
 
---no-track::
+`--no-track`::
 	Do not set up "upstream" configuration, even if the
 	`branch.autoSetupMerge` configuration variable is true.
 
@@ -175,14 +175,14 @@ name, the guessing is aborted.  You can explicitly give a name with
 	Create a new 'orphan' branch, named `<new-branch>`. All
 	tracked files are removed.
 
---ignore-other-worktrees::
+`--ignore-other-worktrees`::
 	`git switch` refuses when the wanted ref is already
 	checked out by another worktree. This option makes it check
 	the ref out anyway. In other words, the ref can be held by
 	more than one worktree.
 
---recurse-submodules::
---no-recurse-submodules::
+`--recurse-submodules`::
+`--no-recurse-submodules`::
 	Using `--recurse-submodules` will update the content of all
 	active submodules according to the commit recorded in the
 	superproject. If nothing (or `--no-recurse-submodules`) is

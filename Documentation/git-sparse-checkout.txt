@@ -27,10 +27,10 @@ THE FUTURE.
 
 COMMANDS
 --------
-'list'::
+`list`::
 	Describe the patterns in the sparse-checkout file.
 
-'init'::
+`init`::
 	Enable the `core.sparseCheckout` setting. If the
 	sparse-checkout file does not exist, then populate it with
 	patterns that match every file in the root directory and
@@ -46,7 +46,7 @@ When `--cone` is provided, the `core.sparseCheckoutCone` setting is
 also set, allowing for better performance with a limited set of
 patterns (see 'CONE PATTERN SET' below).
 
-'set'::
+`set`::
 	Write a set of patterns to the sparse-checkout file, as given as
 	a list of arguments following the 'set' subcommand. Update the
 	working directory to match the new patterns. Enable the
@@ -63,14 +63,14 @@ directories. The input format matches the output of `git ls-tree --name-only`.
 This includes interpreting pathnames that begin with a double quote (") as
 C-style quoted strings.
 
-'add'::
+`add`::
 	Update the sparse-checkout file to include additional patterns.
 	By default, these patterns are read from the command-line arguments,
 	but they can be read from stdin using the `--stdin` option. When
 	`core.sparseCheckoutCone` is enabled, the given patterns are interpreted
 	as directory names as in the 'set' subcommand.
 
-'reapply'::
+`reapply`::
 	Reapply the sparsity pattern rules to paths in the working tree.
 	Commands like merge or rebase can materialize paths to do their
 	work (e.g. in order to show you a conflict), and other
@@ -80,7 +80,7 @@ C-style quoted strings.
 	after cleaning up affected paths (e.g. resolving conflicts, undoing
 	or committing changes, etc.).
 
-'disable'::
+`disable`::
 	Disable the `core.sparseCheckout` config setting, and restore the
 	working directory to include all files. Leaves the sparse-checkout
 	file intact so a later `git sparse-checkout init` command may

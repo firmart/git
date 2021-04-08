@@ -33,16 +33,16 @@ not desired, see linkgit:git-repack[1].
 OPTIONS
 -------
 
--n::
---dry-run::
+`-n`::
+`--dry-run`::
 	Do not remove anything; just report what it would
 	remove.
 
--v::
---verbose::
+`-v`::
+`--verbose`::
 	Report all removed objects.
 
---progress::
+`--progress`::
 	Show progress.
 
 --expire <time>::

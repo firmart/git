@@ -26,20 +26,20 @@ reference to the current repository.
 OPTIONS
 -------
 
--n::
---numbered::
+`-n`::
+`--numbered`::
 	Sort output according to the number of commits per author instead
 	of author alphabetic order.
 
--s::
---summary::
+`-s`::
+`--summary`::
 	Suppress commit description and provide a commit count summary only.
 
--e::
---email::
+`-e`::
+`--email`::
 	Show the email address of each author.
 
---format[=<format>]::
+`--format[=<format>]`::
 	Instead of the commit subject, use some other information to
 	describe each commit.  '<format>' can be any string accepted
 	by the `--format` option of `git log`, such as '* [%h] %s'.
@@ -47,7 +47,7 @@ OPTIONS
 
 	Each pretty-printed commit will be rewrapped before it is shown.
 
---group=<type>::
+`--group=<type>`::
 	Group commits based on `<type>`. If no `--group` option is
 	specified, the default is `author`. `<type>` is one of:
 +
@@ -76,8 +76,8 @@ value (but again, only once per unique value in that commit). For
 example, `git shortlog --group=author --group=trailer:co-authored-by`
 counts both authors and co-authors.
 
--c::
---committer::
+`-c`::
+`--committer`::
 	This is an alias for `--group=committer`.
 
 -w[<width>[,<indent1>[,<indent2>]]]::

@@ -75,24 +75,24 @@ used to give a good default for automated `git merge`
 invocations. The automated message can include the branch description.
 
 -F <file>::
---file=<file>::
+`--file=<file>`::
 	Read the commit message to be used for the merge commit (in
 	case one is created).
 +
 If `--log` is specified, a shortlog of the commits being merged
 will be appended to the specified message.
 
---rerere-autoupdate::
---no-rerere-autoupdate::
+`--rerere-autoupdate`::
+`--no-rerere-autoupdate`::
 	Allow the rerere mechanism to update the index with the
 	result of auto-conflict resolution if possible.
 
---overwrite-ignore::
---no-overwrite-ignore::
+`--overwrite-ignore`::
+`--no-overwrite-ignore`::
 	Silently overwrite ignored files from the merge result. This
 	is the default behavior. Use `--no-overwrite-ignore` to abort.
 
---abort::
+`--abort`::
 	Abort the current conflict resolution process, and
 	try to reconstruct the pre-merge state. If an autostash entry is
 	present, apply it to the worktree.
@@ -108,12 +108,12 @@ which case `git merge --abort` applies the stash entry to the worktree
 whereas `git reset --merge` will save the stashed changes in the stash
 list.
 
---quit::
+`--quit`::
 	Forget about the current merge in progress. Leave the index
 	and the working tree as-is. If `MERGE_AUTOSTASH` is present, the
 	stash entry will be saved to the stash list.
 
---continue::
+`--continue`::
 	After a `git merge` stops due to conflicts you can conclude the
 	merge by running `git merge --continue` (see "HOW TO RESOLVE
 	CONFLICTS" section below).

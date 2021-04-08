@@ -352,19 +352,19 @@ A pathspec with only a colon means "there is no pathspec". This form
 should not be combined with other pathspec.
 +
 --
-top;;
+`top`;;
 	The magic word `top` (magic signature: `/`) makes the pattern
 	match from the root of the working tree, even when you are
 	running the command from inside a subdirectory.
 
-literal;;
+`literal`;;
 	Wildcards in the pattern such as `*` or `?` are treated
 	as literal characters.
 
-icase;;
+`icase`;;
 	Case insensitive match.
 
-glob;;
+`glob`;;
 	Git treats the pattern as a shell glob suitable for
 	consumption by fnmatch(3) with the FNM_PATHNAME flag:
 	wildcards in the pattern will not match a / in the pathname.
@@ -393,7 +393,7 @@ full pathname may have special meaning:
 +
 Glob magic is incompatible with literal magic.
 
-attr;;
+`attr`;;
 After `attr:` comes a space separated list of "attribute
 requirements", all of which must be met in order for the
 path to be considered a match; this is in addition to the
@@ -416,7 +416,7 @@ these forms:
 Note that when matching against a tree object, attributes are still
 obtained from working tree, not from the given tree object.
 
-exclude;;
+`exclude`;;
 	After a path matches any non-exclude pathspec, it will be run
 	through all exclude pathspecs (magic signature: `!` or its
 	synonym `^`). If it matches, the path is ignored.  When there

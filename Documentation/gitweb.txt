@@ -280,24 +280,24 @@ five components:
 .../gitweb.cgi/<repo>/<action>/<revision>:/<path>?<arguments>
 -----------------------------------------------------------------------
 
-repo::
+`repo`::
 	The repository the action will be performed on.
 +
 All actions except for those that list all available projects,
 in whatever form, require this parameter.
 
-action::
+`action`::
 	The action that will be run.  Defaults to 'projects_list' if repo
 	is not set, and to 'summary' otherwise.
 
-revision::
+`revision`::
 	Revision shown.  Defaults to `HEAD`.
 
-path::
+`path`::
 	The path within the <repository> that the action is performed on,
 	for those actions that require it.
 
-arguments::
+`arguments`::
 	Any arguments that control the behaviour of the action.
 
 Some actions require or allow to specify two revisions, and sometimes even two
@@ -327,21 +327,21 @@ project_list::
 	Lists the available Git repositories.  This is the default command if no
 	repository is specified in the URL.
 
-summary::
+`summary`::
 	Displays summary about given repository.  This is the default command if
 	no action is specified in URL, and only repository is specified.
 
-heads::
-remotes::
+`heads`::
+`remotes`::
 	Lists all local or all remote-tracking branches in given repository.
 +
 The latter is not available by default, unless configured.
 
-tags::
+`tags`::
 	List all tags (lightweight and annotated) in given repository.
 
-blob::
-tree::
+`blob`::
+`tree`::
 	Shows the files and directories in a given repository path, at given
 	revision.  This is default command if no action is specified in the URL,
 	and path is given.
@@ -350,10 +350,10 @@ blob_plain::
 	Returns the raw data for the file in given repository, at given path and
 	revision.  Links to this action are marked 'raw'.
 
-blobdiff::
+`blobdiff`::
 	Shows the difference between two revisions of the same file.
 
-blame::
+`blame`::
 blame_incremental::
 	Shows the blame (also called annotation) information for a file. On a
 	per line basis it shows the revision in which that line was last changed
@@ -363,34 +363,34 @@ blame_incremental::
 +
 This action is disabled by default for performance reasons.
 
-commit::
-commitdiff::
+`commit`::
+`commitdiff`::
 	Shows information about a specific commit in a repository.  The 'commit'
 	view shows information about commit in more detail, the 'commitdiff'
 	action shows changeset for given commit.
 
-patch::
+`patch`::
 	Returns the commit in plain text mail format, suitable for applying with
 	linkgit:git-am[1].
 
-tag::
+`tag`::
 	Display specific annotated tag (tag object).
 
-log::
-shortlog::
+`log`::
+`shortlog`::
 	Shows log information (commit message or just commit subject) for a
 	given branch (starting from given revision).
 +
 The 'shortlog' view is more compact; it shows one commit per line.
 
-history::
+`history`::
 	Shows history of the file or directory in a given repository path,
 	starting from given revision (defaults to `HEAD`, i.e. default branch).
 +
 This view is similar to 'shortlog' view.
 
-rss::
-atom::
+`rss`::
+`atom`::
 	Generates an RSS (or Atom) feed of changes to repository.
 
 

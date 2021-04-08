@@ -24,18 +24,18 @@ third are what you _could_ commit by running `git add` before running
 OPTIONS
 -------
 
--s::
---short::
+`-s`::
+`--short`::
 	Give the output in the short-format.
 
--b::
---branch::
+`-b`::
+`--branch`::
 	Show the branch and tracking info even in short-format.
 
---show-stash::
+`--show-stash`::
 	Show the number of entries currently stashed away.
 
---porcelain[=<version>]::
+`--porcelain[=<version>]`::
 	Give the output in an easy-to-parse format for scripts.
 	This is similar to the short output, but will remain stable
 	across Git versions and regardless of user configuration. See
@@ -44,19 +44,19 @@ OPTIONS
 The version parameter is used to specify the format version.
 This is optional and defaults to the original version 'v1' format.
 
---long::
+`--long`::
 	Give the output in the long-format. This is the default.
 
--v::
---verbose::
+`-v`::
+`--verbose`::
 	In addition to the names of files that have been changed, also
 	show the textual changes that are staged to be committed
 	(i.e., like the output of `git diff --cached`). If `-v` is specified
 	twice, then also show the changes in the working tree that
 	have not yet been staged (i.e., like the output of `git diff`).
 
--u[<mode>]::
---untracked-files[=<mode>]::
+`-u[<mode>]`::
+`--untracked-files[=<mode>]`::
 	Show untracked files.
 +
 --
@@ -84,7 +84,7 @@ The default can be changed using the `status.showUntrackedFiles`
 configuration variable documented in linkgit:git-config[1].
 --
 
---ignore-submodules[=<when>]::
+`--ignore-submodules[=<when>]`::
 	Ignore changes to submodules when looking for changes. <when> can be
 	either "none", "untracked", "dirty" or "all", which is the default.
 	Using "none" will consider the submodule modified when it either contains
@@ -99,7 +99,7 @@ configuration variable documented in linkgit:git-config[1].
 	(and suppresses the output of submodule summaries when the config option
 	`status.submoduleSummary` is set).
 
---ignored[=<mode>]::
+`--ignored[=<mode>]`::
 	Show ignored files as well.
 +
 --
@@ -123,28 +123,28 @@ a directory does not match an ignore pattern, but all contents are
 ignored, then the directory is not shown, but all contents are shown.
 --
 
--z::
+`-z`::
 	Terminate entries with NUL, instead of LF.  This implies
 	the `--porcelain=v1` output format if no other format is given.
 
---column[=<options>]::
---no-column::
+`--column[=<options>]`::
+`--no-column`::
 	Display untracked files in columns. See configuration variable
 	`column.status` for option syntax. `--column` and `--no-column`
 	without options are equivalent to 'always' and 'never'
 	respectively.
 
---ahead-behind::
---no-ahead-behind::
+`--ahead-behind`::
+`--no-ahead-behind`::
 	Display or do not display detailed ahead/behind counts for the
 	branch relative to its upstream branch.  Defaults to true.
 
---renames::
---no-renames::
+`--renames`::
+`--no-renames`::
 	Turn on/off rename detection regardless of user configuration.
 	See also linkgit:git-diff[1] `--no-renames`.
 
---find-renames[=<n>]::
+`--find-renames[=<n>]`::
 	Turn on rename detection, optionally setting the similarity
 	threshold.
 	See also linkgit:git-diff[1] `--find-renames`.

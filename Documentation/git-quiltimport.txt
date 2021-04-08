@@ -31,8 +31,8 @@ preserved as the 1 line subject in the Git description.
 OPTIONS
 -------
 
--n::
---dry-run::
+`-n`::
+`--dry-run`::
 	Walk through the patches in the series and warn
 	if we cannot find all of the necessary information to commit
 	a patch.  At the time of this writing only missing author
@@ -56,7 +56,7 @@ The default for the series file is <patches>/series
 or the value of the `$QUILT_SERIES` environment
 variable.
 
---keep-non-patch::
+`--keep-non-patch`::
 	Pass `-b` flag to `git mailinfo` (see linkgit:git-mailinfo[1]).
 
 GIT

@@ -21,34 +21,34 @@ patches in the correct order.
 
 OPTIONS
 -------
-<mbox>::
+`<mbox>`::
 	Mbox file to split.  If not given, the mbox is read from
 	the standard input.
 
-<Maildir>::
+`<Maildir>`::
 	Root of the Maildir to split. This directory should contain the cur, tmp
 	and new subdirectories.
 
--o<directory>::
+`-o<directory>`::
 	Directory in which to place the individual messages.
 
--b::
+`-b`::
 	If any file doesn't begin with a From line, assume it is a
 	single mail message instead of signaling error.
 
--d<prec>::
+`-d<prec>`::
 	Instead of the default 4 digits with leading zeros,
 	different precision can be specified for the generated
 	filenames.
 
--f<nn>::
+`-f<nn>`::
 	Skip the first <nn> numbers, for example if `-f`3 is specified,
 	start the numbering with 0004.
 
---keep-cr::
+`--keep-cr`::
 	Do not remove `\r` from lines ending with `\r\n`.
 
---mboxrd::
+`--mboxrd`::
 	Input is of the "mboxrd" format and "^>+From " line escaping is
 	reversed.
 

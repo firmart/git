@@ -26,17 +26,17 @@ the repository named by `<url>`.
 
 OPTIONS
 -------
--p::
+`-p`::
 	Include patch text in the output.
 
-<start>::
+`<start>`::
 	Commit to start at.  This names a commit that is already in
 	the upstream history.
 
-<url>::
+`<url>`::
 	The repository URL to be pulled from.
 
-<end>::
+`<end>`::
 	Commit to end at (defaults to `HEAD`).  This names the commit
 	at the tip of the history you are asking to be pulled.
 +

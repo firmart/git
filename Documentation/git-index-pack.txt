@@ -25,7 +25,7 @@ the objects/pack/ directory of a Git repository.
 
 OPTIONS
 -------
--v::
+`-v`::
 	Be verbose about what is going on, including progress status.
 
 -o <index-file>::
@@ -36,14 +36,14 @@ OPTIONS
 	fails if the name of packed archive does not end
 	with .pack).
 
---[no-]rev-index::
+`--[no-]rev-index`::
 	When this flag is provided, generate a reverse index
 	(a `.rev` file) corresponding to the given pack. If
 	`--verify` is given, ensure that the existing
 	reverse index is correct. Takes precedence over
 	`pack.writeReverseIndex`.
 
---stdin::
+`--stdin`::
 	When this flag is provided, the pack is read from stdin
 	instead and a copy is then written to <pack-file>. If
 	<pack-file> is not specified, the pack is written to
@@ -53,13 +53,13 @@ OPTIONS
 	prevent a race condition between this process and
 	`git repack`.
 
---fix-thin::
+`--fix-thin`::
 	Fix a "thin" pack produced by `git pack-objects --thin` (see
 	linkgit:git-pack-objects[1] for details) by adding the
 	excluded objects the deltified objects are based on to the
 	pack. This option only makes sense in conjunction with `--stdin`.
 
---keep::
+`--keep`::
 	Before moving the index into its final destination
 	create an empty .keep file for the associated pack file.
 	This option is usually necessary with `--stdin` to prevent a
@@ -67,7 +67,7 @@ OPTIONS
 	the newly constructed pack and index before refs can be
 	updated to use objects contained in the pack.
 
---keep=<msg>::
+`--keep=<msg>`::
 	Like `--keep` create a .keep file before moving the index into
 	its final destination, but rather than creating an empty file
 	place '<msg>' followed by an LF into the .keep file.  The '<msg>'
@@ -79,13 +79,13 @@ OPTIONS
 	to force the version for the generated pack index, and to force
 	64-bit index entries on objects located above the given offset.
 
---strict::
+`--strict`::
 	Die, if the pack contains broken objects or links.
 
---check-self-contained-and-connected::
+`--check-self-contained-and-connected`::
 	Die if the pack contains broken links. For internal use only.
 
---fsck-objects::
+`--fsck-objects`::
 	For internal use only.
 +
 Die if the pack contains broken objects. If the pack contains a tree
@@ -93,7 +93,7 @@ pointing to a .gitmodules blob that does not exist, prints the hash of
 that blob (for the caller to check) after the hash that goes into the
 name of the pack/idx file (see "Notes").
 
---threads=<n>::
+`--threads=<n>`::
 	Specifies the number of threads to spawn when resolving
 	deltas. This requires that index-pack be compiled with
 	pthreads otherwise this option is ignored with a warning.
@@ -103,10 +103,10 @@ name of the pack/idx file (see "Notes").
 	Specifying 0 will cause Git to auto-detect the number of CPU's
 	and use maximum 3 threads.
 
---max-input-size=<size>::
+`--max-input-size=<size>`::
 	Die, if the pack is larger than <size>.
 
---object-format=<hash-algorithm>::
+`--object-format=<hash-algorithm>`::
 	Specify the given object format (hash algorithm) for the pack.  The valid
 	values are 'sha1' and (if enabled) 'sha256'.  The default is the algorithm for
 	the current repository (set by `extensions.objectFormat`), or 'sha1' if no

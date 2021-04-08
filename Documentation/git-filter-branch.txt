@@ -185,7 +185,7 @@ be removed, buyer beware. There is also no support for changing the
 author or timestamp (or the tag message for that matter). Tags which point
 to other tags will be rewritten to point to the underlying commit.
 
---prune-empty::
+`--prune-empty`::
 	Some filters will generate empty commits that leave the tree untouched.
 	This option instructs `git-filter-branch` to remove such commits if they
 	have exactly one or zero non-pruned parents; merge commits will
@@ -205,8 +205,8 @@ to other tags will be rewritten to point to the underlying commit.
 	does this in the `.git-rewrite/` directory but you can override
 	that choice by this parameter.
 
--f::
---force::
+`-f`::
+`--force`::
 	`git filter-branch` refuses to start with an existing temporary
 	directory or when there are already refs starting with
 	`refs/original/`, unless forced.

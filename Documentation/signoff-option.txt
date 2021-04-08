@@ -1,8 +1,8 @@
 ifdef::git-commit[]
--s::
+`-s`::
 endif::git-commit[]
---signoff::
---no-signoff::
+`--signoff`::
+`--no-signoff`::
 	Add a `Signed-off-by` trailer by the committer at the end of the commit
 	log message.  The meaning of a signoff depends on the project
 	to which you're committing.  For example, it may certify that

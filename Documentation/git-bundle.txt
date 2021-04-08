@@ -63,7 +63,7 @@ unbundle <file>::
 	references matching those in the list are printed. This command is
 	really plumbing, intended to be called only by `git fetch`.
 
-<git-rev-list-args>::
+`<git-rev-list-args>`::
 	A list of arguments, acceptable to `git rev-parse` and
 	`git rev-list` (and containing a named ref, see SPECIFYING REFERENCES
 	below), that specifies the specific objects and references
@@ -81,13 +81,13 @@ unbundle <file>::
 	necessarily everything in the pack (in this case, `git bundle` acts
 	like `git fetch-pack`).
 
---progress::
+`--progress`::
 	Progress status is reported on the standard error stream
 	by default when it is attached to a terminal, unless -q
 	is specified. This flag forces progress status even if
 	the standard error stream is not directed to a terminal.
 
---all-progress::
+`--all-progress`::
 	When `--stdout` is specified then progress report is
 	displayed during the object count and compression phases
 	but inhibited during the write-out phase. The reason is
@@ -98,19 +98,19 @@ unbundle <file>::
 	report for the write-out phase as well even if `--stdout` is
 	used.
 
---all-progress-implied::
+`--all-progress-implied`::
 	This is used to imply `--all-progress` whenever progress display
 	is activated.  Unlike `--all-progress` this flag doesn't actually
 	force any progress display by itself.
 
---version=<version>::
+`--version=<version>`::
 	Specify the bundle version.  Version 2 is the older format and can only be
 	used with SHA-1 repositories; the newer version 3 contains capabilities that
 	permit extensions. The default is the oldest supported format, based on the
 	hash algorithm in use.
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	This flag makes the command not to report its progress
 	on the standard error stream.
 

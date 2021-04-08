@@ -27,7 +27,7 @@ now, you need to have done a `git update-index` phase before you did the
 
 OPTIONS
 -------
---missing-ok::
+`--missing-ok`::
 	Normally `git write-tree` ensures that the objects referenced by the
 	directory exist in the object database.  This option disables this
 	check.

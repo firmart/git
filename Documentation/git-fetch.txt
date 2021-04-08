@@ -48,7 +48,7 @@ include::fetch-options.txt[]
 
 include::pull-fetch-param.txt[]
 
---stdin::
+`--stdin`::
 	Read refspecs, one per line, from stdin in addition to those provided
 	as arguments. The "tag <name>" format is not supported.
 
@@ -212,7 +212,7 @@ In compact output mode, specified with configuration variable
 other string, it will be substituted with `*` in the other string. For
 example, `master -> origin/master` becomes `master -> origin/*`.
 
-flag::
+`flag`::
 	A single character indicating the status of the ref:
 (space);; for a successfully fetched fast-forward;
 `+`;; for a successful forced update;
@@ -222,22 +222,22 @@ flag::
 `!`;; for a ref that was rejected or failed to update; and
 `=`;; for a ref that was up to date and did not need fetching.
 
-summary::
+`summary`::
 	For a successfully fetched ref, the summary shows the old and new
 	values of the ref in a form suitable for using as an argument to
 	`git log` (this is `<old>..<new>` in most cases, and
 	`<old>...<new>` for forced non-fast-forward updates).
 
-from::
+`from`::
 	The name of the remote ref being fetched from, minus its
 	`refs/<type>/` prefix. In the case of deletion, the name of
 	the remote ref is "(none)".
 
-to::
+`to`::
 	The name of the local ref being updated, minus its
 	`refs/<type>/` prefix.
 
-reason::
+`reason`::
 	A human-readable explanation. In the case of successfully fetched
 	refs, no explanation is needed. For a failed ref, the reason for
 	failure is described.

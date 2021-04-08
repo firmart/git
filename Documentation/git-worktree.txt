@@ -92,7 +92,7 @@ checked out in the new working tree, if it's not checked out anywhere
 else, otherwise the command will refuse to create the working tree (unless
 `--force` is used).
 
-list::
+`list`::
 
 List details of each working tree.  The main working tree is listed first,
 followed by each of the linked working trees.  The output details include
@@ -101,7 +101,7 @@ branch currently checked out (or "detached `HEAD`" if none), "locked" if
 the worktree is locked, "prunable" if the worktree can be pruned by `prune`
 command.
 
-lock::
+`lock`::
 
 If a working tree is on a portable device or network share which
 is not always mounted, lock it to prevent its administrative
@@ -109,7 +109,7 @@ files from being pruned automatically. This also prevents it from
 being moved or deleted. Optionally, specify a reason for the lock
 with `--reason`.
 
-move::
+`move`::
 
 Move a working tree to a new location. Note that the main working tree
 or linked working trees containing submodules cannot be moved with this
@@ -117,11 +117,11 @@ command. (The `git worktree repair` command, however, can reestablish
 the connection with linked working trees if you move the main working
 tree manually.)
 
-prune::
+`prune`::
 
 Prune working tree information in `$GIT_DIR/worktrees`.
 
-remove::
+`remove`::
 
 Remove a working tree. Only clean working trees (no untracked files
 and no modification in tracked files) can be removed. Unclean working
@@ -150,15 +150,15 @@ manually, then running `repair` in the main working tree and specifying the
 new `<path>` of each linked working tree will reestablish all connections
 in both directions.
 
-unlock::
+`unlock`::
 
 Unlock a working tree, allowing it to be pruned, moved or deleted.
 
 OPTIONS
 -------
 
--f::
---force::
+`-f`::
+`--force`::
 	By default, `add` refuses to create a new working tree when
 	`<commit-ish>` is a branch name and is already checked out by
 	another working tree, or if `<path>` is already assigned to some
@@ -183,18 +183,18 @@ To remove a locked working tree, specify `--force` twice.
 	exists. `-B` overrides this safeguard, resetting `<new-branch>` to
 	`<commit-ish>`.
 
--d::
---detach::
+`-d`::
+`--detach`::
 	With `add`, detach `HEAD` in the new working tree. See "DETACHED HEAD"
 	in linkgit:git-checkout[1].
 
---[no-]checkout::
+`--[no-]checkout`::
 	By default, `add` checks out `<commit-ish>`, however, `--no-checkout` can
 	be used to suppress checkout in order to make customizations,
 	such as configuring sparse-checkout. See "Sparse checkout"
 	in linkgit:git-read-tree[1].
 
---[no-]guess-remote::
+`--[no-]guess-remote`::
 	With `worktree add <path>`, without `<commit-ish>`, instead
 	of creating a new branch from `HEAD`, if there exists a tracking
 	branch in exactly one remote matching the basename of `<path>`,
@@ -204,33 +204,33 @@ To remove a locked working tree, specify `--force` twice.
 This can also be set up as the default behaviour by using the
 `worktree.guessRemote` config option.
 
---[no-]track::
+`--[no-]track`::
 	When creating a new branch, if `<commit-ish>` is a branch,
 	mark it as "upstream" from the new branch.  This is the
 	default if `<commit-ish>` is a remote-tracking branch.  See
 	`--track` in linkgit:git-branch[1] for details.
 
---lock::
+`--lock`::
 	Keep the working tree locked after creation. This is the
 	equivalent of `git worktree lock` after `git worktree add`,
 	but without a race condition.
 
--n::
---dry-run::
+`-n`::
+`--dry-run`::
 	With `prune`, do not remove anything; just report what it would
 	remove.
 
---porcelain::
+`--porcelain`::
 	With `list`, output in an easy-to-parse format for scripts.
 	This format will remain stable across Git versions and regardless of user
 	configuration.  See below for details.
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	With `add`, suppress feedback messages.
 
--v::
---verbose::
+`-v`::
+`--verbose`::
 	With `prune`, report all removals.
 +
 With `list`, output additional information about worktrees (see below).
@@ -244,7 +244,7 @@ older than `<time>`.
 --reason <string>::
 	With `lock`, an explanation why the working tree is locked.
 
-<worktree>::
+`<worktree>`::
 	Working trees can be identified by path, either relative or
 	absolute.
 +

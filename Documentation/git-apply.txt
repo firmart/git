@@ -38,29 +38,29 @@ OPTIONS
 	The files to read the patch from.  '-' can be used to read
 	from the standard input.
 
---stat::
+`--stat`::
 	Instead of applying the patch, output diffstat for the
 	input.  Turns off "apply".
 
---numstat::
+`--numstat`::
 	Similar to `--stat`, but shows the number of added and
 	deleted lines in decimal notation and the pathname without
 	abbreviation, to make it more machine friendly.  For
 	binary files, outputs two `-` instead of saying
 	`0 0`.  Turns off "apply".
 
---summary::
+`--summary`::
 	Instead of applying the patch, output a condensed
 	summary of information obtained from `git diff` extended
 	headers, such as creations, renames and mode changes.
 	Turns off "apply".
 
---check::
+`--check`::
 	Instead of applying the patch, see if the patch is
 	applicable to the current working tree and/or the index
 	file and detects errors.  Turns off "apply".
 
---index::
+`--index`::
 	Apply the patch to both the index and the working tree (or
 	merely check that it would apply cleanly to both if `--check` is
 	in effect). Note that `--index` expects index entries and
@@ -69,12 +69,12 @@ OPTIONS
 	raise an error if they are not, even if the patch would apply
 	cleanly to both the index and the working tree in isolation.
 
---cached::
+`--cached`::
 	Apply the patch to just the index, without touching the working
 	tree. If `--check` is in effect, merely check that it would
 	apply cleanly to the index entry.
 
---intent-to-add::
+`--intent-to-add`::
 	When applying the patch only to the working tree, mark new
 	files to be added to the index later (see `--intent-to-add`
 	option in linkgit:git-add[1]). This option is ignored unless
@@ -91,7 +91,7 @@ OPTIONS
 	resolve.  This option implies the `--index` option, and is incompatible
 	with the `--reject` and the `--cached` options.
 
---build-fake-ancestor=<file>::
+`--build-fake-ancestor=<file>`::
 	Newer `git diff` output has embedded 'index information'
 	for each blob to help identify the original version that
 	the patch applies to.  When this flag is given, and if
@@ -101,18 +101,18 @@ OPTIONS
 When a pure mode change is encountered (which has no index information),
 the information is read from the current index instead.
 
--R::
---reverse::
+`-R`::
+`--reverse`::
 	Apply the patch in reverse.
 
---reject::
+`--reject`::
 	For atomicity, `git apply` by default fails the whole patch and
 	does not touch the working tree when some of the hunks
 	do not apply.  This option makes it apply
 	the parts of the patch that are applicable, and leave the
 	rejected hunks in corresponding *.rej files.
 
--z::
+`-z`::
 	When `--numstat` has been given, do not munge pathnames,
 	but use a NUL-terminated machine-readable format.
 +
@@ -120,19 +120,19 @@ Without this option, pathnames with "unusual" characters are quoted as
 explained for the configuration variable `core.quotePath` (see
 linkgit:git-config[1]).
 
--p<n>::
+`-p<n>`::
 	Remove <n> leading path components (separated by slashes) from
 	traditional diff paths. E.g., with `-p2`, a patch against
 	`a/dir/file` will be applied directly to `file`. The default is
 	1.
 
--C<n>::
+`-C<n>`::
 	Ensure at least <n> lines of surrounding context match before
 	and after each change.  When fewer lines of surrounding
 	context exist they all must match.  By default no context is
 	ever ignored.
 
---unidiff-zero::
+`--unidiff-zero`::
 	By default, `git apply` expects that the patch being
 	applied is a unified diff with at least one line of context.
 	This provides good safety measures, but breaks down when
@@ -142,33 +142,33 @@ linkgit:git-config[1]).
 Note, for the reasons stated above usage of context-free patches is
 discouraged.
 
---apply::
+`--apply`::
 	If you use any of the options marked "Turns off
 	'apply'" above, `git apply` reads and outputs the
 	requested information without actually applying the
 	patch.  Give this flag after those flags to also apply
 	the patch.
 
---no-add::
+`--no-add`::
 	When applying a patch, ignore additions made by the
 	patch.  This can be used to extract the common part between
 	two files by first running 'diff' on them and applying
 	the result with this option, which would apply the
 	deletion part but not the addition part.
 
---allow-binary-replacement::
---binary::
+`--allow-binary-replacement`::
+`--binary`::
 	Historically we did not allow binary patch applied
 	without an explicit permission from the user, and this
 	flag was the way to do so.  Currently we always allow binary
 	patch application, so this is a no-op.
 
---exclude=<path-pattern>::
+`--exclude=<path-pattern>`::
 	Don't apply changes to files matching the given path pattern. This can
 	be useful when importing patchsets, where you want to exclude certain
 	files or directories.
 
---include=<path-pattern>::
+`--include=<path-pattern>`::
 	Apply changes to files matching the given path pattern. This can
 	be useful when importing patchsets, where you want to include certain
 	files or directories.
@@ -179,15 +179,15 @@ patch to each path is used.  A patch to a path that does not match any
 include/exclude pattern is used by default if there is no include pattern
 on the command line, and ignored if there is any include pattern.
 
---ignore-space-change::
---ignore-whitespace::
+`--ignore-space-change`::
+`--ignore-whitespace`::
 	When applying a patch, ignore changes in whitespace in context
 	lines if necessary.
 	Context lines will preserve their whitespace, and they will not
 	undergo whitespace fixing regardless of the value of the
 	`--whitespace` option. New lines will still be fixed, though.
 
---whitespace=<action>::
+`--whitespace=<action>`::
 	When applying a patch, detect a new or modified line that has
 	whitespace errors.  What are considered whitespace errors is
 	controlled by `core.whitespace` configuration.  By default,
@@ -214,25 +214,25 @@ behavior:
   to apply the patch.
 * `error-all` is similar to `error` but shows all errors.
 
---inaccurate-eof::
+`--inaccurate-eof`::
 	Under certain circumstances, some versions of 'diff' do not correctly
 	detect a missing new-line at the end of the file. As a result, patches
 	created by such 'diff' programs do not record incomplete lines
 	correctly. This option adds support for applying such patches by
 	working around this bug.
 
--v::
---verbose::
+`-v`::
+`--verbose`::
 	Report progress to stderr. By default, only a message about the
 	current patch being applied will be printed. This option will cause
 	additional information to be reported.
 
---recount::
+`--recount`::
 	Do not trust the line counts in the hunk headers, but infer them
 	by inspecting the patch (e.g. after editing the patch without
 	adjusting the hunk headers appropriately).
 
---directory=<root>::
+`--directory=<root>`::
 	Prepend <root> to all filenames.  If a `-p` argument was also passed,
 	it is applied before prepending the new root.
 +
@@ -240,7 +240,7 @@ For example, a patch that talks about updating `a/git-gui.sh` to `b/git-gui.sh`
 can be applied to the file in the working tree `modules/git-gui/git-gui.sh` by
 running `git apply --directory=modules/git-gui`.
 
---unsafe-paths::
+`--unsafe-paths`::
 	By default, a patch that affects outside the working area
 	(either a Git controlled working tree, or the current working
 	directory when `git apply` is used as a replacement of GNU

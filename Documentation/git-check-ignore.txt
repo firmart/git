@@ -40,11 +40,11 @@ OPTIONS
 For precedence rules within and between exclude sources, see
 linkgit:gitignore[5].
 
---stdin::
+`--stdin`::
 	Read pathnames from the standard input, one per line,
 	instead of from the command-line.
 
--z::
+`-z`::
 	The output format is modified to be machine-parsable (see
 	below).  If `--stdin` is also given, input paths are separated
 	with a NUL character instead of a linefeed character.
@@ -55,7 +55,7 @@ linkgit:gitignore[5].
 	not be possible to distinguish between paths which match a
 	pattern and those which don't.
 
---no-index::
+`--no-index`::
 	Don't look in the index when undertaking the checks. This can
 	be used to debug why a path became tracked by e.g. `git add .`
 	and was not ignored by the rules as expected by the user or when

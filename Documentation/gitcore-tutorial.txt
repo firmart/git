@@ -1011,7 +1011,7 @@ $ git fetch <remote-repository>
 One of the following transports can be used to name the
 repository to download from:
 
-SSH::
+`SSH`::
 	`remote.machine:/path/to/repo.git/` or
 +
 `ssh://remote.machine/path/to/repo.git/`

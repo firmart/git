@@ -41,8 +41,8 @@ OPTIONS
 	default, see linkgit:git-rev-list[1] and its `--no-walk`
 	option.
 
--e::
---edit::
+`-e`::
+`--edit`::
 	With this option, `git revert` will let you edit the commit
 	message prior to committing the revert. This is the default if
 	you run the command from a terminal.
@@ -63,19 +63,19 @@ reverted merge.  This may or may not be what you want.
 See the link:howto/revert-a-faulty-merge.html[revert-a-faulty-merge How-To] for
 more details.
 
---no-edit::
+`--no-edit`::
 	With this option, `git revert` will not start the commit
 	message editor.
 
---cleanup=<mode>::
+`--cleanup=<mode>`::
 	This option determines how the commit message will be cleaned up before
 	being passed on to the commit machinery. See linkgit:git-commit[1] for more
 	details. In particular, if the '<mode>' is given a value of `scissors`,
 	scissors will be appended to `MERGE_MSG` before being passed on in the case
 	of a conflict.
 
--n::
---no-commit::
+`-n`::
+`--no-commit`::
 	Usually the command automatically creates some commits with
 	commit log messages stating which commits were
 	reverted.  This flag applies the changes necessary
@@ -88,32 +88,32 @@ more details.
 This is useful when reverting more than one commits'
 effect to your index in a row.
 
--S[<keyid>]::
---gpg-sign[=<keyid>]::
---no-gpg-sign::
+`-S[<keyid>]`::
+`--gpg-sign[=<keyid>]`::
+`--no-gpg-sign`::
 	GPG-sign commits. The `keyid` argument is optional and
 	defaults to the committer identity; if specified, it must be
 	stuck to the option without a space. `--no-gpg-sign` is useful to
 	countermand both `commit.gpgSign` configuration variable, and
 	earlier `--gpg-sign`.
 
--s::
---signoff::
+`-s`::
+`--signoff`::
 	Add a `Signed-off-by` trailer at the end of the commit message.
 	See the signoff option in linkgit:git-commit[1] for more information.
 
---strategy=<strategy>::
+`--strategy=<strategy>`::
 	Use the given merge strategy.  Should only be used once.
 	See the MERGE STRATEGIES section in linkgit:git-merge[1]
 	for details.
 
--X<option>::
---strategy-option=<option>::
+`-X<option>`::
+`--strategy-option=<option>`::
 	Pass the merge strategy-specific option through to the
 	merge strategy.  See linkgit:git-merge[1] for details.
 
---rerere-autoupdate::
---no-rerere-autoupdate::
+`--rerere-autoupdate`::
+`--no-rerere-autoupdate`::
 	Allow the rerere mechanism to update the index with the
 	result of auto-conflict resolution if possible.
 

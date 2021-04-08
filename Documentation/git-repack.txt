@@ -28,7 +28,7 @@ engines, disk storage, etc.
 OPTIONS
 -------
 
--a::
+`-a`::
 	Instead of incrementally packing the unpacked objects,
 	pack everything referenced into a single pack.
 	Especially useful when packing a repository that is used
@@ -46,7 +46,7 @@ have an associated ".promisor" file, these packfiles will be repacked
 into another separate pack, and an empty ".promisor" file corresponding
 to the new separate pack will be written.
 
--A::
+`-A`::
 	Same as `-a`, unless `-d` is used.  Then any unreachable
 	objects in a previous pack become loose, unpacked objects,
 	instead of being left in the old pack.  Unreachable objects
@@ -57,37 +57,37 @@ to the new separate pack will be written.
 	will be pruned according to normal expiry rules
 	with the next `git gc` invocation. See linkgit:git-gc[1].
 
--d::
+`-d`::
 	After packing, if the newly created packs make some
 	existing packs redundant, remove the redundant packs.
 	Also run  `git prune-packed` to remove redundant
 	loose object files.
 
--l::
+`-l`::
 	Pass the `--local` option to `git pack-objects`. See
 	linkgit:git-pack-objects[1].
 
--f::
+`-f`::
 	Pass the `--no-reuse-delta` option to `git-pack-objects`, see
 	linkgit:git-pack-objects[1].
 
--F::
+`-F`::
 	Pass the `--no-reuse-object` option to `git-pack-objects`, see
 	linkgit:git-pack-objects[1].
 
--q::
+`-q`::
 	Pass the `-q` option to `git pack-objects`. See
 	linkgit:git-pack-objects[1].
 
--n::
+`-n`::
 	Do not update the server information with
 	`git update-server-info`.  This option skips
 	updating local catalog files needed to publish
 	this repository (or a direct copy of it)
 	over HTTP or FTP.  See linkgit:git-update-server-info[1].
 
---window=<n>::
---depth=<n>::
+`--window=<n>`::
+`--depth=<n>`::
 	These two options affect how the objects contained in the pack are
 	stored using delta compression. The objects are first internally
 	sorted by type, size and optionally names and compared against the
@@ -99,10 +99,10 @@ to the new separate pack will be written.
 The default value for `--window` is 10 and `--depth` is 50. The maximum
 depth is 4095.
 
---threads=<n>::
+`--threads=<n>`::
 	This option is passed through to `git pack-objects`.
 
---window-memory=<n>::
+`--window-memory=<n>`::
 	This option provides an additional limit on top of `--window`;
 	the window size will dynamically scale down so as to not take
 	up more than '<n>' bytes in memory.  This is useful in
@@ -115,7 +115,7 @@ depth is 4095.
 	Note that the actual memory usage will be the limit multiplied
 	by the number of threads used by linkgit:git-pack-objects[1].
 
---max-pack-size=<n>::
+`--max-pack-size=<n>`::
 	Maximum size of each output pack file. The size can be suffixed with
 	"k", "m", or "g". The minimum size allowed is limited to 1 MiB.
 	If specified, multiple packfiles may be created, which also
@@ -123,15 +123,15 @@ depth is 4095.
 	The default is unlimited, unless the config variable
 	`pack.packSizeLimit` is set.
 
--b::
---write-bitmap-index::
+`-b`::
+`--write-bitmap-index`::
 	Write a reachability bitmap index as part of the repack. This
 	only makes sense when used with `-a` or `-A`, as the bitmaps
 	must be able to refer to all reachable objects. This option
 	overrides the setting of `repack.writeBitmaps`.  This option
 	has no effect if multiple packfiles are created.
 
---pack-kept-objects::
+`--pack-kept-objects`::
 	Include objects in `.keep` files when repacking.  Note that we
 	still do not delete `.keep` packs after `pack-objects` finishes.
 	This means that we may duplicate objects, but this makes the
@@ -140,33 +140,33 @@ depth is 4095.
 	with `-b` or `repack.writeBitmaps`, as it ensures that the
 	bitmapped packfile has the necessary objects.
 
---keep-pack=<pack-name>::
+`--keep-pack=<pack-name>`::
 	Exclude the given pack from repacking. This is the equivalent
 	of having `.keep` file on the pack. `<pack-name>` is the
 	pack file name without leading directory (e.g. `pack-123.pack`).
 	The option could be specified multiple times to keep multiple
 	packs.
 
---unpack-unreachable=<when>::
+`--unpack-unreachable=<when>`::
 	When loosening unreachable objects, do not bother loosening any
 	objects older than `<when>`. This can be used to optimize out
 	the write of any objects that would be immediately pruned by
 	a follow-up `git prune`.
 
--k::
---keep-unreachable::
+`-k`::
+`--keep-unreachable`::
 	When used with `-ad`, any unreachable objects from existing
 	packs will be appended to the end of the packfile instead of
 	being removed. In addition, any unreachable loose objects will
 	be packed (and their loose counterparts removed).
 
--i::
---delta-islands::
+`-i`::
+`--delta-islands`::
 	Pass the `--delta-islands` option to `git-pack-objects`, see
 	linkgit:git-pack-objects[1].
 
--g=<factor>::
---geometric=<factor>::
+`-g=<factor>`::
+`--geometric=<factor>`::
 	Arrange resulting pack structure so that each successive pack
 	contains at least `<factor>` times the number of objects as the
 	next-largest pack.

@@ -125,7 +125,7 @@ the stash entry is applied on top of the commit that was `HEAD` at the
 time `git stash` was run, it restores the originally stashed state
 with no conflicts.
 
-clear::
+`clear`::
 	Remove all the stash entries. Note that those entries will then
 	be subject to pruning, and may be impossible to recover (see
 	'Examples' below for a possible strategy).
@@ -134,7 +134,7 @@ drop [-q|--quiet] [<stash>]::
 
 	Remove a single stash entry from the list of stash entries.
 
-create::
+`create`::
 
 	Create a stash entry (which is a regular commit object) and
 	return its object name, without storing it anywhere in the ref
@@ -142,7 +142,7 @@ create::
 	This is intended to be useful for scripts.  It is probably not
 	the command you want to use; see "push" above.
 
-store::
+`store`::
 
 	Store a given stash created via `git stash create` (which is a
 	dangling merge commit) in the stash ref, updating the stash
@@ -151,16 +151,16 @@ store::
 
 OPTIONS
 -------
--a::
---all::
+`-a`::
+`--all`::
 	This option is only valid for `push` and `save` commands.
 +
 All ignored and untracked files are also stashed and then cleaned
 up with `git clean`.
 
--u::
---include-untracked::
---no-include-untracked::
+`-u`::
+`--include-untracked`::
+`--no-include-untracked`::
 	When used with the `push` and `save` commands,
 	all untracked files are also stashed and then cleaned up with
 	`git clean`.
@@ -168,12 +168,12 @@ up with `git clean`.
 When used with the `show` command, show the untracked files in the stash
 entry as part of the diff.
 
---only-untracked::
+`--only-untracked`::
 	This option is only valid for the `show` command.
 +
 Show only the untracked files in the stash entry as part of the diff.
 
---index::
+`--index`::
 	This option is only valid for `pop` and `apply` commands.
 +
 Tries to reinstate not only the working tree's changes, but also
@@ -181,15 +181,15 @@ the index's ones. However, this can fail, when you have conflicts
 (which are stored in the index, where you therefore can no longer
 apply the changes as they were originally).
 
--k::
---keep-index::
---no-keep-index::
+`-k`::
+`--keep-index`::
+`--no-keep-index`::
 	This option is only valid for `push` and `save` commands.
 +
 All changes already added to the index are left intact.
 
--p::
---patch::
+`-p`::
+`--patch`::
 	This option is only valid for `push` and `save` commands.
 +
 Interactively select hunks from the diff between `HEAD` and the
@@ -203,7 +203,7 @@ to learn how to operate the `--patch` mode.
 The `--patch` option implies `--keep-index`.  You can use
 `--no-keep-index` to override this.
 
---pathspec-from-file=<file>::
+`--pathspec-from-file=<file>`::
 	This option is only valid for `push` command.
 +
 Pathspec is passed in `<file>` instead of commandline args. If
@@ -213,15 +213,15 @@ quoted as explained for the configuration variable `core.quotePath`
 (see linkgit:git-config[1]). See also `--pathspec-file-nul` and
 global `--literal-pathspecs`.
 
---pathspec-file-nul::
+`--pathspec-file-nul`::
 	This option is only valid for `push` command.
 +
 Only meaningful with `--pathspec-from-file`. Pathspec elements are
 separated with NUL character and all other characters are taken
 literally (including newlines and quotes).
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	This option is only valid for `apply`, `drop`, `pop`, `push`,
 	`save`, `store` commands.
 +
@@ -242,7 +242,7 @@ too, leaving files that do not match the pathspec intact.
 +
 For more details, see the 'pathspec' entry in linkgit:gitglossary[7].
 
-<stash>::
+`<stash>`::
 	This option is only valid for `apply`, `branch`, `drop`, `pop`,
 	`show` commands.
 +

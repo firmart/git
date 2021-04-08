@@ -235,29 +235,29 @@ Values of many variables are treated as a simple string, but there
 are variables that take values of specific types and there are rules
 as to how to spell them.
 
-boolean::
+`boolean`::
 
        When a variable is said to take a boolean value, many
        synonyms are accepted for 'true' and 'false'; these are all
        case-insensitive.
 
-	true;; Boolean true literals are `yes`, `on`, `true`,
+	`true`;; Boolean true literals are `yes`, `on`, `true`,
 		and `1`.  Also, a variable defined without `= <value>`
 		is taken as true.
 
-	false;; Boolean false literals are `no`, `off`, `false`,
+	`false`;; Boolean false literals are `no`, `off`, `false`,
 		`0` and the empty string.
 +
 When converting a value to its canonical form using the `--type=bool` type
 specifier, `git config` will ensure that the output is "true" or
 "false" (spelled in lowercase).
 
-integer::
+`integer`::
        The value for many variables that specify various sizes can
        be suffixed with `k`, `M`,... to mean "scale the number by
        1024", "by 1024x1024", etc.
 
-color::
+`color`::
        The value for a variable that takes a color is a list of
        colors (at most two, one for foreground and one for background)
        and attributes (as many as you want), separated by spaces.
@@ -292,7 +292,7 @@ output) is set to be painted with `bold` or some other attribute.
 However, custom log formats may do more complicated and layered
 coloring, and the negated forms may be useful there.
 
-pathname::
+`pathname`::
 	A variable that takes a pathname value can be given a
 	string that begins with "`~/`" or "`~user/`", and the usual
 	tilde expansion happens to such a string: `~/`

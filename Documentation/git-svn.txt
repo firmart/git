@@ -43,8 +43,8 @@ COMMANDS
 --tags=<tags_subdir>;;
 -b<branches_subdir>;;
 --branches=<branches_subdir>;;
--s;;
---stdlayout;;
+`-s`;;
+`--stdlayout`;;
 	These are optional command-line options for `init`.  Each of
 	these flags can point to a relative repository path
 	(`--tags=project/tags`) or a full url
@@ -55,24 +55,24 @@ COMMANDS
 	a shorthand way of setting trunk,tags,branches as the relative paths,
 	which is the Subversion default. If any of the other options are given
 	as well, they take precedence.
---no-metadata;;
+`--no-metadata`;;
 	Set the 'noMetadata' option in the [svn-remote] config.
 	This option is not recommended, please read the `svn.noMetadata`
 	section of this manpage before using this option.
---use-svm-props;;
+`--use-svm-props`;;
 	Set the 'useSvmProps' option in the [svn-remote] config.
---use-svnsync-props;;
+`--use-svnsync-props`;;
 	Set the 'useSvnsyncProps' option in the [svn-remote] config.
---rewrite-root=<URL>;;
+`--rewrite-root=<URL>`;;
 	Set the 'rewriteRoot' option in the [svn-remote] config.
---rewrite-uuid=<UUID>;;
+`--rewrite-uuid=<UUID>`;;
 	Set the 'rewriteUUID' option in the [svn-remote] config.
---username=<user>;;
+`--username=<user>`;;
 	For transports that SVN handles authentication for (http,
 	https, and plain svn), specify the username.  For other
 	transports (e.g. `svn+ssh://`), you must include the username in
 	the URL, e.g. `svn+ssh://foo@svn.bar.com/project`
---prefix=<prefix>;;
+`--prefix=<prefix>`;;
 	This allows one to specify a prefix which is prepended
 	to the names of remotes if trunk/branches/tags are
 	specified.  The prefix does not automatically include a
@@ -95,19 +95,19 @@ If you still want the old default, you can get it by passing
 `--prefix ""` on the command line (`--prefix=""` may not work if
 your Perl's Getopt::Long is < v2.37).
 
---ignore-refs=<regex>;;
+`--ignore-refs=<regex>`;;
 	When passed to `init` or `clone` this regular expression will
 	be preserved as a config key.  See `fetch` for a description
 	of `--ignore-refs`.
---ignore-paths=<regex>;;
+`--ignore-paths=<regex>`;;
 	When passed to `init` or `clone` this regular expression will
 	be preserved as a config key.  See `fetch` for a description
 	of `--ignore-paths`.
---include-paths=<regex>;;
+`--include-paths=<regex>`;;
 	When passed to `init` or `clone` this regular expression will
 	be preserved as a config key.  See `fetch` for a description
 	of `--include-paths`.
---no-minimize-url;;
+`--no-minimize-url`;;
 	When tracking multiple directories (using `--stdlayout`,
 	`--branches`, or `--tags` options), `git svn` will attempt to connect
 	to the root (or highest allowed level) of the Subversion
@@ -128,7 +128,7 @@ your Perl's Getopt::Long is < v2.37).
 This automatically updates the rev_map if needed (see
 `$GIT_DIR/svn/\**/.rev_map.*` in the FILES section below for details).
 
---localtime;;
+`--localtime`;;
 	Store Git commit times in the local time zone instead of UTC.  This
 	makes `git log` (even without `--date=local`) show the same times
 	that `svn log` would in the local time zone.
@@ -139,10 +139,10 @@ repository to be able to interoperate with someone else's local Git
 repository, either don't use this option or you should both use it in
 the same local time zone.
 
---parent;;
+`--parent`;;
 	Fetch only from the SVN parent of the current `HEAD`.
 
---ignore-refs=<regex>;;
+`--ignore-refs=<regex>`;;
 	Ignore refs for branches or tags matching the Perl regular
 	expression. A negative look-ahead assertion like
 	`^refs/remotes/origin/(?!tags/wanted-tag|wanted-branch).*$`
@@ -154,7 +154,7 @@ config key: `svn-remote.<name>.ignore-refs`
 If the ignore-refs configuration key is set, and the command-line
 option is also given, both regular expressions will be used.
 
---ignore-paths=<regex>;;
+`--ignore-paths=<regex>`;;
 	This allows one to specify a Perl regular expression that will
 	cause skipping of all matching paths from checkout from SVN.
 	The `--ignore-paths` option should match for every `fetch`
@@ -183,7 +183,7 @@ Skip "branches" and "tags" of first level directories;;
 ------------------------------------------------------------------------
 --
 
---include-paths=<regex>;;
+`--include-paths=<regex>`;;
 	This allows one to specify a Perl regular expression that will
 	cause the inclusion of only matching paths from checkout from SVN.
 	The `--include-paths` option should match for every `fetch`
@@ -194,7 +194,7 @@ Skip "branches" and "tags" of first level directories;;
 [verse]
 config key: `svn-remote.<name>.include-paths`
 
---log-window-size=<n>;;
+`--log-window-size=<n>`;;
 	Fetch <n> log entries per request when scanning Subversion history.
 	The default is 100. For very large Subversion repositories, larger
 	values may be needed for `clone`/'fetch' to complete in reasonable
@@ -212,14 +212,14 @@ config key: `svn-remote.<name>.include-paths`
 	affecting the working tree; and the `rebase` command will be
 	able to update the working tree with the latest changes.
 
---preserve-empty-dirs;;
+`--preserve-empty-dirs`;;
 	Create a placeholder file in the local Git repository for each
 	empty directory fetched from Subversion.  This includes directories
 	that become empty by removing all entries in the Subversion
 	repository (but not the directory itself).  The placeholder files
 	are also tracked and removed when no longer necessary.
 
---placeholder-filename=<filename>;;
+`--placeholder-filename=<filename>`;;
 	Set the name of placeholder files created by `--preserve-empty-dirs`.
 	Default: "`.gitignore`"
 
@@ -241,8 +241,8 @@ and have no uncommitted changes.
 This automatically updates the rev_map if needed (see
 `$GIT_DIR/svn/\**/.rev_map.*` in the FILES section below for details).
 
--l;;
---local;;
+`-l`;;
+`--local`;;
 	Do not `fetch` remotely; only run `git rebase` against the
 	last fetched commit from the upstream SVN.
 
@@ -258,7 +258,7 @@ branch, not on the current branch.
 +
 Use of `dcommit` is preferred to `set-tree` (below).
 +
---no-rebase;;
+`--no-rebase`;;
 	After committing, do not rebase or reset.
 --commit-url <URL>;;
 	Commit to this SVN URL (the full path).  This is intended to
@@ -278,7 +278,7 @@ If you rather want to set the commit URL for an entire SVN repository use
 Using this option for any other purpose (don't ask) is very strongly
 discouraged.
 
---mergeinfo=<mergeinfo>;;
+`--mergeinfo=<mergeinfo>`;;
 	Add the given merge information during the `dcommit`
 	(e.g. `--mergeinfo="/branches/foo:1-10"`). All svn server versions can
 	store this information (as a property), and svn clients starting from
@@ -294,7 +294,7 @@ svn:mergeinfo property in the SVN repository when possible. Currently, this can
 only be done when dcommitting non-fast-forward merges where all parents but the
 first have already been pushed into SVN.
 
---interactive;;
+`--interactive`;;
 	Ask the user to confirm that a patch set should actually be sent to SVN.
 	For each patch, one may answer "yes" (accept this patch), "no" (discard this
 	patch), "all" (accept all patches), or "quit".
@@ -305,17 +305,17 @@ committing anything to SVN.
 `branch`::
 	Create a branch in the SVN repository.
 
--m;;
---message;;
+`-m`;;
+`--message`;;
 	Allows to specify the commit message.
 
--t;;
---tag;;
+`-t`;;
+`--tag`;;
 	Create a tag by using the tags_subdir instead of the branches_subdir
 	specified during `git svn` init.
 
--d<path>;;
---destination=<path>;;
+`-d<path>`;;
+`--destination=<path>`;;
 
 	If more than one `--branches` (or `--tags`) option was given to the `init`
 	or `clone` command, you must provide the location of the branch (or
@@ -330,11 +330,11 @@ committing anything to SVN.
 where <name> is the name of the SVN repository as specified by the `-R` option to
 `init` (or "svn" by default).
 
---username;;
+`--username`;;
 	Specify the SVN username to perform the commit as.  This option overrides
 	the 'username' configuration property.
 
---commit-url;;
+`--commit-url`;;
 	Use the specified URL to connect to the destination Subversion
 	repository.  This is useful in cases where the source SVN
 	repository is read-only.  This option overrides configuration
@@ -343,7 +343,7 @@ where <name> is the name of the SVN repository as specified by the `-R` option t
 	git config --get-all svn-remote.<name>.commiturl
 +
 
---parents;;
+`--parents`;;
 	Create parent folders. This parameter is equivalent to the parameter
 	`--parents` on svn cp commands and is useful for non-standard repository
 	layouts.
@@ -363,23 +363,23 @@ The following features from `svn log' are supported:
 --revision=<n>[:<n>];;
 	is supported, non-numeric args are not:
 	HEAD, NEXT, BASE, PREV, etc ...
--v;;
---verbose;;
+`-v`;;
+`--verbose`;;
 	it's not completely compatible with the `--verbose`
 	output in svn log, but reasonably close.
---limit=<n>;;
+`--limit=<n>`;;
 	is NOT the same as `--max-count`, doesn't count
 	merged/excluded commits
---incremental;;
+`--incremental`;;
 	supported
 --
 +
 New features:
 +
 --
---show-commit;;
+`--show-commit`;;
 	shows the Git commit sha1, as well
---oneline;;
+`--oneline`;;
 	our version of `--pretty=oneline`
 --
 +
@@ -397,26 +397,26 @@ Any other arguments are passed directly to `git log`
 	the version of the file in the `HEAD` revision is annotated. Unknown
 	arguments are passed directly to `git blame`.
 +
---git-format;;
+`--git-format`;;
 	Produce output in the same format as `git blame`, but with
 	SVN revision numbers instead of Git commit hashes. In this mode,
 	changes that haven't been committed to SVN (including local
 	working-copy edits) are shown as revision 0.
 
-'find-rev'::
+`find-rev`::
 	When given an SVN revision number of the form 'rN', returns the
 	corresponding Git commit hash (this can optionally be followed by a
 	tree-ish to specify which branch should be searched).  When given a
 	tree-ish, returns the corresponding SVN revision number.
 +
--B;;
---before;;
+`-B`;;
+`--before`;;
 	Don't require an exact match if given an SVN revision, instead find
 	the commit corresponding to the state of the SVN repository (on the
 	current branch) at the specified revision.
 +
--A;;
---after;;
+`-A`;;
+`--after`;;
 	Don't require an exact match if given an SVN revision; if there is
 	not an exact match return the closest match searching forward in the
 	history.
@@ -466,12 +466,12 @@ denotes such an object, or it is requested by invoking an editor (see
 `--edit` option below).
 
 -m <msg>;;
---message=<msg>;;
+`--message=<msg>`;;
 	Use the given `msg` as the commit message. This option
 	disables the `--edit` option.
 
 -F <filename>;;
---file=<filename>;;
+`--file=<filename>`;;
 	Take the commit message from the given file. This option
 	disables the `--edit` option.
 
@@ -529,11 +529,11 @@ Follow 'reset' with a `fetch` and then `git reset` or `git rebase` to
 move local branches onto the new tree.
 
 -r <n>;;
---revision=<n>;;
+`--revision=<n>`;;
 	Specify the most recent revision to keep.  All later revisions
 	are discarded.
--p;;
---parent;;
+`-p`;;
+`--parent`;;
 	Discard the specified revision as well, keeping the nearest
 	parent instead.
 Example:;;
@@ -591,15 +591,15 @@ This can allow you to make partial mirrors when running `fetch`;
 but is generally not recommended because history will be skipped
 and lost.
 
--::
---stdin::
+`-`::
+`--stdin`::
 	Only used with the `set-tree` command.
 +
 Read a list of commits from stdin and commit them in reverse
 order.  Only the leading sha1 is read from each line, so
 `git rev-list --pretty=oneline` output can be used.
 
---rmdir::
+`--rmdir`::
 	Only used with the `dcommit`, `set-tree` and `commit-diff` commands.
 +
 Remove directories from the SVN tree if there are no files left
@@ -611,8 +611,8 @@ the commit to SVN act like Git.
 [verse]
 config key: `svn.rmdir`
 
--e::
---edit::
+`-e`::
+`--edit`::
 	Only used with the `dcommit`, `set-tree` and `commit-diff` commands.
 +
 Edit the commit message before committing to SVN.  This is off by
@@ -622,8 +622,8 @@ tree objects.
 [verse]
 config key: `svn.edit`
 
--l<num>::
---find-copies-harder::
+`-l<num>`::
+`--find-copies-harder`::
 	Only used with the `dcommit`, `set-tree` and `commit-diff` commands.
 +
 They are both passed directly to `git diff-tree`; see
@@ -633,8 +633,8 @@ linkgit:git-diff-tree[1] for more information.
 config key: `svn.l`
 config key: `svn.findcopiesharder`
 
--A<filename>::
---authors-file=<filename>::
+`-A<filename>`::
+`--authors-file=<filename>`::
 	Syntax is compatible with the file used by `git cvsimport` but
 	an empty email address can be supplied with '<>':
 +
@@ -651,7 +651,7 @@ after the authors-file is modified should continue operation.
 [verse]
 config key: `svn.authorsfile`
 
---authors-prog=<filename>::
+`--authors-prog=<filename>`::
 	If this option is specified, for each SVN committer name that
 	does not exist in the authors file, the given file is executed
 	with the committer name as the first argument.  The program is
@@ -667,25 +667,25 @@ not found, it is searched like any other command in `$PATH`.
 [verse]
 config key: `svn.authorsProg`
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	Make `git svn` less verbose. Specify a second time to make it
 	even less verbose.
 
--m::
---merge::
--s<strategy>::
---strategy=<strategy>::
--p::
---rebase-merges::
+`-m`::
+`--merge`::
+`-s<strategy>`::
+`--strategy=<strategy>`::
+`-p`::
+`--rebase-merges`::
 --preserve-merges (DEPRECATED)::
 	These are only used with the `dcommit` and `rebase` commands.
 +
 Passed directly to `git rebase` when using `dcommit` if a
 `git reset` cannot be used (see `dcommit`).
 
--n::
---dry-run::
+`-n`::
+`--dry-run`::
 	This can be used with the `dcommit`, `rebase`, `branch` and
 	`tag` commands.
 +
@@ -699,7 +699,7 @@ repository that will be fetched from.
 For `branch` and `tag`, display the urls that will be used for copying when
 creating the branch or tag.
 
---use-log-author::
+`--use-log-author`::
 	When retrieving svn commits into Git (as part of `fetch`, `rebase`, or
 	`dcommit` operations), look for the first `From:` line or `Signed-off-by` trailer
 	in the log message and use that as the author string.
@@ -707,7 +707,7 @@ creating the branch or tag.
 [verse]
 config key: `svn.useLogAuthor`
 
---add-author-from::
+`--add-author-from`::
 	When committing to svn from Git (as part of `set-tree` or `dcommit`
 	operations), if the existing log message doesn't already have a
 	`From:` or `Signed-off-by` trailer, append a `From:` line based on the
@@ -733,7 +733,7 @@ ADVANCED OPTIONS
 	this allows SVN multiple repositories to be tracked.
 	Default: "svn"
 
---follow-parent::
+`--follow-parent`::
 	This option is only relevant if we are tracking branches (using
 	one of the repository layout options `--trunk`, `--tags`,
 	`--branches`, `--stdlayout`). For each tracked branch, try to find

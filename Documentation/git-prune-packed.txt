@@ -28,13 +28,13 @@ disk storage, etc.
 
 OPTIONS
 -------
--n::
---dry-run::
+`-n`::
+`--dry-run`::
         Don't actually remove any objects, only show those that would have been
         removed.
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	Squelch the progress indicator.
 
 SEE ALSO

@@ -39,10 +39,10 @@ or https://git-scm.com/docs.
 
 OPTIONS
 -------
---version::
+`--version`::
 	Prints the Git suite version that the `git` program came from.
 
---help::
+`--help`::
 	Prints the synopsis and a list of the most commonly used
 	commands. If the option `--all` or `-a` is given then all
 	available commands are printed. If a Git command is named this
@@ -80,7 +80,7 @@ config file). Including the equals but with an empty value (like `git -c
 foo.bar= ...`) sets `foo.bar` to the empty string which `git config
 --type=bool` will convert to `false`.
 
---config-env=<name>=<envvar>::
+`--config-env=<name>=<envvar>`::
 	Like `-c <name>=<value>`, give configuration variable
 	'<name>' a value, where <envvar> is the name of an
 	environment variable from which to retrieve the value. Unlike
@@ -102,36 +102,36 @@ Note that this might add security for variables such as
 the value, but not e.g. `url.<base>.insteadOf` where the
 sensitive information can be part of the key.
 
---exec-path[=<path>]::
+`--exec-path[=<path>]`::
 	Path to wherever your core Git programs are installed.
 	This can also be controlled by setting the GIT_EXEC_PATH
 	environment variable. If no path is given, `git` will print
 	the current setting and then exit.
 
---html-path::
+`--html-path`::
 	Print the path, without trailing slash, where Git's HTML
 	documentation is installed and exit.
 
---man-path::
+`--man-path`::
 	Print the manpath (see `man(1)`) for the man pages for
 	this version of Git and exit.
 
---info-path::
+`--info-path`::
 	Print the path where the Info files documenting this
 	version of Git are installed and exit.
 
--p::
---paginate::
+`-p`::
+`--paginate`::
 	Pipe all output into 'less' (or if set, `$PAGER`) if standard
 	output is a terminal.  This overrides the `pager.<cmd>`
 	configuration options (see the "Configuration Mechanism" section
 	below).
 
--P::
---no-pager::
+`-P`::
+`--no-pager`::
 	Do not pipe Git output into a pager.
 
---git-dir=<path>::
+`--git-dir=<path>`::
 	Set the path to the repository (".git" directory). This can also be
 	controlled by setting the `GIT_DIR` environment variable. It can be
 	an absolute path or relative path to current working directory.
@@ -150,7 +150,7 @@ environment variable)
 If you just want to run `git` as if it was started in `<path>` then use
 `git -C <path>`.
 
---work-tree=<path>::
+`--work-tree=<path>`::
 	Set the path to the working tree. It can be an absolute path
 	or a path relative to the current working directory.
 	This can also be controlled by setting the GIT_WORK_TREE
@@ -158,47 +158,47 @@ If you just want to run `git` as if it was started in `<path>` then use
 	variable (see `core.worktree` in linkgit:git-config[1] for a
 	more detailed discussion).
 
---namespace=<path>::
+`--namespace=<path>`::
 	Set the Git namespace.  See linkgit:gitnamespaces[7] for more
 	details.  Equivalent to setting the `GIT_NAMESPACE` environment
 	variable.
 
---super-prefix=<path>::
+`--super-prefix=<path>`::
 	Currently for internal use only.  Set a prefix which gives a path from
 	above a repository down to its root.  One use is to give submodules
 	context about the superproject that invoked it.
 
---bare::
+`--bare`::
 	Treat the repository as a bare repository.  If GIT_DIR
 	environment is not set, it is set to the current working
 	directory.
 
---no-replace-objects::
+`--no-replace-objects`::
 	Do not use replacement refs to replace Git objects. See
 	linkgit:git-replace[1] for more information.
 
---literal-pathspecs::
+`--literal-pathspecs`::
 	Treat pathspecs literally (i.e. no globbing, no pathspec magic).
 	This is equivalent to setting the `GIT_LITERAL_PATHSPECS` environment
 	variable to `1`.
 
---glob-pathspecs::
+`--glob-pathspecs`::
 	Add "glob" magic to all pathspec. This is equivalent to setting
 	the `GIT_GLOB_PATHSPECS` environment variable to `1`. Disabling
 	globbing on individual pathspecs can be done using pathspec
 	magic ":(literal)"
 
---noglob-pathspecs::
+`--noglob-pathspecs`::
 	Add "literal" magic to all pathspec. This is equivalent to setting
 	the `GIT_NOGLOB_PATHSPECS` environment variable to `1`. Enabling
 	globbing on individual pathspecs can be done using pathspec
 	magic ":(glob)"
 
---icase-pathspecs::
+`--icase-pathspecs`::
 	Add "icase" magic to all pathspec. This is equivalent to setting
 	the `GIT_ICASE_PATHSPECS` environment variable to `1`.
 
---no-optional-locks::
+`--no-optional-locks`::
 	Do not perform optional operations that require locks. This is
 	equivalent to setting the `GIT_OPTIONAL_LOCKS` to `0`.
 
@@ -365,35 +365,35 @@ list and more details about the configuration mechanism.
 
 Identifier Terminology
 ----------------------
-<object>::
+`<object>`::
 	Indicates the object name for any type of object.
 
-<blob>::
+`<blob>`::
 	Indicates a blob object name.
 
-<tree>::
+`<tree>`::
 	Indicates a tree object name.
 
-<commit>::
+`<commit>`::
 	Indicates a commit object name.
 
-<tree-ish>::
+`<tree-ish>`::
 	Indicates a tree, commit or tag object name.  A
 	command that takes a <tree-ish> argument ultimately wants to
 	operate on a <tree> object but automatically dereferences
 	<commit> and <tag> objects that point at a <tree>.
 
-<commit-ish>::
+`<commit-ish>`::
 	Indicates a commit or tag object name.  A
 	command that takes a <commit-ish> argument ultimately wants to
 	operate on a <commit> object but automatically dereferences
 	<tag> objects that point at a <commit>.
 
-<type>::
+`<type>`::
 	Indicates that an object type is required.
 	Currently one of: `blob`, `tree`, `commit`, or `tag`.
 
-<file>::
+`<file>`::
 	Indicates a filename - almost always relative to the
 	root of the tree structure `GIT_INDEX_FILE` describes.
 
@@ -402,14 +402,14 @@ Symbolic Identifiers
 Any Git command accepting any <object> can also use the following
 symbolic notation:
 
-HEAD::
+`HEAD`::
 	indicates the head of the current branch.
 
-<tag>::
+`<tag>`::
 	a valid tag 'name'
 	(i.e. a `refs/tags/<tag>` reference).
 
-<head>::
+`<head>`::
 	a valid head 'name'
 	(i.e. a `refs/heads/<head>` reference).
 

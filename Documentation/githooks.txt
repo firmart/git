@@ -571,7 +571,7 @@ thus has access to these notes.
 
 The following command-specific comments apply:
 
-rebase::
+`rebase`::
 	For the 'squash' and 'fixup' operation, all commits that were
 	squashed are listed as being rewritten to the squashed commit.
 	This means that there will be several lines sharing the same

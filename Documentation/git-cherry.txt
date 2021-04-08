@@ -26,17 +26,17 @@ commits that do not.
 
 OPTIONS
 -------
--v::
+`-v`::
 	Show the commit subjects next to the SHA1s.
 
-<upstream>::
+`<upstream>`::
 	Upstream branch to search for equivalent commits.
 	Defaults to the upstream branch of `HEAD`.
 
-<head>::
+`<head>`::
 	Working branch; defaults to `HEAD`.
 
-<limit>::
+`<limit>`::
 	Do not report commits up to (and including) limit.
 
 EXAMPLES

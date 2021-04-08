@@ -57,13 +57,13 @@ achieve the same effect as the `--no-replace-objects` option.
 
 OPTIONS
 -------
--f::
---force::
+`-f`::
+`--force`::
 	If an existing replace ref for the same object exists, it will
 	be overwritten (instead of failing).
 
--d::
---delete::
+`-d`::
+`--delete`::
 	Delete existing replace refs for the given objects.
 
 --edit <object>::
@@ -75,7 +75,7 @@ OPTIONS
 	newly created object. See linkgit:git-var[1] for details about
 	how the editor will be chosen.
 
---raw::
+`--raw`::
 	When editing, provide the raw object contents rather than
 	pretty-printed ones. Currently this only affects trees, which
 	will be shown in their binary form. This is harder to work with,
@@ -91,7 +91,7 @@ OPTIONS
 	commit. Use `--convert-graft-file` to convert a
 	`$GIT_DIR/info/grafts` file and use replace refs instead.
 
---convert-graft-file::
+`--convert-graft-file`::
 	Creates graft commits for all entries in `$GIT_DIR/info/grafts`
 	and deletes that file upon success. The purpose is to help users
 	with transitioning off of the now-deprecated graft file.
@@ -103,7 +103,7 @@ OPTIONS
 	Typing `git replace` without arguments, also lists all replace
 	refs.
 
---format=<format>::
+`--format=<format>`::
 	When listing, use the specified <format>, which can be one of
 	'short', 'medium' and 'long'. When omitted, the format
 	defaults to 'short'.

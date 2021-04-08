@@ -23,18 +23,18 @@ OPTIONS
 -------
 include::diff-options.txt[]
 
-<tree-ish>::
+`<tree-ish>`::
 	The id of a tree object to diff against.
 
---cached::
+`--cached`::
 	Do not consider the on-disk file at all.
 
---merge-base::
+`--merge-base`::
 	Instead of comparing <tree-ish> directly, use the merge base
 	between <tree-ish> and `HEAD` instead.  <tree-ish> must be a
 	commit.
 
--m::
+`-m`::
 	By default, files recorded in the index but not checked
 	out are reported as deleted.  This flag makes
 	`git diff-index` say that all non-checked-out files are up

@@ -50,19 +50,19 @@ OPTIONS
 	feed all <commit>... arguments to a single revision walk
 	(see a later example that uses 'maint master..next').
 
--e::
---edit::
+`-e`::
+`--edit`::
 	With this option, `git cherry-pick` will let you edit the commit
 	message prior to committing.
 
---cleanup=<mode>::
+`--cleanup=<mode>`::
 	This option determines how the commit message will be cleaned up before
 	being passed on to the commit machinery. See linkgit:git-commit[1] for more
 	details. In particular, if the '<mode>' is given a value of `scissors`,
 	scissors will be appended to `MERGE_MSG` before being passed on in the case
 	of a conflict.
 
--x::
+`-x`::
 	When recording the commit, append a line that says
 	"(cherry picked from commit ...)" to the original commit
 	message in order to indicate which commit this change was
@@ -76,7 +76,7 @@ OPTIONS
 	development branch), adding this information can be
 	useful.
 
--r::
+`-r`::
 	It used to be that the command defaulted to do `-x`
 	described above, and `-r` was to disable it.  Now the
 	default is not to do `-x` so this option is a no-op.
@@ -89,8 +89,8 @@ OPTIONS
 	the mainline and allows cherry-pick to replay the change
 	relative to the specified parent.
 
--n::
---no-commit::
+`-n`::
+`--no-commit`::
 	Usually the command automatically creates a sequence of commits.
 	This flag applies the changes necessary to cherry-pick
 	each named commit to your working tree and the index,
@@ -102,26 +102,26 @@ OPTIONS
 This is useful when cherry-picking more than one commits'
 effect to your index in a row.
 
--s::
---signoff::
+`-s`::
+`--signoff`::
 	Add a `Signed-off-by` trailer at the end of the commit message.
 	See the signoff option in linkgit:git-commit[1] for more information.
 
--S[<keyid>]::
---gpg-sign[=<keyid>]::
---no-gpg-sign::
+`-S[<keyid>]`::
+`--gpg-sign[=<keyid>]`::
+`--no-gpg-sign`::
 	GPG-sign commits. The `keyid` argument is optional and
 	defaults to the committer identity; if specified, it must be
 	stuck to the option without a space. `--no-gpg-sign` is useful to
 	countermand both `commit.gpgSign` configuration variable, and
 	earlier `--gpg-sign`.
 
---ff::
+`--ff`::
 	If the current `HEAD` is the same as the parent of the
 	cherry-pick'ed commit, then a fast forward to this commit will
 	be performed.
 
---allow-empty::
+`--allow-empty`::
 	By default, cherry-picking an empty commit will fail,
 	indicating that an explicit invocation of `git commit
 	--allow-empty` is required. This option overrides that
@@ -134,30 +134,30 @@ effect to your index in a row.
 	previous commit are dropped.  To force the inclusion of those commits
 	use `--keep-redundant-commits`.
 
---allow-empty-message::
+`--allow-empty-message`::
 	By default, cherry-picking a commit with an empty message will fail.
 	This option overrides that behavior, allowing commits with empty
 	messages to be cherry picked.
 
---keep-redundant-commits::
+`--keep-redundant-commits`::
 	If a commit being cherry picked duplicates a commit already in the
 	current history, it will become empty.  By default these
 	redundant commits cause `cherry-pick` to stop so the user can
 	examine the commit. This option overrides that behavior and
 	creates an empty commit object.  Implies `--allow-empty`.
 
---strategy=<strategy>::
+`--strategy=<strategy>`::
 	Use the given merge strategy.  Should only be used once.
 	See the MERGE STRATEGIES section in linkgit:git-merge[1]
 	for details.
 
--X<option>::
---strategy-option=<option>::
+`-X<option>`::
+`--strategy-option=<option>`::
 	Pass the merge strategy-specific option through to the
 	merge strategy.  See linkgit:git-merge[1] for details.
 
---rerere-autoupdate::
---no-rerere-autoupdate::
+`--rerere-autoupdate`::
+`--no-rerere-autoupdate`::
 	Allow the rerere mechanism to update the index with the
 	result of auto-conflict resolution if possible.
 

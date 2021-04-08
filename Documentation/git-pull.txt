@@ -74,14 +74,14 @@ pulling or stash them away with linkgit:git-stash[1].
 OPTIONS
 -------
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	This is passed to both underlying `git-fetch` to squelch reporting of
 	during transfer, and underlying `git-merge` to squelch output during
 	merging.
 
--v::
---verbose::
+`-v`::
+`--verbose`::
 	Pass `--verbose` to `git-fetch` and `git-merge`.
 
 --[no-]recurse-submodules[=yes|on-demand|no]::
@@ -101,7 +101,7 @@ Options related to merging
 
 include::merge-options.txt[]
 
--r::
+`-r`::
 --rebase[=false|true|merges|preserve|interactive]::
 	When true, rebase the current branch on top of the upstream
 	branch after fetching. If there is a remote-tracking branch
@@ -131,7 +131,7 @@ It rewrites history, which does not bode well when you
 published that history already.  Do *not* use this option
 unless you have read linkgit:git-rebase[1] carefully.
 
---no-rebase::
+`--no-rebase`::
 	Override earlier `--rebase`.
 
 Options related to fetching

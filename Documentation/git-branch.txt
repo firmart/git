@@ -94,16 +94,16 @@ way to clean up all obsolete remote-tracking branches.
 
 OPTIONS
 -------
--d::
---delete::
+`-d`::
+`--delete`::
 	Delete a branch. The branch must be fully merged in its
 	upstream branch, or in `HEAD` if no upstream was set with
 	`--track` or `--set-upstream-to`.
 
--D::
+`-D`::
 	Shortcut for `--delete --force`.
 
---create-reflog::
+`--create-reflog`::
 	Create the branch's reflog.  This activates recording of
 	all changes made to the branch ref, enabling use of date
 	based sha1 expressions such as "<branchname>@\{yesterday}".
@@ -113,8 +113,8 @@ OPTIONS
 	`--create-reflog`, but currently does not negate the setting of
 	`core.logAllRefUpdates`.
 
--f::
---force::
+`-f`::
+`--force`::
 	Reset <branchname> to <startpoint>, even if <branchname> exists
 	already. Without `-f`, `git branch` refuses to change an existing branch.
 	In combination with `-d` (or `--delete`), allow deleting the
@@ -122,65 +122,65 @@ OPTIONS
 	`-m` (or `--move`), allow renaming the branch even if the new
 	branch name already exists, the same applies for `-c` (or `--copy`).
 
--m::
---move::
+`-m`::
+`--move`::
 	Move/rename a branch and the corresponding reflog.
 
--M::
+`-M`::
 	Shortcut for `--move --force`.
 
--c::
---copy::
+`-c`::
+`--copy`::
 	Copy a branch and the corresponding reflog.
 
--C::
+`-C`::
 	Shortcut for `--copy --force`.
 
---color[=<when>]::
+`--color[=<when>]`::
 	Color branches to highlight current, local, and
 	remote-tracking branches.
 	The value must be always (the default), never, or auto.
 
---no-color::
+`--no-color`::
 	Turn off branch colors, even when the configuration file gives the
 	default to color output.
 	Same as `--color=never`.
 
--i::
---ignore-case::
+`-i`::
+`--ignore-case`::
 	Sorting and filtering branches are case insensitive.
 
---column[=<options>]::
---no-column::
+`--column[=<options>]`::
+`--no-column`::
 	Display branch listing in columns. See configuration variable
 	`column.branch` for option syntax. `--column` and `--no-column`
 	without options are equivalent to 'always' and 'never' respectively.
 +
 This option is only applicable in non-verbose mode.
 
--r::
---remotes::
+`-r`::
+`--remotes`::
 	List or delete (if used with -d) the remote-tracking branches.
 	Combine with `--list` to match the optional pattern(s).
 
--a::
---all::
+`-a`::
+`--all`::
 	List both remote-tracking branches and local branches.
 	Combine with `--list` to match optional pattern(s).
 
--l::
---list::
+`-l`::
+`--list`::
 	List branches.  With optional `<pattern>...`, e.g. `git
 	branch --list 'maint-*'`, list only the branches that match
 	the pattern(s).
 
---show-current::
+`--show-current`::
 	Print the name of the current branch. In detached `HEAD` state,
 	nothing is printed.
 
--v::
--vv::
---verbose::
+`-v`::
+`-vv`::
+`--verbose`::
 	When in list mode,
 	show sha1 and commit subject line for each head, along with
 	relationship to upstream branch (if any). If given twice, print
@@ -189,23 +189,23 @@ This option is only applicable in non-verbose mode.
 	current worktree's `HEAD` will not have its path printed (it will always
 	be your current directory).
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	Be more quiet when creating or deleting a branch, suppressing
 	non-error messages.
 
---abbrev=<n>::
+`--abbrev=<n>`::
 	In the verbose listing that show the commit object name,
 	show the shortest prefix that is at least '<n>' hexdigits
 	long that uniquely refers the object.
 	The default value is 7 and can be overridden by the `core.abbrev`
 	config option.
 
---no-abbrev::
+`--no-abbrev`::
 	Display the full sha1s in the output listing rather than abbreviating them.
 
--t::
---track::
+`-t`::
+`--track`::
 	When creating a new branch, set up `branch.<name>.remote` and
 	`branch.<name>.merge` configuration entries to mark the
 	start-point branch as "upstream" from the new branch. This
@@ -220,25 +220,25 @@ want `git switch`, `git checkout` and `git branch` to always behave as if `--no-
 were given. Set it to `always` if you want this behavior when the
 start-point is either a local or remote-tracking branch.
 
---no-track::
+`--no-track`::
 	Do not set up "upstream" configuration, even if the
 	branch.autoSetupMerge configuration variable is true.
 
---set-upstream::
+`--set-upstream`::
 	As this option had confusing syntax, it is no longer supported.
 	Please use `--track` or `--set-upstream-to` instead.
 
 -u <upstream>::
---set-upstream-to=<upstream>::
+`--set-upstream-to=<upstream>`::
 	Set up <branchname>'s tracking information so <upstream> is
 	considered <branchname>'s upstream branch. If no <branchname>
 	is specified, then it defaults to the current branch.
 
---unset-upstream::
+`--unset-upstream`::
 	Remove the upstream information for <branchname>. If no branch
 	is specified it defaults to the current branch.
 
---edit-description::
+`--edit-description`::
 	Open an editor and edit the text to explain what the branch is
 	for, to be used by various other commands (e.g. `format-patch`,
 	`request-pull`, and `merge` (if enabled)). Multi-line explanations
@@ -260,25 +260,25 @@ start-point is either a local or remote-tracking branch.
 	Only list branches whose tips are not reachable from the
 	specified commit (`HEAD` if not specified). Implies `--list`.
 
-<branchname>::
+`<branchname>`::
 	The name of the branch to create or delete.
 	The new branch name must pass all checks defined by
 	linkgit:git-check-ref-format[1].  Some of these checks
 	may restrict the characters allowed in a branch name.
 
-<start-point>::
+`<start-point>`::
 	The new branch head will point to this commit.  It may be
 	given as a branch name, a commit-id, or a tag.  If this
 	option is omitted, the current `HEAD` will be used instead.
 
-<oldbranch>::
+`<oldbranch>`::
 	The name of an existing branch to rename.
 
-<newbranch>::
+`<newbranch>`::
 	The new name for an existing branch. The same restrictions as for
 	<branchname> apply.
 
---sort=<key>::
+`--sort=<key>`::
 	Sort based on the key given. Prefix `-` to sort in descending
 	order of the value. You may use the `--sort=<key>` option
 	multiple times, in which case the last key becomes the primary

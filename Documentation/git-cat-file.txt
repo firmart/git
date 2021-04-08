@@ -28,28 +28,28 @@ whitespace, so that the appropriate drivers can be determined.
 
 OPTIONS
 -------
-<object>::
+`<object>`::
 	The name of the object to show.
 	For a more complete list of ways to spell object names, see
 	the "SPECIFYING REVISIONS" section in linkgit:gitrevisions[7].
 
--t::
+`-t`::
 	Instead of the content, show the object type identified by
 	`<object>`.
 
--s::
+`-s`::
 	Instead of the content, show the object size identified by
 	`<object>`.
 
--e::
+`-e`::
 	Exit with zero status if `<object>` exists and is a valid
 	object. If `<object>` is of an invalid format exit with non-zero and
 	emits an error on stderr.
 
--p::
+`-p`::
 	Pretty-print the contents of `<object>` based on its type.
 
-<type>::
+`<type>`::
 	Typically this matches the real type of `<object>` but asking
 	for a type that can trivially be dereferenced from the given
 	`<object>` is also permitted.  An example is to ask for a
@@ -57,54 +57,54 @@ OPTIONS
 	or to ask for a "blob" with `<object>` being a tag object that
 	points at it.
 
---textconv::
+`--textconv`::
 	Show the content as transformed by a textconv filter. In this case,
 	`<object>` has to be of the form `<tree-ish>:<path>`, or `:<path>` in
 	order to apply the filter to the content recorded in the index at
 	`<path>`.
 
---filters::
+`--filters`::
 	Show the content as converted by the filters configured in
 	the current working tree for the given `<path>` (i.e. smudge filters,
 	end-of-line conversion, etc). In this case, `<object>` has to be of
 	the form `<tree-ish>:<path>`, or `:<path>`.
 
---path=<path>::
+`--path=<path>`::
 	For use with `--textconv` or `--filters`, to allow specifying an object
 	name and a path separately, e.g. when it is difficult to figure out
 	the revision from which the blob came.
 
---batch::
---batch=<format>::
+`--batch`::
+`--batch=<format>`::
 	Print object information and contents for each object provided
 	on stdin.  May not be combined with any other options or arguments
 	except `--textconv` or `--filters`, in which case the input lines
 	also need to specify the path, separated by whitespace.  See the
 	section `BATCH OUTPUT` below for details.
 
---batch-check::
---batch-check=<format>::
+`--batch-check`::
+`--batch-check=<format>`::
 	Print object information for each object provided on stdin.  May
 	not be combined with any other options or arguments except
 	`--textconv` or `--filters`, in which case the input lines also
 	need to specify the path, separated by whitespace.  See the
 	section `BATCH OUTPUT` below for details.
 
---batch-all-objects::
+`--batch-all-objects`::
 	Instead of reading a list of objects on stdin, perform the
 	requested batch operation on all objects in the repository and
 	any alternate object stores (not just reachable objects).
 	Requires `--batch` or `--batch-check` be specified. Note that
 	the objects are visited in order sorted by their hashes.
 
---buffer::
+`--buffer`::
 	Normally batch output is flushed after each object is output, so
 	that a process can interactively read and write from
 	`cat-file`. With this option, the output uses normal stdio
 	buffering; this is much more efficient when invoking
 	`--batch-check` on a large number of objects.
 
---unordered::
+`--unordered`::
 	When `--batch-all-objects` is in use, visit objects in an
 	order which may be more efficient for accessing the object
 	contents than hash order. The exact details of the order are
@@ -114,10 +114,10 @@ OPTIONS
 	only once, even if it is stored multiple times in the
 	repository.
 
---allow-unknown-type::
+`--allow-unknown-type`::
 	Allow `-s` or `-t` to query broken/corrupt objects of unknown type.
 
---follow-symlinks::
+`--follow-symlinks`::
 	With `--batch` or `--batch-check`, follow symlinks inside the
 	repository when requesting objects with extended SHA-1
 	expressions of the form tree-ish:path-in-tree.  Instead of

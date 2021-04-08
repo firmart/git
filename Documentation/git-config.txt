@@ -74,24 +74,24 @@ On success, the command returns the exit code 0.
 OPTIONS
 -------
 
---replace-all::
+`--replace-all`::
 	Default behavior is to replace at most one line. This replaces
 	all lines matching the key (and optionally the `value-pattern`).
 
---add::
+`--add`::
 	Adds a new line to the option without altering any existing
 	values.  This is the same as providing '^$' as the `value-pattern`
 	in `--replace-all`.
 
---get::
+`--get`::
 	Get the value for a given key (optionally filtered by a regex
 	matching the value). Returns error code 1 if the key was not
 	found and the last value if multiple key values were found.
 
---get-all::
+`--get-all`::
 	Like get, but returns all values for a multi-valued key.
 
---get-regexp::
+`--get-regexp`::
 	Like `--get-all`, but interprets the name as a regular expression and
 	writes out the key names.  Regular expression matching is currently
 	case-sensitive and done against a canonicalized version of the key
@@ -106,7 +106,7 @@ OPTIONS
 	section as name, do so for all the keys in the section and
 	list them.  Returns error code 1 if no value is found.
 
---global::
+`--global`::
 	For writing options: write to global `~/.gitconfig` file
 	rather than the repository `.git/config`, write to
 	`$XDG_CONFIG_HOME/git/config` file if this file exists and the
@@ -117,7 +117,7 @@ For reading options: read only from global `~/.gitconfig` and from
 +
 See also <<FILES>>.
 
---system::
+`--system`::
 	For writing options: write to system-wide
 	`$(prefix)/etc/gitconfig` rather than the repository
 	`.git/config`.
@@ -127,7 +127,7 @@ rather than from all available files.
 +
 See also <<FILES>>.
 
---local::
+`--local`::
 	For writing options: write to the repository `.git/config` file.
 	This is the default behavior.
 +
@@ -136,7 +136,7 @@ from all available files.
 +
 See also <<FILES>>.
 
---worktree::
+`--worktree`::
 	Similar to `--local` except that `.git/config.worktree` is
 	read from or written to if `extensions.worktreeConfig` is
 	present. If not it's the same as `--local`.
@@ -152,23 +152,23 @@ See also <<FILES>>.
 	section in linkgit:gitrevisions[7] for a more complete list of
 	ways to spell blob names.
 
---remove-section::
+`--remove-section`::
 	Remove the given section from the configuration file.
 
---rename-section::
+`--rename-section`::
 	Rename the given section to a new name.
 
---unset::
+`--unset`::
 	Remove the line matching the key from config file.
 
---unset-all::
+`--unset-all`::
 	Remove all lines matching the key from config file.
 
--l::
---list::
+`-l`::
+`--list`::
 	List all variables set in config file, along with their values.
 
---fixed-value::
+`--fixed-value`::
 	When used with the `value-pattern` argument, treat `value-pattern` as
 	an exact string instead of a regular expression. This will restrict
 	the name/value pairs that are matched to only those where the value
@@ -199,21 +199,21 @@ Valid `<type>`'s include:
   as-is.
 +
 
---bool::
---int::
---bool-or-int::
---path::
---expiry-date::
+`--bool`::
+`--int`::
+`--bool-or-int`::
+`--path`::
+`--expiry-date`::
   Historical options for selecting a type specifier. Prefer instead `--type`
   (see above).
 
---no-type::
+`--no-type`::
   Un-sets the previously set type specifier (if one was previously set). This
   option requests that `git config` not canonicalize the retrieved variable.
   `--no-type` has no effect without `--type=<type>` or `--<type>`.
 
--z::
---null::
+`-z`::
+`--null`::
 	For all options that output values and/or keys, always
 	end values with the null character (instead of a
 	newline). Use newline instead as a delimiter between
@@ -221,17 +221,17 @@ Valid `<type>`'s include:
 	output without getting confused e.g. by values that
 	contain line breaks.
 
---name-only::
+`--name-only`::
 	Output only the names of config variables for `--list` or
 	`--get-regexp`.
 
---show-origin::
+`--show-origin`::
 	Augment the output of all queried config options with the
 	origin type (file, standard input, blob, command line) and
 	the actual origin (config file path, ref, or blob id if
 	applicable).
 
---show-scope::
+`--show-scope`::
 	Similar to `--show-origin` in that it augments the output of
 	all queried config options with the scope of that value
 	(local, global, system, command).
@@ -258,12 +258,12 @@ Valid `<type>`'s include:
 (but note that `--get-color` will omit the trailing newline printed by
 `--type=color`).
 
--e::
---edit::
+`-e`::
+`--edit`::
 	Opens an editor to modify the specified config file; either
 	`--system`, `--global`, or repository (default).
 
---[no-]includes::
+`--[no-]includes`::
 	Respect `include.*` directives in config files when looking up
 	values. Defaults to `off` when a specific file is given (e.g.,
 	using `--file`, `--global`, etc) and `on` when searching all

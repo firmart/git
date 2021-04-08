@@ -19,31 +19,31 @@ linkgit:git-diff[1].
 
 OPTIONS
 -------
--d::
---dir-diff::
+`-d`::
+`--dir-diff`::
 	Copy the modified files to a temporary location and perform
 	a directory diff on them. This mode never prompts before
 	launching the diff tool.
 
--y::
---no-prompt::
+`-y`::
+`--no-prompt`::
 	Do not prompt before launching a diff tool.
 
---prompt::
+`--prompt`::
 	Prompt before each invocation of the diff tool.
 	This is the default behaviour; the option is provided to
 	override any configuration settings.
 
---rotate-to=<file>::
+`--rotate-to=<file>`::
 	Start showing the diff for the given path,
 	the paths before it will move to end and output.
 
---skip-to=<file>::
+`--skip-to=<file>`::
 	Start showing the diff for the given path, skipping all
 	the paths before it.
 
 -t <tool>::
---tool=<tool>::
+`--tool=<tool>`::
 	Use the diff tool specified by <tool>.  Valid values include
 	emerge, kompare, meld, and vimdiff. Run `git difftool --tool-help`
 	for the list of valid <tool> settings.
@@ -74,10 +74,10 @@ of the diff post-image.  `$MERGED` is the name of the file which is
 being compared. `$BASE` is provided for compatibility
 with custom merge tool commands and has the same value as `$MERGED`.
 
---tool-help::
+`--tool-help`::
 	Print a list of diff tools that may be used with `--tool`.
 
---[no-]symlinks::
+`--[no-]symlinks`::
 	`git difftool`'s default behavior is create symlinks to the
 	working tree when run in `--dir-diff` mode and the right-hand
 	side of the comparison yields the same content as the file in
@@ -87,14 +87,14 @@ Specifying `--no-symlinks` instructs `git difftool` to create copies
 instead.  `--no-symlinks` is the default on Windows.
 
 -x <command>::
---extcmd=<command>::
+`--extcmd=<command>`::
 	Specify a custom command for viewing diffs.
 	`git-difftool` ignores the configured defaults and runs
 	`$command $LOCAL $REMOTE` when this option is specified.
 	Additionally, `$BASE` is set in the environment.
 
--g::
---[no-]gui::
+`-g`::
+`--[no-]gui`::
 	When `git-difftool` is invoked with the `-g` or `--gui` option
 	the default diff tool will be read from the configured
 	`diff.guitool` variable instead of `diff.tool`. The `--no-gui`
@@ -102,7 +102,7 @@ instead.  `--no-symlinks` is the default on Windows.
 	is not set, we will fallback in the order of `merge.guitool`,
 	`diff.tool`, `merge.tool` until a tool is found.
 
---[no-]trust-exit-code::
+`--[no-]trust-exit-code`::
 	`git-difftool` invokes a diff tool individually on each file.
 	Errors reported by the diff tool are ignored by default.
 	Use `--trust-exit-code` to make `git-difftool` exit when an

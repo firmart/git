@@ -43,17 +43,17 @@ of directory `d2`.
 +
 For more details, see the 'pathspec' entry in linkgit:gitglossary[7].
 
--f::
---force::
+`-f`::
+`--force`::
 	Override the up-to-date check.
 
--n::
---dry-run::
+`-n`::
+`--dry-run`::
 	Don't actually remove any file(s).  Instead, just show
 	if they exist in the index and would otherwise be removed
 	by the command.
 
--r::
+`-r`::
         Allow recursive removal when a leading directory name is
         given.
 
@@ -62,20 +62,20 @@ For more details, see the 'pathspec' entry in linkgit:gitglossary[7].
 	the list of files, (useful when filenames might be mistaken
 	for command-line options).
 
---cached::
+`--cached`::
 	Use this option to unstage and remove paths only from the index.
 	Working tree files, whether modified or not, will be
 	left alone.
 
---ignore-unmatch::
+`--ignore-unmatch`::
 	Exit with a zero status even if no files matched.
 
--q::
---quiet::
+`-q`::
+`--quiet`::
 	`git rm` normally outputs one line (in the form of an `rm` command)
 	for each file removed. This option suppresses that output.
 
---pathspec-from-file=<file>::
+`--pathspec-from-file=<file>`::
 	Pathspec is passed in `<file>` instead of commandline args. If
 	`<file>` is exactly `-` then standard input is used. Pathspec
 	elements are separated by LF or CR/LF. Pathspec elements can be
@@ -83,7 +83,7 @@ For more details, see the 'pathspec' entry in linkgit:gitglossary[7].
 	(see linkgit:git-config[1]). See also `--pathspec-file-nul` and
 	global `--literal-pathspecs`.
 
---pathspec-file-nul::
+`--pathspec-file-nul`::
 	Only meaningful with `--pathspec-from-file`. Pathspec elements are
 	separated with NUL character and all other characters are taken
 	literally (including newlines and quotes).

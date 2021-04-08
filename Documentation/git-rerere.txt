@@ -35,7 +35,7 @@ Normally, `git rerere` is run without arguments or user-intervention.
 However, it has several commands that allow it to interact with
 its working state.
 
-'clear'::
+`clear`::
 
 Reset the metadata used by rerere if a merge resolution is to be
 aborted.  Calling `git am [--skip|--abort]` or `git rebase [--skip|--abort]`
@@ -46,24 +46,24 @@ will automatically invoke this command.
 Reset the conflict resolutions which rerere has recorded for the current
 conflict in <pathspec>.
 
-'diff'::
+`diff`::
 
 Display diffs for the current state of the resolution.  It is
 useful for tracking what has changed while the user is resolving
 conflicts.  Additional arguments are passed directly to the system
 'diff' command installed in PATH.
 
-'status'::
+`status`::
 
 Print paths with conflicts whose merge resolution rerere will record.
 
-'remaining'::
+`remaining`::
 
 Print paths with conflicts that have not been autoresolved by rerere.
 This includes paths whose resolutions cannot be tracked by rerere,
 such as conflicting submodules.
 
-'gc'::
+`gc`::
 
 Prune records of conflicted merges that
 occurred a long time ago.  By default, unresolved conflicts older

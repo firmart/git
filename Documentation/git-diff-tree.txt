@@ -26,29 +26,29 @@ OPTIONS
 -------
 include::diff-options.txt[]
 
-<tree-ish>::
+`<tree-ish>`::
 	The id of a tree object.
 
 <path>...::
 	If provided, the results are limited to a subset of files
 	matching one of the provided pathspecs.
 
--r::
+`-r`::
         recurse into sub-trees
 
--t::
+`-t`::
 	show tree entry itself as well as subtrees.  Implies `-r`.
 
---root::
+`--root`::
 	When `--root` is specified the initial commit will be shown as a big
 	creation event. This is equivalent to a diff against the NULL tree.
 
---merge-base::
+`--merge-base`::
 	Instead of comparing the <tree-ish>s directly, use the merge
 	base between the two <tree-ish>s as the "before" side.  There
 	must be two <tree-ish>s given and they must both be commits.
 
---stdin::
+`--stdin`::
 	When `--stdin` is specified, the command does not take
 	<tree-ish> arguments from the command line.  Instead, it
 	reads lines containing either two <tree>, one <commit>, or a
@@ -68,29 +68,29 @@ newline, is printed.
 The following flags further affect the behavior when comparing
 commits (but not trees).
 
--m::
+`-m`::
 	By default, `git diff-tree --stdin` does not show
 	differences for merge commits.  With this flag, it shows
 	differences to that commit from all of its parents. See
 	also `-c`.
 
--s::
+`-s`::
 	By default, `git diff-tree --stdin` shows differences,
 	either in machine-readable form (without `-p`) or in patch
 	form (with `-p`).  This output can be suppressed.  It is
 	only useful with `-v` flag.
 
--v::
+`-v`::
 	This flag causes `git diff-tree --stdin` to also show
 	the commit message before the differences.
 
 include::pretty-options.txt[]
 
---no-commit-id::
+`--no-commit-id`::
 	`git diff-tree` outputs a line with the commit ID when
 	applicable.  This flag suppressed the commit ID output.
 
--c::
+`-c`::
 	This flag changes the way a merge commit is displayed
 	(which means it is useful only when the command is given
 	one <tree-ish>, or `--stdin`).  It shows the differences
@@ -100,7 +100,7 @@ include::pretty-options.txt[]
 	Furthermore, it lists only files which were modified
 	from all parents.
 
---cc::
+`--cc`::
 	This flag changes the way a merge commit patch is displayed,
 	in a similar way to the `-c` option. It implies the `-c`
 	and `-p` options and further compresses the patch output
@@ -110,14 +110,14 @@ include::pretty-options.txt[]
 	itself and the commit log message is not shown, just like in any other
 	"empty diff" case.
 
---combined-all-paths::
+`--combined-all-paths`::
 	This flag causes combined diffs (used for merge commits) to
 	list the name of the file from all parents.  It thus only has
 	effect when `-c` or `--cc` are specified, and is likely only
 	useful if filename changes are detected (i.e. when either
 	rename or copy detection have been requested).
 
---always::
+`--always`::
 	Show the commit itself and the commit log message even
 	if the diff itself is empty.
 

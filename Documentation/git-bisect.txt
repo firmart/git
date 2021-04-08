@@ -354,7 +354,7 @@ determine the eventual outcome of the bisect session.
 
 OPTIONS
 -------
---no-checkout::
+`--no-checkout`::
 +
 Do not checkout the new working tree at each iteration of the bisection
 process. Instead just update a special reference named `BISECT_HEAD` to make
@@ -365,7 +365,7 @@ does not require a checked out tree.
 +
 If the repository is bare, `--no-checkout` is assumed.
 
---first-parent::
+`--first-parent`::
 +
 Follow only the first parent commit upon seeing a merge commit.
 +

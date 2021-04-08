@@ -27,11 +27,11 @@ each commit introduces are shown.
 OPTIONS
 -------
 
---follow::
+`--follow`::
 	Continue listing the history of a file beyond renames
 	(works only for a single file).
 
---no-decorate::
+`--no-decorate`::
 --decorate[=short|full|auto|no]::
 	Print out the ref names of any commits that are shown. If 'short' is
 	specified, the ref name prefixes `refs/heads/`, `refs/tags/` and
@@ -41,8 +41,8 @@ OPTIONS
 	are shown as if 'short' were given, otherwise no ref names are
 	shown. The default option is 'short'.
 
---decorate-refs=<pattern>::
---decorate-refs-exclude=<pattern>::
+`--decorate-refs=<pattern>`::
+`--decorate-refs-exclude=<pattern>`::
 	If no `--decorate-refs` is given, pretend as if all refs were
 	included.  For each candidate, do not use it for decoration if it
 	matches any patterns given to `--decorate-refs-exclude` or if it
@@ -51,17 +51,17 @@ OPTIONS
 	the decorations, but an explicit `--decorate-refs` pattern will
 	override a match in `log.excludeDecoration`.
 
---source::
+`--source`::
 	Print out the ref name given on the command line by which each
 	commit was reached.
 
---[no-]mailmap::
---[no-]use-mailmap::
+`--[no-]mailmap`::
+`--[no-]use-mailmap`::
 	Use mailmap file to map author and committer names and email
 	addresses to canonical real names and email addresses. See
 	linkgit:git-shortlog[1].
 
---full-diff::
+`--full-diff`::
 	Without this flag, `git log -p <path>...` shows commits that
 	touch the specified paths, and diffs about the same specified
 	paths.  With this, the full diff is shown for commits that touch
@@ -71,7 +71,7 @@ OPTIONS
 Note that this affects all diff-based output types, e.g. those
 produced by `--stat`, etc.
 
---log-size::
+`--log-size`::
 	Include a line ``log size <number>'' in the output for each commit,
 	where <number> is the length of that commit's message in bytes.
 	Intended to speed up tools that read log messages from `git log`

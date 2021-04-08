@@ -29,22 +29,22 @@ a fairly native interface for users.
 
 COMMANDS
 --------
-blame::
+`blame`::
 	Start a blame viewer on the specified file on the given
 	version (or working directory if not specified).
 
-browser::
+`browser`::
 	Start a tree browser showing all files in the specified
 	commit.  Files selected through the
 	browser are opened in the blame viewer.
 
-citool::
+`citool`::
 	Start `git gui` and arrange to make exactly one commit before
 	exiting and returning to the shell.  The interface is limited
 	to only commit actions, slightly reducing the application's
 	startup time and simplifying the menubar.
 
-version::
+`version`::
 	Display the currently running version of `git gui`.
 
 

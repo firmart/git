@@ -33,11 +33,11 @@ variables, but does *not* export them to the environment.
 FUNCTIONS
 ---------
 
-die::
+`die`::
 	exit after emitting the supplied error message to the
 	standard error stream.
 
-usage::
+`usage`::
 	die with the usage message.
 
 set_reflog_action::

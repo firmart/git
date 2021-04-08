@@ -23,7 +23,7 @@ otherwise print the input as-is.
 
 OPTIONS
 -------
---stdin::
+`--stdin`::
 	Read contacts, one per line, from the standard input after exhausting
 	contacts provided on the command-line.
 

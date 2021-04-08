@@ -34,23 +34,23 @@ closely as possible.
 --base-path <path>::
 Prepend 'path' to requested CVSROOT
 
---strict-paths::
+`--strict-paths`::
 Don't allow recursing into subdirectories
 
---export-all::
+`--export-all`::
 Don't check for `gitcvs.enabled` in config. You also have to specify a list
 of allowed directories (see below) if you want to use this option.
 
--V::
---version::
+`-V`::
+`--version`::
 Print version information and exit
 
--h::
--H::
---help::
+`-h`::
+`-H`::
+`--help`::
 Print usage information and exit
 
-<directory>::
+`<directory>`::
 You can specify a list of allowed directories. If no directories
 are given, all are allowed. This is an additional restriction, gitcvs
 access still needs to be enabled by the `gitcvs.enabled` config option

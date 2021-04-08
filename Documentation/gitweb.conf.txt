@@ -624,7 +624,7 @@ As one can see it lacks the \'sub' element.
 The meaning of each part of feature configuration is described
 below:
 
-default::
+`default`::
 	List (array reference) of feature parameters (if there are any),
 	used also to toggle (enable or disable) given feature.
 +
@@ -638,7 +638,7 @@ section.
 To disable features that accept parameters (are configurable), you
 need to set this element to empty list i.e. `[]`.
 
-override::
+`override`::
 	If this field has a true value then the given feature is
 	overridable, which means that it can be configured
 	(or enabled/disabled) on a per-repository basis.
@@ -648,7 +648,7 @@ config variable in the per-repository Git configuration file.
 +
 *Note* that no feature is overridable by default.
 
-sub::
+`sub`::
 	Internal detail of implementation.  What is important is that
 	if this field is not present then per-repository override for
 	given feature is not supported.
@@ -663,7 +663,7 @@ below.  This should be a complete list, but ultimately the authoritative
 and complete list is in gitweb.cgi source code, with features described
 in the comments.
 
-blame::
+`blame`::
 	Enable the "blame" and "blame_incremental" blob views, showing for
 	each line the last commit that modified it; see linkgit:git-blame[1].
 	This can be very CPU-intensive and is therefore disabled by default.
@@ -671,7 +671,7 @@ blame::
 This feature can be configured on a per-repository basis via
 repository's `gitweb.blame` configuration variable (boolean).
 
-snapshot::
+`snapshot`::
 	Enable and configure the "snapshot" action, which allows user to
 	download a compressed archive of any tree or commit, as produced
 	by linkgit:git-archive[1] and possibly additionally compressed.
@@ -688,7 +688,7 @@ repository's `gitweb.snapshot` configuration variable, which contains
 a comma separated list of formats or "none" to disable snapshots.
 Unknown values are ignored.
 
-grep::
+`grep`::
 	Enable grep search, which lists the files in currently selected
 	tree (directory) containing the given string; see linkgit:git-grep[1].
 	This can be potentially CPU-intensive, of course.  Enabled by default.
@@ -696,7 +696,7 @@ grep::
 This feature can be configured on a per-repository basis via
 repository's `gitweb.grep` configuration variable (boolean).
 
-pickaxe::
+`pickaxe`::
 	Enable the so called pickaxe search, which will list the commits
 	that introduced or removed a given string in a file.  This can be
 	practical and quite faster alternative to "blame" action, but it is
@@ -709,7 +709,7 @@ linkgit:gitdiffcore[7] for more details).
 This feature can be configured on a per-repository basis by setting
 repository's `gitweb.pickaxe` configuration variable (boolean).
 
-show-sizes::
+`show-sizes`::
 	Enable showing size of blobs (ordinary files) in a "tree" view, in a
 	separate column, similar to what `ls -l` does; see description of
 	`-l` option in linkgit:git-ls-tree[1] manpage.  This costs a bit of
@@ -718,7 +718,7 @@ show-sizes::
 This feature can be configured on a per-repository basis via
 repository's `gitweb.showSizes` configuration variable (boolean).
 
-patches::
+`patches`::
 	Enable and configure "patches" view, which displays list of commits in email
 	(plain text) output format; see also linkgit:git-format-patch[1].
 	The value is the maximum number of patches in a patchset generated
@@ -730,7 +730,7 @@ patches::
 This feature can be configured on a per-repository basis via
 repository's `gitweb.patches` configuration variable (integer).
 
-avatar::
+`avatar`::
 	Avatar support.  When this feature is enabled, views such as
 	"shortlog" or "commit" will display an avatar associated with
 	the email of each committer and author.
@@ -751,7 +751,7 @@ default font sizes or lineheights are changed (e.g. via adding extra
 CSS stylesheet in `@stylesheets`), it may be appropriate to change
 these values.
 
-highlight::
+`highlight`::
 	Server-side syntax highlight support in "blob" view.  It requires
 	`$highlight_bin` program to be available (see the description of
 	this variable in the "Configuration variables" section above),
@@ -773,7 +773,7 @@ repository's `gitweb.remote_heads` configuration variable (boolean).
 
 The remaining features cannot be overridden on a per project basis.
 
-search::
+`search`::
 	Enable text search, which will list the commits which match author,
 	committer or commit text to a given string; see the description of
 	`--author`, `--committer` and `--grep` options in linkgit:git-log[1]
@@ -781,7 +781,7 @@ search::
 +
 Project specific override is not supported.
 
-forks::
+`forks`::
 	If this feature is enabled, `gitweb` considers projects in
 	subdirectories of project root (basename) to be forks of existing
 	projects.  For each project +$projname.git+, projects in the
@@ -797,7 +797,7 @@ in that file.
 +
 Project specific override is not supported.
 
-actions::
+`actions`::
 	Insert custom links to the action bar of all project pages.  This
 	allows you to link to third-party scripts integrating into `gitweb`.
 +
@@ -823,7 +823,7 @@ This adds a link titled "graphiclog" after the "summary" link, leading to
 +
 Project specific override is not supported.
 
-timed::
+`timed`::
 	Enable displaying how much time and how many Git commands it took to
 	generate and display each page in the page footer (at the bottom of
 	page).  For example the footer might contain: "This page took 6.53325
@@ -831,7 +831,7 @@ timed::
 +
 Project specific override is not supported.
 
-javascript-timezone::
+`javascript-timezone`::
 	Enable and configure the ability to change a common time zone for dates
 	in `gitweb` output via JavaScript.  Dates in `gitweb` output include
 	authordate and committerdate in "commit", "commitdiff" and "log"
@@ -859,7 +859,7 @@ time zones in the form of "+/-HHMM", such as "+0200".
 +
 Project specific override is not supported.
 
-extra-branch-refs::
+`extra-branch-refs`::
 	List of additional directories under `refs` which are going to
 	be used as branch refs. For example if you have a gerrit setup
 	where all branches under refs/heads/ are official,

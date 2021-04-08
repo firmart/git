@@ -27,7 +27,7 @@ without GNU gettext.
 FUNCTIONS
 ---------
 
-gettext::
+`gettext`::
 	Currently a dummy fall-through function implemented as a wrapper
 	around `printf(1)`. Will be replaced by a real gettext
 	implementation in a later version.

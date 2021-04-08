@@ -29,7 +29,7 @@ Git repository.
 SUBCOMMANDS
 -----------
 
-register::
+`register`::
 	Initialize Git config values so any scheduled maintenance will
 	start running on this repository. This adds the repository to the
 	`maintenance.repo` config variable in the current user's global
@@ -55,25 +55,25 @@ task:
 setting `maintenance.auto = false` in the current repository. This config
 setting will remain after a `git maintenance unregister` command.
 
-run::
+`run`::
 	Run one or more maintenance tasks. If one or more `--task` options
 	are specified, then those tasks are run in that order. Otherwise,
 	the tasks are determined by which `maintenance.<task>.enabled`
 	config options are true. By default, only `maintenance.gc.enabled`
 	is true.
 
-start::
+`start`::
 	Start running maintenance on the current repository. This performs
 	the same config updates as the `register` subcommand, then updates
 	the background scheduler to run `git maintenance run --scheduled`
 	on an hourly basis.
 
-stop::
+`stop`::
 	Halt the background maintenance schedule. The current repository
 	is not removed from the list of maintained repositories, in case
 	the background maintenance is restarted later.
 
-unregister::
+`unregister`::
 	Remove the current repository from background maintenance. This
 	only removes the repository from the configured list. It does not
 	stop the background maintenance processes from running.
@@ -81,7 +81,7 @@ unregister::
 TASKS
 -----
 
-commit-graph::
+`commit-graph`::
 	The `commit-graph` job updates the `commit-graph` files incrementally,
 	then verifies that the written data is correct. The incremental
 	write is safe to run alongside concurrent Git processes since it
@@ -89,7 +89,7 @@ commit-graph::
 	`commit-graph-chain` file. They will be deleted by a later run based
 	on the expiration delay.
 
-prefetch::
+`prefetch`::
 	The `prefetch` task updates the object directory with the latest
 	objects from all registered remotes. For each remote, a `git fetch`
 	command is run. The refmap is custom to avoid updating local or remote
@@ -104,7 +104,7 @@ already be obtained, so the real fetch would go faster.  In the ideal case,
 it will just become an update to a bunch of remote-tracking branches without
 any object transfer.
 
-gc::
+`gc`::
 	Clean up unnecessary files and optimize the local repository. "GC"
 	stands for "garbage collection," but this task performs many
 	smaller tasks. This task can be expensive for large repositories,
@@ -112,7 +112,7 @@ gc::
 	be disruptive in some situations, as it deletes stale data. See
 	linkgit:git-gc[1] for more details on garbage collection in Git.
 
-loose-objects::
+`loose-objects`::
 	The `loose-objects` job cleans up loose objects and places them into
 	pack-files. In order to prevent race conditions with concurrent Git
 	commands, it follows a two-step process. First, it deletes any loose
@@ -127,7 +127,7 @@ loose-objects::
 	advisable to enable both the `loose-objects` and `gc` tasks at the
 	same time.
 
-incremental-repack::
+`incremental-repack`::
 	The `incremental-repack` job repacks the object directory
 	using the `multi-pack-index` feature. In order to prevent race
 	conditions with concurrent Git commands, it follows a two-step
@@ -145,7 +145,7 @@ incremental-repack::
 	which is a special case that attempts to repack all pack-files
 	into a single pack-file.
 
-pack-refs::
+`pack-refs`::
 	The `pack-refs` task collects the loose reference files and
 	collects them into a single file. This speeds up operations that
 	need to iterate across many references. See linkgit:git-pack-refs[1]
@@ -153,7 +153,7 @@ pack-refs::
 
 OPTIONS
 -------
---auto::
+`--auto`::
 	When combined with the `run` subcommand, run maintenance tasks
 	only if certain thresholds are met. For example, the `gc` task
 	runs when the number of loose objects exceeds the number stored
@@ -161,7 +161,7 @@ OPTIONS
 	exceeds the `gc.autoPackLimit` config setting. Not compatible with
 	the `--schedule` option.
 
---schedule::
+`--schedule`::
 	When combined with the `run` subcommand, run maintenance tasks
 	only if certain time conditions are met, as specified by the
 	`maintenance.<task>.schedule` config value for each `<task>`.
@@ -171,10 +171,10 @@ OPTIONS
 	the `--task=<task>` option(s) or those with
 	`maintenance.<task>.enabled` set to true.
 
---quiet::
+`--quiet`::
 	Do not report progress or other information over `stderr`.
 
---task=<task>::
+`--task=<task>`::
 	If this option is specified one or more times, then only run the
 	specified tasks in the specified order. If no `--task=<task>`
 	arguments are specified, then only the tasks with

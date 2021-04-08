@@ -99,45 +99,45 @@ In either format, values can be specified in any form that Git
 recognizes as an object name.  Commands in any other format or a
 repeated <ref> produce an error.  Command meanings are:
 
-update::
+`update`::
 	Set <ref> to <newvalue> after verifying <oldvalue>, if given.
 	Specify a zero <newvalue> to ensure the ref does not exist
 	after the update and/or a zero <oldvalue> to make sure the
 	ref does not exist before the update.
 
-create::
+`create`::
 	Create <ref> with <newvalue> after verifying it does not
 	exist.  The given <newvalue> may not be zero.
 
-delete::
+`delete`::
 	Delete <ref> after verifying it exists with <oldvalue>, if
 	given.  If given, <oldvalue> may not be zero.
 
-verify::
+`verify`::
 	Verify <ref> against <oldvalue> but do not change it.  If
 	<oldvalue> is zero or missing, the ref must not exist.
 
-option::
+`option`::
 	Modify behavior of the next command naming a <ref>.
 	The only valid option is `no-deref` to avoid dereferencing
 	a symbolic ref.
 
-start::
+`start`::
 	Start a transaction. In contrast to a non-transactional session, a
 	transaction will automatically abort if the session ends without an
 	explicit commit. This command may create a new empty transaction when
 	the current one has been committed or aborted already.
 
-prepare::
+`prepare`::
 	Prepare to commit the transaction. This will create lock files for all
 	queued reference updates. If one reference could not be locked, the
 	transaction will be aborted.
 
-commit::
+`commit`::
 	Commit all reference updates queued for the transaction, ending the
 	transaction.
 
-abort::
+`abort`::
 	Abort the transaction, releasing all locks if the transaction is in
 	prepared state.
 

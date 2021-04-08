@@ -16,12 +16,12 @@ Validates the gpg signature created by `git tag`.
 
 OPTIONS
 -------
---raw::
+`--raw`::
 	Print the raw gpg status output to standard error instead of the normal
 	human-readable output.
 
--v::
---verbose::
+`-v`::
+`--verbose`::
 	Print the contents of the tag object before validating it.
 
 <tag>...::

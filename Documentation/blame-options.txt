@@ -1,12 +1,12 @@
--b::
+`-b`::
 	Show blank SHA-1 for boundary commits.  This can also
 	be controlled via the `blame.blankBoundary` config option.
 
---root::
+`--root`::
 	Do not treat root commits as boundaries.  This can also be
 	controlled via the `blame.showRoot` config option.
 
---show-stats::
+`--show-stats`::
 	Include additional statistics at the end of blame output.
 
 -L <start>,<end>::
@@ -20,10 +20,10 @@
 +
 include::line-range-format.txt[]
 
--l::
+`-l`::
 	Show long rev (Default: off).
 
--t::
+`-t`::
 	Show raw timestamp (Default: off).
 
 -S <revs-file>::
@@ -37,26 +37,26 @@ include::line-range-format.txt[]
 	START.  `git blame --reverse START` is taken as `git blame
 	--reverse START..HEAD` for convenience.
 
---first-parent::
+`--first-parent`::
 	Follow only the first parent commit upon seeing a merge
 	commit. This option can be used to determine when a line
 	was introduced to a particular integration branch, rather
 	than when it was introduced to the history overall.
 
--p::
---porcelain::
+`-p`::
+`--porcelain`::
 	Show in a format designed for machine consumption.
 
---line-porcelain::
+`--line-porcelain`::
 	Show the porcelain format, but output commit information for
 	each line, not just the first time a commit is referenced.
 	Implies `--porcelain`.
 
---incremental::
+`--incremental`::
 	Show the result incrementally in a format designed for
 	machine consumption.
 
---encoding=<encoding>::
+`--encoding=<encoding>`::
 	Specifies the encoding used to output author names
 	and commit summaries. Setting it to `none` makes blame
 	output unconverted data. For more information see the
@@ -77,14 +77,14 @@ include::line-range-format.txt[]
 	iso format is used. For supported values, see the discussion
 	of the `--date` option at linkgit:git-log[1].
 
---[no-]progress::
+`--[no-]progress`::
 	Progress status is reported on the standard error stream
 	by default when it is attached to a terminal. This flag
 	enables progress reporting even if not attached to a
 	terminal. Can't use `--progress` together with `--porcelain`
 	or `--incremental`.
 
--M[<num>]::
+`-M[<num>]`::
 	Detect moved or copied lines within a file. When a commit
 	moves or copies a block of lines (e.g. the original file
 	has A and then B, and the commit changes it to B and then
@@ -100,7 +100,7 @@ alphanumeric characters that Git must detect as moving/copying
 within a file for it to associate those lines with the parent
 commit. The default value is 20.
 
--C[<num>]::
+`-C[<num>]`::
 	In addition to `-M`, detect lines moved or copied from other
 	files that were modified in the same commit.  This is
 	useful when you reorganize your program and move code
@@ -136,5 +136,5 @@ take effect.
 	option.  An empty file name, `""`, will clear the list of revs from
 	previously processed files.
 
--h::
+`-h`::
 	Show help message.

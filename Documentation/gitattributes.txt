@@ -29,13 +29,13 @@ listed on the line are given to the path.
 
 Each attribute can be in one of these states for a given path:
 
-Set::
+`Set`::
 
 	The path has the attribute with special value "true";
 	this is specified by listing only the name of the
 	attribute in the attribute list.
 
-Unset::
+`Unset`::
 
 	The path has the attribute with special value "false";
 	this is specified by listing the name of the attribute
@@ -48,7 +48,7 @@ Set to a value::
 	followed by an equal sign `=` and its value in the
 	attribute list.
 
-Unspecified::
+`Unspecified`::
 
 	No pattern matches the path, and nothing says if
 	the path has or does not have the attribute, the
@@ -129,13 +129,13 @@ Note that setting `core.autocrlf` to `true` or `input` overrides
 `core.eol` (see the definitions of those options in
 linkgit:git-config[1]).
 
-Set::
+`Set`::
 
 	Setting the `text` attribute on a path enables end-of-line
 	normalization and marks the path as a text file.  End-of-line
 	conversion takes place without guessing the content type.
 
-Unset::
+`Unset`::
 
 	Unsetting the `text` attribute on a path tells Git not to
 	attempt any end-of-line conversion upon checkin or checkout.
@@ -147,7 +147,7 @@ Set to string value "auto"::
 	text, its line endings are converted to LF on checkin.
 	When the file has been committed with CRLF, no conversion is done.
 
-Unspecified::
+`Unspecified`::
 
 	If the `text` attribute is unspecified, Git uses the
 	`core.autocrlf` configuration variable to determine if the
@@ -707,26 +707,26 @@ shown on the hunk header `@@ -k,l +n,m @@` line, tell Git to use an
 external command to generate the diff, or ask Git to convert binary
 files to a text format before generating the diff.
 
-Set::
+`Set`::
 
 	A path to which the `diff` attribute is set is treated
 	as text, even when they contain byte values that
 	normally never appear in text files, such as NUL.
 
-Unset::
+`Unset`::
 
 	A path to which the `diff` attribute is unset will
 	generate `Binary files differ` (or a binary patch, if
 	binary patches are enabled).
 
-Unspecified::
+`Unspecified`::
 
 	A path to which the `diff` attribute is unspecified
 	first gets its contents inspected, and if it looks like
 	text and is smaller than `core.bigFileThreshold`, it is treated
 	as text. Otherwise it would generate `Binary files differ`.
 
-String::
+`String`::
 
 	Diff is shown using the specified diff driver.  Each driver may
 	specify one or more options, as described in the following
@@ -1000,20 +1000,20 @@ The attribute `merge` affects how three versions of a file are
 merged when a file-level merge is necessary during `git merge`,
 and other commands such as `git revert` and `git cherry-pick`.
 
-Set::
+`Set`::
 
 	Built-in 3-way merge driver is used to merge the
 	contents in a way similar to 'merge' command of `RCS`
 	suite.  This is suitable for ordinary text files.
 
-Unset::
+`Unset`::
 
 	Take the version from the current branch as the
 	tentative merge result, and declare that the merge has
 	conflicts.  This is suitable for binary files that do
 	not have a well-defined merge semantics.
 
-Unspecified::
+`Unspecified`::
 
 	By default, this uses the same built-in 3-way merge
 	driver as is the case when the `merge` attribute is set.
@@ -1021,7 +1021,7 @@ Unspecified::
 	different merge driver to be used with paths for which the
 	`merge` attribute is unspecified.
 
-String::
+`String`::
 
 	3-way merge is performed using the specified custom
 	merge driver.  The built-in 3-way merge driver can be
@@ -1036,7 +1036,7 @@ Built-in merge drivers
 There are a few built-in low-level merge drivers defined that
 can be asked for via the `merge` attribute.
 
-text::
+`text`::
 
 	Usual 3-way file level merge for text files.  Conflicted
 	regions are marked with conflict markers `<<<<<<<`,
@@ -1045,13 +1045,13 @@ text::
 	from the merged branch appears after the `=======`
 	marker.
 
-binary::
+`binary`::
 
 	Keep the version from your branch in the work tree, but
 	leave the path in the conflicted state for the user to
 	sort out.
 
-union::
+`union`::
 
 	Run 3-way file level merge for text files, but take
 	lines from both versions, instead of leaving conflict
@@ -1132,22 +1132,22 @@ The `core.whitespace` configuration variable allows you to define what
 the project (See linkgit:git-config[1]).  This attribute gives you finer
 control per path.
 
-Set::
+`Set`::
 
 	Notice all types of potential whitespace errors known to Git.
 	The tab width is taken from the value of the `core.whitespace`
 	configuration variable.
 
-Unset::
+`Unset`::
 
 	Do not notice anything as error.
 
-Unspecified::
+`Unspecified`::
 
 	Use the value of the `core.whitespace` configuration variable to
 	decide what to notice as error.
 
-String::
+`String`::
 
 	Specify a comma separate list of common whitespace problems to
 	notice in the same format as the `core.whitespace` configuration

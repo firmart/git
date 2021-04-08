@@ -25,20 +25,20 @@ updates it from the current repository, sending named refs.
 
 OPTIONS
 -------
---receive-pack=<git-receive-pack>::
+`--receive-pack=<git-receive-pack>`::
 	Path to the `git-receive-pack` program on the remote
 	end.  Sometimes useful when pushing to a remote
 	repository over ssh, and you do not have the program in
 	a directory on the default `$PATH`.
 
---exec=<git-receive-pack>::
+`--exec=<git-receive-pack>`::
 	Same as `--receive-pack`=<git-receive-pack>.
 
---all::
+`--all`::
 	Instead of explicitly specifying which refs to update,
 	update all heads that locally exist.
 
---stdin::
+`--stdin`::
 	Take the list of refs from stdin, one per line. If there
 	are refs specified on the command line in addition to this
 	option, then the refs from stdin are processed after those
@@ -48,29 +48,29 @@ If `--stateless-rpc` is specified together with this option then
 the list of refs must be in packet format (pkt-line). Each ref must
 be in a separate packet, and the list must end with a flush packet.
 
---dry-run::
+`--dry-run`::
 	Do everything except actually send the updates.
 
---force::
+`--force`::
 	Usually, the command refuses to update a remote ref that
 	is not an ancestor of the local ref used to overwrite it.
 	This flag disables the check.  What this means is that
 	the remote repository can lose commits; use it with
 	care.
 
---verbose::
+`--verbose`::
 	Run verbosely.
 
---thin::
+`--thin`::
 	Send a "thin" pack, which records objects in deltified form based
 	on objects not included in the pack to reduce network traffic.
 
---atomic::
+`--atomic`::
 	Use an atomic transaction for updating the refs. If any of the refs
 	fails to update then the entire push will fail without changing any
 	refs.
 
---[no-]signed::
+`--[no-]signed`::
 --signed=(true|false|if-asked)::
 	GPG-sign the push request to update refs on the receiving
 	side, to allow it to be checked by the hooks and/or be
@@ -81,18 +81,18 @@ be in a separate packet, and the list must end with a flush packet.
 	will also fail if the actual call to `gpg --sign` fails.  See
 	linkgit:git-receive-pack[1] for the details on the receiving end.
 
---push-option=<string>::
+`--push-option=<string>`::
 	Pass the specified string as a push option for consumption by
 	hooks on the server side.  If the server doesn't support push
 	options, error out.  See linkgit:git-push[1] and
 	linkgit:githooks[5] for details.
 
-<host>::
+`<host>`::
 	A remote host to house the repository.  When this
 	part is specified, `git-receive-pack` is invoked via
 	ssh.
 
-<directory>::
+`<directory>`::
 	The repository to update.
 
 <ref>...::

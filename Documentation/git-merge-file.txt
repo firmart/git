@@ -60,19 +60,19 @@ OPTIONS
 	looks like it came from files x, y and z instead of
 	from files a, b and c.
 
--p::
+`-p`::
 	Send results to standard output instead of overwriting
 	`<current-file>`.
 
--q::
+`-q`::
 	Quiet; do not warn about conflicts.
 
 --diff3::
 	Show conflicts in "diff3" style.
 
---ours::
---theirs::
---union::
+`--ours`::
+`--theirs`::
+`--union`::
 	Instead of leaving conflicts in the file, resolve conflicts
 	favouring our (or their or both) side of the lines.
 
