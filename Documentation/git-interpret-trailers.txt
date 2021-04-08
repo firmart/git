@@ -84,7 +84,7 @@ OPTIONS
 	trailer to the input messages. See the description of this
 	command.
 
---where <placement>::
+`--where <placement>`::
 `--no-where`::
 	Specify where all new trailers will be added.  A setting
 	provided with `--where` overrides all configuration variables
@@ -92,7 +92,7 @@ OPTIONS
 	`--where` or `--no-where`. Possible values are `after`, `before`,
 	`end` or `start`.
 
---if-exists <action>::
+`--if-exists <action>`::
 `--no-if-exists`::
 	Specify what action will be performed when there is already at
 	least one trailer with the same <token> in the message.  A setting
@@ -101,7 +101,7 @@ OPTIONS
 	`--if-exists` or `--no-if-exists`. Possible actions are `addIfDifferent`,
 	`addIfDifferentNeighbor`, `add`, `replace` and `doNothing`.
 
---if-missing <action>::
+`--if-missing <action>`::
 `--no-if-missing`::
 	Specify what action will be performed when there is no other
 	trailer with the same <token> in the message.  A setting

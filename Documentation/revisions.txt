@@ -318,7 +318,7 @@ three notations also consider its parents. For example you can say
 Revision Range Summary
 ----------------------
 
-'<rev>'::
+`<rev>`::
 	Include commits that are reachable from <rev> (i.e. <rev> and its
 	ancestors).
 

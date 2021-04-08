@@ -95,25 +95,25 @@ multiple commits.
 OPTIONS
 -------
 
---setup <command>::
+`--setup <command>`::
 	This is not a real filter executed for each commit but a one
 	time setup just before the loop. Therefore no commit-specific
 	variables are defined yet.  Functions or variables defined here
 	can be used or modified in the following filter steps except
 	the commit filter, for technical reasons.
 
---subdirectory-filter <directory>::
+`--subdirectory-filter <directory>`::
 	Only look at the history which touches the given subdirectory.
 	The result will contain that directory (and only that) as its
 	project root. Implies <<Remap_to_ancestor>>.
 
---env-filter <command>::
+`--env-filter <command>`::
 	This filter may be used if you only need to modify the environment
 	in which the commit will be performed.  Specifically, you might
 	want to rewrite the author/committer name/email/time environment
 	variables (see linkgit:git-commit-tree[1] for details).
 
---tree-filter <command>::
+`--tree-filter <command>`::
 	This is the filter for rewriting the tree and its contents.
 	The argument is evaluated in shell with the working
 	directory set to the root of the checked out tree.  The new tree
@@ -121,14 +121,14 @@ OPTIONS
 	are auto-removed - neither .gitignore files nor any other ignore
 	rules *HAVE ANY EFFECT*!).
 
---index-filter <command>::
+`--index-filter <command>`::
 	This is the filter for rewriting the index.  It is similar to the
 	tree filter but does not check out the tree, which makes it much
 	faster.  Frequently used with `git rm --cached
 	--ignore-unmatch ...`, see EXAMPLES below.  For hairy
 	cases, see linkgit:git-update-index[1].
 
---parent-filter <command>::
+`--parent-filter <command>`::
 	This is the filter for rewriting the commit's parent list.
 	It will receive the parent string on stdin and shall output
 	the new parent string on stdout.  The parent string is in
@@ -136,13 +136,13 @@ OPTIONS
 	the initial commit, `-p parent` for a normal commit and
 	`-p parent1 -p parent2 -p parent3 ...` for a merge commit.
 
---msg-filter <command>::
+`--msg-filter <command>`::
 	This is the filter for rewriting the commit messages.
 	The argument is evaluated in the shell with the original
 	commit message on standard input; its standard output is
 	used as the new commit message.
 
---commit-filter <command>::
+`--commit-filter <command>`::
 	This is the filter for performing the commit.
 	If this filter is specified, it will be called instead of the
 	`git commit-tree` command, with arguments of the form
@@ -162,7 +162,7 @@ You can also use the `git_commit_non_empty_tree "$@"` instead of
 `git commit-tree "$@"` if you don't wish to keep commits with a single parent
 and that makes no change to the tree.
 
---tag-name-filter <command>::
+`--tag-name-filter <command>`::
 	This is the filter for rewriting tag names. When passed,
 	it will be called for every tag ref that points to a rewritten
 	object (or to a tag object which points to a rewritten object).
@@ -193,11 +193,11 @@ to other tags will be rewritten to point to the underlying commit.
 	`--commit-filter`, though the same effect can be achieved by using the
 	provided `git_commit_non_empty_tree` function in a commit filter.
 
---original <namespace>::
+`--original <namespace>`::
 	Use this option to set the namespace where the original commits
 	will be stored. The default value is `refs/original`.
 
--d <directory>::
+`-d <directory>`::
 	Use this option to set the path to the temporary directory used for
 	rewriting.  When applying a tree filter, the command needs to
 	temporarily check out the tree to some directory, which may consume
@@ -211,7 +211,7 @@ to other tags will be rewritten to point to the underlying commit.
 	directory or when there are already refs starting with
 	`refs/original/`, unless forced.
 
---state-branch <branch>::
+`--state-branch <branch>`::
 	This option will cause the mapping from old to new objects to
 	be loaded from named branch upon startup and saved as a new
 	commit to that branch upon exit, enabling incremental of large

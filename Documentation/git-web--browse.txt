@@ -41,13 +41,13 @@ Custom commands may also be specified.
 
 OPTIONS
 -------
--b <browser>::
---browser=<browser>::
+`-b <browser>`::
+`--browser=<browser>`::
 	Use the specified browser. It must be in the list of supported
 	browsers.
 
--t <browser>::
---tool=<browser>::
+`-t <browser>`::
+`--tool=<browser>`::
 	Same as above.
 
 -c <conf.var>::

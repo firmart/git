@@ -202,7 +202,7 @@ General options
 ~~~~~~~~~~~~~~~
 All commands except clone accept these options.
 
---git-dir <dir>::
+`--git-dir <dir>`::
 	Set the `GIT_DIR` environment variable.  See linkgit:git[1].
 
 `-v`::
@@ -214,7 +214,7 @@ Sync options
 These options can be used in the initial 'clone' as well as in
 subsequent 'sync' operations.
 
---branch <ref>::
+`--branch <ref>`::
 	Import changes into <ref> instead of refs/remotes/p4/master.
 	If <ref> starts with refs/, it is used as is.  Otherwise, if
 	it does not start with p4/, that prefix is added.
@@ -237,7 +237,7 @@ Git repository:
 	Use the branch detection algorithm to find new paths in p4.  It is
 	documented below in "BRANCH DETECTION".
 
---changesfile <file>::
+`--changesfile <file>`::
 	Import exactly the p4 change numbers listed in 'file', one per
 	line.  Normally, `git p4` inspects the current p4 repository
 	state and detects the changes it should import.
@@ -261,14 +261,14 @@ Git repository:
 	sync operations must specify `--import-local` as well so that
 	they can find the p4 branches in refs/heads.
 
---max-changes <n>::
+`--max-changes <n>`::
 	Import at most 'n' changes, rather than the entire range of
 	changes included in the given revision specifier. A typical
 	usage would be use '@all' as the revision specifier, but then
 	to use `--max-changes 1000` to import only the last 1000
 	revisions rather than the entire revision history.
 
---changes-block-size <n>::
+`--changes-block-size <n>`::
 	The internal block size to use when converting a revision
 	specifier such as '@all' into a list of specific change
 	numbers. Instead of using a single call to `p4 changes` to
@@ -297,7 +297,7 @@ Clone options
 These options can be used in an initial 'clone', along with the 'sync'
 options described above.
 
---destination <directory>::
+`--destination <directory>`::
 	Where to create the Git repository.  If not provided, the last
 	component in the p4 depot path is used to create a new
 	directory.
@@ -309,7 +309,7 @@ Submit options
 ~~~~~~~~~~~~~~
 These options can be used to modify `git p4 submit` behavior.
 
---origin <commit>::
+`--origin <commit>`::
 	Upstream location from which commits are identified to submit to
 	p4.  By default, this is the most recent p4 commit reachable
 	from `HEAD`.
@@ -333,7 +333,7 @@ These options can be used to modify `git p4 submit` behavior.
 	Show just what commits would be submitted to p4; do not change
 	state in Git or p4.
 
---prepare-p4-only::
+`--prepare-p4-only`::
 	Apply a commit to the p4 workspace, opening, adding and deleting
 	files in p4 as for a normal submit operation.  Do not issue the
 	final `p4 submit`, but instead print a message about how to
@@ -345,7 +345,7 @@ These options can be used to modify `git p4 submit` behavior.
 	After creating each shelve, the relevant files are reverted/deleted.
 	If you have multiple commits pending multiple shelves will be created.
 
---update-shelve CHANGELIST::
+`--update-shelve CHANGELIST`::
 	Update an existing shelved changelist with this commit. Implies
 	`--shelve`. Repeat for multiple shelved changelists.
 
@@ -356,7 +356,7 @@ These options can be used to modify `git p4 submit` behavior.
 	to bypass the prompt, causing conflicting commits to be automatically
 	skipped, or to quit trying to apply commits, without prompting.
 
---branch <branch>::
+`--branch <branch>`::
 	After submitting, sync this named branch instead of the default
 	p4/master.  See the "Sync options" section above for more
 	information.
@@ -369,7 +369,7 @@ These options can be used to modify `git p4 submit` behavior.
     Disable the automatic rebase after all commits have been successfully
     submitted. Can also be set with `git-p4.disableRebase`.
 
---disable-p4sync::
+`--disable-p4sync`::
     Disable the automatic sync of `p4/master` from Perforce after commits have
     been submitted. Implies `--disable-rebase`. Can also be set with
     `git-p4.disableP4Sync`. Sync with `origin/master` still goes ahead if possible.

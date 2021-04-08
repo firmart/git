@@ -33,7 +33,7 @@ in the multi-valued config variable `maintenance.repo`.
 
 OPTIONS
 -------
---config=<config>::
+`--config=<config>`::
 	Use the given config variable as a multi-valued list storing
 	absolute path names. Iterate on that list of paths to run
 	the given arguments.

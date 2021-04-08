@@ -56,8 +56,8 @@ As a special case, you may use `A...B` as a shortcut for the merge
 base of `A` and `B` if there is exactly one merge base. You can leave
 out at most one of `A` and `B`, in which case it defaults to `HEAD`.
 
--c <new-branch>::
---create <new-branch>::
+`-c <new-branch>`::
+`--create <new-branch>`::
 	Create a new branch named `<new-branch>` starting at
 	`<start-point>` before switching to the branch. This is a
 	convenient shortcut for:
@@ -67,8 +67,8 @@ $ git branch <new-branch>
 $ git switch <new-branch>
 ------------
 
--C <new-branch>::
---force-create <new-branch>::
+`-C <new-branch>`::
+`--force-create <new-branch>`::
 	Similar to `--create` except that if `<new-branch>` already
 	exists, it will be reset to `<start-point>`. This is a
 	convenient shortcut for:
@@ -171,7 +171,7 @@ name, the guessing is aborted.  You can explicitly give a name with
 	Do not set up "upstream" configuration, even if the
 	`branch.autoSetupMerge` configuration variable is true.
 
---orphan <new-branch>::
+`--orphan <new-branch>`::
 	Create a new 'orphan' branch, named `<new-branch>`. All
 	tracked files are removed.
 

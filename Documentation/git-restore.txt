@@ -32,7 +32,7 @@ THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.
 
 OPTIONS
 -------
--s <tree>::
+`-s <tree>`::
 `--source=<tree>`::
 	Restore the working tree files with the content from the given
 	tree. It is common to specify the source tree by naming a

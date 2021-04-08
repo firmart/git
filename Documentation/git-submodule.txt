@@ -185,7 +185,7 @@ set-branch (-d|--default) [--] <path>::
 	`--default` option removes the `submodule.<name>.branch` configuration
 	key, which causes the tracking branch to default to the remote `HEAD`.
 
-set-url [--] <path> <newurl>::
+`set-url [--] <path> <newurl>`::
 	Sets the URL of the specified submodule to <newurl>. Then, it will
 	automatically synchronize the submodule's new remote URL
 	configuration.
@@ -203,7 +203,7 @@ summary [--cached|--files] [(-n|--summary-limit) <n>] [commit] [--] [<path>...]:
 Using the `--submodule=log` option with linkgit:git-diff[1] will provide that
 information too.
 
-foreach [--recursive] <command>::
+`foreach [--recursive] <command>`::
 	Evaluates an arbitrary shell command in each checked out submodule.
 	The command has access to the variables `$name`, `$sm_path`, `$displaypath`,
 	`$sha1` and `$toplevel`:
@@ -277,8 +277,8 @@ OPTIONS
 	This option is only valid for the deinit command. Unregister all
 	submodules in the working tree.
 
--b <branch>::
---branch <branch>::
+`-b <branch>`::
+`--branch <branch>`::
 	Branch of repository to add as submodule.
 	The name of the branch is recorded as `submodule.<name>.branch` in
 	`.gitmodules` for `update --remote`.  A special value of `.` is used to
@@ -391,7 +391,7 @@ the submodule itself.
 	name to the given string instead of defaulting to its path. The name
 	must be valid as a directory name and may not end with a '/'.
 
---reference <repository>::
+`--reference <repository>`::
 	This option is only valid for add and update commands.  These
 	commands sometimes need to clone a remote repository. In this case,
 	this option will be passed to the linkgit:git-clone[1] command.
@@ -424,8 +424,8 @@ options carefully.
 	`submodule.<name>.shallow` as provided by the `.gitmodules` file
 	by default. To ignore the suggestions use `--no-recommend-shallow`.
 
--j <n>::
---jobs <n>::
+`-j <n>`::
+`--jobs <n>`::
 	This option is only valid for the update command.
 	Clone new submodules in parallel with as many jobs.
 	Defaults to the `submodule.fetchJobs` option.

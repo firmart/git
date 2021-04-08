@@ -52,7 +52,7 @@ linkgit:git[1].
 OPTIONS
 -------
 
--L <label>::
+`-L <label>`::
 	This option may be given up to three times, and
 	specifies labels to be used in place of the
 	corresponding file names in conflict reports. That is,
@@ -67,7 +67,7 @@ OPTIONS
 `-q`::
 	Quiet; do not warn about conflicts.
 
---diff3::
+`--diff3`::
 	Show conflicts in "diff3" style.
 
 `--ours`::

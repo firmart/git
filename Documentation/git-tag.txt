@@ -72,7 +72,7 @@ OPTIONS
 	Override `tag.gpgSign` configuration variable that is
 	set to force each and every tag to be signed.
 
--u <keyid>::
+`-u <keyid>`::
 `--local-user=<keyid>`::
 	Make a GPG-signed tag, using the given key.
 
@@ -139,27 +139,27 @@ options for details.
 +
 This option is only applicable when listing tags without annotation lines.
 
---contains [<commit>]::
+`--contains [<commit>]`::
 	Only list tags which contain the specified commit (HEAD if not
 	specified). Implies `--list`.
 
---no-contains [<commit>]::
+`--no-contains [<commit>]`::
 	Only list tags which don't contain the specified commit (HEAD if
 	not specified). Implies `--list`.
 
---merged [<commit>]::
+`--merged [<commit>]`::
 	Only list tags whose commits are reachable from the specified
 	commit (`HEAD` if not specified).
 
---no-merged [<commit>]::
+`--no-merged [<commit>]`::
 	Only list tags whose commits are not reachable from the specified
 	commit (`HEAD` if not specified).
 
---points-at <object>::
+`--points-at <object>`::
 	Only list tags of the given object (HEAD if not
 	specified). Implies `--list`.
 
--m <msg>::
+`-m <msg>`::
 `--message=<msg>`::
 	Use the given tag message (instead of prompting).
 	If multiple `-m` options are given, their values are
@@ -167,7 +167,7 @@ This option is only applicable when listing tags without annotation lines.
 	Implies `-a` if none of `-a`, `-s`, or `-u <keyid>`
 	is given.
 
--F <file>::
+`-F <file>`::
 `--file=<file>`::
 	Take the tag message from the given file.  Use '-' to
 	read the message from the standard input.

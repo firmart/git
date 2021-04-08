@@ -203,7 +203,7 @@ $ git reset --hard HEAD~3   <1>
     "RECOVERING FROM UPSTREAM REBASE" section in linkgit:git-rebase[1]
     for the implications of doing so.)
 
-Undo a merge or pull::
+`Undo a merge or pull`::
 +
 ------------
 $ git pull                         <1>
@@ -253,7 +253,7 @@ $ git reset --merge ORIG_HEAD      <2>
     want.  `git reset --merge` keeps your local changes.
 
 
-Interrupted workflow::
+`Interrupted workflow`::
 +
 Suppose you are interrupted by an urgent fix request while you
 are in the middle of a large change.  The files in your
@@ -298,7 +298,7 @@ $ git add frotz.c                           <3>
 <2> This commits all other changes in the index.
 <3> Adds the file to the index again.
 
-Keep changes in working tree while discarding some previous commits::
+`Keep changes in working tree while discarding some previous commits`::
 +
 Suppose you are working on something and you commit it, and then you
 continue working a bit more, but now you think that what you have in

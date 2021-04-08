@@ -92,9 +92,9 @@ encode SPACE), all whitespace characters as defined in Perl, including SP,
 TAB and LF, (used to separate fields in a record).
 
 * Currently recognized fields are:
-<repository path>::
+`<repository path>`::
 	path to repository GIT_DIR, relative to `$projectroot`
-<repository owner>::
+`<repository owner>`::
 	displayed as repository owner, preferably full name, or email,
 	or both
 

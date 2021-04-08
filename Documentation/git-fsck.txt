@@ -129,7 +129,7 @@ using `git commit-graph verify`. See linkgit:git-commit-graph[1].
 Extracted Diagnostics
 ---------------------
 
-unreachable <type> <object>::
+`unreachable <type> <object>`::
 	The <type> object <object>, isn't actually referred to directly
 	or indirectly in any of the trees or commits seen. This can
 	mean that there's another root node that you're not specifying
@@ -137,15 +137,15 @@ unreachable <type> <object>::
 	then you might as well delete unreachable nodes since they
 	can't be used.
 
-missing <type> <object>::
+`missing <type> <object>`::
 	The <type> object <object>, is referred to but isn't present in
 	the database.
 
-dangling <type> <object>::
+`dangling <type> <object>`::
 	The <type> object <object>, is present in the database but never
 	'directly' used. A dangling commit could be a root node.
 
-hash mismatch <object>::
+`hash mismatch <object>`::
 	The database has an object whose hash doesn't match the
 	object database value.
 	This indicates a serious data integrity problem.

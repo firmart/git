@@ -76,13 +76,13 @@ OPTIONS
 	which changes to commit. See linkgit:git-add[1] for
 	details.
 
--C <commit>::
+`-C <commit>`::
 `--reuse-message=<commit>`::
 	Take an existing commit object, and reuse the log message
 	and the authorship information (including the timestamp)
 	when creating the commit.
 
--c <commit>::
+`-c <commit>`::
 `--reedit-message=<commit>`::
 	Like `-C`, but with `-c` the editor is invoked, so that
 	the user can further edit the commit message.
@@ -164,7 +164,7 @@ See linkgit:git-rebase[1] for details.
 	quoted as explained for the configuration variable `core.quotePath`
 	(see linkgit:git-config[1]).
 
--F <file>::
+`-F <file>`::
 `--file=<file>`::
 	Take the commit message from the given file.  Use '-' to
 	read the message from the standard input.
@@ -179,7 +179,7 @@ See linkgit:git-rebase[1] for details.
 `--date=<date>`::
 	Override the author date used in the commit.
 
--m <msg>::
+`-m <msg>`::
 `--message=<msg>`::
 	Use the given <msg> as the commit message.
 	If multiple `-m` options are given, their values are
@@ -187,7 +187,7 @@ See linkgit:git-rebase[1] for details.
 +
 The `-m` option is mutually exclusive with `-c`, `-C`, and `-F`.
 
--t <file>::
+`-t <file>`::
 `--template=<file>`::
 	When editing the commit message, start the editor with the
 	contents in the given file.  The `commit.template` configuration

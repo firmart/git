@@ -42,7 +42,7 @@ OPTIONS
 	Start showing the diff for the given path, skipping all
 	the paths before it.
 
--t <tool>::
+`-t <tool>`::
 `--tool=<tool>`::
 	Use the diff tool specified by <tool>.  Valid values include
 	emerge, kompare, meld, and vimdiff. Run `git difftool --tool-help`
@@ -86,7 +86,7 @@ with custom merge tool commands and has the same value as `$MERGED`.
 Specifying `--no-symlinks` instructs `git difftool` to create copies
 instead.  `--no-symlinks` is the default on Windows.
 
--x <command>::
+`-x <command>`::
 `--extcmd=<command>`::
 	Specify a custom command for viewing diffs.
 	`git-difftool` ignores the configured defaults and runs

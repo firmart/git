@@ -58,7 +58,7 @@ specifying `--reason` to explain why the working tree is locked.
 
 COMMANDS
 --------
-add <path> [<commit-ish>]::
+`add <path> [<commit-ish>]`::
 
 Create `<path>` and checkout `<commit-ish>` into it. The new working directory
 is linked to the current repository, sharing everything except working
@@ -174,8 +174,8 @@ allows the move to proceed; use `--force` twice if the destination is locked.
 `remove` refuses to remove an unclean working tree unless `--force` is used.
 To remove a locked working tree, specify `--force` twice.
 
--b <new-branch>::
--B <new-branch>::
+`-b <new-branch>`::
+`-B <new-branch>`::
 	With `add`, create a new branch named `<new-branch>` starting at
 	`<commit-ish>`, and check out `<new-branch>` into the new working tree.
 	If `<commit-ish>` is omitted, it defaults to `HEAD`.
@@ -235,13 +235,13 @@ This can also be set up as the default behaviour by using the
 +
 With `list`, output additional information about worktrees (see below).
 
---expire <time>::
+`--expire <time>`::
 	With `prune`, only expire unused working trees older than `<time>`.
 +
 With `list`, annotate missing working trees as prunable if they are
 older than `<time>`.
 
---reason <string>::
+`--reason <string>`::
 	With `lock`, an explanation why the working tree is locked.
 
 `<worktree>`::

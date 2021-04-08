@@ -75,7 +75,7 @@ OPTIONS
 	Be quiet. Only print error messages.
 
 `-u`::
---utf8::
+`--utf8`::
 	Pass `-u` flag to `git mailinfo` (see linkgit:git-mailinfo[1]).
 	The proposed commit log message taken from the e-mail
 	is re-coded into UTF-8 encoding (configuration variable
@@ -85,13 +85,13 @@ OPTIONS
 This was optional in prior versions of git, but now it is the
 default.   You can use `--no-utf8` to override this.
 
---no-utf8::
+`--no-utf8`::
 	Pass `-n` flag to `git mailinfo` (see
 	linkgit:git-mailinfo[1]).
 
--3::
---3way::
---no-3way::
+`-3`::
+`--3way`::
+`--no-3way`::
 	When the patch does not apply cleanly, fall back on
 	3-way merge if the patch records the identity of blobs
 	it is supposed to apply to and we have those blobs

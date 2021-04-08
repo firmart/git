@@ -38,7 +38,7 @@ its behavior, see linkgit:git-config[1].
 
 OPTIONS
 -------
-<directory>::
+`<directory>`::
 	The repository to sync into.
 
 PRE-RECEIVE HOOK

@@ -93,7 +93,7 @@ OPTIONS
 	describe such a commit as v1.2-0-gdeadbee (0th commit since tag v1.2
 	that points at object deadbee....).
 
---match <pattern>::
+`--match <pattern>`::
 	Only consider tags matching the given `glob(7)` pattern,
 	excluding the `refs/tags/` prefix. If used with `--all`, it also
 	considers local branches and remote-tracking references matching the
@@ -103,7 +103,7 @@ OPTIONS
 	matching any of the patterns will be considered.  Use `--no-match` to
 	clear and reset the list of patterns.
 
---exclude <pattern>::
+`--exclude <pattern>`::
 	Do not consider tags matching the given `glob(7)` pattern, excluding
 	the `refs/tags/` prefix. If used with `--all`, it also does not consider
 	local branches and remote-tracking references matching the pattern,

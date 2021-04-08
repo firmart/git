@@ -74,11 +74,11 @@ Options for Filtering
 Options for Output
 ~~~~~~~~~~~~~~~~~~
 
---default <arg>::
+`--default <arg>`::
 	If there is no parameter given by the user, use `<arg>`
 	instead.
 
---prefix <arg>::
+`--prefix <arg>`::
 	Behave as if `git rev-parse` was invoked from the `<arg>`
 	subdirectory of the working tree.  Any relative filenames are
 	resolved as if they are prefixed by `<arg>` and will be printed
@@ -236,13 +236,13 @@ print a message to stderr and exit with nonzero status.
 `--git-common-dir`::
 	Show `$GIT_COMMON_DIR` if defined, else `$GIT_DIR`.
 
---resolve-git-dir <path>::
+`--resolve-git-dir <path>`::
 	Check if <path> is a valid repository or a gitfile that
 	points at a valid repository, and print the location of the
 	repository.  If <path> is a gitfile then the resolved path
 	to the real repository is printed.
 
---git-path <path>::
+`--git-path <path>`::
 	Resolve `$GIT_DIR/<path>` and takes other path relocation
 	variables such as `$GIT_OBJECT_DIRECTORY`,
 	`$GIT_INDEX_FILE`... into account. For example, if

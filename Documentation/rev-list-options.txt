@@ -14,7 +14,7 @@ Note that these are applied before commit
 ordering and formatting options, such as `--reverse`.
 
 `-<number>`::
--n <number>::
+`-n <number>`::
 `--max-count=<number>`::
 	Limit the number of commits to output.
 
@@ -454,7 +454,7 @@ Parent/child relations are only visible with `--parents`, but that does
 not affect the commits selected in default mode, so we have shown the
 parent lines.
 
---full-history without parent rewriting::
+`--full-history without parent rewriting`::
 	This mode differs from the default in one point: always follow
 	all parents of a merge, even if it is TREESAME to one of them.
 	Even if more than one side of the merge has commits that are
@@ -473,7 +473,7 @@ Note that without parent rewriting, it is not really possible to talk
 about the parent/child relationships between the commits, so we show
 them disconnected.
 
---full-history with parent rewriting::
+`--full-history with parent rewriting`::
 	Ordinary commits are only included if they are !TREESAME
 	(though this can be changed, see `--sparse` below).
 +

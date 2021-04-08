@@ -20,7 +20,7 @@ returns the name of the temporary file in the following format:
 
 OPTIONS
 -------
-<blob>::
+`<blob>`::
 	Must be a blob id
 
 GIT

@@ -271,7 +271,7 @@ See REF LIST KEYWORDS for a list of currently defined keywords.
 +
 Supported if the helper has the "fetch" or "import" capability.
 
-'list for-push'::
+`list for-push`::
 	Similar to 'list', except that it is used if and only if
 	the caller wants to the resulting ref list to prepare
 	push commands.
@@ -470,10 +470,10 @@ set by Git if the remote helper has the 'option' capability.
 'option depth' <depth>::
 	Deepens the history of a shallow repository.
 
-'option deepen-since <timestamp>::
+`option deepen-since <timestamp>`::
 	Deepens the history of a shallow repository based on time.
 
-'option deepen-not <ref>::
+`option deepen-not <ref>`::
 	Deepens the history of a shallow repository excluding ref.
 	Multiple options add up.
 
@@ -494,7 +494,7 @@ set by Git if the remote helper has the 'option' capability.
 	but don't actually change any repository data.  For most
 	helpers this only applies to the 'push', if supported.
 
-'option servpath <c-style-quoted-path>'::
+`option servpath <c-style-quoted-path>`::
 	Sets service path (--upload-pack, --receive-pack etc.) for
 	next connect. Remote helper may support this option, but
 	must not rely on this option being set before
@@ -517,7 +517,7 @@ set by Git if the remote helper has the 'option' capability.
 'option pushcert' {'true'|'false'}::
 	GPG sign pushes.
 
-'option push-option <string>::
+`option push-option <string>`::
 	Transmit <string> as a push option. As the push option
 	must not contain LF or NUL characters, the string is not encoded.
 

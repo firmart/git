@@ -24,7 +24,7 @@ the merge tool program on every file with merge conflicts.
 
 OPTIONS
 -------
--t <tool>::
+`-t <tool>`::
 `--tool=<tool>`::
 	Use the merge resolution program specified by <tool>.
 	Valid values include emerge, gvimdiff, kdiff3,

@@ -313,7 +313,7 @@ contents of working tree files for selected paths in the index.
   information for selected paths are reverted to that of the
   `HEAD` version.  Reverting new paths makes them untracked.
 
-add untracked::
+`add untracked`::
 
   This has a very similar UI to 'update' and
   'revert', and lets you add untracked paths to the index.

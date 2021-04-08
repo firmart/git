@@ -67,7 +67,7 @@ save [-p|--patch] [-k|--[no-]keep-index] [-u|--include-untracked] [-a|--all] [-q
 	Instead, all non-option arguments are concatenated to form the stash
 	message.
 
-list [<log-options>]::
+`list [<log-options>]`::
 
 	List the stash entries that you currently have.  Each 'stash entry' is
 	listed with its name (e.g. `stash@{0}` is the latest entry, `stash@{1}` is
@@ -111,7 +111,7 @@ apply [--index] [-q|--quiet] [<stash>]::
 	`<stash>` may be any commit that looks like a commit created by
 	`stash push` or `stash create`.
 
-branch <branchname> [<stash>]::
+`branch <branchname> [<stash>]`::
 
 	Creates and checks out a new branch named `<branchname>` starting from
 	the commit at which the `<stash>` was originally created, applies the

@@ -89,7 +89,7 @@ counts both authors and co-authors.
 If width is `0` (zero) then indent the lines of the output without wrapping
 them.
 
-<revision range>::
+`<revision range>`::
 	Show only commits in the specified revision range.  When no
 	<revision range> is specified, it defaults to `HEAD` (i.e. the
 	whole history leading to the current commit).  `origin..HEAD`

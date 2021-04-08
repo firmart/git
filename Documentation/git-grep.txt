@@ -118,7 +118,7 @@ OPTIONS
 `-I`::
 	Don't match the pattern in binary files.
 
---max-depth <depth>::
+`--max-depth <depth>`::
 	For each <pathspec> given on command line, descend at most <depth>
 	levels of directories. A value of -1 means no limit.
 	This option is ignored if <pathspec> contains active wildcards.
@@ -246,18 +246,18 @@ providing this option will cause it to die.
 	linkgit:gitattributes[5]).
 
 `-<num>`::
--C <num>::
---context <num>::
+`-C <num>`::
+`--context <num>`::
 	Show <num> leading and trailing lines, and place a line
 	containing `--` between contiguous groups of matches.
 
--A <num>::
---after-context <num>::
+`-A <num>`::
+`--after-context <num>`::
 	Show <num> trailing lines, and place a line containing
 	`--` between contiguous groups of matches.
 
--B <num>::
---before-context <num>::
+`-B <num>`::
+`--before-context <num>`::
 	Show <num> leading lines, and place a line containing
 	`--` between contiguous groups of matches.
 
@@ -270,11 +270,11 @@ providing this option will cause it to die.
 	`git diff` works out patch hunk headers (see 'Defining a
 	custom hunk-header' in linkgit:gitattributes[5]).
 
---threads <num>::
+`--threads <num>`::
 	Number of grep worker threads to use.
 	See `grep.threads` in 'CONFIGURATION' for more information.
 
--f <file>::
+`-f <file>`::
 	Read patterns from <file>, one per line.
 +
 Passing the pattern via <file> allows for providing a search pattern

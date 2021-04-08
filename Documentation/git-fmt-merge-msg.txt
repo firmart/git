@@ -39,13 +39,13 @@ OPTIONS
 	Synonyms to `--log` and `--no-log`; these are deprecated and will be
 	removed in the future.
 
--m <message>::
---message <message>::
+`-m <message>`::
+`--message <message>`::
 	Use <message> instead of the branch names for the first line
 	of the log message.  For use with `--log`.
 
--F <file>::
---file <file>::
+`-F <file>`::
+`--file <file>`::
 	Take the list of merged objects from <file> instead of
 	stdin.
 

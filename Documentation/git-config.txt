@@ -98,7 +98,7 @@ OPTIONS
 	in which section and variable names are lowercased, but subsection
 	names are not.
 
---get-urlmatch name URL::
+`--get-urlmatch name URL`::
 	When given a two-part name `section.key`, the value for
 	`section.<url>.key` whose <url> part matches the best to the
 	given URL is returned (if no such key exists, the value for
@@ -141,11 +141,11 @@ See also <<FILES>>.
 	read from or written to if `extensions.worktreeConfig` is
 	present. If not it's the same as `--local`.
 
--f config-file::
---file config-file::
+`-f config-file`::
+`--file config-file`::
 	Use the given config file instead of the one specified by GIT_CONFIG.
 
---blob blob::
+`--blob blob`::
 	Similar to `--file` but use the given blob instead of a file. E.g.
 	you can use 'master:.gitmodules' to read values from the file
 	`.gitmodules` in the `master` branch. See "SPECIFYING REVISIONS"
@@ -174,7 +174,7 @@ See also <<FILES>>.
 	the name/value pairs that are matched to only those where the value
 	is exactly equal to the `value-pattern`.
 
---type <type>::
+`--type <type>`::
   `git config` will ensure that any input or output is valid under the given
   type constraint(s), and will canonicalize outgoing values in `<type>`'s
   canonical form.
@@ -236,7 +236,7 @@ Valid `<type>`'s include:
 	all queried config options with the scope of that value
 	(local, global, system, command).
 
---get-colorbool name [stdout-is-tty]::
+`--get-colorbool name [stdout-is-tty]`::
 
 	Find the color setting for `name` (e.g. `color.diff`) and output
 	"true" or "false".  `stdout-is-tty` should be either "true" or
@@ -247,7 +247,7 @@ Valid `<type>`'s include:
 	When the color setting for `name` is undefined, the command uses
 	`color.ui` as fallback.
 
---get-color name [default]::
+`--get-color name [default]`::
 
 	Find the color configured for `name` (e.g. `color.diff.new`) and
 	output it as the ANSI color escape sequence to the standard
@@ -269,7 +269,7 @@ Valid `<type>`'s include:
 	using `--file`, `--global`, etc) and `on` when searching all
 	config files.
 
---default <value>::
+`--default <value>`::
   When using `--get`, and the requested variable is not found, behave as if
   <value> were the value assigned to the that variable.
 

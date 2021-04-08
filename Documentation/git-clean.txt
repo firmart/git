@@ -55,7 +55,7 @@ OPTIONS
 	Be quiet, only report errors, but not the files that are
 	successfully removed.
 
--e <pattern>::
+`-e <pattern>`::
 `--exclude=<pattern>`::
 	Use the given exclude pattern in addition to the standard ignore rules
 	(see linkgit:gitignore[5]).
@@ -98,7 +98,7 @@ The main command loop has 6 subcommands.
 
    Start cleaning files and directories, and then quit.
 
-filter by pattern::
+`filter by pattern`::
 
    This shows the files and directories to be deleted and issues an
    "Input ignore patterns>>" prompt. You can input space-separated
@@ -107,7 +107,7 @@ filter by pattern::
    deletion. When you are satisfied with the filtered result, press
    ENTER (empty) back to the main menu.
 
-select by numbers::
+`select by numbers`::
 
    This shows the files and directories to be deleted and issues an
    "Select items to delete>>" prompt. When the prompt ends with double
@@ -119,7 +119,7 @@ select by numbers::
    Also when you are satisfied with the filtered result, press ENTER
    (empty) back to the main menu.
 
-ask each::
+`ask each`::
 
   This will start to clean, and you must confirm one by one in order
   to delete items. Please note that this action is not as efficient

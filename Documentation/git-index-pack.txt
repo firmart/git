@@ -28,7 +28,7 @@ OPTIONS
 `-v`::
 	Be verbose about what is going on, including progress status.
 
--o <index-file>::
+`-o <index-file>`::
 	Write the generated pack index into the specified
 	file.  Without this option the name of pack index
 	file is constructed from the name of packed archive

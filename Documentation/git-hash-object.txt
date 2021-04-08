@@ -23,7 +23,7 @@ When <type> is not specified, it defaults to "blob".
 OPTIONS
 -------
 
--t <type>::
+`-t <type>`::
 	Specify the type (default: "blob").
 
 `-w`::

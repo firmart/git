@@ -73,7 +73,7 @@ OPTIONS
 	Ignores missing files during a `--refresh`
 
 --cacheinfo <mode>,<object>,<path>::
---cacheinfo <mode> <object> <path>::
+`--cacheinfo <mode> <object> <path>`::
 	Directly insert the specified info into the index.  For
 	backward compatibility, you can also give these three
 	arguments as three separate parameters, but new users are
@@ -158,7 +158,7 @@ you will need to handle the situation manually.
 `--verbose`::
         Report what is being added and removed from index.
 
---index-version <n>::
+`--index-version <n>`::
 	Write the resulting index out in the named on-disk format version.
 	Supported versions are 2, 3 and 4. The current default version is 2
 	or 3, depending on whether extra features are used, such as

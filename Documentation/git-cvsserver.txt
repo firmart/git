@@ -31,7 +31,7 @@ All these options obviously only make sense if enforced by the server side.
 They have been implemented to resemble the linkgit:git-daemon[1] options as
 closely as possible.
 
---base-path <path>::
+`--base-path <path>`::
 Prepend 'path' to requested CVSROOT
 
 `--strict-paths`::

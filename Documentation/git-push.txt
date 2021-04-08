@@ -212,7 +212,7 @@ already exists on the remote side.
 	Either all refs are updated, or on error, no refs are updated.
 	If the server does not support atomic pushes the push will fail.
 
--o <option>::
+`-o <option>`::
 `--push-option=<option>`::
 	Transmit the given string to the server, which passes them to
 	the pre-receive as well as the post-receive hook. The given string
@@ -419,12 +419,12 @@ Specifying `--no-force-if-includes` disables this behavior.
 	default is `--verify`, giving the hook a chance to prevent the
 	push.  With `--no-verify`, the hook is bypassed completely.
 
--4::
---ipv4::
+`-4`::
+`--ipv4`::
 	Use IPv4 addresses only, ignoring IPv6 addresses.
 
--6::
---ipv6::
+`-6`::
+`--ipv6`::
 	Use IPv6 addresses only, ignoring IPv4 addresses.
 
 include::urls-remotes.txt[]
@@ -474,7 +474,7 @@ For a failed update, more details are given:
 	Git did not try to send the ref at all, typically because it
 	is not a fast-forward and you did not force the update.
 
-remote rejected::
+`remote rejected`::
 	The remote end refused the update.  Usually caused by a hook
 	on the remote side, or because the remote repository has one
 	of the following safety options in effect:
@@ -483,7 +483,7 @@ remote rejected::
 	non-fast-forward updates), `receive.denyDeletes` or
 	`receive.denyDeleteCurrent`.  See linkgit:git-config[1].
 
-remote failure::
+`remote failure`::
 	The remote end did not report the successful update of the ref,
 	perhaps because of a temporary error on the remote side, a
 	break in the network connection, or other transient error.

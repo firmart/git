@@ -110,8 +110,8 @@ include::diff-options.txt[]
 `-<n>`::
 	Prepare patches from the topmost <n> commits.
 
--o <dir>::
---output-directory <dir>::
+`-o <dir>`::
+`--output-directory <dir>`::
 	Use <dir> to store the resulting files, instead of the
 	current working directory.
 
@@ -123,7 +123,7 @@ include::diff-options.txt[]
 `--no-numbered`::
 	Name output in '[PATCH]' format.
 
---start-number <n>::
+`--start-number <n>`::
 	Start numbering the patches at <n> instead of 1.
 
 `--numbered-files`::
@@ -180,7 +180,7 @@ Beware that the default for `git send-email` is to thread emails
 itself.  If you want `git format-patch` to take care of threading, you
 will want to ensure that threading is disabled for `git send-email`.
 
---in-reply-to=<message id>::
+`--in-reply-to=<message id>`::
 	Make the first mail (or all the mails with `--no-thread`) appear as a
 	reply to the given <message id>, which avoids breaking threads to
 	provide a new patch series.
@@ -212,7 +212,7 @@ is greater than 100 bytes, then the mode will be `message`, otherwise
 If `<mode>` is `none`, both the cover letter subject and body will be
 populated with placeholder text.
 
---subject-prefix=<subject prefix>::
+`--subject-prefix=<subject prefix>`::
 	Instead of the standard '[PATCH]' prefix in the subject
 	line, instead use '[<subject prefix>]'. This
 	allows for useful naming of a patch series, and can be
@@ -230,7 +230,7 @@ populated with placeholder text.
 	Comments"; use this when sending an experimental patch for
 	discussion rather than application.
 
--v <n>::
+`-v <n>`::
 `--reroll-count=<n>`::
 	Mark the series as the <n>-th iteration of the topic. The
 	output filenames have `v<n>` prepended to them, and the

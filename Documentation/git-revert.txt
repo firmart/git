@@ -47,8 +47,8 @@ OPTIONS
 	message prior to committing the revert. This is the default if
 	you run the command from a terminal.
 
--m parent-number::
---mainline parent-number::
+`-m parent-number`::
+`--mainline parent-number`::
 	Usually you cannot revert a merge because you do not know which
 	side of the merge should be considered the mainline.  This
 	option specifies the parent number (starting from 1) of

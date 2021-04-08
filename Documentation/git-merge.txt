@@ -63,7 +63,7 @@ OPTIONS
 -------
 include::merge-options.txt[]
 
--m <msg>::
+`-m <msg>`::
 	Set the commit message to be used for the merge commit (in
 	case one is created).
 +
@@ -74,7 +74,7 @@ The `git fmt-merge-msg` command can be
 used to give a good default for automated `git merge`
 invocations. The automated message can include the branch description.
 
--F <file>::
+`-F <file>`::
 `--file=<file>`::
 	Read the commit message to be used for the merge commit (in
 	case one is created).

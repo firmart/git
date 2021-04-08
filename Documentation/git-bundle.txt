@@ -37,13 +37,13 @@ destination repository.
 OPTIONS
 -------
 
-create [options] <file> <git-rev-list-args>::
+`create [options] <file> <git-rev-list-args>`::
 	Used to create a bundle named 'file'.  This requires the
 	'<git-rev-list-args>' arguments to define the bundle contents.
 	'options' contains the options specific to the `git bundle create`
 	subcommand.
 
-verify <file>::
+`verify <file>`::
 	Used to check that a bundle file is valid and will apply
 	cleanly to the current repository.  This includes checks on the
 	bundle format itself as well as checking that the prerequisite
@@ -51,12 +51,12 @@ verify <file>::
 	`git bundle` prints a list of missing commits, if any, and exits
 	with a non-zero status.
 
-list-heads <file>::
+`list-heads <file>`::
 	Lists the references defined in the bundle.  If followed by a
 	list of references, only references matching those given are
 	printed out.
 
-unbundle <file>::
+`unbundle <file>`::
 	Passes the objects in the bundle to `git index-pack`
 	for storage in the repository, then prints the names of all
 	defined references. If a list of references is given, only

@@ -72,7 +72,7 @@ OPTIONS
 	themselves will not work for refs whose objects have not yet been
 	fetched from the remote, and will give a `missing object` error.
 
--o <option>::
+`-o <option>`::
 `--server-option=<option>`::
 	Transmit the given string to the server when communicating using
 	protocol version 2.  The given string must not contain a NUL or LF

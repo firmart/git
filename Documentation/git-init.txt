@@ -62,7 +62,7 @@ include::object-format-disclaimer.txt[]
 Specify the directory from which templates will be used.  (See the "TEMPLATE
 DIRECTORY" section below.)
 
---separate-git-dir=<git dir>::
+`--separate-git-dir=<git dir>`::
 
 Instead of initializing the repository as a directory to either `$GIT_DIR` or
 `./.git/`, create a text file there containing the path to the actual
@@ -71,7 +71,7 @@ repository.
 +
 If this is reinitialization, the repository will be moved to the specified path.
 
--b <branch-name>::
+`-b <branch-name>`::
 `--initial-branch=<branch-name>`::
 
 Use the specified name for the initial branch in the newly created
@@ -110,7 +110,7 @@ the repository permissions.
 
 Same as 'group', but make the repository readable by all users.
 
-'0xxx'::
+`0xxx`::
 
 '0xxx' is an octal number and each file will have mode '0xxx'. '0xxx' will
 override users' umask(2) value (and not only loosen permissions as 'group' and

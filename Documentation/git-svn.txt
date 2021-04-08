@@ -260,7 +260,7 @@ Use of `dcommit` is preferred to `set-tree` (below).
 +
 `--no-rebase`;;
 	After committing, do not rebase or reset.
---commit-url <URL>;;
+`--commit-url <URL>`;;
 	Commit to this SVN URL (the full path).  This is intended to
 	allow existing `git svn` repositories created with one transport
 	method (e.g. `svn://` or `http://` for anonymous read) to be
@@ -465,12 +465,12 @@ option, or indirectly from the tag or commit when the second tree-ish
 denotes such an object, or it is requested by invoking an editor (see
 `--edit` option below).
 
--m <msg>;;
+`-m <msg>`;;
 `--message=<msg>`;;
 	Use the given `msg` as the commit message. This option
 	disables the `--edit` option.
 
--F <filename>;;
+`-F <filename>`;;
 `--file=<filename>`;;
 	Take the commit message from the given file. This option
 	disables the `--edit` option.
@@ -528,7 +528,7 @@ Only the rev_map and refs/remotes/git-svn are changed (see
 Follow 'reset' with a `fetch` and then `git reset` or `git rebase` to
 move local branches onto the new tree.
 
--r <n>;;
+`-r <n>`;;
 `--revision=<n>`;;
 	Specify the most recent revision to keep.  All later revisions
 	are discarded.
@@ -579,8 +579,8 @@ OPTIONS
 	Only used with the `init` command.
 	These are passed directly to `git init`.
 
--r <arg>::
---revision <arg>::
+`-r <arg>`::
+`--revision <arg>`::
 	   Used with the `fetch` command.
 +
 This allows revision ranges for partial/cauterized history
@@ -727,8 +727,8 @@ ADVANCED OPTIONS
 	when tracking a single URL.  The `log` and `dcommit` commands
 	no longer require this switch as an argument.
 
--R<remote name>::
---svn-remote <remote name>::
+`-R<remote name>`::
+`--svn-remote <remote name>`::
 	Specify the [svn-remote "<remote name>"] section to use,
 	this allows SVN multiple repositories to be tracked.
 	Default: "svn"

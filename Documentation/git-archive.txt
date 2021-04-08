@@ -51,7 +51,7 @@ OPTIONS
 --prefix=<prefix>/::
 	Prepend <prefix>/ to each filename in the archive.
 
--o <file>::
+`-o <file>`::
 `--output=<file>`::
 	Write the archive to <file> instead of stdout.
 
@@ -93,9 +93,9 @@ BACKEND EXTRA OPTIONS
 
 zip
 ~~~
--0::
+`-0`::
 	Store the files instead of deflating them.
--9::
+`-9`::
 	Highest and slowest compression level.  You can specify any
 	number from 1 to 9 to adjust compression speed and ratio.
 

@@ -208,7 +208,7 @@ include::config/sequencer.txt[]
 
 OPTIONS
 -------
---onto <newbase>::
+`--onto <newbase>`::
 	Starting point at which to create the new commits. If the
 	`--onto` option is not specified, the starting point is
 	<upstream>.  May be any valid commit, and not just an
@@ -358,7 +358,7 @@ other words, the sides are swapped.
 +
 See also INCOMPATIBLE OPTIONS below.
 
--s <strategy>::
+`-s <strategy>`::
 `--strategy=<strategy>`::
 	Use the given merge strategy.
 	If there is no `-s` option `git merge-recursive` is used
@@ -371,7 +371,7 @@ which makes little sense.
 +
 See also INCOMPATIBLE OPTIONS below.
 
--X <strategy-option>::
+`-X <strategy-option>`::
 `--strategy-option=<strategy-option>`::
 	Pass the <strategy-option> through to the merge strategy.
 	This implies `--merge` and, if no strategy has been
@@ -554,8 +554,8 @@ idea unless you know what you are doing (see BUGS below).
 +
 See also INCOMPATIBLE OPTIONS below.
 
--x <cmd>::
---exec <cmd>::
+`-x <cmd>`::
+`--exec <cmd>`::
 	Append "exec <cmd>" after each line creating a commit in the
 	final history. <cmd> will be interpreted as one or more shell
 	commands. Any command that fails will interrupt the rebase,

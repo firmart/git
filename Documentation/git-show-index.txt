@@ -39,7 +39,7 @@ index file itself, it's both faster and more flexible.
 OPTIONS
 -------
 
---object-format=<hash-algorithm>::
+`--object-format=<hash-algorithm>`::
 	Specify the given object format (hash algorithm) for the index file.  The
 	valid values are 'sha1' and (if enabled) 'sha256'.  The default is the
 	algorithm for the current repository (set by `extensions.objectFormat`), or

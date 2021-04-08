@@ -38,13 +38,13 @@ the kind of information listed above when manually asking for help.
 
 OPTIONS
 -------
--o <path>::
---output-directory <path>::
+`-o <path>`::
+`--output-directory <path>`::
 	Place the resulting bug report file in `<path>` instead of the root of
 	the Git repository.
 
--s <format>::
---suffix <format>::
+`-s <format>`::
+`--suffix <format>`::
 	Specify an alternate suffix for the bugreport name, to create a file
 	named `git-bugreport-<formatted suffix>`. This should take the form of a
 	strftime(3) format string; the current local time will be used.

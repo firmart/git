@@ -228,7 +228,7 @@ start-point is either a local or remote-tracking branch.
 	As this option had confusing syntax, it is no longer supported.
 	Please use `--track` or `--set-upstream-to` instead.
 
--u <upstream>::
+`-u <upstream>`::
 `--set-upstream-to=<upstream>`::
 	Set up <branchname>'s tracking information so <upstream> is
 	considered <branchname>'s upstream branch. If no <branchname>
@@ -244,19 +244,19 @@ start-point is either a local or remote-tracking branch.
 	`request-pull`, and `merge` (if enabled)). Multi-line explanations
 	may be used.
 
---contains [<commit>]::
+`--contains [<commit>]`::
 	Only list branches which contain the specified commit (HEAD
 	if not specified). Implies `--list`.
 
---no-contains [<commit>]::
+`--no-contains [<commit>]`::
 	Only list branches which don't contain the specified commit
 	(`HEAD` if not specified). Implies `--list`.
 
---merged [<commit>]::
+`--merged [<commit>]`::
 	Only list branches whose tips are reachable from the
 	specified commit (`HEAD` if not specified). Implies `--list`.
 
---no-merged [<commit>]::
+`--no-merged [<commit>]`::
 	Only list branches whose tips are not reachable from the
 	specified commit (`HEAD` if not specified). Implies `--list`.
 
@@ -290,10 +290,10 @@ start-point is either a local or remote-tracking branch.
 	finally remote-tracking branches. See linkgit:git-config[1].
 
 
---points-at <object>::
+`--points-at <object>`::
 	Only list branches of the given object.
 
---format <format>::
+`--format <format>`::
 	A string that interpolates `%(fieldname)` from a branch ref being shown
 	and the object it points at.  The format is the same as
 	that of linkgit:git-for-each-ref[1].

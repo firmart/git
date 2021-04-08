@@ -1,17 +1,17 @@
-<repository>::
+`<repository>`::
 	The "remote" repository that is the source of a fetch
 	or pull operation.  This parameter can be either a URL
 	(see the section <<URLS,GIT URLS>> below) or the name
 	of a remote (see the section <<REMOTES,REMOTES>> below).
 
 ifndef::git-pull[]
-<group>::
+`<group>`::
 	A name referring to a list of repositories as the value
 	of `remotes.<group>` in the configuration file.
 	(See linkgit:git-config[1]).
 endif::git-pull[]
 
-<refspec>::
+`<refspec>`::
 	Specifies which refs to fetch and which local refs to update.
 	When no <refspec>s appear on the command line, the refs to fetch
 	are read from `remote.<repository>.fetch` variables instead

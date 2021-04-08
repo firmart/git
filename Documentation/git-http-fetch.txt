@@ -30,7 +30,7 @@ OPTIONS
 `-v`::
 	Report what is downloaded.
 
--w <filename>::
+`-w <filename>`::
         Writes the commit-id into the filename under `$GIT_DIR/refs/<filename>` on
         the local end after the transfer is complete.
 

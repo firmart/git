@@ -66,7 +66,7 @@ OPTIONS
 `--delete`::
 	Delete existing replace refs for the given objects.
 
---edit <object>::
+`--edit <object>`::
 	Edit an object's content interactively. The existing content
 	for <object> is pretty-printed into a temporary file, an
 	editor is launched on the file, and the result is parsed to
@@ -96,8 +96,8 @@ OPTIONS
 	and deletes that file upon success. The purpose is to help users
 	with transitioning off of the now-deprecated graft file.
 
--l <pattern>::
---list <pattern>::
+`-l <pattern>`::
+`--list <pattern>`::
 	List replace refs for objects that match the given pattern (or
 	all if no pattern is given).
 	Typing `git replace` without arguments, also lists all replace

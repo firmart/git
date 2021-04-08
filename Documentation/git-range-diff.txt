@@ -81,14 +81,14 @@ to revert to color all lines according to the outer diff markers
 	This flag is passed to the `git log` program
 	(see linkgit:git-log[1]) that generates the patches.
 
-<range1> <range2>::
+`<range1> <range2>`::
 	Compare the commits specified by the two ranges, where
 	`<range1>` is considered an older version of `<range2>`.
 
 <rev1>...<rev2>::
 	Equivalent to passing `<rev2>..<rev1>` and `<rev1>..<rev2>`.
 
-<base> <rev1> <rev2>::
+`<base> <rev1> <rev2>`::
 	Equivalent to passing `<base>..<rev1>` and `<base>..<rev2>`.
 	Note that `<base>` does not need to be the exact branch point
 	of the branches. Example: after rebasing a branch `my-topic`,

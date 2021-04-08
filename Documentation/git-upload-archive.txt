@@ -54,7 +54,7 @@ access via non-smart-http.
 
 OPTIONS
 -------
-<directory>::
+`<directory>`::
 	The repository to get a tar archive from.
 
 GIT

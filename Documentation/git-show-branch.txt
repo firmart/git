@@ -94,7 +94,7 @@ OPTIONS
 `--no-name`::
 	Do not show naming strings for each commit.
 
---sha1-name::
+`--sha1-name`::
 	Instead of naming the commits using the path to reach
 	them from heads (e.g. "master~2" to mean the grandparent
 	of "master"), name them with the unique prefix of their

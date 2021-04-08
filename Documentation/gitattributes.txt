@@ -41,7 +41,7 @@ Each attribute can be in one of these states for a given path:
 	this is specified by listing the name of the attribute
 	prefixed with a dash `-` in the attribute list.
 
-Set to a value::
+`Set to a value`::
 
 	The path has the attribute with specified string value;
 	this is specified by listing the name of the attribute

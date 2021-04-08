@@ -53,7 +53,7 @@ displayed. See linkgit:git-help[1] for more information,
 because `git --help ...` is converted internally into `git
 help ...`.
 
--C <path>::
+`-C <path>`::
 	Run as if `git` was started in '<path>' instead of the current working
 	directory.  When multiple `-C` options are given, each subsequent
 	non-absolute `-C <path>` is interpreted relative to the preceding `-C
@@ -68,7 +68,7 @@ example the following invocations are equivalent:
     git --git-dir=a.git --work-tree=b -C c status
     git --git-dir=c/a.git --work-tree=c/b status
 
--c <name>=<value>::
+`-c <name>=<value>`::
 	Pass a configuration parameter to the command. The value
 	given will override values from configuration files.
 	The <name> is expected in the same format as listed by

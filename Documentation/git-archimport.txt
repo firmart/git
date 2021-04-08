@@ -91,7 +91,7 @@ OPTIONS
 	on the command-line will override the automatically-generated
 	ones.
 
--D <depth>::
+`-D <depth>`::
 	Follow merge ancestry and attempt to import trees that have been
 	merged from.  Specify a depth greater than 1 if patch logs have been
 	pruned.
@@ -100,7 +100,7 @@ OPTIONS
 	Attempt to auto-register archives at http://mirrors.sourcecontrol.net
 	This is particularly useful with the `-D` option.
 
--t <tmpdir>::
+`-t <tmpdir>`::
 	Override the default tempdir.
 
 

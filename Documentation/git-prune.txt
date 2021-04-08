@@ -45,7 +45,7 @@ OPTIONS
 `--progress`::
 	Show progress.
 
---expire <time>::
+`--expire <time>`::
 	Only expire loose objects older than <time>.
 
 \--::
