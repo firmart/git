@@ -816,6 +816,12 @@ enum auto_base_setting {
 	AUTO_BASE_WHEN_ABLE
 };
 
+enum confirm_overwrite_setting {
+	CONFIRM_OVERWRITE_NEVER,
+	CONFIRM_OVERWRITE_ALWAYS,
+	CONFIRM_OVERWRITE_COVER
+};
+
 static enum thread_level thread;
 static int do_signoff;
 static enum auto_base_setting auto_base;
@@ -827,6 +833,7 @@ static const char *config_output_directory;
 static enum cover_from_description cover_from_description_mode = COVER_FROM_MESSAGE;
 static int show_notes;
 static struct display_notes_opt notes_opt;
+static enum confirm_overwrite_setting confirm_overwrite = CONFIRM_OVERWRITE_COVER;
 
 static enum cover_from_description parse_cover_from_description(const char *arg)
 {
@@ -842,6 +849,18 @@ static enum cover_from_description parse_cover_from_description(const char *arg)
 		return COVER_FROM_AUTO;
 	else
 		die(_("%s: invalid cover from description mode"), arg);
+}
+
+static enum confirm_overwrite_setting parse_confirm_overwrite(const char *arg)
+{
+	if (!arg || !strcasecmp(arg, "cover"))
+		return CONFIRM_OVERWRITE_COVER;
+	else if (!strcasecmp(arg, "always"))
+		return CONFIRM_OVERWRITE_ALWAYS;
+	else if (!strcasecmp(arg, "never"))
+		return CONFIRM_OVERWRITE_NEVER;
+	else
+		die(_("%s: invalid file overwrite setting"), arg);
 }
 
 static int git_format_config(const char *var, const char *value, void *cb)
@@ -949,6 +968,10 @@ static int git_format_config(const char *var, const char *value, void *cb)
 		cover_from_description_mode = parse_cover_from_description(value);
 		return 0;
 	}
+	if (!strcmp(var, "format.confirmoverwrite")) {
+		confirm_overwrite = parse_confirm_overwrite(value);
+		return 0;
+	}
 
 	return git_log_config(var, value, cb);
 }
@@ -977,7 +1000,10 @@ static int open_next_file(struct commit *commit, const char *subject,
 	else
 		fmt_output_subject(&filename, subject, rev);
 
-	if (not_prompted && !access(filename.buf, F_OK)) {
+	if (not_prompted &&
+        ((rev->nr == 0 && confirm_overwrite == CONFIRM_OVERWRITE_COVER) || 
+          confirm_overwrite == CONFIRM_OVERWRITE_ALWAYS) &&
+	  !access(filename.buf, F_OK)) {
 
 		/*
 		 * TRANSLATORS: Make sure to include [Y] and [n] in your
