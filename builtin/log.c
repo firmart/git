@@ -35,6 +35,7 @@
 #include "repository.h"
 #include "commit-reach.h"
 #include "range-diff.h"
+#include "prompt.h"
 
 #define MAIL_DEFAULT_WRAP 72
 #define COVER_FROM_AUTO_MAX_SUBJECT_LEN 100
@@ -959,6 +960,10 @@ static int open_next_file(struct commit *commit, const char *subject,
 			 struct rev_info *rev, int quiet)
 {
 	struct strbuf filename = STRBUF_INIT;
+	struct strbuf file_exists_prompt = STRBUF_INIT;
+	const char *yesno;
+	static int not_prompted = 1;
+	int res = 0;
 
 	if (output_directory) {
 		strbuf_addstr(&filename, output_directory);
@@ -972,17 +977,35 @@ static int open_next_file(struct commit *commit, const char *subject,
 	else
 		fmt_output_subject(&filename, subject, rev);
 
-	if (!quiet)
-		printf("%s\n", filename.buf + outdir_offset);
+	if (not_prompted && !access(filename.buf, F_OK)) {
+
+		/*
+		 * TRANSLATORS: Make sure to include [Y] and [n] in your
+		 * translation. The program will only accept English input
+		 * at this point.
+		 */
+		strbuf_addf(&file_exists_prompt, _("The file '%s' already exists.\n"
+			"Would you overwrite this file and subsequent ones [Y/n]? "), filename.buf);
+		yesno = git_prompt(file_exists_prompt.buf, PROMPT_ECHO);
+		not_prompted = 0;
+		if (tolower(*yesno) == 'n') {
+			res = -1;
+			goto done;
+		}
+	}
 
 	if ((rev->diffopt.file = fopen(filename.buf, "w")) == NULL) {
 		error_errno(_("cannot open patch file %s"), filename.buf);
-		strbuf_release(&filename);
-		return -1;
+		res = -1;
+		goto done;
 	}
 
+	if (!quiet)
+		printf("%s\n", filename.buf + outdir_offset);
+done:
 	strbuf_release(&filename);
-	return 0;
+	strbuf_release(&file_exists_prompt);
+	return res;
 }
 
 static void get_patch_ids(struct rev_info *rev, struct patch_ids *ids)
