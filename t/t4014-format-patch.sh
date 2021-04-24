@@ -2256,6 +2256,129 @@ test_expect_success 'format-patch --pretty=mboxrd' '
 	test_cmp expect actual
 '
 
+# $1 = git format-patch extra arguments
+confirm_overwrite_setup () {
+	test_when_finished "rm -rf confirm-overwrite" &&
+	git format-patch $1 -o confirm-overwrite main..side &&
+	for patch in confirm-overwrite/*; do echo 'APPENDUM' >>$patch; done
+}
+
+# $1 = format.confirmOverwrite value
+# $2 = git format-patch extra arguments
+# $3 = git format-patch with prompt (Y/N) or without it
+confirm_overwrite_test_body () {
+	if test ! -z $1; 
+	then
+		test_config format.confirmOverwrite $1
+	fi &&
+	case "$3" in
+	Y)
+		echo Y | test_terminal git format-patch $2 -o confirm-overwrite main..side 
+		;;
+	N)
+		echo N | test_must_fail test_terminal git format-patch $2 -o confirm-overwrite main..side
+		;;
+	*)
+		git format-patch $2 -o confirm-overwrite main..side 
+		;;
+	esac
+}
+
+# true if all patches are overwritten, false otherwise
+confirm_overwrite_all_overwritten () {
+	for patch in confirm-overwrite/*; do test_i18ngrep ! "^APPENDUM$" $patch; done 
+}
+
+test_expect_success 'format-patch overwrite unconditionally patch series without cover letter' '
+	confirm_overwrite_setup &&
+	confirm_overwrite_test_body &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch overwrites present cover letter (prompt/Y)' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "" "--cover-letter" "Y" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch does not overwrite present cover letter (prompt/N)' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "" "--cover-letter" "N" &&
+	! confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch --numbered-files overwrites existing cover letter (prompt/Y)' '
+	confirm_overwrite_setup "--cover-letter --numbered-files" &&
+	confirm_overwrite_test_body "" "--cover-letter --numbered-files" "Y" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch --numbered-files does not overwrite existing cover letter (prompt/N)' '
+	confirm_overwrite_setup "--cover-letter --numbered-files" &&
+	confirm_overwrite_test_body "" "--cover-letter --numbered-files" "N" &&
+	! confirm_overwrite_all_overwritten
+'
+
+test_expect_success 'format-patch overwrites existing cover letter (format.confirmOverwrite = never)' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "never" "--cover-letter" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch: the user disagrees to overwrite existing cover letter (format.confirmOverwrite = always)' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "always" "--cover-letter" "N" &&
+	! confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch: the user agrees to overwrite existing cover letter (format.confirmOverwrite = always)' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "always" "--cover-letter" "Y" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success 'format-patch --confirm-overwrite has higher priority than format.confirmOverwrite' '
+	confirm_overwrite_setup &&
+	confirm_overwrite_test_body "always" "--confirm-overwrite never" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch --confirm-overwrite cover: the user agrees to overwrite existing cover letter' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "never" "--cover-letter --confirm-overwrite cover" "Y" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch --confirm-overwrite cover: the user disagrees to overwrite existing cover letter' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "never" "--cover-letter --confirm-overwrite cover" "N" &&
+	! confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch --confirm-overwrite always: the user agrees to overwrite existing patches' '
+	confirm_overwrite_setup &&
+	confirm_overwrite_test_body "never" "--confirm-overwrite always" "Y" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success TTY 'format-patch --confirm-overwrite always: the user disagrees to overwrite existing patches' '
+	confirm_overwrite_setup &&
+	confirm_overwrite_test_body "never" "--confirm-overwrite always" "N" &&
+	! confirm_overwrite_all_overwritten
+'
+
+test_expect_success 'format-patch --confirm-overwrite never: overwrite cover letter unconditionally' '
+	confirm_overwrite_setup "--cover-letter" &&
+	confirm_overwrite_test_body "always" "--cover-letter --confirm-overwrite never" &&
+	confirm_overwrite_all_overwritten
+'
+
+test_expect_success 'format-patch --confirm-overwrite never: overwrite patches unconditionally' '
+	confirm_overwrite_setup &&
+	confirm_overwrite_test_body "always" "--confirm-overwrite never" &&
+	confirm_overwrite_all_overwritten
+'
+
 test_expect_success 'interdiff: setup' '
 	git checkout -b boop main &&
 	test_commit fnorp blorp &&
