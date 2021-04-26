@@ -202,41 +202,50 @@ static int mingw_getchar(void)
 char *git_terminal_prompt(const char *prompt, int echo)
 {
 	static struct strbuf buf = STRBUF_INIT;
-	int r;
-	FILE *input_fh, *output_fh;
+	int r, input_not_from_tty = !isatty(STDIN_FILENO);
+	FILE *input_fh = NULL, *output_fh = NULL;
+	char* ret = NULL;
 
-	input_fh = fopen(INPUT_PATH, "r" FORCE_TEXT);
+	if (input_not_from_tty) 
+		input_fh = stdin;
+	else
+		input_fh = fopen(INPUT_PATH, "r" FORCE_TEXT);
+
 	if (!input_fh)
-		return NULL;
+		goto done;
 
 	output_fh = fopen(OUTPUT_PATH, "w" FORCE_TEXT);
-	if (!output_fh) {
-		fclose(input_fh);
-		return NULL;
-	}
 
-	if (!echo && disable_echo()) {
-		fclose(input_fh);
-		fclose(output_fh);
-		return NULL;
-	}
+	if (!output_fh) 
+		goto done;
+
+	if (!echo && disable_echo()) 
+		goto done;
 
 	fputs(prompt, output_fh);
 	fflush(output_fh);
 
 	r = strbuf_getline_lf(&buf, input_fh);
-	if (!echo) {
+
+	if (input_not_from_tty) 
+		fputs(buf.buf, output_fh);
+
+	if (!echo || input_not_from_tty) {
 		putc('\n', output_fh);
 		fflush(output_fh);
 	}
 
 	restore_term();
-	fclose(input_fh);
-	fclose(output_fh);
 
-	if (r == EOF)
-		return NULL;
-	return buf.buf;
+	if (r != EOF)
+		ret = buf.buf;
+done:
+	if (input_fh && input_fh != stdin) 
+		fclose(input_fh);
+	if (output_fh)
+		fclose(output_fh);
+
+	return ret;
 }
 
 /*
