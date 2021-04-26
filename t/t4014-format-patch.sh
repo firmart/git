@@ -669,11 +669,13 @@ test_expect_success 'failure to write cover-letter aborts gracefully' '
 '
 
 test_expect_success 'cover-letter inherits diff options' '
+	test_when_finished "rm 0000-cover-letter.patch" &&
 	git mv file foo &&
 	git commit -m foo &&
 	git format-patch --no-renames --cover-letter -1 &&
 	check_patch 0000-cover-letter.patch &&
 	! grep "file => foo .* 0 *\$" 0000-cover-letter.patch &&
+	rm 0000-cover-letter.patch &&
 	git format-patch --cover-letter -1 -M &&
 	grep "file => foo .* 0 *\$" 0000-cover-letter.patch
 '
@@ -1917,10 +1919,9 @@ test_expect_success 'cover letter with nothing' '
 
 test_expect_success 'cover letter auto' '
 	mkdir -p tmp &&
-	test_when_finished "rm -rf tmp;
-		git config --unset format.coverletter" &&
+	test_when_finished "rm -rf tmp" &&
 
-	git config format.coverletter auto &&
+	test_config format.coverletter auto &&
 	git format-patch -o tmp -1 >list &&
 	test_line_count = 1 list &&
 	git format-patch -o tmp -2 >list &&
@@ -1929,10 +1930,10 @@ test_expect_success 'cover letter auto' '
 
 test_expect_success 'cover letter auto user override' '
 	mkdir -p tmp &&
-	test_when_finished "rm -rf tmp;
-		git config --unset format.coverletter" &&
+	test_when_finished "rm -rf tmp" &&
 
-	git config format.coverletter auto &&
+	test_config format.confirmOverwrite never &&
+	test_config format.coverletter auto &&
 	git format-patch -o tmp --cover-letter -1 >list &&
 	test_line_count = 2 list &&
 	git format-patch -o tmp --cover-letter -2 >list &&
@@ -2386,6 +2387,7 @@ test_expect_success 'interdiff: setup' '
 '
 
 test_expect_success 'interdiff: cover-letter' '
+	test_when_finished "rm 0000-cover-letter.patch" &&
 	sed "y/q/ /" >expect <<-\EOF &&
 	+fleep
 	--q
@@ -2398,16 +2400,19 @@ test_expect_success 'interdiff: cover-letter' '
 '
 
 test_expect_success 'interdiff: reroll-count' '
+	test_when_finished "rm v2-0000-cover-letter.patch" &&
 	git format-patch --cover-letter --interdiff=boop~2 -v2 -1 boop &&
 	test_i18ngrep "^Interdiff ..* v1:$" v2-0000-cover-letter.patch
 '
 
 test_expect_success 'interdiff: reroll-count with a non-integer' '
+	test_when_finished "rm v2.2-0000-cover-letter.patch" &&
 	git format-patch --cover-letter --interdiff=boop~2 -v2.2 -1 boop &&
 	test_i18ngrep "^Interdiff:$" v2.2-0000-cover-letter.patch
 '
 
 test_expect_success 'interdiff: reroll-count with a integer' '
+	test_when_finished "rm v2-0000-cover-letter.patch" &&
 	git format-patch --cover-letter --interdiff=boop~2 -v2 -1 boop &&
 	test_i18ngrep "^Interdiff ..* v1:$" v2-0000-cover-letter.patch
 '
