@@ -1776,6 +1776,7 @@ int cmd_format_patch(int argc, const char **argv, const char *prefix)
 	int quiet = 0;
 	const char *reroll_count = NULL;
 	char *cover_from_description_arg = NULL;
+	char *confirm_overwrite_arg = NULL;
 	char *branch_name = NULL;
 	char *base_commit = NULL;
 	struct base_tree_info bases;
@@ -1818,6 +1819,8 @@ int cmd_format_patch(int argc, const char **argv, const char *prefix)
 		OPT_STRING(0, "cover-from-description", &cover_from_description_arg,
 			    N_("cover-from-description-mode"),
 			    N_("generate parts of a cover letter based on a branch's description")),
+		OPT_STRING(0, "confirm-overwrite", &confirm_overwrite_arg, N_("when"),
+			    N_("overwrite cover letter/patches with or without confirmation")),
 		OPT_CALLBACK_F(0, "subject-prefix", &rev, N_("prefix"),
 			    N_("use [<prefix>] instead of [PATCH]"),
 			    PARSE_OPT_NONEG, subject_prefix_callback),
@@ -1918,6 +1921,9 @@ int cmd_format_patch(int argc, const char **argv, const char *prefix)
 
 	if (cover_from_description_arg)
 		cover_from_description_mode = parse_cover_from_description(cover_from_description_arg);
+
+	if (confirm_overwrite_arg)
+		confirm_overwrite = parse_confirm_overwrite(confirm_overwrite_arg);
 
 	if (reroll_count) {
 		struct strbuf sprefix = STRBUF_INIT;
