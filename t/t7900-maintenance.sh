@@ -155,8 +155,7 @@ test_expect_success 'prefetch multiple remotes' '
 	git log --oneline --decorate --all >log &&
 	! grep "prefetch" log &&
 
-	test_when_finished git config --unset remote.remote1.skipFetchAll &&
-	git config remote.remote1.skipFetchAll true &&
+	test_config remote.remote1.skipFetchAll true &&
 	GIT_TRACE2_EVENT="$(pwd)/skip-remote1.txt" git maintenance run --task=prefetch 2>/dev/null &&
 	test_subcommand ! git fetch remote1 $fetchargs <skip-remote1.txt &&
 	test_subcommand git fetch remote2 $fetchargs <skip-remote1.txt
@@ -407,8 +406,7 @@ test_expect_success 'maintenance.strategy inheritance' '
 		git config --unset maintenance.$task.schedule || return 1
 	done &&
 
-	test_when_finished git config --unset maintenance.strategy &&
-	git config maintenance.strategy incremental &&
+	test_config maintenance.strategy incremental &&
 
 	GIT_TRACE2_EVENT="$(pwd)/incremental-hourly.txt" \
 		git maintenance run --schedule=hourly --quiet &&
@@ -465,8 +463,7 @@ test_expect_success 'maintenance.strategy inheritance' '
 '
 
 test_expect_success 'register and unregister' '
-	test_when_finished git config --global --unset-all maintenance.repo &&
-	git config --global --add maintenance.repo /existing1 &&
+	test_config_global maintenance.repo /existing1 &&
 	git config --global --add maintenance.repo /existing2 &&
 	git config --global --get-all maintenance.repo >before &&
 

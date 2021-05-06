@@ -279,13 +279,10 @@ test_expect_success "Recursion doesn't happen when new superproject commits don'
 '
 
 test_expect_success "Recursion picks up config in submodule" '
+	test_config -C downstream/submodule fetch.recurseSubmodules true &&
 	(
 		cd downstream &&
-		git fetch --recurse-submodules &&
-		(
-			cd submodule &&
-			git config fetch.recurseSubmodules true
-		)
+		git fetch --recurse-submodules
 	) &&
 	add_upstream_commit &&
 	head1=$(git rev-parse --short HEAD) &&
@@ -297,11 +294,7 @@ test_expect_success "Recursion picks up config in submodule" '
 	cat expect.err >> expect.err.sub &&
 	(
 		cd downstream &&
-		git fetch >../actual.out 2>../actual.err &&
-		(
-			cd submodule &&
-			git config --unset fetch.recurseSubmodules
-		)
+		git fetch >../actual.out 2>../actual.err
 	) &&
 	test_cmp expect.err.sub actual.err &&
 	test_must_be_empty actual.out
@@ -357,11 +350,10 @@ test_expect_success "'--recurse-submodules=on-demand' doesn't recurse when no ne
 		echo "From $pwd/submodule" >> ../expect.err.sub &&
 		echo "   $head1..$head2  sub        -> origin/sub" >> ../expect.err.sub
 	) &&
+	test_config -C downstream fetch.recurseSubmodules true &&
 	(
 		cd downstream &&
-		git config fetch.recurseSubmodules true &&
-		git fetch --recurse-submodules=on-demand >../actual.out 2>../actual.err &&
-		git config --unset fetch.recurseSubmodules
+		git fetch --recurse-submodules=on-demand >../actual.out 2>../actual.err
 	) &&
 	test_must_be_empty actual.out &&
 	test_must_be_empty actual.err
@@ -377,20 +369,9 @@ test_expect_success "'--recurse-submodules=on-demand' recurses as deep as necess
 	echo "   $head1..$head2  super      -> origin/super" >>expect.err &&
 	cat expect.err.sub >> expect.err &&
 	cat expect.err.deepsub >> expect.err &&
-	(
-		cd downstream &&
-		git config fetch.recurseSubmodules false &&
-		(
-			cd submodule &&
-			git config -f .gitmodules submodule.subdir/deepsubmodule.fetchRecursive false
-		) &&
-		git fetch --recurse-submodules=on-demand >../actual.out 2>../actual.err &&
-		git config --unset fetch.recurseSubmodules &&
-		(
-			cd submodule &&
-			git config --unset -f .gitmodules submodule.subdir/deepsubmodule.fetchRecursive
-		)
-	) &&
+	test_config -C downstream fetch.recurseSubmodules false &&
+	test_config -C downstream/submodule -f .gitmodules submodule.subdir/deepsubmodule.fetchRecursive false &&
+	git -C downstream fetch --recurse-submodules=on-demand >actual.out 2>actual.err &&
 	test_must_be_empty actual.out &&
 	test_cmp expect.err actual.err
 '
@@ -418,7 +399,7 @@ test_expect_success "'fetch.recurseSubmodules=on-demand' overrides global config
 		git fetch --recurse-submodules
 	) &&
 	add_upstream_commit &&
-	git config --global fetch.recurseSubmodules false &&
+	test_config_global fetch.recurseSubmodules false &&
 	head1=$(git rev-parse --short HEAD) &&
 	git add submodule &&
 	git commit -m "new submodule" &&
@@ -426,15 +407,10 @@ test_expect_success "'fetch.recurseSubmodules=on-demand' overrides global config
 	echo "From $pwd/." > expect.err.2 &&
 	echo "   $head1..$head2  super      -> origin/super" >>expect.err.2 &&
 	head -3 expect.err >> expect.err.2 &&
+	test_config -C downstream fetch.recurseSubmodules on-demand &&
 	(
 		cd downstream &&
-		git config fetch.recurseSubmodules on-demand &&
 		git fetch >../actual.out 2>../actual.err
-	) &&
-	git config --global --unset fetch.recurseSubmodules &&
-	(
-		cd downstream &&
-		git config --unset fetch.recurseSubmodules
 	) &&
 	test_must_be_empty actual.out &&
 	test_cmp expect.err.2 actual.err
@@ -446,7 +422,7 @@ test_expect_success "'submodule.<sub>.fetchRecurseSubmodules=on-demand' override
 		git fetch --recurse-submodules
 	) &&
 	add_upstream_commit &&
-	git config fetch.recurseSubmodules false &&
+	test_config fetch.recurseSubmodules false &&
 	head1=$(git rev-parse --short HEAD) &&
 	git add submodule &&
 	git commit -m "new submodule" &&
@@ -454,15 +430,10 @@ test_expect_success "'submodule.<sub>.fetchRecurseSubmodules=on-demand' override
 	echo "From $pwd/." > expect.err.2 &&
 	echo "   $head1..$head2  super      -> origin/super" >>expect.err.2 &&
 	head -3 expect.err >> expect.err.2 &&
+	test_config -C downstream submodule.submodule.fetchRecurseSubmodules on-demand &&
 	(
 		cd downstream &&
-		git config submodule.submodule.fetchRecurseSubmodules on-demand &&
 		git fetch >../actual.out 2>../actual.err
-	) &&
-	git config --unset fetch.recurseSubmodules &&
-	(
-		cd downstream &&
-		git config --unset submodule.submodule.fetchRecurseSubmodules
 	) &&
 	test_must_be_empty actual.out &&
 	test_cmp expect.err.2 actual.err
@@ -505,10 +476,10 @@ test_expect_success "'fetch.recurseSubmodules=on-demand' works also without .git
 	echo "From $pwd/." >expect.err.2 &&
 	echo "   $head1..$head2  super      -> origin/super" >>expect.err.2 &&
 	head -3 expect.err >>expect.err.2 &&
+	test_config -C downstream fetch.recurseSubmodules on-demand &&
 	(
 		cd downstream &&
 		rm .gitmodules &&
-		git config fetch.recurseSubmodules on-demand &&
 		# fake submodule configuration to avoid skipping submodule handling
 		git config -f .gitmodules submodule.fake.path fake &&
 		git config -f .gitmodules submodule.fake.url fakeurl &&
@@ -516,7 +487,6 @@ test_expect_success "'fetch.recurseSubmodules=on-demand' works also without .git
 		git config --unset submodule.submodule.url &&
 		git fetch >../actual.out 2>../actual.err &&
 		# cleanup
-		git config --unset fetch.recurseSubmodules &&
 		git reset --hard
 	) &&
 	test_must_be_empty actual.out &&

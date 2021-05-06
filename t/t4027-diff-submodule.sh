@@ -123,7 +123,7 @@ test_expect_success 'git diff HEAD with dirty submodule (work tree, refs match)'
 '
 
 test_expect_success 'git diff HEAD with dirty submodule (work tree, refs match) [.gitmodules]' '
-	git config diff.ignoreSubmodules dirty &&
+	test_config diff.ignoreSubmodules dirty &&
 	git diff HEAD >actual &&
 	test_must_be_empty actual &&
 	git config --add -f .gitmodules submodule.subname.ignore none &&
@@ -152,7 +152,6 @@ test_expect_success 'git diff HEAD with dirty submodule (work tree, refs match) 
 	test_cmp expect.body actual.body &&
 	git config --remove-section submodule.subname &&
 	git config --remove-section -f .gitmodules submodule.subname &&
-	git config --unset diff.ignoreSubmodules &&
 	rm .gitmodules
 '
 

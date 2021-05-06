@@ -79,7 +79,7 @@ test_expect_success 'UTF-8 non-characters refused' '
 for H in ISO8859-1 eucJP ISO-2022-JP
 do
 	test_expect_success "$H setup" '
-		git config i18n.commitencoding $H &&
+		test_config i18n.commitencoding $H &&
 		git checkout -b $H C0 &&
 		echo $H >F &&
 		git commit -a -F "$TEST_DIRECTORY"/t3900/$H.txt
@@ -95,30 +95,29 @@ do
 done
 
 test_expect_success 'config to remove customization' '
-	git config --unset-all i18n.commitencoding &&
 	if Z=$(git config --get-all i18n.commitencoding)
 	then
 		echo Oops, should have failed.
 		false
 	else
 		test z = "z$Z"
-	fi &&
-	git config i18n.commitencoding UTF-8
+	fi
 '
 
 test_expect_success 'ISO8859-1 should be shown in UTF-8 now' '
+	test_config i18n.commitencoding UTF-8 &&
 	compare_with ISO8859-1 "$TEST_DIRECTORY"/t3900/1-UTF-8.txt
 '
 
 for H in eucJP ISO-2022-JP
 do
 	test_expect_success "$H should be shown in UTF-8 now" '
+		test_config i18n.commitencoding UTF-8 &&
 		compare_with '$H' "$TEST_DIRECTORY"/t3900/2-UTF-8.txt
 	'
 done
 
 test_expect_success 'config to add customization' '
-	git config --unset-all i18n.commitencoding &&
 	if Z=$(git config --get-all i18n.commitencoding)
 	then
 		echo Oops, should have failed.
@@ -179,7 +178,7 @@ test_commit_autosquash_flags () {
 	H=$1
 	flag=$2
 	test_expect_success "commit --$flag with $H encoding" '
-		git config i18n.commitencoding $H &&
+		test_config i18n.commitencoding $H &&
 		git checkout -b $H-$flag C0 &&
 		echo $H >>F &&
 		git commit -a -F "$TEST_DIRECTORY"/t3900/$H.txt &&
@@ -193,7 +192,6 @@ test_commit_autosquash_flags () {
 		E=$(git cat-file commit '$H-$flag' |
 			sed -ne "s/^encoding //p") &&
 		test "z$E" = "z$H" &&
-		git config --unset-all i18n.commitencoding &&
 		git rebase --autosquash -i HEAD^^^ &&
 		git log --oneline >actual &&
 		test_line_count = 3 actual

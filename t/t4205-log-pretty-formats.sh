@@ -30,12 +30,11 @@ test_expect_success 'set up basic repos' '
 	>bar &&
 	git add foo &&
 	test_tick &&
-	git config i18n.commitEncoding $test_encoding &&
+	test_config i18n.commitEncoding $test_encoding &&
 	commit_msg $test_encoding | git commit -F - &&
 	git add bar &&
 	test_tick &&
-	git commit -m "add bar" &&
-	git config --unset i18n.commitEncoding
+	git commit -m "add bar"
 '
 
 test_expect_success 'alias builtin format' '
@@ -60,10 +59,9 @@ test_expect_success 'alias user-defined format' '
 '
 
 test_expect_success 'alias user-defined tformat with %s (ISO8859-1 encoding)' '
-	git config i18n.logOutputEncoding $test_encoding &&
+	test_config i18n.logOutputEncoding $test_encoding &&
 	git log --oneline >expected-s &&
 	git log --pretty="tformat:%h %s" >actual-s &&
-	git config --unset i18n.logOutputEncoding &&
 	test_cmp expected-s actual-s
 '
 

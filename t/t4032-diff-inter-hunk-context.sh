@@ -17,12 +17,11 @@ f() {
 
 t() {
 	use_config=
-	git config --unset diff.interHunkContext
 
 	case $# in
 	4) hunks=$4; cmd="diff -U$3";;
 	5) hunks=$5; cmd="diff -U$3 --inter-hunk-context=$4";;
-	6) hunks=$5; cmd="diff -U$3"; git config diff.interHunkContext $4; use_config="(diff.interHunkContext=$4) ";;
+	6) hunks=$5; cmd="diff -U$3"; test_config diff.interHunkContext $4; use_config="(diff.interHunkContext=$4) ";;
 	esac
 	label="$use_config$cmd, $1 common $2"
 	file=f$1

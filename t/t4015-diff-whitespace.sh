@@ -767,13 +767,12 @@ test_expect_success 'ditto, but tabwidth=1 (must be irrelevant)' '
 '
 
 test_expect_success 'check tab-in-indent and indent-with-non-tab conflict' '
-	git config core.whitespace "tab-in-indent,indent-with-non-tab" &&
+	test_config core.whitespace "tab-in-indent,indent-with-non-tab" &&
 	echo "foo ();" >x &&
 	test_must_fail git diff --check
 '
 
 test_expect_success 'check tab-in-indent excluded from wildcard whitespace attribute' '
-	git config --unset core.whitespace &&
 	echo "x whitespace" >.gitattributes &&
 	echo "	  foo ();" >x &&
 	git diff --check &&
@@ -1514,12 +1513,12 @@ test_expect_success 'set up whitespace tests' '
 	long line 9
 	EOF
 	git add lines.txt &&
-	git commit -m "add poetry" &&
-	git config color.diff.oldMoved "magenta" &&
-	git config color.diff.newMoved "cyan"
+	git commit -m "add poetry"
 '
 
 test_expect_success 'move detection ignoring whitespace ' '
+	test_config color.diff.oldMoved "magenta" &&
+	test_config color.diff.newMoved "cyan" &&
 	q_to_tab <<-\EOF >lines.txt &&
 	Qlong line 6
 	Qlong line 7
@@ -1580,6 +1579,8 @@ test_expect_success 'move detection ignoring whitespace ' '
 '
 
 test_expect_success 'move detection ignoring whitespace changes' '
+	test_config color.diff.oldMoved "magenta" &&
+	test_config color.diff.newMoved "cyan" &&
 	git reset --hard &&
 	# Lines 6-8 have a space change, but 9 is new whitespace
 	q_to_tab <<-\EOF >lines.txt &&
@@ -1643,6 +1644,8 @@ test_expect_success 'move detection ignoring whitespace changes' '
 '
 
 test_expect_success 'move detection ignoring whitespace at eol' '
+	test_config color.diff.oldMoved "magenta" &&
+	test_config color.diff.newMoved "cyan" &&
 	git reset --hard &&
 	# Lines 6-9 have new eol whitespace, but 9 also has it in the middle
 	q_to_tab <<-\EOF >lines.txt &&
@@ -1706,11 +1709,6 @@ test_expect_success 'move detection ignoring whitespace at eol' '
 	<RED>-long line 9<RESET>
 	EOF
 	test_cmp expected actual
-'
-
-test_expect_success 'clean up whitespace-test colors' '
-	git config --unset color.diff.oldMoved &&
-	git config --unset color.diff.newMoved
 '
 
 test_expect_success '--color-moved block at end of diff output respects MIN_ALNUM_COUNT' '

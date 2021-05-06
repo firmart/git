@@ -55,7 +55,7 @@ test_expect_success 'eol=crlf puts CRLFs in normalized file' '
 test_expect_success 'autocrlf=true overrides eol=lf' '
 
 	rm -f .gitattributes tmp one two &&
-	git config core.eol lf &&
+	test_config core.eol lf &&
 	git config core.autocrlf true &&
 	git read-tree --reset -u HEAD &&
 
@@ -69,7 +69,6 @@ test_expect_success 'autocrlf=true overrides eol=lf' '
 test_expect_success 'autocrlf=true overrides unset eol' '
 
 	rm -f .gitattributes tmp one two &&
-	git config --unset-all core.eol &&
 	git config core.autocrlf true &&
 	git read-tree --reset -u HEAD &&
 

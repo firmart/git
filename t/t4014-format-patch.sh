@@ -1917,10 +1917,9 @@ test_expect_success 'cover letter with nothing' '
 
 test_expect_success 'cover letter auto' '
 	mkdir -p tmp &&
-	test_when_finished "rm -rf tmp;
-		git config --unset format.coverletter" &&
+	test_when_finished "rm -rf tmp" &&
+	test_config format.coverletter auto &&
 
-	git config format.coverletter auto &&
 	git format-patch -o tmp -1 >list &&
 	test_line_count = 1 list &&
 	git format-patch -o tmp -2 >list &&
@@ -1929,10 +1928,9 @@ test_expect_success 'cover letter auto' '
 
 test_expect_success 'cover letter auto user override' '
 	mkdir -p tmp &&
-	test_when_finished "rm -rf tmp;
-		git config --unset format.coverletter" &&
+	test_when_finished "rm -rf tmp" &&
+	test_config format.coverletter auto &&
 
-	git config format.coverletter auto &&
 	git format-patch -o tmp --cover-letter -1 >list &&
 	test_line_count = 2 list &&
 	git format-patch -o tmp --cover-letter -2 >list &&

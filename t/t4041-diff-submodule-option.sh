@@ -58,13 +58,12 @@ test_expect_success 'added submodule' '
 '
 
 test_expect_success 'added submodule, set diff.submodule' '
-	git config diff.submodule log &&
+	test_config diff.submodule log &&
 	git add sm1 &&
 	git diff --cached >actual &&
 	cat >expected <<-EOF &&
 	Submodule sm1 0000000...$head1 (new submodule)
 	EOF
-	git config --unset diff.submodule &&
 	test_cmp expected actual
 '
 

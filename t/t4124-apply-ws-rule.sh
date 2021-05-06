@@ -119,7 +119,7 @@ test_expect_success 'whitespace=error-all, default rule' '
 
 test_expect_success 'whitespace=error-all, no rule' '
 
-	git config core.whitespace -trailing,-space-before,-indent &&
+	test_config core.whitespace -trailing,-space-before,-indent &&
 	apply_patch --whitespace=error-all &&
 	test_cmp file target
 
@@ -127,7 +127,6 @@ test_expect_success 'whitespace=error-all, no rule' '
 
 test_expect_success 'whitespace=error-all, no rule (attribute)' '
 
-	git config --unset core.whitespace &&
 	echo "target -whitespace" >.gitattributes &&
 	apply_patch --whitespace=error-all &&
 	test_cmp file target
@@ -184,12 +183,11 @@ do
 				'
 
 				test_expect_success "rule=$rule,tabwidth=16" '
-					git config core.whitespace "$rule,tabwidth=16" &&
+					test_config core.whitespace "$rule,tabwidth=16" &&
 					test_fix "$tt$ts$ti16$th"
 				'
 
 				test_expect_success "rule=$rule (attributes)" '
-					git config --unset core.whitespace &&
 					echo "target whitespace=$rule" >.gitattributes &&
 					test_fix "$tt$ts$ti$th"
 				'
@@ -464,7 +462,7 @@ test_expect_success 'same, but with the --ignore-space-option' '
 '
 
 test_expect_success 'same, but with CR-LF line endings && cr-at-eol set' '
-	git config core.whitespace cr-at-eol &&
+	test_config core.whitespace cr-at-eol &&
 	printf "a\r\n" >one &&
 	printf "b\r\n" >>one &&
 	printf "c\r\n" >>one &&
@@ -481,7 +479,6 @@ test_expect_success 'same, but with CR-LF line endings && cr-at-eol set' '
 '
 
 test_expect_success 'CR-LF line endings && add line && text=auto' '
-	git config --unset core.whitespace &&
 	printf "a\r\n" >one &&
 	cp one save-one &&
 	git add one &&

@@ -20,9 +20,9 @@ done
 for H in ISO8859-1 eucJP
 do
 	test_expect_success "$H commit on git side" '
+		test_config -C $H i18n.commitencoding $H &&
 	(
 		cd $H &&
-		git config i18n.commitencoding $H &&
 		git checkout -b t refs/remotes/git-svn &&
 		echo $H >F &&
 		git add F &&
@@ -36,11 +36,7 @@ done
 for H in ISO8859-1 eucJP
 do
 	test_expect_success "$H dcommit to svn" '
-	(
-		cd $H &&
-		git config --unset i18n.commitencoding &&
-		test_must_fail git svn dcommit
-	)
+		test_must_fail git -C $H svn dcommit
 	'
 done
 
