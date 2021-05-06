@@ -179,7 +179,7 @@ test_commit_autosquash_flags () {
 	H=$1
 	flag=$2
 	test_expect_success "commit --$flag with $H encoding" '
-		git config i18n.commitencoding $H &&
+		test_config i18n.commitencoding $H &&
 		git checkout -b $H-$flag C0 &&
 		echo $H >>F &&
 		git commit -a -F "$TEST_DIRECTORY"/t3900/$H.txt &&
@@ -193,7 +193,6 @@ test_commit_autosquash_flags () {
 		E=$(git cat-file commit '$H-$flag' |
 			sed -ne "s/^encoding //p") &&
 		test "z$E" = "z$H" &&
-		git config --unset-all i18n.commitencoding &&
 		git rebase --autosquash -i HEAD^^^ &&
 		git log --oneline >actual &&
 		test_line_count = 3 actual

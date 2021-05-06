@@ -37,7 +37,7 @@ truncate_count=20
 test_expect_success 'setup' '
 	: >foo &&
 	git add foo &&
-	git config i18n.commitEncoding $test_encoding &&
+	test_config i18n.commitEncoding $test_encoding &&
 	echo "$added_iso88591" | git commit -F - &&
 	head1=$(git rev-parse --verify HEAD) &&
 	head1_short=$(git rev-parse --verify --short $head1) &&
@@ -48,8 +48,7 @@ test_expect_success 'setup' '
 	head2=$(git rev-parse --verify HEAD) &&
 	head2_short=$(git rev-parse --verify --short $head2) &&
 	tree2=$(git rev-parse --verify HEAD:) &&
-	tree2_short=$(git rev-parse --verify --short $tree2) &&
-	git config --unset i18n.commitEncoding
+	tree2_short=$(git rev-parse --verify --short $tree2)
 '
 
 # usage: test_format name format_string [failure] <expected_output

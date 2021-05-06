@@ -803,7 +803,7 @@ test_expect_success 'diff.orderFile configuration is honored' '
 test_expect_success 'mergetool -Oorder-file is honored' '
 	test_when_finished "git reset --hard" &&
 	git checkout -b test$test_count order-file-side2 &&
-	test_config diff.orderFile order-file &&
+	git config diff.orderFile order-file &&
 	test_config mergetool.myecho.cmd "echo \"\$LOCAL\"" &&
 	test_config mergetool.myecho.trustExitCode true &&
 	echo b >order-file &&

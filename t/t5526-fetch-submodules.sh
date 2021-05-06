@@ -418,7 +418,7 @@ test_expect_success "'fetch.recurseSubmodules=on-demand' overrides global config
 		git fetch --recurse-submodules
 	) &&
 	add_upstream_commit &&
-	git config --global fetch.recurseSubmodules false &&
+	test_config_global fetch.recurseSubmodules false &&
 	head1=$(git rev-parse --short HEAD) &&
 	git add submodule &&
 	git commit -m "new submodule" &&
@@ -429,11 +429,7 @@ test_expect_success "'fetch.recurseSubmodules=on-demand' overrides global config
 	(
 		cd downstream &&
 		git config fetch.recurseSubmodules on-demand &&
-		git fetch >../actual.out 2>../actual.err
-	) &&
-	git config --global --unset fetch.recurseSubmodules &&
-	(
-		cd downstream &&
+		git fetch >../actual.out 2>../actual.err &&
 		git config --unset fetch.recurseSubmodules
 	) &&
 	test_must_be_empty actual.out &&
@@ -446,7 +442,7 @@ test_expect_success "'submodule.<sub>.fetchRecurseSubmodules=on-demand' override
 		git fetch --recurse-submodules
 	) &&
 	add_upstream_commit &&
-	git config fetch.recurseSubmodules false &&
+	test_config fetch.recurseSubmodules false &&
 	head1=$(git rev-parse --short HEAD) &&
 	git add submodule &&
 	git commit -m "new submodule" &&
@@ -457,11 +453,7 @@ test_expect_success "'submodule.<sub>.fetchRecurseSubmodules=on-demand' override
 	(
 		cd downstream &&
 		git config submodule.submodule.fetchRecurseSubmodules on-demand &&
-		git fetch >../actual.out 2>../actual.err
-	) &&
-	git config --unset fetch.recurseSubmodules &&
-	(
-		cd downstream &&
+		git fetch >../actual.out 2>../actual.err &&
 		git config --unset submodule.submodule.fetchRecurseSubmodules
 	) &&
 	test_must_be_empty actual.out &&
