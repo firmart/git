@@ -340,7 +340,7 @@ static int decide_next(const struct bisect_terms *terms,
 
 	if (missing_good && !missing_bad &&
 	    !strcmp(current_term, terms->term_good)) {
-		char *yesno;
+		struct strbuf yesno = STRBUF_INIT;
 		/*
 		 * have bad (or new) but not good (or old). We could bisect
 		 * although this is less optimum.
@@ -353,8 +353,9 @@ static int decide_next(const struct bisect_terms *terms,
 		 * translation. The program will only accept English input
 		 * at this point.
 		 */
-		yesno = git_prompt(_("Are you sure [Y/n]? "), PROMPT_ECHO);
-		if (starts_with(yesno, "N") || starts_with(yesno, "n"))
+		printf(_("Are you sure [Y/n]? "));
+		git_read_line_interactively(&yesno);
+		if (yesno.len && !strncasecmp(yesno.buf, "no", yesno.len))
 			return -1;
 		return 0;
 	}
@@ -805,7 +806,7 @@ static inline int file_is_not_empty(const char *path)
 static int bisect_autostart(struct bisect_terms *terms)
 {
 	int res;
-	const char *yesno;
+	struct strbuf yesno = STRBUF_INIT;
 
 	if (file_is_not_empty(git_path_bisect_start()))
 		return 0;
@@ -821,9 +822,9 @@ static int bisect_autostart(struct bisect_terms *terms)
 	 * translation. The program will only accept English input
 	 * at this point.
 	 */
-	yesno = git_prompt(_("Do you want me to do it for you "
-			     "[Y/n]? "), PROMPT_ECHO);
-	res = tolower(*yesno) == 'n' ?
+	printf(_("Do you want me to do it for you [Y/n]? "));
+	git_read_line_interactively(&yesno);
+	res = (yesno.len && strncasecmp(yesno.buf, "no", yesno.len)) ?
 		-1 : bisect_start(terms, empty_strvec, 0);
 
 	return res;

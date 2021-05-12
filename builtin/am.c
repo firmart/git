@@ -1643,7 +1643,7 @@ static int do_interactive(struct am_state *state)
 	assert(state->msg);
 
 	for (;;) {
-		char reply[64];
+		struct strbuf reply = STRBUF_INIT;
 
 		puts(_("Commit Body is:"));
 		puts("--------------------------");
@@ -1656,17 +1656,17 @@ static int do_interactive(struct am_state *state)
 		 * input at this point.
 		 */
 		printf(_("Apply? [y]es/[n]o/[e]dit/[v]iew patch/[a]ccept all: "));
-		if (!fgets(reply, sizeof(reply), stdin))
+		if (git_read_line_interactively(&reply) == EOF)
 			die("unable to read from stdin; aborting");
 
-		if (*reply == 'y' || *reply == 'Y') {
+		if (reply.len && !strncasecmp(reply.buf, "yes", reply.len)) {
 			return 0;
-		} else if (*reply == 'a' || *reply == 'A') {
+		} else if (*reply.buf == 'a' || *reply.buf == 'A') {
 			state->interactive = 0;
 			return 0;
-		} else if (*reply == 'n' || *reply == 'N') {
+		} else if (reply.len && !strncasecmp(reply.buf, "no", reply.len)) {
 			return 1;
-		} else if (*reply == 'e' || *reply == 'E') {
+		} else if (*reply.buf == 'e' || *reply.buf == 'E') {
 			struct strbuf msg = STRBUF_INIT;
 
 			if (!launch_editor(am_path(state, "final-commit"), &msg, NULL)) {
@@ -1674,7 +1674,7 @@ static int do_interactive(struct am_state *state)
 				state->msg = strbuf_detach(&msg, &state->msg_len);
 			}
 			strbuf_release(&msg);
-		} else if (*reply == 'v' || *reply == 'V') {
+		} else if (*reply.buf == 'v' || *reply.buf == 'V') {
 			const char *pager = git_pager(1);
 			struct child_process cp = CHILD_PROCESS_INIT;
 
