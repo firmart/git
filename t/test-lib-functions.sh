@@ -429,7 +429,14 @@ test_config () {
 		config_dir=$1
 		shift
 	fi
-	test_when_finished "test_unconfig ${config_dir:+-C '$config_dir'} '$1'" &&
+	file_option=
+	if test "$1" = -f
+	then
+		shift
+		file_option=$1
+		shift
+	fi
+	test_when_finished "test_unconfig ${config_dir:+-C '$config_dir'} ${file_option:+-f '$file_option'} '$1'" &&
 	git ${config_dir:+-C "$config_dir"} config "$@"
 }
 
